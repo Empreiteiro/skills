@@ -1,0 +1,5 @@
+node_modules/
+out/
+models/
+assets/fonts/*.woff2
+assets/style/editorial/paper.png

@@ -1,0 +1,32 @@
+{
+  "style": "editorial",
+  "characters": [
+    {
+      "id": "example",
+      "role": "A home baker who writes a weekly recipe newsletter",
+      "voice": { "voice": "en-US-AvaMultilingualNeural", "rate": "+4%" },
+      "facing": "left",
+      "anchors": "short dark curly hair tied back with a slate-blue scarf, round glasses, a cream apron over a slate-blue shirt with rolled sleeves, black trousers, plain flat shoes, a wooden spoon",
+      "skin": "",
+      "noLogo": "Plain flat shoes and plain kitchen tools with no logo.",
+      "refs": [],
+      "poses": {
+        "stand": "assets/cast/example/stand.svg",
+        "point": "assets/cast/example/point.svg"
+      },
+      "profile": {
+        "age": 34,
+        "lives": "A small flat with a narrow kitchen",
+        "work": "Tests recipes on Saturdays, writes on Sunday nights, sends the newsletter on Monday mornings",
+        "routine": "Weighs everything, writes the method first and the story after",
+        "pains": [
+          "A tool that rewrites the whole recipe when only one line was wrong",
+          "Quantities silently changed to the 'usual' value",
+          "Explaining the same house rules every time"
+        ],
+        "quotes": ["Change the line I marked. Leave my grams alone."],
+        "never": ["A recipe that tells the story before the ingredients"]
+      }
+    }
+  ]
+}

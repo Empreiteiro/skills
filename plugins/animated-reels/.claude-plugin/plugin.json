@@ -1,0 +1,9 @@
+{
+  "name": "animated-reels",
+  "displayName": "Animated reels",
+  "description": "Turn a topic and a cast of drawn characters into a vertical 1080x1920 reel: script, voice, animation rendered frame by frame in Chromium, soundtrack, cover and caption.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["video", "reels", "animation", "instagram", "tts", "three.js"]
+}

@@ -1,6 +1,6 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Eight plugins, installed separately:
+Claude Code skills and the presentations built with them. Nine plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
@@ -12,6 +12,7 @@ Claude Code skills and the presentations built with them. Eight plugins, install
 | `writing` | Brand copy without AI tells, and the craft of fourteen forms from fiction to technical docs | [`plugins/writing/`](plugins/writing/) |
 | `dev-workflow` | A change from request to production: worktree, gate, PR, deploy, proof by fetch | [`plugins/dev-workflow/`](plugins/dev-workflow/) |
 | `ab-testing` | Product A/B tests, from the design to promoting the winner | [`plugins/ab-testing/`](plugins/ab-testing/) |
+| `animated-reels` | Vertical reels with drawn characters, rendered frame by frame | [`plugins/animated-reels/`](plugins/animated-reels/) |
 
 ```
 .claude-plugin/            plugin + marketplace manifests (install the skills with one command)
@@ -28,6 +29,7 @@ plugins/                   self-contained plugins, each with its own manifest, R
   writing/
   dev-workflow/
   ab-testing/
+  animated-reels/
 ```
 
 ## Presentation skills
@@ -136,6 +138,15 @@ Plugin in [`plugins/ab-testing/`](plugins/ab-testing/README.md), for web apps wi
 | `ab-test-create` | Design the test with you, assign each account once at signup, gate the arms behind a flag, build the results board |
 | `ab-test-promote-winner` | Snapshot the final board, send everyone to the winner, delete the losing arms, retire the flag, archive the test |
 
+## Animated reel skill
+
+Plugin in [`plugins/animated-reels/`](plugins/animated-reels/README.md): the skill plus its render engine, with one
+neutral example character and reel. Bring your own characters and brand.
+
+| Skill | What it does |
+|---|---|
+| `animated-reel` | A 1080x1920 reel from a topic and a cast: first-person script and voice-over checked with Whisper, new poses from an image model, frame-by-frame animation in headless Chromium, synthesized soundtrack, cover and caption |
+
 ## Install
 
 As a plugin (recommended):
@@ -150,6 +161,7 @@ claude plugin install data-analytics@empreiteiro-skills
 claude plugin install writing@empreiteiro-skills
 claude plugin install dev-workflow@empreiteiro-skills
 claude plugin install ab-testing@empreiteiro-skills
+claude plugin install animated-reels@empreiteiro-skills
 ```
 
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
@@ -160,6 +172,8 @@ The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its R
 The A/B board scripts need Node 18+ and Playwright (see [its README](plugins/ab-testing/README.md)).
 The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
 (`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
+The reel engine needs Node 18+, ffmpeg, ImageMagick 7 and whisper.cpp; its setup script installs the rest (see
+[its README](plugins/animated-reels/README.md)).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
 `~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Some skills use a sibling's files, so copy these

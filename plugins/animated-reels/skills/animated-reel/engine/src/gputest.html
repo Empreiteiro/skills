@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Animated reel · GPU test</title><style>html,body{margin:0;background:#000;overflow:hidden}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script></head>
+<body><script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+r.setSize(1920, 1080); document.body.appendChild(r.domElement);
+const gl = r.getContext(); const ext = gl.getExtension('WEBGL_debug_renderer_info');
+window.glInfo = ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
+const scene = new THREE.Scene(); const pm = new THREE.PMREMGenerator(r);
+scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+const cam = new THREE.PerspectiveCamera(35, 16/9, 0.1, 100); cam.position.set(0, 0, 6);
+const m = new THREE.Mesh(new THREE.TorusKnotGeometry(1, 0.35, 400, 64), new THREE.MeshPhysicalMaterial({ color: 0xd3ab52, metalness: 1, roughness: 0.25 }));
+scene.add(m);
+window.seek = t => { m.rotation.set(t, t * 0.7, 0); r.render(scene, cam); return true; };
+window.ready = true;
+</script></body></html>

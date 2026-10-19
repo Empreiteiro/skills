@@ -1,0 +1,231 @@
+{
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+10%",
+ "lufs": -16,
+ "estimated": true,
+ "lines": [
+  {
+   "id": "l1",
+   "text": "My recipe says two cups. It means one.",
+   "speech": null,
+   "voice": "en-US-AvaMultilingualNeural",
+   "rate": "+4%",
+   "t0": 0.25,
+   "dur": 3.022,
+   "w0": 0.33,
+   "t1": 3.152,
+   "words": [
+    {
+     "w": "My",
+     "t0": 0.33,
+     "t1": 0.546
+    },
+    {
+     "w": "recipe",
+     "t0": 0.576,
+     "t1": 0.984
+    },
+    {
+     "w": "says",
+     "t0": 1.014,
+     "t1": 1.326
+    },
+    {
+     "w": "two",
+     "t0": 1.356,
+     "t1": 1.62
+    },
+    {
+     "w": "cups",
+     "t0": 1.65,
+     "t1": 1.962
+    },
+    {
+     "w": "It",
+     "t0": 2.252,
+     "t1": 2.468
+    },
+    {
+     "w": "means",
+     "t0": 2.498,
+     "t1": 2.858
+    },
+    {
+     "w": "one",
+     "t0": 2.888,
+     "t1": 3.152
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "text": "A note in the margin, one tap, and only that line changes.",
+   "speech": null,
+   "voice": "en-US-AvaMultilingualNeural",
+   "rate": "+4%",
+   "t0": 4.2,
+   "dur": 4.602,
+   "w0": 4.28,
+   "t1": 8.682,
+   "words": [
+    {
+     "w": "A",
+     "t0": 4.28,
+     "t1": 4.448
+    },
+    {
+     "w": "note",
+     "t0": 4.478,
+     "t1": 4.79
+    },
+    {
+     "w": "in",
+     "t0": 4.82,
+     "t1": 5.036
+    },
+    {
+     "w": "the",
+     "t0": 5.066,
+     "t1": 5.33
+    },
+    {
+     "w": "margin",
+     "t0": 5.36,
+     "t1": 5.768
+    },
+    {
+     "w": "one",
+     "t0": 6.058,
+     "t1": 6.322
+    },
+    {
+     "w": "tap",
+     "t0": 6.352,
+     "t1": 6.616
+    },
+    {
+     "w": "and",
+     "t0": 6.906,
+     "t1": 7.17
+    },
+    {
+     "w": "only",
+     "t0": 7.2,
+     "t1": 7.512
+    },
+    {
+     "w": "that",
+     "t0": 7.542,
+     "t1": 7.854
+    },
+    {
+     "w": "line",
+     "t0": 7.884,
+     "t1": 8.196
+    },
+    {
+     "w": "changes",
+     "t0": 8.226,
+     "t1": 8.682
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "text": "Small fixes. Nothing else moves.",
+   "speech": null,
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+10%",
+   "t0": 8.75,
+   "dur": 2.428,
+   "w0": 8.83,
+   "t1": 11.058,
+   "words": [
+    {
+     "w": "Small",
+     "t0": 8.83,
+     "t1": 9.19
+    },
+    {
+     "w": "fixes",
+     "t0": 9.22,
+     "t1": 9.58
+    },
+    {
+     "w": "Nothing",
+     "t0": 9.87,
+     "t1": 10.326
+    },
+    {
+     "w": "else",
+     "t0": 10.356,
+     "t1": 10.668
+    },
+    {
+     "w": "moves",
+     "t0": 10.698,
+     "t1": 11.058
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "text": "Learn more. The link is in the first comment.",
+   "speech": null,
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+10%",
+   "t0": 11.358,
+   "dur": 3.46,
+   "w0": 11.438,
+   "t1": 14.698,
+   "words": [
+    {
+     "w": "Learn",
+     "t0": 11.438,
+     "t1": 11.798
+    },
+    {
+     "w": "more",
+     "t0": 11.828,
+     "t1": 12.14
+    },
+    {
+     "w": "The",
+     "t0": 12.43,
+     "t1": 12.694
+    },
+    {
+     "w": "link",
+     "t0": 12.724,
+     "t1": 13.036
+    },
+    {
+     "w": "is",
+     "t0": 13.066,
+     "t1": 13.282
+    },
+    {
+     "w": "in",
+     "t0": 13.312,
+     "t1": 13.528
+    },
+    {
+     "w": "the",
+     "t0": 13.558,
+     "t1": 13.822
+    },
+    {
+     "w": "first",
+     "t0": 13.852,
+     "t1": 14.212
+    },
+    {
+     "w": "comment",
+     "t0": 14.242,
+     "t1": 14.698
+    }
+   ]
+  }
+ ],
+ "end": 14.698
+}

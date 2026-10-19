@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1000" viewBox="0 0 420 1000">
+  <!-- Placeholder character "example", pose "point": same cut-out, front arm raised, pointing left with the spoon.
+       Replace with a generated, cleaned transparent PNG (tools/pose.mjs + prepare.mjs) for a real reel. -->
+  <g stroke="#2b2a28" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- legs and shoes -->
+    <path d="M168 520 L150 940 L186 940 L204 560 L222 940 L258 940 L246 520 Z" fill="#2b2a28"/>
+    <path d="M186 940 Q150 936 120 950 Q108 966 124 974 L190 974 Q196 956 186 940 Z" fill="#2b2a28"/>
+    <path d="M258 940 Q222 936 196 950 Q186 966 200 974 L262 974 Q268 956 258 940 Z" fill="#2b2a28"/>
+    <!-- back arm (slate sleeve, cream hand) -->
+    <path d="M268 262 Q300 330 296 430 L270 432 Q272 340 244 286 Z" fill="#4b638e"/>
+    <circle cx="284" cy="452" r="18" fill="#f4eee4"/>
+    <!-- torso: slate shirt, cream apron -->
+    <path d="M150 250 Q210 228 270 250 L262 530 L156 530 Z" fill="#4b638e"/>
+    <path d="M164 330 L256 330 L262 560 L158 560 Z" fill="#f4eee4"/>
+    <path d="M176 330 Q210 300 244 330" fill="none"/>
+    <path d="M180 420 L240 420" fill="none" stroke-width="4"/>
+    <!-- front arm raised, pointing left with the spoon -->
+    <path d="M160 262 Q110 250 62 214 L76 192 Q120 222 176 236 Z" fill="#4b638e"/>
+    <circle cx="58" cy="198" r="18" fill="#f4eee4"/>
+    <path d="M46 190 L24 170" fill="none" stroke-width="8"/>
+    <ellipse cx="20" cy="160" rx="12" ry="18" fill="#f4eee4" transform="rotate(-50 20 160)"/>
+    <!-- neck and head -->
+    <path d="M194 208 L194 244 L226 244 L226 208 Z" fill="#f4eee4"/>
+    <ellipse cx="206" cy="146" rx="70" ry="80" fill="#f4eee4"/>
+    <!-- hair (dark curls) and slate scarf -->
+    <path d="M140 140 Q130 70 196 58 Q270 50 282 120 Q290 170 268 196 Q266 150 244 128 Q200 116 164 132 Q152 150 150 176 Q134 166 140 140 Z" fill="#2b2a28"/>
+    <path d="M150 112 Q206 86 274 108 L270 126 Q206 106 156 132 Z" fill="#4b638e"/>
+    <!-- face: glasses, eye, nose, open mouth (looking left) -->
+    <circle cx="160" cy="150" r="17" fill="none" stroke-width="4"/>
+    <circle cx="200" cy="150" r="17" fill="none" stroke-width="4"/>
+    <path d="M177 150 L183 150" fill="none" stroke-width="4"/>
+    <circle cx="158" cy="152" r="3" fill="#2b2a28" stroke="none"/>
+    <circle cx="198" cy="152" r="3" fill="#2b2a28" stroke="none"/>
+    <path d="M150 168 L142 186 L152 188" fill="none" stroke-width="4"/>
+    <ellipse cx="166" cy="206" rx="9" ry="6" fill="#2b2a28" stroke="none"/>
+  </g>
+</svg>
