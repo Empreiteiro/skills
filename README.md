@@ -1,14 +1,15 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Five plugins, installed separately:
+Claude Code skills and the presentations built with them. Six plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
 | `presentations` | Creating and checking HTML presentations | `skills/` |
 | `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
 | `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
-| `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs | [`plugins/web-ui/`](plugins/web-ui/) |
+| `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs, layout review | [`plugins/web-ui/`](plugins/web-ui/) |
 | `data-analytics` | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | [`plugins/data-analytics/`](plugins/data-analytics/) |
+| `data-cards` | Shareable data cards rendered to PNG on the server: design system and render checks | [`plugins/data-cards/`](plugins/data-cards/) |
 
 ```
 .claude-plugin/            plugin + marketplace manifests (install the skills with one command)
@@ -22,6 +23,7 @@ plugins/                   self-contained plugins, each with its own manifest, R
   saas-backend/
   web-ui/
   data-analytics/
+  data-cards/
 ```
 
 ## Presentation skills
@@ -67,13 +69,15 @@ starts by mapping the project's own helpers.
 
 ## Web UI skills
 
-Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens and framework-less SPA screens.
+Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens, framework-less SPA screens, and
+looking at every changed screen before it ships.
 
 | Skill | What it does |
 |---|---|
 | `search-filter-bar` | One search/filter bar for every list: search, *Filters* popover, quick selectors, pills, counts, overflow |
 | `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
 | `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
+| `web-layout-review` | Look at a changed screen: demo seed, screenshots at 1440px and 390px in every theme, sideways-overflow detection, layout checklist and rules |
 
 ## Data analytics skills
 
@@ -94,6 +98,15 @@ for search/assistants; these cover API extracts as queryable tables, platform-wi
 SQLAlchemy/Alembic portability. Six skills ship scripts (`profile_dataset.py`, `sql_guard.py`, `infer_joins.py`,
 `chart_spec.py`, `check_url.py`, `resolve_identities.py`); see the plugin README for what each needs.
 
+## Data card skills
+
+Plugin in [`plugins/data-cards/`](plugins/data-cards/README.md): chart images an app draws on the server for people to
+share (Satori, `next/og`, `@vercel/og`).
+
+| Skill | What it does |
+|---|---|
+| `data-card-design` | The sheet, three type roles, color tokens by role with one highlight, textures, chart marks, copy, editable parts, social formats, and before/after render comparison |
+
 ## Install
 
 As a plugin (recommended):
@@ -105,6 +118,7 @@ claude plugin install memes@empreiteiro-skills
 claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
 claude plugin install data-analytics@empreiteiro-skills
+claude plugin install data-cards@empreiteiro-skills
 ```
 
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
@@ -114,6 +128,8 @@ Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
 The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
 (`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
+The layout review needs Node 18+ and Playwright with a Chromium; the card render comparison needs
+`pip install pillow` (see each plugin's README).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
 `~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
