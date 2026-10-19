@@ -1,24 +1,28 @@
 # Skills
 
-Claude Code skills, grouped into four plugins, and the presentations built with some of them.
+Claude Code skills and the presentations built with them. Four plugins, installed separately:
+
+| Plugin | What it is for | Skills |
+|---|---|---|
+| `presentations` | Creating and checking HTML presentations | `skills/` |
+| `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
+| `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
+| `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs | [`plugins/web-ui/`](plugins/web-ui/) |
 
 ```
-.claude-plugin/            marketplace manifest: four plugins, each listing its skills
-skills/                    the skills (one folder per skill, SKILL.md + scripts, references, agents)
+.claude-plugin/            plugin + marketplace manifests (install the skills with one command)
+skills/                    the presentation skills (one folder per skill, SKILL.md + scripts)
 presentations/
   README.md                index of presentations and how to add one
   _template/               starter deck: copy it to start a new presentation
   <slug>/                  one folder per presentation (index.html, assets/, data/, README.md)
+plugins/                   self-contained plugins, each with its own manifest, README and skills/
+  memes/
+  saas-backend/
+  web-ui/
 ```
 
-| Plugin | Skills | For |
-|---|---|---|
-| `presentations` | 8 | HTML decks: create, edit, graph, export, check |
-| `writing` | 17 | Brand copy without AI tells, and the craft of fourteen forms |
-| `dev-workflow` | 6 | A change from request to production, with proof it is live |
-| `ab-testing` | 2 | Product A/B tests, from design to promoting the winner |
-
-## Presentations
+## Presentation skills
 
 | Skill | What it does |
 |---|---|
@@ -26,91 +30,76 @@ presentations/
 | `presentation-slide` | Add, edit, reorder or hide slides, with notes, explanations, fragments and controller steps |
 | `presentation-graph` | Graph slides with D3: data, deterministic layout, legible labels, real datasets |
 | `presentation-export` | PDF, one image per slide, or a single-slide screenshot at 1920×1080 (headless Chrome) |
+
+## Presentation checking skills
+
+| Skill | What it does |
+|---|---|
 | `presentation-check-structure` | Slide list, notes, explanations, clicks, controllers, slide references, assets, pinned CDNs, console errors |
 | `presentation-check-visual` | Renders every slide and inspects it; compares before/after renders to catch unintended changes |
 | `presentation-check-facts` | Verifies claims and datasets against primary sources and records them |
 | `presentation-review` | Runs the three checks and returns one prioritized report |
 
-## Writing
+## Meme skills
+
+Plugin in [`plugins/memes/`](plugins/memes/README.md), for any humor page in any language: each page keeps its
+voice in a `PAGE.md` profile, built from its post archive or its best posts.
 
 | Skill | What it does |
 |---|---|
-| `write` | Brand writing system: voice and opinion templates you fill once, a claim check against the product, then the two passes below |
-| `no-ai-slop` | Flags AI-slop patterns line by line and cuts them, keeping the writer's voice |
-| `humanizer` | Rewrites what still reads as AI without changing what it says |
-| `writing-academic-research` | Papers, abstracts, literature reviews, theses, responses to reviewers |
-| `writing-blog-posts` | How-tos, tutorials, explainers, postmortems, announcements |
-| `writing-books-fiction` | Novels, short stories, scenes, dialogue, opening pages |
-| `writing-business-legal` | Contracts, memos, reports, proposals, grant applications |
-| `writing-essays` | Personal and argument essays, columns, op-eds |
-| `writing-ghostwriting` | Books, bylined articles, founder posts and speeches under someone else's name |
-| `writing-journalism` | News, features, profiles, explainers, investigations, headlines |
-| `writing-marketing-copy` | Landing and product pages, ads, launch emails, taglines, calls to action |
-| `writing-newsletters` | Issues, subject lines and preview text, link digests, product updates |
-| `writing-nonfiction-memoir` | Memoir, personal and reported narrative, biography, trade nonfiction |
-| `writing-poetry` | Free verse, prose poems, fixed forms, spoken word, collections |
-| `writing-scripts-speeches` | Screen and stage scripts, video and podcast scripts, talks, toasts |
-| `writing-social-media` | LinkedIn and X posts, threads, captions, carousel text, replies |
-| `writing-technical` | READMEs, tutorials, API references, runbooks, release notes, interface copy |
+| `meme-post` | Writes a post — the line on the image, the caption, the hashtag block — and renders the 1080×1080 PNG |
+| `meme-chart` | Posts where the drawing is the joke: zigzag line, staircase, bars or pie |
+| `meme-reel` | 1080×1920 videos generated by code, ending on the still post (Pillow + ffmpeg) |
+| `meme-game` | A series of reels told as a 1-bit platform game |
 
-`write` reads two templates, `references/voice-dna.md` and `references/opinion-dna.md`. Fill them once per brand
-(the skill drafts them from two or three samples of copy you like) and keep the filled copies in the project, for
-example in `.claude/brand/`, so a plugin update does not overwrite them.
+## SaaS backend skills
 
-`humanizer` ([blader/humanizer](https://github.com/blader/humanizer)) and `no-ai-slop`
-([petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)) are vendored unedited under their MIT licenses.
-
-## Dev workflow
+Plugin in [`plugins/saas-backend/`](plugins/saas-backend/README.md): checklists for multi-tenant backends. Each one
+starts by mapping the project's own helpers.
 
 | Skill | What it does |
 |---|---|
-| `implement` | Entry point for build/fix/change requests: isolates the work in a git worktree, reads the framework docs, checks the project's invariants, validates the premise against today's code, plans |
-| `test-and-ship` | Runs the gate and fixes what fails, then commits, opens and merges the PR, deploys, and proves it by fetching the live site |
-| `ship` | The same without the gate, for diffs that do not run (docs, skills, config) |
-| `atomic-design` | Where a React component lives (atoms, molecules, organisms, templates, feature folders), what it may import, what goes stale when it moves |
-| `ui-revamp-prototype` | A throwaway prototype of one screen, published as an Artifact: the current state, a diagnosis, N directions to pick from before any code |
-| `railway-ops` | Operate an app on Railway: status, logs, deploys, variables, read-only Postgres, rollback |
+| `secure-api-route` | Add or change an API route without leaking across tenants or roles: auth layers, scope, tenant-checked writes, input, errors, audit, SSRF, signatures |
+| `sqlite-postgres-schema` | Schema changes and SQL that run on both SQLite and Postgres, with idempotent boot-time schema files |
+| `data-source-integration` | Connect an external SaaS source end to end: OAuth or API key, polling, cursors, rate limits, webhooks, ingestion, visibility, UI, docs |
 
-These skills read project facts (gate commands, deploy command per environment, URLs, branch names, Railway IDs)
-from the project's `CLAUDE.md` or `AGENTS.md`, and ask once for what is missing. Each one lists the facts it needs in
-its "Project setup" section.
+## Web UI skills
 
-## A/B testing
+Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens and framework-less SPA screens.
 
 | Skill | What it does |
 |---|---|
-| `ab-test-create` | Design the test with you, assign each account once at signup, gate the arms behind a flag, build the results board |
-| `ab-test-promote-winner` | Snapshot the final board, send everyone to the winner, delete the losing arms, retire the flag, archive the test |
+| `search-filter-bar` | One search/filter bar for every list: search, *Filters* popover, quick selectors, pills, counts, overflow |
+| `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
+| `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
 
 ## Install
 
-As plugins (recommended):
+As a plugin (recommended):
 
 ```bash
 claude plugin marketplace add Empreiteiro/skills
 claude plugin install presentations@empreiteiro-skills
-claude plugin install writing@empreiteiro-skills
-claude plugin install dev-workflow@empreiteiro-skills
-claude plugin install ab-testing@empreiteiro-skills
+claude plugin install memes@empreiteiro-skills
+claude plugin install saas-backend@empreiteiro-skills
+claude plugin install web-ui@empreiteiro-skills
 ```
 
-Install only the plugins you need. Inside a session: `/plugin marketplace add Empreiteiro/skills`, then
-`/plugin install <plugin>@empreiteiro-skills`. Skills are then available as `/<plugin>:<skill>`, for example
-`/presentations:presentation-review` or `/writing:write`. Updates: `claude plugin update <plugin>@empreiteiro-skills`.
+Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
+Skills are then available as `/presentations:presentation-review`, `/saas-backend:secure-api-route`, and so on.
+Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
-Without the plugin system, copy the folders you want from `skills/` to `~/.claude/skills/` (personal) or to a
-project's `.claude/skills/`. Some skills use a sibling's files, so copy these together:
+The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
 
-- `presentation-export` with the presentation check skills (they use its script);
-- `write` with `no-ai-slop` and `humanizer`;
-- `test-and-ship` with `ship` (it uses ship's agents);
-- `ab-test-promote-winner` with `ab-test-create` (it uses its board check).
+Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
+`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
+check skills: they use its script.
 
-## Requirements for the scripts
+## Requirements for the presentation scripts
 
-- Presentations: Python 3.9+, Google Chrome, Chromium or Microsoft Edge (set `CHROME_PATH` if it is not found), and
-  `pip install pymupdf pillow` for slide images and render comparison.
-- A/B testing: Node 18+ and Playwright (`npm i -D playwright`) for the board checks.
+- Python 3.9+
+- Google Chrome, Chromium or Microsoft Edge (set `CHROME_PATH` if it is not found)
+- `pip install pymupdf pillow` for slide images and render comparison
 
 ## Viewing a presentation
 

@@ -1,0 +1,9 @@
+{
+  "name": "web-ui",
+  "displayName": "Web UI",
+  "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, and screens in framework-less single-page apps.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["ui", "ux", "search", "filters", "data-table", "spa", "vanilla-js"]
+}
