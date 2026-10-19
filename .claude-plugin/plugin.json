@@ -1,9 +1,0 @@
-{
-  "name": "presentations",
-  "displayName": "Presentations",
-  "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review.",
-  "version": "1.0.0",
-  "author": { "name": "Empreiteiro" },
-  "repository": "https://github.com/Empreiteiro/skills",
-  "keywords": ["presentations", "slides", "html", "review", "d3"]
-}

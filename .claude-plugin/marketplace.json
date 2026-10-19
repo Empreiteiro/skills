@@ -1,12 +1,126 @@
 {
   "name": "empreiteiro-skills",
-  "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations.",
+  "owner": {
+    "name": "Empreiteiro"
+  },
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, writing craft, a build-test-ship workflow and A/B tests.",
   "plugins": [
     {
       "name": "presentations",
+      "displayName": "Presentations",
       "source": "./",
-      "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
+      "strict": false,
+      "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Empreiteiro"
+      },
+      "repository": "https://github.com/Empreiteiro/skills",
+      "keywords": [
+        "presentations",
+        "slides",
+        "html",
+        "review",
+        "d3"
+      ],
+      "skills": [
+        "./skills/presentation-create",
+        "./skills/presentation-slide",
+        "./skills/presentation-graph",
+        "./skills/presentation-export",
+        "./skills/presentation-check-structure",
+        "./skills/presentation-check-visual",
+        "./skills/presentation-check-facts",
+        "./skills/presentation-review"
+      ]
+    },
+    {
+      "name": "writing",
+      "displayName": "Writing",
+      "source": "./",
+      "strict": false,
+      "description": "Write without sounding like AI: a brand voice system, two editing passes, and the craft of fourteen forms from fiction to technical docs.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Empreiteiro"
+      },
+      "repository": "https://github.com/Empreiteiro/skills",
+      "keywords": [
+        "writing",
+        "editing",
+        "voice",
+        "copywriting",
+        "ai-slop"
+      ],
+      "skills": [
+        "./skills/write",
+        "./skills/no-ai-slop",
+        "./skills/humanizer",
+        "./skills/writing-academic-research",
+        "./skills/writing-blog-posts",
+        "./skills/writing-books-fiction",
+        "./skills/writing-business-legal",
+        "./skills/writing-essays",
+        "./skills/writing-ghostwriting",
+        "./skills/writing-journalism",
+        "./skills/writing-marketing-copy",
+        "./skills/writing-newsletters",
+        "./skills/writing-nonfiction-memoir",
+        "./skills/writing-poetry",
+        "./skills/writing-scripts-speeches",
+        "./skills/writing-social-media",
+        "./skills/writing-technical"
+      ]
+    },
+    {
+      "name": "dev-workflow",
+      "displayName": "Dev workflow",
+      "source": "./",
+      "strict": false,
+      "description": "Take a change from request to production: isolate and plan it, run the gate, open and merge the PR, deploy and prove it by fetching the live site.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Empreiteiro"
+      },
+      "repository": "https://github.com/Empreiteiro/skills",
+      "keywords": [
+        "workflow",
+        "ship",
+        "deploy",
+        "ci",
+        "railway",
+        "prototype"
+      ],
+      "skills": [
+        "./skills/implement",
+        "./skills/test-and-ship",
+        "./skills/ship",
+        "./skills/atomic-design",
+        "./skills/ui-revamp-prototype",
+        "./skills/railway-ops"
+      ]
+    },
+    {
+      "name": "ab-testing",
+      "displayName": "A/B testing",
+      "source": "./",
+      "strict": false,
+      "description": "Run product A/B tests end to end: design the arms, assign accounts once at signup, build the results board, then promote the winner and remove the rest.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Empreiteiro"
+      },
+      "repository": "https://github.com/Empreiteiro/skills",
+      "keywords": [
+        "ab-testing",
+        "experiments",
+        "feature-flags",
+        "analytics"
+      ],
+      "skills": [
+        "./skills/ab-test-create",
+        "./skills/ab-test-promote-winner"
+      ]
     }
   ]
 }
