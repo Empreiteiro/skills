@@ -1,12 +1,17 @@
 {
   "name": "empreiteiro-skills",
   "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations.",
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, and data analytics with LLMs.",
   "plugins": [
     {
       "name": "presentations",
       "source": "./",
       "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
+    },
+    {
+      "name": "data-analytics",
+      "source": "./plugins/data-analytics",
+      "description": "Answer questions over data and build data features with LLMs: profiling, text-to-SQL, file Q&A, joins, grounded answers, charts, connectors, reports, pipelines, identity resolution, AutoML and security."
     }
   ]
 }
