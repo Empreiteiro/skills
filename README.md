@@ -1,6 +1,6 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Four plugins, installed separately:
+Claude Code skills and the presentations built with them. Five plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
@@ -8,6 +8,7 @@ Claude Code skills and the presentations built with them. Four plugins, installe
 | `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
 | `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
 | `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs | [`plugins/web-ui/`](plugins/web-ui/) |
+| `data-analytics` | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | [`plugins/data-analytics/`](plugins/data-analytics/) |
 
 ```
 .claude-plugin/            plugin + marketplace manifests (install the skills with one command)
@@ -20,6 +21,7 @@ plugins/                   self-contained plugins, each with its own manifest, R
   memes/
   saas-backend/
   web-ui/
+  data-analytics/
 ```
 
 ## Presentation skills
@@ -73,6 +75,25 @@ Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens
 | `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
 | `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
 
+## Data analytics skills
+
+Plugin in [`plugins/data-analytics/`](plugins/data-analytics/README.md): distilled from building
+[Data Talks](https://github.com/Empreiteiro/data-talks), an LLM data-analysis platform, and generalized. Each skill
+keeps the pattern that worked and turns what broke into a rule. Use them to analyse data for someone or to build the
+same features into an application.
+
+| Group | Skills |
+|---|---|
+| Analysis | `dataset-profiling`, `dataset-onboarding`, `text-to-sql`, `tabular-file-qa`, `join-discovery`, `grounded-answers`, `chart-spec` |
+| Integration and reporting | `api-data-connector`, `data-reports-and-alerts` |
+| Data engineering | `medallion-pipeline`, `lineage-and-versioning`, `identity-resolution`, `baseline-automl` |
+| Platform | `secure-data-platform`, `llm-structured-output`, `sqlite-postgres-portability` |
+
+They complement `saas-backend`: that plugin covers per-route security, boot-time schema files and SaaS ingestion
+for search/assistants; these cover API extracts as queryable tables, platform-wide data security and
+SQLAlchemy/Alembic portability. Six skills ship scripts (`profile_dataset.py`, `sql_guard.py`, `infer_joins.py`,
+`chart_spec.py`, `check_url.py`, `resolve_identities.py`); see the plugin README for what each needs.
+
 ## Install
 
 As a plugin (recommended):
@@ -83,6 +104,7 @@ claude plugin install presentations@empreiteiro-skills
 claude plugin install memes@empreiteiro-skills
 claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
+claude plugin install data-analytics@empreiteiro-skills
 ```
 
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
@@ -90,10 +112,13 @@ Skills are then available as `/presentations:presentation-review`, `/saas-backen
 Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
 The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
+The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
+(`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
 `~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
-check skills: they use its script.
+check skills: they use its script. Copy `dataset-profiling` and `text-to-sql` together with `tabular-file-qa`: it
+uses their scripts.
 
 ## Requirements for the presentation scripts
 
