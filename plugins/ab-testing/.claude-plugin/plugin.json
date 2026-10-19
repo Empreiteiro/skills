@@ -1,0 +1,9 @@
+{
+  "name": "ab-testing",
+  "displayName": "A/B testing",
+  "description": "Run product A/B tests end to end: design the arms, assign accounts once at signup, build the results board, then promote the winner and remove the rest.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["ab-testing", "experiments", "feature-flags", "analytics"]
+}

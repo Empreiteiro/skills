@@ -1,7 +1,9 @@
 {
   "name": "empreiteiro-skills",
-  "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends and web UI patterns.",
+  "owner": {
+    "name": "Empreiteiro"
+  },
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, writing without AI tells, a build-test-ship workflow and A/B tests.",
   "plugins": [
     {
       "name": "presentations",
@@ -22,6 +24,21 @@
       "name": "web-ui",
       "source": "./plugins/web-ui",
       "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, and screens in framework-less single-page apps."
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Write without sounding like AI: a brand voice system, two editing passes, and the craft of fourteen forms from fiction to technical docs."
+    },
+    {
+      "name": "dev-workflow",
+      "source": "./plugins/dev-workflow",
+      "description": "Take a change from request to production: isolate and plan it, run the gate, open and merge the PR, deploy and prove it by fetching the live site."
+    },
+    {
+      "name": "ab-testing",
+      "source": "./plugins/ab-testing",
+      "description": "Run product A/B tests end to end: design the arms, assign accounts once at signup, build the results board, then promote the winner and remove the rest."
     }
   ]
 }

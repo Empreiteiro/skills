@@ -1,6 +1,6 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Four plugins, installed separately:
+Claude Code skills and the presentations built with them. Seven plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
@@ -8,6 +8,9 @@ Claude Code skills and the presentations built with them. Four plugins, installe
 | `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
 | `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
 | `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs | [`plugins/web-ui/`](plugins/web-ui/) |
+| `writing` | Brand copy without AI tells, and the craft of fourteen forms from fiction to technical docs | [`plugins/writing/`](plugins/writing/) |
+| `dev-workflow` | A change from request to production: worktree, gate, PR, deploy, proof by fetch | [`plugins/dev-workflow/`](plugins/dev-workflow/) |
+| `ab-testing` | Product A/B tests, from the design to promoting the winner | [`plugins/ab-testing/`](plugins/ab-testing/) |
 
 ```
 .claude-plugin/            plugin + marketplace manifests (install the skills with one command)
@@ -20,6 +23,9 @@ plugins/                   self-contained plugins, each with its own manifest, R
   memes/
   saas-backend/
   web-ui/
+  writing/
+  dev-workflow/
+  ab-testing/
 ```
 
 ## Presentation skills
@@ -73,6 +79,42 @@ Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens
 | `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
 | `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
 
+## Writing skills
+
+Plugin in [`plugins/writing/`](plugins/writing/README.md). `write` keeps a brand's voice in two templates it fills
+from samples of copy you like, checks claims against the product, then runs `no-ai-slop` and `humanizer` (vendored
+unedited, MIT).
+
+| Skill | What it does |
+|---|---|
+| `write` | Brand writing system: voice and opinion templates, a claim check, then the two passes below |
+| `no-ai-slop` | Flags AI-slop patterns line by line and cuts them, keeping the writer's voice |
+| `humanizer` | Rewrites what still reads as AI without changing what it says |
+| `writing-*` (14) | The craft of one form each: academic research, blog posts, books and fiction, business and legal, essays, ghostwriting, journalism, marketing copy, newsletters, nonfiction and memoir, poetry, scripts and speeches, social media, technical |
+
+## Dev workflow skills
+
+Plugin in [`plugins/dev-workflow/`](plugins/dev-workflow/README.md). Project facts (gate and deploy commands, URLs,
+branch names, Railway IDs) come from the project's `CLAUDE.md` or `AGENTS.md`.
+
+| Skill | What it does |
+|---|---|
+| `implement` | Entry point for build/fix/change requests: worktree, framework docs, the project's invariants, premise checked against today's code, plan |
+| `test-and-ship` | Runs the gate and fixes what fails, then commits, opens and merges the PR, deploys, and proves it by fetching the live site |
+| `ship` | The same without the gate, for diffs that do not run |
+| `atomic-design` | Where a React component lives, what it may import, what goes stale when it moves |
+| `ui-revamp-prototype` | A throwaway prototype of one screen, published as an Artifact, with N directions to pick from before any code |
+| `railway-ops` | Operate an app on Railway: status, logs, deploys, variables, read-only Postgres, rollback |
+
+## A/B testing skills
+
+Plugin in [`plugins/ab-testing/`](plugins/ab-testing/README.md), for web apps with user accounts.
+
+| Skill | What it does |
+|---|---|
+| `ab-test-create` | Design the test with you, assign each account once at signup, gate the arms behind a flag, build the results board |
+| `ab-test-promote-winner` | Snapshot the final board, send everyone to the winner, delete the losing arms, retire the flag, archive the test |
+
 ## Install
 
 As a plugin (recommended):
@@ -83,6 +125,9 @@ claude plugin install presentations@empreiteiro-skills
 claude plugin install memes@empreiteiro-skills
 claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
+claude plugin install writing@empreiteiro-skills
+claude plugin install dev-workflow@empreiteiro-skills
+claude plugin install ab-testing@empreiteiro-skills
 ```
 
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
@@ -90,10 +135,12 @@ Skills are then available as `/presentations:presentation-review`, `/saas-backen
 Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
 The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
+The A/B board scripts need Node 18+ and Playwright (see [its README](plugins/ab-testing/README.md)).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
 `~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
-check skills: they use its script.
+check skills: they use its script. Likewise keep `write` with `no-ai-slop` and `humanizer`, `test-and-ship` with
+`ship`, and `ab-test-promote-winner` with `ab-test-create`.
 
 ## Requirements for the presentation scripts
 
