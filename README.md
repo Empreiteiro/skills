@@ -1,6 +1,6 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Seven plugins, installed separately:
+Claude Code skills and the presentations built with them. Eight plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
@@ -8,6 +8,7 @@ Claude Code skills and the presentations built with them. Seven plugins, install
 | `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
 | `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
 | `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs | [`plugins/web-ui/`](plugins/web-ui/) |
+| `data-analytics` | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | [`plugins/data-analytics/`](plugins/data-analytics/) |
 | `writing` | Brand copy without AI tells, and the craft of fourteen forms from fiction to technical docs | [`plugins/writing/`](plugins/writing/) |
 | `dev-workflow` | A change from request to production: worktree, gate, PR, deploy, proof by fetch | [`plugins/dev-workflow/`](plugins/dev-workflow/) |
 | `ab-testing` | Product A/B tests, from the design to promoting the winner | [`plugins/ab-testing/`](plugins/ab-testing/) |
@@ -23,6 +24,7 @@ plugins/                   self-contained plugins, each with its own manifest, R
   memes/
   saas-backend/
   web-ui/
+  data-analytics/
   writing/
   dev-workflow/
   ab-testing/
@@ -79,6 +81,25 @@ Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens
 | `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
 | `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
 
+## Data analytics skills
+
+Plugin in [`plugins/data-analytics/`](plugins/data-analytics/README.md): distilled from building
+[Data Talks](https://github.com/Empreiteiro/data-talks), an LLM data-analysis platform, and generalized. Each skill
+keeps the pattern that worked and turns what broke into a rule. Use them to analyse data for someone or to build the
+same features into an application.
+
+| Group | Skills |
+|---|---|
+| Analysis | `dataset-profiling`, `dataset-onboarding`, `text-to-sql`, `tabular-file-qa`, `join-discovery`, `grounded-answers`, `chart-spec` |
+| Integration and reporting | `api-data-connector`, `data-reports-and-alerts` |
+| Data engineering | `medallion-pipeline`, `lineage-and-versioning`, `identity-resolution`, `baseline-automl` |
+| Platform | `secure-data-platform`, `llm-structured-output`, `sqlite-postgres-portability` |
+
+They complement `saas-backend`: that plugin covers per-route security, boot-time schema files and SaaS ingestion
+for search/assistants; these cover API extracts as queryable tables, platform-wide data security and
+SQLAlchemy/Alembic portability. Six skills ship scripts (`profile_dataset.py`, `sql_guard.py`, `infer_joins.py`,
+`chart_spec.py`, `check_url.py`, `resolve_identities.py`); see the plugin README for what each needs.
+
 ## Writing skills
 
 Plugin in [`plugins/writing/`](plugins/writing/README.md). `write` keeps a brand's voice in two templates it fills
@@ -125,6 +146,7 @@ claude plugin install presentations@empreiteiro-skills
 claude plugin install memes@empreiteiro-skills
 claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
+claude plugin install data-analytics@empreiteiro-skills
 claude plugin install writing@empreiteiro-skills
 claude plugin install dev-workflow@empreiteiro-skills
 claude plugin install ab-testing@empreiteiro-skills
@@ -136,11 +158,14 @@ Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
 The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
 The A/B board scripts need Node 18+ and Playwright (see [its README](plugins/ab-testing/README.md)).
+The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
+(`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
-`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
-check skills: they use its script. Likewise keep `write` with `no-ai-slop` and `humanizer`, `test-and-ship` with
-`ship`, and `ab-test-promote-winner` with `ab-test-create`.
+`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Some skills use a sibling's files, so copy these
+together: `presentation-export` with the presentation check skills; `dataset-profiling` and `text-to-sql` with
+`tabular-file-qa`; `write` with `no-ai-slop` and `humanizer`; `test-and-ship` with `ship`; and
+`ab-test-promote-winner` with `ab-test-create`.
 
 ## Requirements for the presentation scripts
 
