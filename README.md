@@ -1,14 +1,22 @@
 # Skills
 
-Claude Code skills and the presentations built with them.
+Claude Code skills, grouped into plugins, and the presentations built with them.
+
+| Plugin | Skills | For |
+|---|---|---|
+| `presentations` | `skills/` | Creating and checking HTML presentations |
+| `saas-backend` | `plugins/saas-backend/skills/` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations |
+| `web-ui` | `plugins/web-ui/skills/` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs |
 
 ```
-.claude-plugin/            plugin + marketplace manifests (install the skills with one command)
-skills/                    the skills (one folder per skill, SKILL.md + scripts)
+.claude-plugin/            marketplace manifest + the presentations plugin manifest
+skills/                    presentations plugin: one folder per skill (SKILL.md + scripts)
 presentations/
   README.md                index of presentations and how to add one
   _template/               starter deck: copy it to start a new presentation
   <slug>/                  one folder per presentation (index.html, assets/, data/, README.md)
+plugins/
+  <plugin>/                one folder per self-contained plugin: .claude-plugin/plugin.json, README.md, skills/
 ```
 
 ## Presentation skills
@@ -29,6 +37,28 @@ presentations/
 | `presentation-check-facts` | Verifies claims and datasets against primary sources and records them |
 | `presentation-review` | Runs the three checks and returns one prioritized report |
 
+## SaaS backend skills
+
+Checklists for multi-tenant backends. Each one starts by mapping the project's own helpers.
+See [plugins/saas-backend/README.md](plugins/saas-backend/README.md).
+
+| Skill | What it does |
+|---|---|
+| `secure-api-route` | Add or change an API route without leaking across tenants or roles: auth layers, scope, tenant-checked writes, input, errors, audit, SSRF, signatures |
+| `sqlite-postgres-schema` | Schema changes and SQL that run on both SQLite and Postgres, with idempotent boot-time schema files |
+| `data-source-integration` | Connect an external SaaS source end to end: OAuth or API key, polling, cursors, rate limits, webhooks, ingestion, visibility, UI, docs |
+
+## Web UI skills
+
+Consistent list screens and framework-less SPA screens.
+See [plugins/web-ui/README.md](plugins/web-ui/README.md).
+
+| Skill | What it does |
+|---|---|
+| `search-filter-bar` | One search/filter bar for every list: search, *Filters* popover, quick selectors, pills, counts, overflow |
+| `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
+| `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
+
 ## Install
 
 As a plugin (recommended):
@@ -36,14 +66,17 @@ As a plugin (recommended):
 ```bash
 claude plugin marketplace add Empreiteiro/skills
 claude plugin install presentations@empreiteiro-skills
+claude plugin install saas-backend@empreiteiro-skills
+claude plugin install web-ui@empreiteiro-skills
 ```
 
-Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install presentations@empreiteiro-skills`.
-Skills are then available as `/presentations:presentation-review`, `/presentations:presentation-create`, and so on.
-Updates: `claude plugin update presentations@empreiteiro-skills`.
+Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
+Skills are then available as `/presentations:presentation-review`, `/saas-backend:secure-api-route`, and so on.
+Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
-Without the plugin system, copy the folders you want from `skills/` to `~/.claude/skills/` (personal) or to a
-project's `.claude/skills/`. Copy `presentation-export` together with the check skills: they use its script.
+Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
+`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
+check skills: they use its script.
 
 ## Requirements for the scripts
 

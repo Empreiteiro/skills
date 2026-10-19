@@ -1,12 +1,22 @@
 {
   "name": "empreiteiro-skills",
   "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations.",
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, multi-tenant SaaS backends and web UI patterns.",
   "plugins": [
     {
       "name": "presentations",
       "source": "./",
       "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
+    },
+    {
+      "name": "saas-backend",
+      "source": "./plugins/saas-backend",
+      "description": "Multi-tenant SaaS backends: secure API routes, schema changes and SQL portable across SQLite and Postgres, and data-source integrations."
+    },
+    {
+      "name": "web-ui",
+      "source": "./plugins/web-ui",
+      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, and screens in framework-less single-page apps."
     }
   ]
 }
