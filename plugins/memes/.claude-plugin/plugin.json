@@ -1,0 +1,9 @@
+{
+  "name": "memes",
+  "displayName": "Memes",
+  "description": "Write and render posts for a humor/meme page in its own voice: text posts, chart memes, code-generated Reels and a 1-bit platform-game series.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["memes", "humor", "instagram", "social-media", "reels", "pillow", "ffmpeg"]
+}
