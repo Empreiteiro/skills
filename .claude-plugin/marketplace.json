@@ -1,12 +1,27 @@
 {
   "name": "empreiteiro-skills",
   "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: HTML presentations, shareable data cards and web layout review.",
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, shareable data cards and web layout review.",
   "plugins": [
     {
       "name": "presentations",
       "source": "./",
       "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
+    },
+    {
+      "name": "memes",
+      "source": "./plugins/memes",
+      "description": "Write and render posts for a humor/meme page in its own voice: text posts, chart memes, code-generated Reels and a 1-bit platform-game series."
+    },
+    {
+      "name": "saas-backend",
+      "source": "./plugins/saas-backend",
+      "description": "Multi-tenant SaaS backends: secure API routes, schema changes and SQL portable across SQLite and Postgres, and data-source integrations."
+    },
+    {
+      "name": "web-ui",
+      "source": "./plugins/web-ui",
+      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, and screens in framework-less single-page apps."
     },
     {
       "name": "data-cards",
