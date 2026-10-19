@@ -1,6 +1,6 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Five plugins, installed separately:
+Claude Code skills and the presentations built with them. Six plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
@@ -8,6 +8,7 @@ Claude Code skills and the presentations built with them. Five plugins, installe
 | `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
 | `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
 | `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs, layout review | [`plugins/web-ui/`](plugins/web-ui/) |
+| `data-analytics` | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | [`plugins/data-analytics/`](plugins/data-analytics/) |
 | `data-cards` | Shareable data cards rendered to PNG on the server: design system and render checks | [`plugins/data-cards/`](plugins/data-cards/) |
 
 ```
@@ -21,6 +22,7 @@ plugins/                   self-contained plugins, each with its own manifest, R
   memes/
   saas-backend/
   web-ui/
+  data-analytics/
   data-cards/
 ```
 
@@ -77,6 +79,25 @@ looking at every changed screen before it ships.
 | `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
 | `web-layout-review` | Look at a changed screen: demo seed, screenshots at 1440px and 390px in every theme, sideways-overflow detection, layout checklist and rules |
 
+## Data analytics skills
+
+Plugin in [`plugins/data-analytics/`](plugins/data-analytics/README.md): distilled from building
+[Data Talks](https://github.com/Empreiteiro/data-talks), an LLM data-analysis platform, and generalized. Each skill
+keeps the pattern that worked and turns what broke into a rule. Use them to analyse data for someone or to build the
+same features into an application.
+
+| Group | Skills |
+|---|---|
+| Analysis | `dataset-profiling`, `dataset-onboarding`, `text-to-sql`, `tabular-file-qa`, `join-discovery`, `grounded-answers`, `chart-spec` |
+| Integration and reporting | `api-data-connector`, `data-reports-and-alerts` |
+| Data engineering | `medallion-pipeline`, `lineage-and-versioning`, `identity-resolution`, `baseline-automl` |
+| Platform | `secure-data-platform`, `llm-structured-output`, `sqlite-postgres-portability` |
+
+They complement `saas-backend`: that plugin covers per-route security, boot-time schema files and SaaS ingestion
+for search/assistants; these cover API extracts as queryable tables, platform-wide data security and
+SQLAlchemy/Alembic portability. Six skills ship scripts (`profile_dataset.py`, `sql_guard.py`, `infer_joins.py`,
+`chart_spec.py`, `check_url.py`, `resolve_identities.py`); see the plugin README for what each needs.
+
 ## Data card skills
 
 Plugin in [`plugins/data-cards/`](plugins/data-cards/README.md): chart images an app draws on the server for people to
@@ -96,6 +117,7 @@ claude plugin install presentations@empreiteiro-skills
 claude plugin install memes@empreiteiro-skills
 claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
+claude plugin install data-analytics@empreiteiro-skills
 claude plugin install data-cards@empreiteiro-skills
 ```
 
@@ -104,12 +126,15 @@ Skills are then available as `/presentations:presentation-review`, `/saas-backen
 Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
 The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
+The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
+(`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
 The layout review needs Node 18+ and Playwright with a Chromium; the card render comparison needs
 `pip install pillow` (see each plugin's README).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
 `~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
-check skills: they use its script.
+check skills: they use its script. Copy `dataset-profiling` and `text-to-sql` together with `tabular-file-qa`: it
+uses their scripts.
 
 ## Requirements for the presentation scripts
 

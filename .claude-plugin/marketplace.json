@@ -1,7 +1,9 @@
 {
   "name": "empreiteiro-skills",
-  "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns and shareable data cards.",
+  "owner": {
+    "name": "Empreiteiro"
+  },
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, data analytics with LLMs and shareable data cards.",
   "plugins": [
     {
       "name": "presentations",
@@ -22,6 +24,11 @@
       "name": "web-ui",
       "source": "./plugins/web-ui",
       "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, screens in framework-less single-page apps, and layout review with screenshots at desktop and phone widths."
+    },
+    {
+      "name": "data-analytics",
+      "source": "./plugins/data-analytics",
+      "description": "Answer questions over data and build data features with LLMs: profiling, text-to-SQL, file Q&A, joins, grounded answers, charts, connectors, reports, pipelines, identity resolution, AutoML and security."
     },
     {
       "name": "data-cards",
