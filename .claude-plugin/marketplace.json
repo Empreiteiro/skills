@@ -3,7 +3,7 @@
   "owner": {
     "name": "Empreiteiro"
   },
-  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, data analytics with LLMs, writing without AI tells, a build-test-ship workflow, A/B tests and animated reels.",
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, data analytics with LLMs, shareable data cards, writing without AI tells, a build-test-ship workflow, A/B tests and animated reels.",
   "plugins": [
     {
       "name": "presentations",
@@ -23,12 +23,17 @@
     {
       "name": "web-ui",
       "source": "./plugins/web-ui",
-      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, and screens in framework-less single-page apps."
+      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, screens in framework-less single-page apps, and layout review with screenshots at desktop and phone widths."
     },
     {
       "name": "data-analytics",
       "source": "./plugins/data-analytics",
       "description": "Answer questions over data and build data features with LLMs: profiling, text-to-SQL, file Q&A, joins, grounded answers, charts, connectors, reports, pipelines, identity resolution, AutoML and security."
+    },
+    {
+      "name": "data-cards",
+      "source": "./plugins/data-cards",
+      "description": "Design and check shareable data cards rendered to PNG on the server (Satori, next/og, @vercel/og): sheet, type, color roles, chart marks, copy, social formats and before/after render comparison."
     },
     {
       "name": "writing",
