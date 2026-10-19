@@ -1,9 +1,0 @@
-{
-  "name": "compass",
-  "displayName": "Compass",
-  "description": "Skills for working on Compass (Empreiteiro/training-analysis): the training-card design system and the web and mobile layout review.",
-  "version": "1.0.0",
-  "author": { "name": "Empreiteiro" },
-  "repository": "https://github.com/Empreiteiro/skills",
-  "keywords": ["compass", "training", "cards", "satori", "layout", "screenshots", "nextjs"]
-}

@@ -1,7 +1,7 @@
 {
   "name": "empreiteiro-skills",
   "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations, and working on the Compass training-analysis app.",
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, shareable data cards and web layout review.",
   "plugins": [
     {
       "name": "presentations",
@@ -9,9 +9,14 @@
       "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
     },
     {
-      "name": "compass",
-      "source": "./plugins/compass",
-      "description": "Work on Compass (Empreiteiro/training-analysis): the training-card design system with a PNG renderer, and the web and mobile layout review with demo data and screenshots."
+      "name": "data-cards",
+      "source": "./plugins/data-cards",
+      "description": "Design and check shareable data cards rendered to PNG on the server (Satori, next/og, @vercel/og): sheet, type, color roles, chart marks, copy, social formats and before/after render comparison."
+    },
+    {
+      "name": "web-layout",
+      "source": "./plugins/web-layout",
+      "description": "Review web app screens by looking at them: deterministic demo data, Playwright screenshots at desktop and phone widths in every theme, overflow detection and a layout checklist."
     }
   ]
 }

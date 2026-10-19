@@ -1,0 +1,9 @@
+{
+  "name": "data-cards",
+  "displayName": "Data cards",
+  "description": "Design and check shareable data cards rendered to PNG on the server (Satori, next/og, @vercel/og): sheet, type, color roles, chart marks, copy, social formats and before/after render comparison.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["data-visualization", "satori", "og-image", "share-card", "social-media", "design-system"]
+}

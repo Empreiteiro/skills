@@ -1,13 +1,15 @@
 # Skills
 
-Claude Code skills and the presentations built with them. The repository is a plugin marketplace with two
-plugins: `presentations` (the repository root: `skills/` and `presentations/`) and `compass` (`plugins/compass/`).
+Claude Code skills and the presentations built with them. The repository is a plugin marketplace with three
+plugins: `presentations` (the repository root: `skills/` and `presentations/`), `data-cards` and `web-layout`
+(each in `plugins/<name>/`).
 
 ```
 .claude-plugin/            marketplace manifest, and the manifest of the presentations plugin
 skills/                    the presentation skills (one folder per skill, SKILL.md + scripts)
 plugins/
-  compass/                 skills for the Compass training-analysis app (own manifest, README and skills/)
+  data-cards/              shareable data cards rendered to PNG (own manifest, README and skills/)
+  web-layout/              layout review of web app screens with screenshots (own manifest, README and skills/)
 presentations/
   README.md                index of presentations and how to add one
   _template/               starter deck: copy it to start a new presentation
@@ -32,15 +34,21 @@ presentations/
 | `presentation-check-facts` | Verifies claims and datasets against primary sources and records them |
 | `presentation-review` | Runs the three checks and returns one prioritized report |
 
-## Compass skills
+## Data card skills
 
-For [Compass](https://github.com/Empreiteiro/training-analysis) only: they run the app's own modules, so they
-need a checkout of it. See [`plugins/compass/README.md`](plugins/compass/README.md).
+See [`plugins/data-cards/README.md`](plugins/data-cards/README.md).
 
 | Skill | What it does |
 |---|---|
-| `compass-card-design` | The design system of the training cards and Instagram posts, and a script that renders the real PNGs without starting the app |
-| `compass-layout-review` | Seeds demo data, starts the app, screenshots a screen at 1440px and 390px in both themes, and goes through the layout checklist |
+| `data-card-design` | Design system for chart images shared from an app (Satori / `next/og`): sheet, type, color roles, chart marks, copy, social formats, and before/after render comparison |
+
+## Web layout skills
+
+See [`plugins/web-layout/README.md`](plugins/web-layout/README.md).
+
+| Skill | What it does |
+|---|---|
+| `web-layout-review` | Seeds demo data, starts the app, screenshots a screen at 1440px and 390px in every theme, flags sideways overflow, and goes through a layout checklist |
 
 ## Install
 
@@ -54,14 +62,15 @@ claude plugin install presentations@empreiteiro-skills
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install presentations@empreiteiro-skills`.
 Skills are then available as `/presentations:presentation-review`, `/presentations:presentation-create`, and so on.
 Updates: `claude plugin update presentations@empreiteiro-skills`.
-For the Compass skills: `claude plugin install compass@empreiteiro-skills`.
+The other plugins install the same way: `claude plugin install data-cards@empreiteiro-skills`,
+`claude plugin install web-layout@empreiteiro-skills`.
 
 Without the plugin system, copy the folders you want from `skills/` to `~/.claude/skills/` (personal) or to a
 project's `.claude/skills/`. Copy `presentation-export` together with the check skills: they use its script.
 
 ## Requirements for the presentation scripts
 
-The Compass skills have their own, listed in [`plugins/compass/README.md`](plugins/compass/README.md).
+The other plugins list their own in their READMEs.
 
 - Python 3.9+
 - Google Chrome, Chromium or Microsoft Edge (set `CHROME_PATH` if it is not found)
