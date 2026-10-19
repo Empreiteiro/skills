@@ -1,7 +1,7 @@
 {
   "name": "empreiteiro-skills",
   "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, shareable data cards and web layout review.",
+  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns and shareable data cards.",
   "plugins": [
     {
       "name": "presentations",
@@ -21,17 +21,12 @@
     {
       "name": "web-ui",
       "source": "./plugins/web-ui",
-      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, and screens in framework-less single-page apps."
+      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, screens in framework-less single-page apps, and layout review with screenshots at desktop and phone widths."
     },
     {
       "name": "data-cards",
       "source": "./plugins/data-cards",
       "description": "Design and check shareable data cards rendered to PNG on the server (Satori, next/og, @vercel/og): sheet, type, color roles, chart marks, copy, social formats and before/after render comparison."
-    },
-    {
-      "name": "web-layout",
-      "source": "./plugins/web-layout",
-      "description": "Review web app screens by looking at them: deterministic demo data, Playwright screenshots at desktop and phone widths in every theme, overflow detection and a layout checklist."
     }
   ]
 }

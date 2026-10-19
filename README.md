@@ -1,15 +1,14 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Six plugins, installed separately:
+Claude Code skills and the presentations built with them. Five plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
 | `presentations` | Creating and checking HTML presentations | `skills/` |
 | `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
 | `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
-| `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs | [`plugins/web-ui/`](plugins/web-ui/) |
+| `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs, layout review | [`plugins/web-ui/`](plugins/web-ui/) |
 | `data-cards` | Shareable data cards rendered to PNG on the server: design system and render checks | [`plugins/data-cards/`](plugins/data-cards/) |
-| `web-layout` | Layout review of web app screens with screenshots at desktop and phone widths | [`plugins/web-layout/`](plugins/web-layout/) |
 
 ```
 .claude-plugin/            plugin + marketplace manifests (install the skills with one command)
@@ -23,7 +22,6 @@ plugins/                   self-contained plugins, each with its own manifest, R
   saas-backend/
   web-ui/
   data-cards/
-  web-layout/
 ```
 
 ## Presentation skills
@@ -69,13 +67,15 @@ starts by mapping the project's own helpers.
 
 ## Web UI skills
 
-Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens and framework-less SPA screens.
+Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens, framework-less SPA screens, and
+looking at every changed screen before it ships.
 
 | Skill | What it does |
 |---|---|
 | `search-filter-bar` | One search/filter bar for every list: search, *Filters* popover, quick selectors, pills, counts, overflow |
 | `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
 | `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
+| `web-layout-review` | Look at a changed screen: demo seed, screenshots at 1440px and 390px in every theme, sideways-overflow detection, layout checklist and rules |
 
 ## Data card skills
 
@@ -85,14 +85,6 @@ share (Satori, `next/og`, `@vercel/og`).
 | Skill | What it does |
 |---|---|
 | `data-card-design` | The sheet, three type roles, color tokens by role with one highlight, textures, chart marks, copy, editable parts, social formats, and before/after render comparison |
-
-## Web layout skills
-
-Plugin in [`plugins/web-layout/`](plugins/web-layout/README.md).
-
-| Skill | What it does |
-|---|---|
-| `web-layout-review` | Look at a changed screen: demo seed, screenshots at 1440px and 390px in every theme, sideways-overflow detection, layout checklist and rules |
 
 ## Install
 
@@ -105,7 +97,6 @@ claude plugin install memes@empreiteiro-skills
 claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
 claude plugin install data-cards@empreiteiro-skills
-claude plugin install web-layout@empreiteiro-skills
 ```
 
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.

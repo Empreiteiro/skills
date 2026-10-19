@@ -1,9 +1,0 @@
-{
-  "name": "web-layout",
-  "displayName": "Web layout",
-  "description": "Review web app screens by looking at them: deterministic demo data, Playwright screenshots at desktop and phone widths in every theme, overflow detection and a layout checklist.",
-  "version": "1.0.0",
-  "author": { "name": "Empreiteiro" },
-  "repository": "https://github.com/Empreiteiro/skills",
-  "keywords": ["layout", "responsive", "screenshots", "playwright", "ui-review", "dark-mode"]
-}

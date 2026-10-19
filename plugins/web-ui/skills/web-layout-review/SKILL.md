@@ -101,10 +101,12 @@ In each screenshot, against the rules:
    title's vertical. Nothing touches the window's right edge.
 3. **The frame** (sidebar, content area, right rail) keeps its shape: corners,
    borders and columns are the shell's, not redrawn per screen.
-4. **Side panel and filters**: the default state (collapsed or open) is the
-   one the rules say; while collapsed, the screen still says what is being
-   filtered; categories are selection lists, one option per row; on mobile the
-   panel opens from its trigger at the top.
+4. **Filters**: the screen uses the app's shared filter component, not a
+   hand-built one. For a search/filter bar, go through the verification
+   checklist in `search-filter-bar` (and `data-table-list-view` for the table
+   under it). For a side panel: the default state is the one the rules say,
+   the screen still says what is being filtered while it is collapsed, and on
+   a phone it opens from its trigger at the top.
 5. **Phone (390px)**: no sideways scroll (the JSON line reports it; a wide
    table scrolls inside its own container); the text starts at the mobile
    gutter; the bottom navigation does not cover the last block; screens that
