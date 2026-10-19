@@ -105,3 +105,5 @@ reflected parameter.
 - [ ] Type checker / `ruff F821` in CI so refactors cannot leave undefined names behind
 
 Related: `text-to-sql`, `api-data-connector`, `data-reports-and-alerts`, `sqlite-postgres-portability`.
+For the per-route checklist (auth layers, input, errors, signed OAuth state, test matrix), see
+`saas-backend:secure-api-route`.

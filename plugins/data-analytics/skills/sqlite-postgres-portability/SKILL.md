@@ -108,4 +108,5 @@ jobs:
 Keep the SQLite job too: both engines are supported, so both are tested.
 
 Related: `lineage-and-versioning` (append-only rows, unique constraints), `secure-data-platform` (encrypted
-column sizes).
+column sizes). For apps that keep the schema as idempotent files applied at boot instead of a migration tool, see
+`saas-backend:sqlite-postgres-schema`.

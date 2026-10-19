@@ -119,4 +119,5 @@ prints `{"ok", "reason", "host", "addresses"}` per URL; exit 0 all allowed, 1 an
 Import `check_url()` from it in Python code.
 
 Related: `tabular-file-qa` (loading and coercing frames), `text-to-sql` (querying the loaded tables),
-`data-reports-and-alerts` (KPI templates on top of the catalog).
+`data-reports-and-alerts` (KPI templates on top of the catalog). For OAuth connect flows, webhooks and ingestion
+into a search/assistant store in a multi-tenant app, see `saas-backend:data-source-integration`.

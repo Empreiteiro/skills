@@ -1,0 +1,9 @@
+{
+  "name": "saas-backend",
+  "displayName": "SaaS backend",
+  "description": "Multi-tenant SaaS backends: secure API routes, schema changes and SQL portable across SQLite and Postgres, and data-source integrations.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["multi-tenant", "saas", "api", "security", "sqlite", "postgres", "integrations", "oauth"]
+}
