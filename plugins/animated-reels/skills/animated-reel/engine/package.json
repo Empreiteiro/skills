@@ -1,0 +1,12 @@
+{
+  "name": "animated-reel-engine",
+  "version": "1.0.0",
+  "description": "Frame-by-frame renderer for vertical animated reels: DOM + three.js in headless Chromium, synthesized soundtrack, ffmpeg master.",
+  "scripts": {},
+  "type": "module",
+  "dependencies": {
+    "playwright": "1.63.0",
+    "three": "^0.186.1"
+  },
+  "private": true
+}

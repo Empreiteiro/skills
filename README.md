@@ -1,6 +1,6 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Six plugins, installed separately:
+Claude Code skills and the presentations built with them. Ten plugins, installed separately:
 
 | Plugin | What it is for | Skills |
 |---|---|---|
@@ -10,6 +10,10 @@ Claude Code skills and the presentations built with them. Six plugins, installed
 | `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs, layout review | [`plugins/web-ui/`](plugins/web-ui/) |
 | `data-analytics` | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | [`plugins/data-analytics/`](plugins/data-analytics/) |
 | `data-cards` | Shareable data cards rendered to PNG on the server: design system and render checks | [`plugins/data-cards/`](plugins/data-cards/) |
+| `writing` | Brand copy without AI tells, and the craft of fourteen forms from fiction to technical docs | [`plugins/writing/`](plugins/writing/) |
+| `dev-workflow` | A change from request to production: worktree, gate, PR, deploy, proof by fetch | [`plugins/dev-workflow/`](plugins/dev-workflow/) |
+| `ab-testing` | Product A/B tests, from the design to promoting the winner | [`plugins/ab-testing/`](plugins/ab-testing/) |
+| `animated-reels` | Vertical reels with drawn characters, rendered frame by frame | [`plugins/animated-reels/`](plugins/animated-reels/) |
 
 ```
 .claude-plugin/            plugin + marketplace manifests (install the skills with one command)
@@ -24,6 +28,10 @@ plugins/                   self-contained plugins, each with its own manifest, R
   web-ui/
   data-analytics/
   data-cards/
+  writing/
+  dev-workflow/
+  ab-testing/
+  animated-reels/
 ```
 
 ## Presentation skills
@@ -107,6 +115,51 @@ share (Satori, `next/og`, `@vercel/og`).
 |---|---|
 | `data-card-design` | The sheet, three type roles, color tokens by role with one highlight, textures, chart marks, copy, editable parts, social formats, and before/after render comparison |
 
+## Writing skills
+
+Plugin in [`plugins/writing/`](plugins/writing/README.md). `write` keeps a brand's voice in two templates it fills
+from samples of copy you like, checks claims against the product, then runs `no-ai-slop` and `humanizer` (vendored
+unedited, MIT).
+
+| Skill | What it does |
+|---|---|
+| `write` | Brand writing system: voice and opinion templates, a claim check, then the two passes below |
+| `no-ai-slop` | Flags AI-slop patterns line by line and cuts them, keeping the writer's voice |
+| `humanizer` | Rewrites what still reads as AI without changing what it says |
+| `writing-*` (14) | The craft of one form each: academic research, blog posts, books and fiction, business and legal, essays, ghostwriting, journalism, marketing copy, newsletters, nonfiction and memoir, poetry, scripts and speeches, social media, technical |
+
+## Dev workflow skills
+
+Plugin in [`plugins/dev-workflow/`](plugins/dev-workflow/README.md). Project facts (gate and deploy commands, URLs,
+branch names, Railway IDs) come from the project's `CLAUDE.md` or `AGENTS.md`.
+
+| Skill | What it does |
+|---|---|
+| `implement` | Entry point for build/fix/change requests: worktree, framework docs, the project's invariants, premise checked against today's code, plan |
+| `test-and-ship` | Runs the gate and fixes what fails, then commits, opens and merges the PR, deploys, and proves it by fetching the live site |
+| `ship` | The same without the gate, for diffs that do not run |
+| `atomic-design` | Where a React component lives, what it may import, what goes stale when it moves |
+| `ui-revamp-prototype` | A throwaway prototype of one screen, published as an Artifact, with N directions to pick from before any code |
+| `railway-ops` | Operate an app on Railway: status, logs, deploys, variables, read-only Postgres, rollback |
+
+## A/B testing skills
+
+Plugin in [`plugins/ab-testing/`](plugins/ab-testing/README.md), for web apps with user accounts.
+
+| Skill | What it does |
+|---|---|
+| `ab-test-create` | Design the test with you, assign each account once at signup, gate the arms behind a flag, build the results board |
+| `ab-test-promote-winner` | Snapshot the final board, send everyone to the winner, delete the losing arms, retire the flag, archive the test |
+
+## Animated reel skill
+
+Plugin in [`plugins/animated-reels/`](plugins/animated-reels/README.md): the skill plus its render engine, with one
+neutral example character and reel. Bring your own characters and brand.
+
+| Skill | What it does |
+|---|---|
+| `animated-reel` | A 1080x1920 reel from a topic and a cast: first-person script and voice-over checked with Whisper, new poses from an image model, frame-by-frame animation in headless Chromium, synthesized soundtrack, cover and caption |
+
 ## Install
 
 As a plugin (recommended):
@@ -119,6 +172,10 @@ claude plugin install saas-backend@empreiteiro-skills
 claude plugin install web-ui@empreiteiro-skills
 claude plugin install data-analytics@empreiteiro-skills
 claude plugin install data-cards@empreiteiro-skills
+claude plugin install writing@empreiteiro-skills
+claude plugin install dev-workflow@empreiteiro-skills
+claude plugin install ab-testing@empreiteiro-skills
+claude plugin install animated-reels@empreiteiro-skills
 ```
 
 Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
@@ -126,15 +183,19 @@ Skills are then available as `/presentations:presentation-review`, `/saas-backen
 Updates: `claude plugin update <plugin>@empreiteiro-skills`.
 
 The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
+The A/B board scripts need Node 18+ and Playwright (see [its README](plugins/ab-testing/README.md)).
 The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
 (`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
 The layout review needs Node 18+ and Playwright with a Chromium; the card render comparison needs
 `pip install pillow` (see each plugin's README).
+The reel engine needs Node 18+, ffmpeg, ImageMagick 7 and whisper.cpp; its setup script installs the rest (see
+[its README](plugins/animated-reels/README.md)).
 
 Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
-`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Copy `presentation-export` together with the
-check skills: they use its script. Copy `dataset-profiling` and `text-to-sql` together with `tabular-file-qa`: it
-uses their scripts.
+`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Some skills use a sibling's files, so copy these
+together: `presentation-export` with the presentation check skills; `dataset-profiling` and `text-to-sql` with
+`tabular-file-qa`; `write` with `no-ai-slop` and `humanizer`; `test-and-ship` with `ship`; and
+`ab-test-promote-winner` with `ab-test-create`.
 
 ## Requirements for the presentation scripts
 

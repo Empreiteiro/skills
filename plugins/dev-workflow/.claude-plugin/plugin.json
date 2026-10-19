@@ -1,0 +1,9 @@
+{
+  "name": "dev-workflow",
+  "displayName": "Dev workflow",
+  "description": "Take a change from request to production: isolate and plan it, run the gate, open and merge the PR, deploy and prove it by fetching the live site.",
+  "version": "1.0.0",
+  "author": { "name": "Empreiteiro" },
+  "repository": "https://github.com/Empreiteiro/skills",
+  "keywords": ["workflow", "ship", "deploy", "ci", "railway", "prototype"]
+}
