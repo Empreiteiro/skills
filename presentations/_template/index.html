@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentation title</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1115'/%3E%3Cg stroke='%23A7B3C0' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M19 21L45 18M19 21L32 45M45 18L32 45'/%3E%3C/g%3E%3Ccircle cx='19' cy='21' r='8' fill='%234C9BE8'/%3E%3Ccircle cx='45' cy='18' r='7' fill='%23B86BD6'/%3E%3Ccircle cx='32' cy='45' r='9' fill='%232AACB0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+<!-- Need D3 for graph slides? Pin an exact version, e.g.:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script> -->
+<style>
+:root{
+  /* node / category colors */
+  --blue:#4C9BE8; --purple:#B86BD6; --green:#5BAE5B; --orange:#E89A4C; --teal:#2AACB0; --gray:#666666;
+  /* surfaces */
+  --bg:#0E1115; --panel:#141B23; --line:#25303C; --line-2:#344150;
+  --border:rgba(232,237,242,.11);
+  --title-gap:64px; /* fixed distance from the title to the content, on every slide */
+  /* text */
+  --text:#E8EDF2; --soft:#A7B3C0; --dim:#6E7B88;
+  /* states */
+  --error:#F0635A; --ok:#6CC46C; --highlight:#F2CC60;
+  --sans:'Martian Mono',ui-monospace,'Cascadia Code',Consolas,monospace;
+  --mono:'Martian Mono',ui-monospace,'Cascadia Code',Consolas,monospace;
+  /* optional logo in the bottom-right corner of every slide: url("assets/logo.svg") */
+  --logo:none;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);font-stretch:87.5%;overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+
+/* ---------- 16:9 stage (1920×1080, scaled to the window) ---------- */
+#viewport{position:fixed;inset:0;overflow:hidden;background:var(--grain,linear-gradient(transparent,transparent)) 0 0/320px 320px repeat,var(--bg)}
+#deck{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--k,.5));transform-origin:50% 50%}
+.slide{position:absolute;inset:0;padding:calc(64px + var(--extra-v,0px) * .35) max(110px,calc((100% - 1920px) / 2 + 110px)) 76px;display:flex;flex-direction:column;overflow:hidden;
+  background:var(--grain,linear-gradient(transparent,transparent)) 0 0/320px 320px repeat,var(--bg);
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+.slide.active{opacity:1;visibility:visible;transition:opacity .45s ease}
+.slide::after{content:'';position:absolute;bottom:26px;right:max(110px,calc((100% - 1920px) / 2 + 110px));width:46px;height:46px;background:var(--logo) no-repeat center/contain;pointer-events:none}
+aside.notes,aside.explain{display:none!important} /* speaker notes (presenter window) and the explanation for whoever presents */
+
+/* ---------- progress bar and click zones ---------- */
+#hud{position:absolute;left:0;right:0;bottom:0;height:60px;z-index:20;pointer-events:none}
+#bar{position:absolute;left:0;bottom:0;height:5px;width:100%;background:rgba(255,255,255,.05)}
+#bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .4s ease}
+.navzone{position:fixed;top:0;bottom:0;width:5vw;z-index:30;cursor:pointer;opacity:0;transition:opacity .2s}
+.navzone:hover{opacity:1}
+.navzone.left{left:0;background:linear-gradient(90deg,rgba(255,255,255,.06),transparent)}
+.navzone.right{right:0;background:linear-gradient(270deg,rgba(255,255,255,.06),transparent)}
+
+/* ---------- typography ---------- */
+.kicker{font:condensed 500 22px/24px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:22px;min-height:24px}
+.kicker b{color:var(--teal);font-weight:700}
+h1{font-size:112px;line-height:1.02;font-weight:600;letter-spacing:-.03em}
+h2{font-size:52px;line-height:1.12;font-weight:600;letter-spacing:-.02em;margin-bottom:var(--title-gap);max-width:1700px}
+h3{font-size:30px;line-height:1.22;font-weight:600;letter-spacing:-.01em}
+p{font-size:32px;line-height:1.38}
+.muted{color:var(--soft)} .dim{color:var(--dim)} .hl{color:var(--highlight)}
+code{font-family:var(--mono);font-stretch:75%;font-size:.82em;border:1px solid var(--border);border-radius:6px;padding:.04em .32em;white-space:nowrap}
+.body{flex:1;min-height:0;position:relative}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-content:start}
+.card{border:1px solid var(--border);border-radius:12px;padding:28px 32px;display:flex;flex-direction:column;gap:16px}
+.card p{font-size:26px;color:var(--soft)}
+.list{list-style:none;display:flex;flex-direction:column;gap:26px}
+.list li{font-size:32px;line-height:1.36;padding-left:44px;position:relative}
+.list li::before{content:'';position:absolute;left:4px;top:.55em;width:14px;height:14px;border-radius:50%;background:var(--teal)}
+
+/* ---------- fragments (appear click by click) ---------- */
+.fragment{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.fragment.visible{opacity:1;transform:none}
+
+/* ---------- title and closing slides ---------- */
+.s-title,.s-end{justify-content:center;align-items:center;text-align:center}
+.author{margin-top:64px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.author .name{font-size:36px;font-weight:700}
+.author .role{font:condensed 500 24px var(--mono);color:var(--soft);letter-spacing:.04em}
+
+/* ---------- example controller slide ---------- */
+.demo{width:100%;height:auto;max-height:100%}
+.demo circle{stroke:var(--bg);stroke-width:4;transition:fill .5s}
+.demo line{stroke:var(--line-2);stroke-width:4}
+.demo text{font:condensed 700 24px var(--sans);fill:var(--text);text-anchor:middle}
+
+/* ---------- overview (O) ---------- */
+#overview{position:fixed;inset:0;background:rgba(5,8,12,.97);display:none;overflow:auto;padding:40px;z-index:50;gap:22px;justify-content:center;align-content:start;grid-template-columns:repeat(auto-fill,calc(1920px * var(--ts,.15)))}
+#overview.open{display:grid}
+.thumb{position:relative;width:calc(1920px * var(--ts,.15));height:calc(1080px * var(--ts,.15));border:2px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);cursor:pointer;padding:0}
+.thumb:hover{border-color:var(--soft)}
+.thumb.hidden-slide .thumb-inner{opacity:.35}
+.thumb.current{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,172,176,.3)}
+.thumb-inner{position:absolute;left:0;top:0;width:1920px;height:1080px;transform:scale(var(--ts,.15));transform-origin:0 0;pointer-events:none}
+.thumb-inner .slide{opacity:1;visibility:visible;transition:none}
+.thumb-inner *{animation:none!important}
+.thumb-num{position:absolute;left:8px;bottom:6px;font:condensed 600 14px var(--mono);background:rgba(0,0,0,.7);color:var(--text);padding:2px 7px;border-radius:5px}
+
+/* ---------- modes ---------- */
+html.mode-embed .slide,html.mode-embed .fragment{transition:none}
+html.mode-embed .navzone{display:none}
+html.mode-presenter #viewport,html.mode-presenter .navzone{display:none}
+#pres{position:fixed;inset:0;display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:auto 1fr;gap:16px;padding:16px;background:#06080B;color:var(--text)}
+#pres header{grid-column:1/-1;display:flex;align-items:center;gap:22px;font:condensed 600 26px var(--mono)}
+#pres header button{font:condensed 600 17px var(--mono);padding:8px 14px;border-radius:9px;border:1px solid var(--line-2);background:var(--panel);cursor:pointer}
+#p-timer{font-size:36px;min-width:150px}
+#p-timer.over{color:var(--error)}
+#p-clock{color:var(--soft)}
+#p-num{margin-left:auto;color:var(--teal)}
+.p-col{display:flex;flex-direction:column;gap:10px;min-height:0}
+.p-label{font:condensed 600 15px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.p-frame{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000;flex:none}
+.p-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#p-notes{flex:1;min-height:0;overflow:auto;font-size:19px;line-height:1.55;padding:16px 20px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+#p-notes p{font-size:19px;line-height:1.55;margin-bottom:12px}
+.p-hint{font:condensed 500 14px var(--mono);color:var(--dim)}
+
+@media (prefers-reduced-motion:reduce){
+  .slide,.fragment{transition:none!important}
+  *{animation:none!important}
+}
+
+/* ---------- print / PDF: one slide per page, final state ---------- */
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{width:1920px;height:auto;overflow:visible;background:var(--bg)}
+  #viewport{position:static;overflow:visible}
+  #deck{position:static;transform:none!important;width:1920px!important;height:auto!important;--extra-v:0px!important}
+  .slide{position:relative!important;width:1920px;height:1080px;opacity:1!important;visibility:visible!important;transition:none!important;break-after:page;page-break-after:always}
+  .fragment{opacity:1!important;transform:none!important;transition:none!important}
+  .fragment[data-until]{display:none!important}
+  html:not(.show-hidden) .slide[data-hidden]{display:none!important}
+  #hud,#overview,.navzone,aside.notes,aside.explain{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="viewport">
+<div id="deck">
+
+<!-- ============ SLIDES ============
+     Each slide is a <section class="slide">. Optional attributes:
+       data-ctrl="name"   controller in CTRL (init / enter / leave / step) for slides with behavior
+       data-steps="N"     extra clicks handled by the controller (on top of fragments)
+       data-hidden        kept in the file but skipped by the presentation and the PDF (?all shows it)
+     Inside: aside.notes = what to say (presenter window); aside.explain = the concept explained
+     for whoever presents (never shown). ================================================ -->
+
+<section class="slide s-title">
+  <h1>Presentation title</h1>
+  <div class="author"><span class="name">Your Name</span><span class="role">Role · Company</span></div>
+  <aside class="notes">
+    <p>One sentence about who you are and what the audience will get from the talk.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Opening: the topic and the promise of the talk.</p>
+    <p><b>On screen.</b> Title, name and role.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>01</b> · Section</div>
+  <h2>A slide that builds point by point</h2>
+  <ul class="list body">
+    <li class="fragment">First point appears on the first click.</li>
+    <li class="fragment">Second point on the next one.</li>
+    <li class="fragment">Third point closes the argument.</li>
+  </ul>
+  <aside class="notes">
+    <p>Click 1: first point. Click 2: second point. Click 3: the conclusion.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> What the audience should understand from this slide, in plain words.</p>
+    <p><b>On screen.</b> Three points that appear one per click.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>01</b> · Section</div>
+  <h2>Two columns, same height</h2>
+  <div class="cols body">
+    <div class="card"><h3>Before</h3><p>Describe the situation the audience knows.</p></div>
+    <div class="card fragment"><h3>After</h3><p>Describe what changes. Appears on click.</p></div>
+  </div>
+  <aside class="notes">
+    <p>Left: the familiar situation. Click: what changes.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> A before/after comparison.</p>
+    <p><b>On screen.</b> Two cards; the second appears on the first click.</p>
+  </aside>
+</section>
+
+<section class="slide" data-ctrl="demo" data-steps="2">
+  <div class="kicker"><b>02</b> · Section</div>
+  <h2>A slide with a controller</h2>
+  <div class="body" style="display:grid;place-items:center">
+    <svg class="demo" viewBox="0 0 900 360">
+      <line x1="150" y1="180" x2="450" y2="180"/><line x1="450" y1="180" x2="750" y2="180"/>
+      <circle class="n0" cx="150" cy="180" r="56"/><circle class="n1" cx="450" cy="180" r="56"/><circle class="n2" cx="750" cy="180" r="56"/>
+      <text x="150" y="290">A</text><text x="450" y="290">B</text><text x="750" y="290">C</text>
+    </svg>
+  </div>
+  <aside class="notes">
+    <p>Each click lights the next node: A, then B, then C.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Example of a slide whose clicks are handled by JavaScript (CTRL.demo) instead of fragments.</p>
+    <p><b>On screen.</b> Three nodes; each click colors one more.</p>
+  </aside>
+</section>
+
+<section class="slide" data-hidden>
+  <div class="kicker"><b>02</b> · Backup</div>
+  <h2>A hidden backup slide</h2>
+  <p class="muted">Skipped by the presentation and the PDF. Open with <code>?all</code> to see it.</p>
+  <aside class="notes">
+    <p>Only shown if someone asks.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>Why it is hidden.</b> Backup material for questions.</p>
+  </aside>
+</section>
+
+<section class="slide s-end">
+  <h1>Questions?</h1>
+  <div class="author"><span class="name">Your Name</span><span class="role">you@example.com</span></div>
+  <aside class="notes">
+    <p>Thank the audience and open for questions.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Closing and contact.</p>
+  </aside>
+</section>
+
+<div id="hud"><div id="bar"><i></i></div></div>
+</div>
+</div>
+<div class="navzone left" title="previous"></div>
+<div class="navzone right" title="next"></div>
+<div id="overview"></div>
+
+<script>
+'use strict';
+const $ = (sel, el = document) => el.querySelector(sel);
+const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* =====================================================================
+   Slide controllers: CTRL[name] = { init(s), enter(s), leave(s), step(s, step, dir) }
+   init runs once, the first time the slide is needed. step runs on every click.
+   ===================================================================== */
+const CTRL = {};
+
+CTRL.demo = {
+  init(s) { s._nodes = $$('circle', s); },
+  step(s, st) {
+    const colors = [css('--blue'), css('--purple'), css('--teal')];
+    s._nodes.forEach((c, i) => { c.style.fill = i <= st ? colors[i] : css('--line-2'); });
+  }
+};
+
+/* =====================================================================
+   Engine (navigation, fragments, overview, presenter window, print).
+   Usually no need to touch anything below this line.
+   ===================================================================== */
+const params = new URLSearchParams(location.search);
+const MODE = params.has('presenter') ? 'presenter' : params.has('embed') ? 'embed' : 'main';
+document.documentElement.classList.add('mode-' + MODE);
+const deck = $('#deck');
+const slides = $$('#deck > section.slide');
+const TOTAL = slides.length;
+let current = -1, step = 0;
+
+// fragments: data-f="n" sets the click; without it they count up in order. data-until="n" hides it after click n.
+function prepareFragments() {
+  slides.forEach(s => {
+    let auto = 0, max = 0;
+    s._frags = $$('.fragment', s).map(el => {
+      let f;
+      if (el.dataset.f != null) { f = +el.dataset.f; auto = Math.max(auto, f); } else f = ++auto;
+      max = Math.max(max, f);
+      return { el, f, until: el.dataset.until != null ? +el.dataset.until : Infinity };
+    });
+    s._max = Math.max(max, +(s.dataset.steps || 0));
+  });
+}
+
+function call(i, phase, ...args) {
+  const s = slides[i], c = CTRL[s.dataset.ctrl];
+  if (!c) return;
+  try {
+    if (!s._ok) { s._ok = true; if (c.init) c.init(s); }
+    if (c[phase]) c[phase](s, ...args);
+  } catch (e) { console.error('slide', i + 1, e); }
+}
+
+function show(i, st = 0, op = {}) {
+  i = Math.max(0, Math.min(TOTAL - 1, i | 0));
+  const s = slides[i];
+  st = Math.max(0, Math.min(s._max, st | 0));
+  const changed = i !== current;
+  if (changed) {
+    if (current >= 0) { slides[current].classList.remove('active'); call(current, 'leave'); }
+    s.classList.add('active');
+    call(i, 'enter');
+  }
+  s._frags.forEach(({ el, f, until }) => {
+    const vis = st >= f && st <= until;
+    el.classList.toggle('visible', vis);
+    el.classList.toggle('current', vis && f === st);
+  });
+  s.dataset.step = st;
+  current = i; step = st;
+  call(i, 'step', st, op.dir || 1);
+  const shown = slides.filter((_, j) => inShow(j)), pos = shown.filter(x => slides.indexOf(x) <= i).length - 1;
+  $('#bar i').style.width = (shown.length > 1 ? Math.max(0, pos) / (shown.length - 1) * 100 : 100) + '%';
+  if (MODE === 'main') {
+    history.replaceState(null, '', location.search + '#' + (i + 1));
+    if (!op.silent) send({ type: 'state', i, st });
+  }
+}
+
+// data-hidden slides stay in the file but the presentation skips them (?all shows everything)
+const showHidden = params.has('all');
+if (showHidden) document.documentElement.classList.add('show-hidden');
+const inShow = i => showHidden || !slides[i].hasAttribute('data-hidden');
+function neighbor(i, dir) { for (let j = i + dir; j >= 0 && j < TOTAL; j += dir) if (inShow(j)) return j; return -1; }
+function navigate(i, st, action) {
+  if (action === 'next') { if (st < slides[i]._max) return [i, st + 1]; const j = neighbor(i, 1); return j < 0 ? [i, st] : [j, 0]; }
+  if (action === 'prev') { if (st > 0) return [i, st - 1]; const j = neighbor(i, -1); return j < 0 ? [i, st] : [j, slides[j]._max]; }
+  if (action === 'first') return [neighbor(-1, 1), 0];
+  return [neighbor(TOTAL, -1), 0];
+}
+function go(action) { const [i, st] = navigate(current, step, action); show(i, st, { dir: action === 'prev' ? -1 : 1 }); }
+
+function navKeys(e, nav) {
+  if (e.ctrlKey || e.metaKey || e.altKey) return false;
+  const k = e.key;
+  if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(k)) nav('next');
+  else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) nav('prev');
+  else if (k === 'Home') nav('first');
+  else if (k === 'End') nav('last');
+  else return false;
+  e.preventDefault();
+  return true;
+}
+
+// Base 1920×1080. Taller windows grow the stage downwards, wider ones sideways (up to 4:3 and 21:9);
+// the content stays centered and the extra space becomes breathing room.
+let K = 1;
+function fit() {
+  const vw = innerWidth || 1920, vh = innerHeight || 1080;
+  let W = 1920, H = 1080;
+  if (vw / vh < 16 / 9) H = Math.min(1440, Math.round(1920 * vh / vw)); else W = Math.min(2560, Math.round(1080 * vw / vh));
+  K = Math.min(vw / W, vh / H);
+  deck.style.width = W + 'px'; deck.style.height = H + 'px';
+  deck.style.setProperty('--k', K);
+  deck.style.setProperty('--extra-v', (H - 1080) + 'px');
+}
+
+function fullscreen() {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen().catch(() => {});
+}
+
+/* ---------- overview (O) ---------- */
+const ov = $('#overview');
+const ovOpen = () => ov.classList.contains('open');
+function openOverview() {
+  slides.forEach((_, i) => call(i, 'none')); // make sure controller drawings exist in the thumbnails
+  const cols = 5, gap = 22, w = Math.min(380, (innerWidth - 80 - gap * (cols - 1)) / cols);
+  ov.style.setProperty('--ts', w / 1920);
+  ov.innerHTML = '';
+  slides.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.className = 'thumb' + (i === current ? ' current' : '') + (inShow(i) ? '' : ' hidden-slide');
+    const inner = document.createElement('div');
+    inner.className = 'thumb-inner';
+    const c = s.cloneNode(true);
+    c.classList.add('active');
+    c.querySelectorAll('aside').forEach(n => n.remove());
+    c.querySelectorAll('.fragment').forEach(f => f.classList.toggle('visible', !f.hasAttribute('data-until')));
+    c.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+    inner.appendChild(c);
+    b.appendChild(inner);
+    b.insertAdjacentHTML('beforeend', `<span class="thumb-num">${i + 1}${inShow(i) ? '' : ' · hidden'}</span>`);
+    b.onclick = () => { closeOverview(); show(i, 0); };
+    ov.appendChild(b);
+  });
+  ov.classList.add('open');
+  if (ov.children[current]) ov.children[current].scrollIntoView({ block: 'center' });
+}
+function closeOverview() { ov.classList.remove('open'); ov.innerHTML = ''; }
+
+/* ---------- sync between windows (main ↔ presenter ↔ embedded previews) ---------- */
+// file:// may lack BroadcastChannel; then sync uses window.opener/postMessage only
+const channel = (() => { try { return MODE !== 'embed' && 'BroadcastChannel' in window ? new BroadcastChannel('deck-' + location.pathname) : null; } catch (e) { return null; } })();
+let presenterWin = null;
+function send(msg) {
+  msg.from = MODE;
+  try { if (channel) channel.postMessage(msg); } catch (e) { /* file:// may block */ }
+  try {
+    if (MODE === 'main' && presenterWin && !presenterWin.closed) presenterWin.postMessage(msg, '*');
+    if (MODE === 'presenter' && window.opener && !window.opener.closed) window.opener.postMessage(msg, '*');
+  } catch (e) { /* window closed */ }
+}
+function receive(msg, source) {
+  if (!msg || typeof msg !== 'object' || msg.from === MODE) return;
+  if (MODE === 'main') {
+    if (msg.from === 'presenter' && source) presenterWin = source;
+    if (msg.type === 'go' && !(msg.i === current && msg.st === step)) show(msg.i, msg.st, { silent: true, dir: msg.dir });
+    if (msg.type === 'hello') send({ type: 'state', i: current, st: step });
+  } else if (MODE === 'presenter') {
+    if (msg.type === 'state') P.update(msg.i, msg.st);
+  } else if (MODE === 'embed') {
+    if (msg.type === 'embed') show(msg.i, msg.st);
+  }
+}
+addEventListener('message', e => receive(e.data, e.source));
+if (channel) channel.onmessage = e => receive(e.data, null);
+
+function openPresenter() {
+  const url = location.href.split('#')[0].split('?')[0] + '?presenter' + (showHidden ? '&all' : '') + '#' + (current + 1);
+  presenterWin = window.open(url, 'presenter', 'width=1400,height=860');
+}
+
+/* ---------- presenter window (S): timer, current and next slide, notes ---------- */
+const P = {
+  i: 0, st: 0, start: 0, elapsed: 0, running: false, target: null,
+  build() {
+    document.title = 'Presenter · ' + document.title;
+    const base = location.href.split('#')[0].split('?')[0];
+    document.body.insertAdjacentHTML('beforeend', `
+      <div id="pres">
+        <header>
+          <span id="p-timer">00:00</span><button id="p-play">start</button><button id="p-reset">reset</button>
+          <span id="p-clock"></span><span class="p-hint">arrow keys navigate · the main window follows</span><span id="p-num"></span>
+        </header>
+        <div class="p-col"><div class="p-label">now</div><div class="p-frame"><iframe id="p-now" title="current slide"></iframe></div></div>
+        <div class="p-col"><div class="p-label" id="p-next-label">next</div><div class="p-frame"><iframe id="p-next" title="next"></iframe></div>
+          <div class="p-label">notes</div><div id="p-notes"></div></div>
+      </div>`);
+    this.fNow = $('#p-now'); this.fNext = $('#p-next');
+    const i0 = Math.max(0, (parseInt(location.hash.slice(1)) || 1) - 1);
+    this.fNow.onload = this.fNext.onload = () => this.sendFrames();
+    const q = showHidden ? '?embed&all' : '?embed';
+    this.fNow.src = base + q + '#' + (i0 + 1);
+    this.fNext.src = base + q + '#' + (i0 + 1);
+    $('#p-play').onclick = () => this.toggle();
+    $('#p-reset').onclick = () => this.reset();
+    document.addEventListener('keydown', e => navKeys(e, a => this.nav(a)));
+    setInterval(() => this.tick(), 500);
+    this.tick();
+    this.update(i0, 0);
+    send({ type: 'hello' });
+  },
+  nav(action) {
+    const [i, st] = navigate(this.i, this.st, action);
+    if (!this.running && this.elapsed === 0) this.toggle();
+    this.update(i, st);
+    send({ type: 'go', i, st, dir: action === 'prev' ? -1 : 1 });
+  },
+  update(i, st) {
+    this.i = i; this.st = st;
+    const s = slides[i];
+    $('#p-num').textContent = `${i + 1} / ${TOTAL}` + (s._max ? ` · step ${st}/${s._max}` : '');
+    const n = $('aside.notes', s);
+    $('#p-notes').innerHTML = n ? n.innerHTML : '<p class="dim">no notes</p>';
+    const [ni, nst] = navigate(i, st, 'next');
+    $('#p-next-label').textContent = ni === i && nst === st ? 'end' : ni === i ? 'next click' : 'next slide';
+    this.target = { a: [i, st], n: [ni, nst] };
+    this.sendFrames();
+  },
+  sendFrames() {
+    if (!this.target) return;
+    try { this.fNow.contentWindow.postMessage({ type: 'embed', i: this.target.a[0], st: this.target.a[1], from: 'presenter' }, '*'); } catch (e) { /* loading */ }
+    try { this.fNext.contentWindow.postMessage({ type: 'embed', i: this.target.n[0], st: this.target.n[1], from: 'presenter' }, '*'); } catch (e) { /* loading */ }
+  },
+  toggle() {
+    if (this.running) { this.elapsed += Date.now() - this.start; this.running = false; }
+    else { this.start = Date.now(); this.running = true; }
+    $('#p-play').textContent = this.running ? 'pause' : 'resume';
+  },
+  reset() {
+    this.elapsed = 0; this.start = Date.now();
+    if (!this.running) $('#p-play').textContent = 'start';
+    this.tick();
+  },
+  tick() {
+    const sec = Math.floor((this.elapsed + (this.running ? Date.now() - this.start : 0)) / 1000);
+    const t = $('#p-timer');
+    t.textContent = String(Math.floor(sec / 60)).padStart(2, '0') + ':' + String(sec % 60).padStart(2, '0');
+    t.classList.toggle('over', sec >= TALK_MINUTES * 60);
+    $('#p-clock').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+};
+const TALK_MINUTES = 40; // the timer turns red after this
+
+/* ---------- print: every slide in its final state ---------- */
+addEventListener('beforeprint', () => {
+  slides.forEach((s, i) => { s.dataset.step = s._max; call(i, 'step', s._max, 1); });
+});
+addEventListener('afterprint', () => { const a = current; current = -1; slides[a].classList.remove('active'); show(a, step, { silent: true }); });
+
+/* ---------- film grain on the background ---------- */
+function makeGrain() {
+  try {
+    const hex = css('--bg').replace('#', ''), base = [0, 2, 4].map(i => parseInt(hex.slice(i, i + 2), 16));
+    const n = 320, c = document.createElement('canvas'); c.width = c.height = n;
+    const g = c.getContext('2d'), img = g.createImageData(n, n), d = img.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const r = (Math.random() + Math.random() + Math.random() - 1.5) * 12;
+      d[i] = base[0] + r; d[i + 1] = base[1] + r; d[i + 2] = base[2] + r; d[i + 3] = 255;
+    }
+    g.putImageData(img, 0, 0);
+    document.documentElement.style.setProperty('--grain', `url(${c.toDataURL('image/png')})`);
+  } catch (e) { /* no canvas: plain background */ }
+}
+
+/* ---------- start ---------- */
+(function start() {
+  makeGrain();
+  prepareFragments();
+  fit();
+  addEventListener('resize', fit);
+  if (MODE === 'presenter') return P.build();
+  const h = location.hash.slice(1).split('.');
+  show(Math.max(0, (parseInt(h[0]) || 1) - 1), parseInt(h[1]) || 0, { silent: true });
+  if (MODE !== 'main') return;
+  document.addEventListener('keydown', e => {
+    if (ovOpen()) { if (e.key === 'Escape' || e.key.toLowerCase() === 'o') { e.preventDefault(); closeOverview(); } return; }
+    if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+      const k = e.key.toLowerCase();
+      if (k === 'f') return fullscreen();
+      if (k === 'o') return openOverview();
+      if (k === 's') return openPresenter();
+    }
+    navKeys(e, go);
+  });
+  $('.navzone.left').onclick = () => go('prev');
+  $('.navzone.right').onclick = () => go('next');
+  let touch = null;
+  const vp = $('#viewport');
+  vp.addEventListener('touchstart', e => { touch = e.target.closest('input, button') ? null : [e.touches[0].clientX, e.touches[0].clientY]; }, { passive: true });
+  vp.addEventListener('touchend', e => {
+    if (!touch) return;
+    const dx = e.changedTouches[0].clientX - touch[0], dy = e.changedTouches[0].clientY - touch[1];
+    touch = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 'next' : 'prev');
+  });
+  addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1)); if (n && n - 1 !== current) show(n - 1, 0); });
+  send({ type: 'state', i: current, st: step });
+})();
+</script>
+</body>
+</html>

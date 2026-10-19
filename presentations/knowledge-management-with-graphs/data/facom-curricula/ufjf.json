@@ -1,0 +1,1544 @@
+{
+  "universidade": "UFJF",
+  "cursos": [
+    {
+      "curso": "Jornalismo",
+      "campus": "Juiz de Fora",
+      "curriculo": "SIGA currículo 12023 (ingresso a partir de 2023); cursos SIGA 84A (integral) e 85A (noturno), mesma grade com seriação diferente",
+      "fontes": [
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/",
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/curriculos-ativos-integral/?page=grade-curricular&codCurso=84A&codCurriculo=12023",
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/curriculos-ativos-noturno/?page=grade-curricular&codCurso=85A&codCurriculo=12023",
+        "https://www2.ufjf.br/jornalismo/o-curso/matriz-curricular/",
+        "http://www2.ufjf.br/jornalismo/wp-content/uploads/sites/443/2023/09/Jor_Integral2023.pdf",
+        "http://www2.ufjf.br/jornalismo/wp-content/uploads/sites/443/2023/09/Jor_Noturno2023.pdf",
+        "https://www2.ufjf.br/facom/graduacao/jornalismo-integral/",
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/curriculos-ativos-integral/?page=plano-de-ensino&codDisciplina=<CODIGO> (departamento de cada disciplina)"
+      ],
+      "disciplinas": [
+        {
+          "nome": "SOCIOLOGIA : HISTÓRIA, TEMAS E ATUALIDADE",
+          "codigo": "CSO098",
+          "periodo": 1,
+          "periodo_noturno": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE CIENCIAS SOCIAIS/ICH",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TEORIA DA COMUNICAÇÃO I",
+          "codigo": "FTC001",
+          "periodo": 1,
+          "periodo_noturno": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "MÍDIA E REALIDADE BRASILEIRA",
+          "codigo": "FTC002",
+          "periodo": 1,
+          "periodo_noturno": 1,
+          "ch": 45,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "COMUNICAÇÃO E EXPRESSÃO VISUAL",
+          "codigo": "FTC004",
+          "periodo": 1,
+          "periodo_noturno": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "COMUNICAÇÃO E EXPRESSÃO ESCRITA I",
+          "codigo": "FTC005",
+          "periodo": 1,
+          "periodo_noturno": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "CULTURA E ARTE",
+          "codigo": "FTC020",
+          "periodo": 1,
+          "periodo_noturno": 1,
+          "ch": 45,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "HISTÓRIA E FUNDAMENTOS DO JORNALISMO",
+          "codigo": "FTC022",
+          "periodo": 1,
+          "periodo_noturno": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TEORIA DA COMUNICAÇÃO II",
+          "codigo": "FTC006",
+          "periodo": 2,
+          "periodo_noturno": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC001"
+          ]
+        },
+        {
+          "nome": "COMUNICAÇÃO E EXPRESSÃO ORAL",
+          "codigo": "FTC008",
+          "periodo": 2,
+          "periodo_noturno": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "COMUNICAÇÃO E EXPRESSÃO ESCRITA II",
+          "codigo": "FTC009",
+          "periodo": 2,
+          "periodo_noturno": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC005"
+          ]
+        },
+        {
+          "nome": "TEORIA DO JORNALISMO",
+          "codigo": "FTC023",
+          "periodo": 2,
+          "periodo_noturno": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC022"
+          ]
+        },
+        {
+          "nome": "TÉCNICA DE INVESTIGAÇÃO JORNALÍSTICA",
+          "codigo": "TCE021",
+          "periodo": 2,
+          "periodo_noturno": 2,
+          "ch": 45,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "REDAÇÃO JORNALÍSTICA I",
+          "codigo": "TCE025",
+          "periodo": 2,
+          "periodo_noturno": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FOTOJORNALISMO",
+          "codigo": "TCE028",
+          "periodo": 2,
+          "periodo_noturno": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "REDAÇÃO JORNALÍSTICA I - PRÁTICA",
+          "codigo": "TCE525",
+          "periodo": 2,
+          "periodo_noturno": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE025",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FOTOJORNALISMO - PRÁTICA",
+          "codigo": "TCE528",
+          "periodo": 2,
+          "periodo_noturno": 2,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE028",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ESTUDOS CULTURAIS",
+          "codigo": "CSO094",
+          "periodo": 3,
+          "periodo_noturno": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE CIENCIAS SOCIAIS/ICH",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "SEMIÓTICA E COMUNICAÇÃO",
+          "codigo": "FTC011",
+          "periodo": 3,
+          "periodo_noturno": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DESAFIOS ÉTICOS DO JORNALISMO",
+          "codigo": "FTC012",
+          "periodo": 3,
+          "periodo_noturno": 4,
+          "ch": 45,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC022"
+          ]
+        },
+        {
+          "nome": "TÉCNICA DE JORNALISMO AUDIOVISUAL",
+          "codigo": "TCE022",
+          "periodo": 3,
+          "periodo_noturno": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE028"
+          ]
+        },
+        {
+          "nome": "REDAÇÃO JORNALÍSTICA II",
+          "codigo": "TCE026",
+          "periodo": 3,
+          "periodo_noturno": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE025"
+          ]
+        },
+        {
+          "nome": "PLANEJAMENTO GRÁFICO",
+          "codigo": "TCE029",
+          "periodo": 3,
+          "periodo_noturno": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE028"
+          ]
+        },
+        {
+          "nome": "REDAÇÃO JORNALÍSTICA II - PRÁTICA",
+          "codigo": "TCE526",
+          "periodo": 3,
+          "periodo_noturno": 4,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE026",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PLANEJAMENTO GRÁFICO - PRÁTICA",
+          "codigo": "TCE529",
+          "periodo": 3,
+          "periodo_noturno": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE029",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PESQUISA EM COMUNICAÇÃO",
+          "codigo": "FTC013",
+          "periodo": 4,
+          "periodo_noturno": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "OPINIÃO E ANÁLISE EM JORNALISMO",
+          "codigo": "FTC014",
+          "periodo": 4,
+          "periodo_noturno": 5,
+          "ch": 45,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC022"
+          ]
+        },
+        {
+          "nome": "COMUNICAÇÃO COMUNITÁRIA",
+          "codigo": "FTC025",
+          "periodo": 4,
+          "periodo_noturno": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "CSO098"
+          ]
+        },
+        {
+          "nome": "ESTÉTICA E COMUNICAÇÃO",
+          "codigo": "FTC026",
+          "periodo": 4,
+          "periodo_noturno": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "LABORATÓRIO DE REDAÇÃO JORNALÍSTICA",
+          "codigo": "MAP046",
+          "periodo": 4,
+          "periodo_noturno": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE026",
+            "TCE029"
+          ]
+        },
+        {
+          "nome": "LABORATÓRIO DE REDAÇÃO JORNALÍSTICA - PRÁTICA",
+          "codigo": "MAP546",
+          "periodo": 4,
+          "periodo_noturno": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP046",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "MÍDIA DIGITAL I",
+          "codigo": "TCE007",
+          "periodo": 4,
+          "periodo_noturno": 4,
+          "ch": 30,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "COMUNICAÇÃO E MARKETING",
+          "codigo": "TCE011",
+          "periodo": 5,
+          "periodo_noturno": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TELEJORNALISMO",
+          "codigo": "TCE030",
+          "periodo": 5,
+          "periodo_noturno": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE028"
+          ]
+        },
+        {
+          "nome": "RADIOJORNALISMO",
+          "codigo": "TCE031",
+          "periodo": 5,
+          "periodo_noturno": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE021"
+          ]
+        },
+        {
+          "nome": "ASSESSORIA DE COMUNICAÇÃO",
+          "codigo": "TCE032",
+          "periodo": 5,
+          "periodo_noturno": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "JORNALISMO DIGITAL",
+          "codigo": "TCE033",
+          "periodo": 5,
+          "periodo_noturno": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE007",
+            "TCE021"
+          ]
+        },
+        {
+          "nome": "TELEJORNALISMO - PRÁTICA",
+          "codigo": "TCE530",
+          "periodo": 5,
+          "periodo_noturno": 5,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE030",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "RADIOJORNALISMO - PRÁTICA",
+          "codigo": "TCE531",
+          "periodo": 5,
+          "periodo_noturno": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE031",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ASSESSORIA DE COMUNICAÇÃO - PRÁTICA",
+          "codigo": "TCE532",
+          "periodo": 5,
+          "periodo_noturno": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE032",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "JORNALISMO DIGITAL - PRÁTICA",
+          "codigo": "TCE533",
+          "periodo": 5,
+          "periodo_noturno": 5,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE033",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "LABORATÓRIO DE ASSESSORIA DE COMUNICAÇÃO",
+          "codigo": "MAP044",
+          "periodo": 6,
+          "periodo_noturno": 8,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE032"
+          ]
+        },
+        {
+          "nome": "LABORATÓRIO DE RADIOJORNALISMO",
+          "codigo": "MAP045",
+          "periodo": 6,
+          "periodo_noturno": 8,
+          "ch": 120,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE031"
+          ]
+        },
+        {
+          "nome": "LABORATÓRIO DE ASSESSORIA DE COMUNICAÇÃO - PRÁTICA",
+          "codigo": "MAP544",
+          "periodo": 6,
+          "periodo_noturno": 8,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP044",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "LABORATÓRIO DE RADIOJORNALISMO - PRÁTICA",
+          "codigo": "MAP545",
+          "periodo": 6,
+          "periodo_noturno": 8,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP045",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PROJETOS EM JORNALISMO AUDIOVISUAL",
+          "codigo": "TCE027",
+          "periodo": 6,
+          "periodo_noturno": 6,
+          "ch": 45,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE030"
+          ]
+        },
+        {
+          "nome": "PROJETOS EM JORNALISMO AUDIOVISUAL - PRÁTICA",
+          "codigo": "TCE527",
+          "periodo": 6,
+          "periodo_noturno": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "TCE027",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ESTÁGIO CURRICULAR EM JORNALISMO",
+          "codigo": "MAP002",
+          "periodo": 6,
+          "periodo_noturno": 7,
+          "ch": 200,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "estágio",
+          "categoria_siga": "2 - ESTÁGIO",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE031",
+            "FTC012",
+            "TCE033",
+            "TCE030",
+            "TCE032"
+          ]
+        },
+        {
+          "nome": "LABORATÓRIO DE JORNALISMO DIGITAL",
+          "codigo": "MAP047",
+          "periodo": 7,
+          "periodo_noturno": 7,
+          "ch": 120,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE033"
+          ]
+        },
+        {
+          "nome": "LABORATÓRIO DE TELEJORNALISMO",
+          "codigo": "MAP048",
+          "periodo": 7,
+          "periodo_noturno": 7,
+          "ch": 120,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE030"
+          ]
+        },
+        {
+          "nome": "LABORATÓRIO DE JORNALISMO DIGITAL - PRÁTICA",
+          "codigo": "MAP547",
+          "periodo": 7,
+          "periodo_noturno": 7,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP047",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "LABORATÓRIO DE TELEJORNALISMO - PRÁTICA",
+          "codigo": "MAP548",
+          "periodo": 7,
+          "periodo_noturno": 7,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1 - DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP048",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TRABALHO DE CONCLUSÃO DE CURSO EM JORNALISMO I",
+          "codigo": "TCE015",
+          "periodo": 7,
+          "periodo_noturno": 9,
+          "ch": 15,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "TCC",
+          "categoria_siga": "3 - TRABALHO DE CONCLUSÃO DE CURSO",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC013"
+          ]
+        },
+        {
+          "nome": "TRABALHO DE CONCLUSÃO DE CURSO EM JORNALISMO II",
+          "codigo": "TCE016",
+          "periodo": 8,
+          "periodo_noturno": 10,
+          "ch": 270,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "TCC",
+          "categoria_siga": "3 - TRABALHO DE CONCLUSÃO DE CURSO",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE015"
+          ]
+        }
+      ],
+      "observacoes": "Grade oficial do SIGA (integração SIGA publicada no site do curso), currículo 12023, válida para ingressantes a partir de 2023 (matriz PDF: integral 'válido a partir de 2023(3)', noturno 'a partir de 2023(1)'). Integral e noturno são dois cursos distintos no SIGA (84A e 85A), mas com o MESMO currículo 12023: mesmos 53 códigos, mesmos nomes, cargas horárias, pré-requisitos e categorias; muda apenas a seriação (integral 8 períodos, noturno 10). 'periodo' = período sugerido no integral; 'periodo_noturno' = no noturno. 53 códigos obrigatórios = 36 disciplinas + 1 estágio (MAP002, 200h) + 2 TCC (TCE015 15h, TCE016 270h) + 14 componentes '- PRÁTICA' de 0h. Os componentes '- PRÁTICA' são códigos separados no SIGA, sempre pareados com a disciplina-mãe (campo 'pratica_de'; nas matrizes PDF aparecem juntos, ex.: 'TCE028/528'); para o grafo, provavelmente convém filtrar tipo != 'componente prático (0h)'. Soma: 2220h disciplinas + 200h estágio + 285h TCC, exatamente como o site do curso declara; total do curso 3005h incluindo 300h de atividades complementares (não são disciplinas). Ingressantes desde 2023 devem cumprir 310h de extensão. Nomes = grafia exata do SIGA (maiúsculas). As matrizes PDF usam variações: 'Técnicas de Investigação Jornalística', 'Técnicas de Jornalismo Audiovisual', 'Sociologia: história, temas e atualidades'. Unidade = departamento informado pelo SIGA no plano de ensino (/COM = Faculdade de Comunicação; /ICH = Instituto de Ciências Humanas). Optativas e eletivas excluídas (a grade SIGA do Jornalismo 12023 não lista optativas)."
+    },
+    {
+      "curso": "Rádio, TV e Internet",
+      "campus": "Juiz de Fora",
+      "curriculo": "SIGA currículo 12023 (curso 91A, integral); matriz da coordenação 'atualizada em 2023'",
+      "fontes": [
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/curriculos-ativos-integral/?page=curriculos-ativos&codCurso=91A",
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/curriculos-ativos-integral/?page=grade-curricular&codCurso=91A&codCurriculo=12023",
+        "https://www2.ufjf.br/jornalismo/o-curso/grade_curricular/curriculos-ativos-integral/?page=plano-de-ensino&codDisciplina=<CODIGO> (departamento de cada disciplina)",
+        "https://coordenacaortviufj.wixsite.com/rtviufjf/matriz-curricular",
+        "https://www2.ufjf.br/facom/graduacao/curso-de-radio-tv-e-internet/"
+      ],
+      "disciplinas": [
+        {
+          "nome": "TEORIA DA COMUNICAÇÃO I",
+          "codigo": "FTC001",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "COMUNICAÇÃO E EXPRESSÃO ESCRITA I",
+          "codigo": "FTC005",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ARTE E CULTURA",
+          "codigo": "FTC024",
+          "periodo": 1,
+          "ch": 45,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "INTRODUÇÃO À LINGUAGEM AUDIOVISUAL",
+          "codigo": "MAP041",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "LABORATÓRIO MULTIDISCIPLINAR",
+          "codigo": "MAP042",
+          "periodo": 1,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FUNDAMENTOS DA PRÁTICA DE EDIÇÃO",
+          "codigo": "MAP043",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "LABORATÓRIO MULTIDISCIPLINAR - PRÁTICA",
+          "codigo": "MAP542",
+          "periodo": 1,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP042",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FUNDAMENTOS DA PRÁTICA DE EDIÇÃO - PRÁTICA",
+          "codigo": "MAP543",
+          "periodo": 1,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP043",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "HISTÓRIA DA COMUNICAÇÃO",
+          "codigo": "TCE019",
+          "periodo": 1,
+          "ch": 45,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TEORIA DA COMUNICAÇÃO II",
+          "codigo": "FTC006",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC001"
+          ]
+        },
+        {
+          "nome": "COMUNICAÇÃO E EXPRESSÃO ESCRITA II",
+          "codigo": "FTC009",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC005"
+          ]
+        },
+        {
+          "nome": "SEMIÓTICA E COMUNICAÇÃO",
+          "codigo": "FTC011",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "SEMINÁRIOS EM COMUNICAÇÃO",
+          "codigo": "FTC017",
+          "periodo": 2,
+          "ch": 15,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ESTÉTICA E COMUNICAÇÃO",
+          "codigo": "FTC026",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FORMATOS AUDIOVISUAIS",
+          "codigo": "MAP049",
+          "periodo": 2,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP041"
+          ]
+        },
+        {
+          "nome": "FOTOGRAFIA",
+          "codigo": "MAP050",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FORMATOS AUDIOVISUAIS - PRÁTICA",
+          "codigo": "MAP549",
+          "periodo": 2,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP049",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FOTOGRAFIA - PRÁTICA",
+          "codigo": "MAP550",
+          "periodo": 2,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP050",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PESQUISA EM COMUNICAÇÃO",
+          "codigo": "FTC013",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ESTUDOS DA CULTURA DIGITAL",
+          "codigo": "FTC027",
+          "periodo": 3,
+          "ch": 45,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "FTC006",
+            "FTC001"
+          ]
+        },
+        {
+          "nome": "SEMINÁRIO DE ÉTICA E COMUNICAÇÃO",
+          "codigo": "FTC028",
+          "periodo": 3,
+          "ch": 30,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ESTUDOS DA CULTURA DIGITAL - PRÁTICA",
+          "codigo": "FTC527",
+          "periodo": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE FUNDAMENTOS, TEORIAS E CONTEXTOS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "FTC027",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ARGUMENTO E ROTEIRO",
+          "codigo": "MAP051",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PROJETOS MULTIPLATAFORMA",
+          "codigo": "MAP052",
+          "periodo": 3,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "MÍDIAS SONORAS EM MULTIPLATAFORMA",
+          "codigo": "MAP053",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FOTOGRAFIA E ILUMINAÇÃO",
+          "codigo": "MAP067",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP050"
+          ]
+        },
+        {
+          "nome": "ARGUMENTO E ROTEIRO - PRÁTICA",
+          "codigo": "MAP551",
+          "periodo": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP051",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PROJETOS MULTIPLATAFORMA - PRÁTICA",
+          "codigo": "MAP552",
+          "periodo": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP052",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "MÍDIAS SONORAS EM MULTIPLATAFORMA - PRÁTICA",
+          "codigo": "MAP553",
+          "periodo": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP053",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "FOTOGRAFIA E ILUMINAÇÃO - PRÁTICA",
+          "codigo": "MAP567",
+          "periodo": 3,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP067",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ROTEIROS DE FICÇÃO",
+          "codigo": "MAP054",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP051"
+          ]
+        },
+        {
+          "nome": "DIREÇÃO DE ATORES",
+          "codigo": "MAP055",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO DE FOTOGRAFIA",
+          "codigo": "MAP056",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP067"
+          ]
+        },
+        {
+          "nome": "PLANEJAMENTO DE PRODUÇÃO AUDIOVISUAL",
+          "codigo": "MAP057",
+          "periodo": 4,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP052"
+          ]
+        },
+        {
+          "nome": "DESENHO DE SOM",
+          "codigo": "MAP058",
+          "periodo": 4,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO DE ARTE E CENOGRAFIA",
+          "codigo": "MAP059",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ROTEIROS DE FICÇÃO - PRÁTICA",
+          "codigo": "MAP554",
+          "periodo": 4,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP054",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO DE ATORES - PRÁTICA",
+          "codigo": "MAP555",
+          "periodo": 4,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP055",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO DE FOTOGRAFIA - PRÁTICA",
+          "codigo": "MAP556",
+          "periodo": 4,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP056",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PLANEJAMENTO DE PRODUÇÃO AUDIOVISUAL - PRÁTICA",
+          "codigo": "MAP557",
+          "periodo": 4,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP057",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO DE ARTE E CENOGRAFIA - PRÁTICA",
+          "codigo": "MAP559",
+          "periodo": 4,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP059",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "MÍDIA DIGITAL I",
+          "codigo": "TCE007",
+          "periodo": 4,
+          "ch": 30,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "ROTEIRO DE DOCUMENTÁRIO",
+          "codigo": "MAP023",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP051"
+          ]
+        },
+        {
+          "nome": "DIREÇÃO GERAL DE FICÇÃO",
+          "codigo": "MAP060",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP056",
+            "MAP055",
+            "MAP059"
+          ]
+        },
+        {
+          "nome": "DIREÇÃO GERAL DE FICÇÃO - PRÁTICA",
+          "codigo": "MAP560",
+          "periodo": 5,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP060",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "MÍDIA DIGITAL II",
+          "codigo": "TCE017",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE007"
+          ]
+        },
+        {
+          "nome": "CRIAÇÃO PUBLICITÁRIA EM MULTIPLATAFORMAS",
+          "codigo": "TCE042",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "DEPTO DE TÉCNICAS PROFISSIONAIS E CONTEÚDOS ESTRATÉGICOS/COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO GERAL DE DOCUMENTÁRIO",
+          "codigo": "MAP061",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP023"
+          ]
+        },
+        {
+          "nome": "DESIGN MULTIMÍDIA",
+          "codigo": "MAP062",
+          "periodo": 6,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "TCE017"
+          ]
+        },
+        {
+          "nome": "DIREÇÃO SONORA",
+          "codigo": "MAP063",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP058"
+          ]
+        },
+        {
+          "nome": "TEORIA E PRÁTICA DE EDIÇÃO AUDIOVISUAL",
+          "codigo": "MAP068",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP043"
+          ]
+        },
+        {
+          "nome": "DIREÇÃO GERAL DE DOCUMENTÁRIO - PRÁTICA",
+          "codigo": "MAP561",
+          "periodo": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP061",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DESIGN MULTIMÍDIA - PRÁTICA",
+          "codigo": "MAP562",
+          "periodo": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP062",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "DIREÇÃO SONORA - PRÁTICA",
+          "codigo": "MAP563",
+          "periodo": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP063",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TEORIA E PRÁTICA DE EDIÇÃO AUDIOVISUAL - PRÁTICA",
+          "codigo": "MAP568",
+          "periodo": 6,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP068",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TRABALHO DE CONCLUSÃO DE CURSO EM RTVI I - TCC I",
+          "codigo": "MAP064",
+          "periodo": 7,
+          "ch": 45,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "TCC",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP060",
+            "MAP062",
+            "MAP061",
+            "FTC013"
+          ]
+        },
+        {
+          "nome": "PÓS-PRODUÇÃO ÁUDIOVISUAL",
+          "codigo": "MAP065",
+          "periodo": 7,
+          "ch": 90,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP068"
+          ]
+        },
+        {
+          "nome": "PRODUÇÃO MULTIMÍDIA",
+          "codigo": "MAP066",
+          "periodo": 7,
+          "ch": 90,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "disciplina",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP062"
+          ]
+        },
+        {
+          "nome": "PÓS-PRODUÇÃO ÁUDIOVISUAL - PRÁTICA",
+          "codigo": "MAP565",
+          "periodo": 7,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP065",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "PRODUÇÃO MULTIMÍDIA - PRÁTICA",
+          "codigo": "MAP566",
+          "periodo": 7,
+          "ch": 0,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "componente prático (0h)",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": "MAP066",
+          "pre_requisitos": []
+        },
+        {
+          "nome": "TRABALHO DE CONCLUSÃO DE CURSO EM RTVI II - TCC II",
+          "codigo": "MAP031",
+          "periodo": 8,
+          "ch": 270,
+          "unidade": "DEPTO DE MÉTODOS APLICADOS E PRÁTICAS LABORATORIAIS /COM",
+          "tipo": "TCC",
+          "categoria_siga": "1- DISCIPLINAS OBRIGATÓRIAS",
+          "pratica_de": null,
+          "pre_requisitos": [
+            "MAP064"
+          ]
+        }
+      ],
+      "observacoes": "Grade oficial do SIGA, curso 91A 'RÁDIO, TV E INTERNET (INTEGRAL)', currículo 12023 (o outro currículo ativo é o 12017, anterior). Só há turno integral, 8 períodos. 61 códigos obrigatórios = 38 disciplinas + 2 TCC (MAP064 45h, MAP031 270h) + 21 componentes '- PRÁTICA' de 0h (campo 'pratica_de'). Não há estágio obrigatório na grade. Soma das obrigatórias: 2385h, igual às '2.385 horas de disciplinas obrigatórias' da matriz da coordenação ('Integral - Matriz Curricular atualizada em 2023'); total do curso 2700h = 2385h + 105h de ACEs à escolha + 210h de atividades complementares. Excluídas as 4 optativas listadas na grade SIGA (CEA040 a CEA043, Seminário de Cinema I a IV, 30h cada). Nomes = grafia exata do SIGA (inclusive 'PÓS-PRODUÇÃO ÁUDIOVISUAL', com acento). Unidade = departamento informado pelo SIGA no plano de ensino."
+    }
+  ],
+  "compartilhadas": [
+    {
+      "nome": "TEORIA DA COMUNICAÇÃO I",
+      "codigo": "FTC001",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 1,
+      "periodo_jornalismo_noturno": 1,
+      "periodo_rtvi": 1
+    },
+    {
+      "nome": "COMUNICAÇÃO E EXPRESSÃO ESCRITA I",
+      "codigo": "FTC005",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 1,
+      "periodo_jornalismo_noturno": 1,
+      "periodo_rtvi": 1
+    },
+    {
+      "nome": "TEORIA DA COMUNICAÇÃO II",
+      "codigo": "FTC006",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 2,
+      "periodo_jornalismo_noturno": 2,
+      "periodo_rtvi": 2
+    },
+    {
+      "nome": "COMUNICAÇÃO E EXPRESSÃO ESCRITA II",
+      "codigo": "FTC009",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 2,
+      "periodo_jornalismo_noturno": 2,
+      "periodo_rtvi": 2
+    },
+    {
+      "nome": "SEMIÓTICA E COMUNICAÇÃO",
+      "codigo": "FTC011",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 3,
+      "periodo_jornalismo_noturno": 5,
+      "periodo_rtvi": 2
+    },
+    {
+      "nome": "PESQUISA EM COMUNICAÇÃO",
+      "codigo": "FTC013",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 4,
+      "periodo_jornalismo_noturno": 4,
+      "periodo_rtvi": 3
+    },
+    {
+      "nome": "ESTÉTICA E COMUNICAÇÃO",
+      "codigo": "FTC026",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 60,
+      "periodo_jornalismo_integral": 4,
+      "periodo_jornalismo_noturno": 6,
+      "periodo_rtvi": 2
+    },
+    {
+      "nome": "MÍDIA DIGITAL I",
+      "codigo": "TCE007",
+      "cursos": [
+        "Jornalismo",
+        "Rádio, TV e Internet"
+      ],
+      "mesmo_codigo": true,
+      "ch": 30,
+      "periodo_jornalismo_integral": 4,
+      "periodo_jornalismo_noturno": 4,
+      "periodo_rtvi": 4
+    }
+  ],
+  "duvidas": "1) RTVI: nenhuma página oficial do RTVI aponta para a grade SIGA. Achei o código do curso (91A) consultando a mesma integração SIGA usada pelo site do Jornalismo (listagem de currículos ativos por codCurso); os dados vêm do SIGA e batem com o total de 2385h da matriz da coordenação. 2) A imagem da matriz no site da coordenação do RTVI (sem códigos) diverge do SIGA 12023 em várias cargas horárias e mistura valores do currículo antigo 12017: ela traz 'Edição Audiovisual 45h' no 5º período (só existe no 12017, MAP021), Desenho de Som 60h (SIGA 12023: 45h), Direção de Arte e Cenografia 45h (SIGA: 60h), Direção Sonora 45h (SIGA: 60h), Criação Publicitária 45h (SIGA: 60h), 'Seminário de Ética na Comunicação' 15h (SIGA: 'SEMINÁRIO DE ÉTICA E COMUNICAÇÃO' 30h), TCC I 30h (SIGA: 45h), 'Prática de Edição Audiovisual' (SIGA: 'TEORIA E PRÁTICA DE EDIÇÃO AUDIOVISUAL'). As colunas da imagem somam 2370h, não as 2385h declaradas; o SIGA soma exatamente 2385h. Usei o SIGA. 3) Também foram excluídos os PDFs antigos da FACOM (matriz/PPC RTVI de 2017 e matrizes do Jornalismo de 2015/2019), que são de currículos anteriores. 4) Quase-coincidência NÃO contada como compartilhada: Jornalismo FTC020 'CULTURA E ARTE' (45h) x RTVI FTC024 'ARTE E CULTURA' (45h): códigos e nomes diferentes. Nenhuma disciplina tem o mesmo nome com código diferente. 5) Erro de digitação no site do Jornalismo: a lista de disciplinas extensionistas cita 'TCE026 – Estética e Comunicação', mas no SIGA Estética e Comunicação é FTC026 (TCE026 é Redação Jornalística II). 6) O estágio (MAP002) aparece no 6º período no integral e no 7º no noturno segundo o SIGA; as matrizes PDF não mostram período para ele."
+}

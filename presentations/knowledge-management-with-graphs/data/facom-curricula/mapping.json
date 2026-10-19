@@ -1,0 +1,17 @@
+{
+  "courses": {
+    "UFU": {"Sistemas de Informação | Santa Mônica": "ufu_si", "Sistemas de Informação | Monte Carmelo": "ufu_si_mc"}
+  },
+  "units": {
+    "UFU:FAMAT": "ime_ufu", "UFU:IME": "ime_ufu", "UFU:FAGEN": "fagen_ufu", "UFU:FADIR": "fadir_ufu", "UFU:FACIC": "facic_ufu", "UFU:IERI": "ieri_ufu",
+    "UFMS:INMA": "inma_ufms", "UFMS:INFI": "infi_ufms", "UFMS:INQUI": "inqui_ufms", "UFMS:ESAN": "esan_ufms", "UFMS:FAENG": "faeng_ufms",
+    "UFJF:DEPTO DE CIENCIAS SOCIAIS/ICH": "ich_ufjf"
+  },
+  "units_rx": {
+    "UFBA": [["/IHAC$", "ihac_ufba"], ["/EADM$", "eadm_ufba"], ["/LET$", "let_ufba"]]
+  },
+  "facom_rx": {
+    "UFJF": ["/COM$"],
+    "UFBA": ["/FACOM$"]
+  }
+}

@@ -1,0 +1,1800 @@
+{
+  "universidade": "UFU",
+  "cursos": [
+    {
+      "curso": "Ciência da Computação",
+      "campus": "Santa Mônica",
+      "curriculo": "2023-1",
+      "fontes": [
+        "https://facom.ufu.br/graduacao/bcc/grade-curricular",
+        "https://facom.ufu.br/system/files/conteudo/fluxo_curricular_bcc_-_2023-1_1_0.pdf",
+        "https://facom.ufu.br/graduacao/ciencia-da-computacao-campus-santa-monica/fichas-de-disciplina/curriculo-2023-1",
+        "https://facom.ufu.br/system/files/conteudo/sei_23117.053855_2023_26.pdf",
+        "https://facom.ufu.br/graduacao/bcc/projeto-pedagogico",
+        "https://facom.ufu.br/system/files/conteudo/ppc_2023-1_final_correcao_horas_-_tabela_2.pdf"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Cálculo Diferencial e Integral I",
+          "codigo": "FAMAT39121",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Geometria Analítica e Álgebra Linear",
+          "codigo": "GBC013",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Introdução à Ciência da Computação",
+          "codigo": "FACOM31102",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Lógica para Computação",
+          "codigo": "GBC016",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação Procedimental",
+          "codigo": "FACOM31103",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Algoritmos e Estruturas de Dados I",
+          "codigo": "FACOM31201",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo Diferencial e Integral II",
+          "codigo": "FAMAT39215",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Empreendedorismo em Informática",
+          "codigo": "GBC011",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Matemática para Ciência da Computação",
+          "codigo": "FAMAT32401",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Programação Funcional",
+          "codigo": "GBC033",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Digitais",
+          "codigo": "FACOM31202",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Algoritmos e Estruturas de Dados II",
+          "codigo": "FACOM31303",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Arquitetura e Organização de Computadores",
+          "codigo": "FACOM31305",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão - Popularização da Ciência e Tecnologia",
+          "codigo": "FACOM31304",
+          "periodo": 3,
+          "ch": 120,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo Diferencial e Integral III",
+          "codigo": "FAMAT39311",
+          "periodo": 3,
+          "ch": 90,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Cálculo Numérico",
+          "codigo": "FAMAT31032",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Programação Orientada a Objetos",
+          "codigo": "FACOM31306",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estatística",
+          "codigo": "GBC041",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Princípios e Padrões de Projeto",
+          "codigo": "FACOM31401",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação Lógica",
+          "codigo": "GBC025",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas de Banco de Dados",
+          "codigo": "GBC043",
+          "periodo": 4,
+          "ch": 90,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Operacionais",
+          "codigo": "GBC045",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Teoria dos Grafos",
+          "codigo": "GBC042",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Análise de Algoritmos",
+          "codigo": "GBC052",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Arquitetura de Redes de Computadores",
+          "codigo": "GBC056",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão - Informática e Sociedade",
+          "codigo": "FACOM31502",
+          "periodo": 5,
+          "ch": 120,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Engenharia de Software",
+          "codigo": "FACOM31501",
+          "periodo": 5,
+          "ch": 90,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Gerenciamento de Banco de Dados",
+          "codigo": "GBC053",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "GBC063",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Linguagens Formais e Autômatos",
+          "codigo": "GBC044",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Arquitetura de Redes TCP/IP",
+          "codigo": "GBC066",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Inteligência Computacional",
+          "codigo": "GBC073",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Modelagem e Simulação",
+          "codigo": "GBC065",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Otimização",
+          "codigo": "FACOM31601",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Processamento Digital de Imagens",
+          "codigo": "GBC216",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Teoria da Computação",
+          "codigo": "GBC062",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão - Transformação Digital na Sociedade",
+          "codigo": "FACOM31705",
+          "periodo": 7,
+          "ch": 105,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Computação Gráfica",
+          "codigo": "GBC204",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Construção de Compiladores",
+          "codigo": "GBC071",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Metodologia Científica em Computação e Informática",
+          "codigo": "FACOM31704",
+          "periodo": 7,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação para Internet",
+          "codigo": "FACOM31706",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Distribuídos",
+          "codigo": "GBC074",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Direito e Legislação",
+          "codigo": "GBC081",
+          "periodo": 8,
+          "ch": 45,
+          "unidade": "FADIR"
+        },
+        {
+          "nome": "Estágio Supervisionado",
+          "codigo": "FACOM31805",
+          "periodo": 8,
+          "ch": 160,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Gestão Empresarial",
+          "codigo": "GBC061",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Mineração de Dados",
+          "codigo": "GBC212",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Projeto de Graduação",
+          "codigo": "FACOM31806",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Segurança da Informação",
+          "codigo": "GBC083",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM"
+        }
+      ],
+      "observacoes": "O currículo 2023-1 é o mais recente publicado nas páginas de grade, fichas e PPC; 1097A e 2012 são currículos anteriores. São 48 componentes obrigatórios: 43 disciplinas (incluindo Metodologia Científica em Computação e Informática), 3 Atividades Curriculares de Extensão (ACE: FACOM31304, FACOM31502 e FACOM31705), o Estágio Supervisionado (160h) e o Projeto de Graduação (TCC, 60h). As ACE são componentes obrigatórios com código e período, diferentes das Atividades Acadêmicas Complementares. A soma da CH dá 3220h e bate com a Tabela 4 do PPC (2715h de disciplinas obrigatórias + 160h de estágio + 345h de ACE). Ficaram de fora: ENADE Ingressante e Concluinte (componente obrigatório sem CH), Atividades Acadêmicas Complementares (70h) e as 2 vagas de optativa (120h). Código, nome, CH e unidade foram conferidos em cada ficha do PDF consolidado (SEI 23117.053855/2023-26). Período e unidade foram conferidos também na Tabela 1 do PPC. Os códigos GBCxxx são códigos antigos reaproveitados no currículo novo. Os nomes seguem as fichas e o PPC. Para as ACE, usei o separador ' - ' do PPC; a ficha FACOM31705 escreve 'Atividades Curriculares de Extensão: Transformação Digital na Sociedade'. O fluxograma em PDF abrevia nomes e traz 'Cálculo Integral e Diferencial' e 'Gerenciamento de Bancos de Dados'. A página de fichas traz 'Princípios e Padrões de Projetos' e 'Popularização Ciência e Tecnologia'; na ficha e no PPC, os nomes são 'Princípios e Padrões de Projeto' e 'Popularização da Ciência e Tecnologia'. As fichas de 2023/2024 indicam FAMAT como unidade de matemática. A FAMAT foi renomeada para Instituto de Matemática e Estatística (IME) em 2024 (Res. CONSUN 76/2024)."
+    },
+    {
+      "curso": "Sistemas de Informação",
+      "campus": "Santa Mônica",
+      "curriculo": "2022-2",
+      "fontes": [
+        "https://facom.ufu.br/graduacao/bsi-santamonica/grade-curricular",
+        "https://facom.ufu.br/system/files/conteudo/grade_curricular_ppc_bsi-udi_vs_2022.pdf",
+        "https://facom.ufu.br/graduacao/bsi-santamonica/fichas-de-disciplinas-curriculo-2022-2",
+        "https://facom.ufu.br/graduacao/bsi-santamonica/projeto-pedagogico",
+        "https://facom.ufu.br/system/files/conteudo/ppc_bsi2022_2022_10_.pdf"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "FACOM32102",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Contabilidade e Análise de Demonstrativos Financeiros",
+          "codigo": "FACIC39102",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACIC"
+        },
+        {
+          "nome": "Informática e Sociedade",
+          "codigo": "FACOM32101",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Introdução aos Sistemas de Informação",
+          "codigo": "FACOM32104",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Lógica para Computação",
+          "codigo": "FACOM32105",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "FACOM32201",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo I",
+          "codigo": "FAMAT39214",
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Fundamentos de Marketing",
+          "codigo": "FAGEN31102",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Gestão Empresarial",
+          "codigo": "FAGEN39531",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Álgebra Linear",
+          "codigo": "FAMAT31022",
+          "periodo": 3,
+          "ch": 45,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Arquitetura e Organização de Computadores",
+          "codigo": "FACOM32303",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Informática e Sociedade",
+          "codigo": "FACOM32301",
+          "periodo": 3,
+          "ch": 105,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Empreendedorismo",
+          "codigo": "FAGEN39050",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Estrutura de Dados I",
+          "codigo": "FACOM32302",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação Orientada a Objetos",
+          "codigo": "FACOM32305",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Banco de Dados I",
+          "codigo": "FACOM32401",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estrutura de Dados II",
+          "codigo": "FACOM32402",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Matemática para Ciência da Computação",
+          "codigo": "FAMAT32401",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Processo de Desenvolvimento de Software",
+          "codigo": "FACOM32403",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Operacionais",
+          "codigo": "FACOM32404",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia",
+          "codigo": "FACOM32501",
+          "periodo": 5,
+          "ch": 105,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Banco de Dados II",
+          "codigo": "FACOM32304",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estatística",
+          "codigo": "FAMAT39505",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Gestão da Qualidade de Software",
+          "codigo": "FACOM32502",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação para Dispositivos Móveis",
+          "codigo": "FACOM32503",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Redes de Computadores",
+          "codigo": "FACOM32504",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Transformação Digital na Sociedade",
+          "codigo": "FACOM32601",
+          "periodo": 6,
+          "ch": 105,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Ciência de Dados I",
+          "codigo": "FACOM32602",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Desenvolvimento Web I",
+          "codigo": "FACOM32603",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Gerência de Projetos em TI",
+          "codigo": "FACOM32604",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Organização e Recuperação da Informação",
+          "codigo": "FACOM32605",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Distribuídos",
+          "codigo": "FACOM32606",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Ciência de Dados II",
+          "codigo": "FACOM32701",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Desenvolvimento Web II",
+          "codigo": "FACOM32702",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Economia",
+          "codigo": "GSI031",
+          "periodo": 7,
+          "ch": 45,
+          "unidade": "IERI"
+        },
+        {
+          "nome": "Interação Humano-Computador",
+          "codigo": "FACOM32704",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Pesquisa Operacional",
+          "codigo": "FACOM32705",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Projeto de Graduação I",
+          "codigo": "FACOM32703",
+          "periodo": 7,
+          "ch": 105,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Direito",
+          "codigo": "FADIR39802",
+          "periodo": 8,
+          "ch": 45,
+          "unidade": "FADIR"
+        },
+        {
+          "nome": "Estágio Curricular",
+          "codigo": "FACOM32801",
+          "periodo": 8,
+          "ch": 180,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Inovação e Gestão do Conhecimento",
+          "codigo": "FAGEN32802",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Projeto de Graduação II",
+          "codigo": "FACOM32803",
+          "periodo": 8,
+          "ch": 105,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Segurança da Informação",
+          "codigo": "FACOM32804",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM"
+        }
+      ],
+      "observacoes": "A página do PPC marca o PPC 2022-2 como 'Vigente'. Ele vale para quem ingressou a partir de 2022-2; quem ingressou até 2022-1 segue o currículo 2016-1. São 43 componentes obrigatórios: 37 disciplinas, 3 ACE (FACOM32301, FACOM32501 e FACOM32601, de 105h cada), Projeto de Graduação I e II (TCC, 105h cada) e o Estágio Curricular (180h). Entre as 37 disciplinas está 'Informática e Sociedade' (30h), que é diferente da ACE de mesmo tema. A soma da CH dá 2850h e bate com o Quadro 9 do PPC (2145h de disciplinas obrigatórias + 180h de estágio + 210h de PG + 315h de ACE). Ficaram de fora: ENADE, Atividades Acadêmicas Complementares (60h) e as 2 vagas de optativa (120h). Período, CH e unidade foram conferidos no Quadro 10 do PPC e nas fichas em PDF. Os códigos vêm da página de fichas do currículo 2022/2, porque o campo CÓDIGO das fichas em PDF está em branco. 'Economia' usa o código antigo GSI031, embora seja ofertada pelo IERI. O fluxograma 2022 traz 'Contabilidade e análise de balanços'; na ficha e no PPC, o nome é 'Contabilidade e Análise de Demonstrativos Financeiros'. Banco de Dados II tem código FACOM32304, no padrão do 3º período, mas está no 5º período no PPC, no fluxograma e na página de fichas. A unidade de matemática aparece como FAMAT, como nas fichas de 2022/2023 (hoje IME)."
+    },
+    {
+      "curso": "Sistemas de Informação",
+      "campus": "Monte Carmelo",
+      "curriculo": "2022 (PPC aprovado pela Res. CONGRAD 79/2022, com início em 2023-1; o site o chama de 'Currículo 2022-2')",
+      "fontes": [
+        "https://facom.ufu.br/graduacao/bsi-montecarmelo/grade-curricular",
+        "https://facom.ufu.br/system/files/conteudo/fluxo_curricular_bsi-mc_2022.pdf",
+        "https://facom.ufu.br/graduacao/bsi-montecarmelo/fichas-de-disciplinas",
+        "https://facom.ufu.br/graduacao/bsi-montecarmelo/projeto-pedagogico",
+        "https://facom.ufu.br/system/files/conteudo/projeto_pedagogico_bsi_mc_2022.pdf",
+        "https://facom.ufu.br/system/files/conteudo/resolucao_congrad_79-2022.pdf"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "FACOM33101",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Fundamentos de Marketing",
+          "codigo": "GSI532",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Introdução aos Sistemas de Informação",
+          "codigo": "FACOM33102",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Lógica para Computação",
+          "codigo": "GSI505",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Matemática Discreta",
+          "codigo": "FAMAT39114",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Profissão em Sistemas de Informação",
+          "codigo": "GSI509",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "FACOM33201",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Informática e Sociedade",
+          "codigo": "FACOM33202",
+          "periodo": 2,
+          "ch": 120,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo Diferencial e Integral",
+          "codigo": "FAMAT39210",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Fundamentos da Economia",
+          "codigo": "IERI39202",
+          "periodo": 2,
+          "ch": 45,
+          "unidade": "IERI"
+        },
+        {
+          "nome": "Gestão Empresarial",
+          "codigo": "GSI528",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Sistemas Digitais",
+          "codigo": "FACOM33203",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Arquitetura e Organização de Computadores",
+          "codigo": "FACOM33303",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Banco de Dados I",
+          "codigo": "FACOM33304",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estatística",
+          "codigo": "GSI517",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Estrutura de Dados I",
+          "codigo": "FACOM33305",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Fundamentos de Engenharia de Software",
+          "codigo": "FACOM33306",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação Orientada a Objetos I",
+          "codigo": "FACOM33307",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Banco de Dados II",
+          "codigo": "FACOM33406",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estrutura de Dados II",
+          "codigo": "FACOM33407",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "GSI551",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação Orientada a Objetos II",
+          "codigo": "FACOM33408",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação para Web I",
+          "codigo": "FACOM33403",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Operacionais",
+          "codigo": "FACOM33404",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Testes e Manutenção de Software",
+          "codigo": "FACOM33405",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Álgebra Linear",
+          "codigo": "FAMAT33304",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FAMAT"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia",
+          "codigo": "FACOM33503",
+          "periodo": 5,
+          "ch": 120,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Ciência de Dados",
+          "codigo": "FACOM33504",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Matemática Financeira e Análise de Investimento",
+          "codigo": "FAGEN33508",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Modelagem de Domínio",
+          "codigo": "FACOM33505",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação para Web II",
+          "codigo": "FACOM33506",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Redes de Computadores",
+          "codigo": "FACOM33507",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Gerência de Projetos de Tecnologia da Informação",
+          "codigo": "FACOM33601",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Interação Humano-Computador",
+          "codigo": "FACOM33501",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Pesquisa Operacional",
+          "codigo": "FACOM33606",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação para Dispositivos Móveis",
+          "codigo": "FACOM33402",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Recuperação da Informação",
+          "codigo": "FACOM33602",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Distribuídos",
+          "codigo": "GSI529",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Transformação Digital na Sociedade",
+          "codigo": "FACOM33603",
+          "periodo": 7,
+          "ch": 90,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Auditoria e Segurança da Informação",
+          "codigo": "GSI536",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Economia da Inovação e Tecnologia",
+          "codigo": "IERI39702",
+          "periodo": 7,
+          "ch": 45,
+          "unidade": "IERI"
+        },
+        {
+          "nome": "Empreendedorismo em Informática",
+          "codigo": "GSI501",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FAGEN"
+        },
+        {
+          "nome": "Projeto Integrado de Software",
+          "codigo": "FACOM33604",
+          "periodo": 7,
+          "ch": 45,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Trabalho de Conclusão de Curso I",
+          "codigo": "FACOM33701",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estágio Curricular",
+          "codigo": null,
+          "periodo": 8,
+          "ch": 320,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Trabalho de Conclusão de Curso II",
+          "codigo": "FACOM33801",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM"
+        }
+      ],
+      "observacoes": "É um curso separado, com PPC, resolução (CONGRAD 79/2022), códigos (FACOM331xx a FACOM338xx e GSI5xx) e grade próprios. Não é a mesma grade do Santa Mônica. Várias disciplinas só existem aqui: Matemática Discreta, Profissão em Sistemas de Informação, Fundamentos de Engenharia de Software, Testes e Manutenção de Software, Modelagem de Domínio, Projeto Integrado de Software, Matemática Financeira e Análise de Investimento, Auditoria e Segurança da Informação e TCC I/II. As cargas de estágio (320h) e das ACE (120h, 120h e 90h) também diferem. São 46 componentes obrigatórios: 40 disciplinas (incluindo Projeto Integrado de Software), 3 ACE, TCC I e II e o Estágio Curricular (320h). A soma da CH dá 3065h e bate com a Res. CONGRAD 79/2022 (2295h de disciplinas obrigatórias + 330h de ACE + 120h de TCC + 320h de estágio). Ficaram de fora: ENADE, Atividades Acadêmicas Complementares (65h) e as 2 vagas de optativa (120h). Período, CH e unidade foram conferidos na Tabela 16 do PPC, na resolução e no fluxograma 2022. Os códigos foram conferidos nas fichas em PDF da aba 'Currículo 2022-2'. O Estágio Curricular do currículo novo não tem ficha nem código publicados, por isso o código ficou null. A ACE Transformação Digital na Sociedade (FACOM33603) tem duas fichas, uma com 85h e outra com 90h; usei 90h, que é o valor do PPC, da resolução e do fluxograma. A ficha de Introdução aos Sistemas de Informação (FACOM33102) traz 'CH TOTAL: 00 horas', um erro de digitação; usei 30h, que é a CH teórica da ficha e o valor do PPC e do fluxograma. Alunos antigos seguem o currículo 2016-1. A unidade de matemática aparece como FAMAT, como nas fichas (hoje IME)."
+    },
+    {
+      "curso": "Inteligência Artificial",
+      "campus": "Santa Mônica",
+      "curriculo": "2026-1",
+      "fontes": [
+        "https://facom.ufu.br/graduacao/inteligencia-artificial-campus-santa-monica/grade-curricular",
+        "https://facom.ufu.br/system/files/conteudo/fluxo_curricular_bia-300dpi.jpg",
+        "https://facom.ufu.br/graduacao/inteligencia-artificial-campus-santa-monica/fichas-de-disciplinas",
+        "https://facom.ufu.br/graduacao/inteligencia-artificial-campus-santa-monica/projeto-pedagogico",
+        "https://facom.ufu.br/system/files/conteudo/ppc_bia_13_11_2025.pdf",
+        "https://facom.ufu.br/system/files/conteudo/sei_6895557_resolucao_120.pdf"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": null,
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Fundamentos de Inteligência Artificial",
+          "codigo": null,
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Introdução à Computação",
+          "codigo": null,
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Lógica para Computação",
+          "codigo": null,
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Matemática para Ciência da Computação",
+          "codigo": null,
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "IME"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": null,
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Informática e Sociedade",
+          "codigo": null,
+          "periodo": 2,
+          "ch": 80,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo Diferencial e Integral I",
+          "codigo": null,
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "IME"
+        },
+        {
+          "nome": "Estatística",
+          "codigo": "FAMAT31033",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "IME"
+        },
+        {
+          "nome": "Metodologia Científica em Computação e Informática",
+          "codigo": null,
+          "periodo": 2,
+          "ch": 30,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Digitais",
+          "codigo": null,
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Arquitetura e Organização de Computadores",
+          "codigo": null,
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Banco de Dados",
+          "codigo": null,
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo Diferencial e Integral II",
+          "codigo": null,
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "IME"
+        },
+        {
+          "nome": "Estrutura de Dados I",
+          "codigo": null,
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Programação Orientada a Objetos",
+          "codigo": null,
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Álgebra Linear",
+          "codigo": null,
+          "periodo": 4,
+          "ch": 45,
+          "unidade": "IME"
+        },
+        {
+          "nome": "Aprendizado de Máquina Supervisionado",
+          "codigo": null,
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia",
+          "codigo": null,
+          "periodo": 4,
+          "ch": 80,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Estrutura de Dados II",
+          "codigo": null,
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Sistemas Operacionais",
+          "codigo": null,
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Aprendizado de Máquina Não Supervisionado",
+          "codigo": null,
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Cálculo Numérico",
+          "codigo": null,
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "IME"
+        },
+        {
+          "nome": "Computação Bioinspirada",
+          "codigo": null,
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Inteligência Artificial Simbólica",
+          "codigo": null,
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Otimização Matemática",
+          "codigo": null,
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Transformação Digital na Sociedade",
+          "codigo": null,
+          "periodo": 6,
+          "ch": 80,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Engenharia de Software",
+          "codigo": null,
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Processamento de Línguas Naturais",
+          "codigo": null,
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Redes de Computadores",
+          "codigo": null,
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Redes Neurais Profundas",
+          "codigo": null,
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Atividades Curriculares de Extensão: Inovação e Tecnologia",
+          "codigo": null,
+          "periodo": 7,
+          "ch": 80,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "IA Generativa e Modelos de Linguagem",
+          "codigo": null,
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Introdução à Cibersegurança",
+          "codigo": null,
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Projeto de Graduação",
+          "codigo": null,
+          "periodo": 7,
+          "ch": 270,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Visão Computacional",
+          "codigo": null,
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM"
+        },
+        {
+          "nome": "Direito e Legislação",
+          "codigo": "GBC081",
+          "periodo": 8,
+          "ch": 45,
+          "unidade": "FADIR"
+        },
+        {
+          "nome": "Robótica e Sistemas Autônomos",
+          "codigo": null,
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM"
+        }
+      ],
+      "observacoes": "O curso foi criado pela Res. CONSUN 120/2025, com início no 1º semestre de 2026; a página de grade traz 'Currículo BIA 2026-1'. São 38 componentes obrigatórios: 33 disciplinas, 4 ACE de 80h cada (incluindo 'Inovação e Tecnologia', que só existe neste curso) e o Projeto de Graduação (270h). A soma da CH dá 2540h e bate com a resolução (1950h de disciplinas obrigatórias + 320h de ACE + 270h de PG). Não há estágio obrigatório. Ficaram de fora: ENADE, Atividades Acadêmicas Complementares (300h) e as 6 vagas de optativa (I a VI, 360h). Período, CH e unidade vêm do Quadro 9 do PPC e do fluxograma 2026-1. CH e unidade foram conferidos também nas 37 fichas SEI; o Projeto de Graduação não tem ficha publicada. Sobre os códigos: nas fichas SEI, assinadas em novembro de 2025, o campo CÓDIGO está em branco em 35 das 37 fichas. Só Estatística (FAMAT31033) e Direito e Legislação (GBC081) têm código; os demais ficaram null. Os nomes seguem o PPC. As fichas usam variantes: 'Fundamentos da Inteligência Artificial', 'Estruturas de Dados I' e 'ACE: Popularização da Ciência e Tecnologia'. A unidade de matemática é o IME (Instituto de Matemática e Estatística, ex-FAMAT), como no PPC e nas fichas. 'Otimização Matemática' aparece com a cor de matemática no fluxograma, mas o PPC e a ficha indicam FACOM."
+    }
+  ],
+  "compartilhadas": [
+    {
+      "nome": "Arquitetura e Organização de Computadores",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31305",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32303",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33303",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Atividades Curriculares de Extensão: Informática e Sociedade",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31502",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32301",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33202",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Grafias oficiais por curso: Ciência da Computação (Santa Mônica): Atividades Curriculares de Extensão - Informática e Sociedade | Sistemas de Informação (Santa Mônica): Atividades Curriculares de Extensão: Informática e Sociedade | Sistemas de Informação (Monte Carmelo): Atividades Curriculares de Extensão: Informática e Sociedade | Inteligência Artificial (Santa Mônica): Atividades Curriculares de Extensão: Informática e Sociedade. Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Ciência da Computação (Santa Mônica) = 120h, Sistemas de Informação (Santa Mônica) = 105h, Sistemas de Informação (Monte Carmelo) = 120h, Inteligência Artificial (Santa Mônica) = 80h."
+    },
+    {
+      "nome": "Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31304",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32501",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33503",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Grafias oficiais por curso: Ciência da Computação (Santa Mônica): Atividades Curriculares de Extensão - Popularização da Ciência e Tecnologia | Sistemas de Informação (Santa Mônica): Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia | Sistemas de Informação (Monte Carmelo): Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia | Inteligência Artificial (Santa Mônica): Atividades Curriculares de Extensão: Popularização de Ciência e Tecnologia. Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Ciência da Computação (Santa Mônica) = 120h, Sistemas de Informação (Santa Mônica) = 105h, Sistemas de Informação (Monte Carmelo) = 120h, Inteligência Artificial (Santa Mônica) = 80h."
+    },
+    {
+      "nome": "Atividades Curriculares de Extensão: Transformação Digital na Sociedade",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31705",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32601",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33603",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Grafias oficiais por curso: Ciência da Computação (Santa Mônica): Atividades Curriculares de Extensão - Transformação Digital na Sociedade | Sistemas de Informação (Santa Mônica): Atividades Curriculares de Extensão: Transformação Digital na Sociedade | Sistemas de Informação (Monte Carmelo): Atividades Curriculares de Extensão: Transformação Digital na Sociedade | Inteligência Artificial (Santa Mônica): Atividades Curriculares de Extensão: Transformação Digital na Sociedade. Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Ciência da Computação (Santa Mônica) = 105h, Sistemas de Informação (Santa Mônica) = 105h, Sistemas de Informação (Monte Carmelo) = 90h, Inteligência Artificial (Santa Mônica) = 80h."
+    },
+    {
+      "nome": "Estatística",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC041",
+        "Sistemas de Informação (Santa Mônica)": "FAMAT39505",
+        "Sistemas de Informação (Monte Carmelo)": "GSI517",
+        "Inteligência Artificial (Santa Mônica)": "FAMAT31033"
+      }
+    },
+    {
+      "nome": "Lógica para Computação",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC016",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32105",
+        "Sistemas de Informação (Monte Carmelo)": "GSI505",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Sistemas Operacionais",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC045",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32404",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33404",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Algoritmos e Programação I",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32102",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33101",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Algoritmos e Programação II",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32201",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33201",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Estrutura de Dados I",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32302",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33305",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Estrutura de Dados II",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32402",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33407",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Gestão Empresarial",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC061",
+        "Sistemas de Informação (Santa Mônica)": "FAGEN39531",
+        "Sistemas de Informação (Monte Carmelo)": "GSI528"
+      }
+    },
+    {
+      "nome": "Matemática para Ciência da Computação",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FAMAT32401",
+        "Sistemas de Informação (Santa Mônica)": "FAMAT32401",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica). Os códigos publicados são iguais (FAMAT32401)."
+    },
+    {
+      "nome": "Programação Orientada a Objetos",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31306",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32305",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Redes de Computadores",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32504",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33507",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Sistemas Digitais",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31202",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33203",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Sistemas Distribuídos",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC074",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32606",
+        "Sistemas de Informação (Monte Carmelo)": "GSI529"
+      }
+    },
+    {
+      "nome": "Álgebra Linear",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FAMAT31022",
+        "Sistemas de Informação (Monte Carmelo)": "FAMAT33304",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Sistemas de Informação (Santa Mônica) = 45h, Sistemas de Informação (Monte Carmelo) = 60h, Inteligência Artificial (Santa Mônica) = 45h."
+    },
+    {
+      "nome": "Banco de Dados I",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32401",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33304"
+      }
+    },
+    {
+      "nome": "Banco de Dados II",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32304",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33406"
+      }
+    },
+    {
+      "nome": "Cálculo Diferencial e Integral I",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FAMAT39121",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Ciência da Computação (Santa Mônica) = 60h, Inteligência Artificial (Santa Mônica) = 90h."
+    },
+    {
+      "nome": "Cálculo Diferencial e Integral II",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FAMAT39215",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Cálculo Numérico",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FAMAT31032",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Direito e Legislação",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": true,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC081",
+        "Inteligência Artificial (Santa Mônica)": "GBC081"
+      }
+    },
+    {
+      "nome": "Empreendedorismo em Informática",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC011",
+        "Sistemas de Informação (Monte Carmelo)": "GSI501"
+      }
+    },
+    {
+      "nome": "Engenharia de Software",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31501",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Ciência da Computação (Santa Mônica) = 90h, Inteligência Artificial (Santa Mônica) = 60h."
+    },
+    {
+      "nome": "Estágio Curricular",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32801",
+        "Sistemas de Informação (Monte Carmelo)": null
+      },
+      "obs": "Código não publicado para: Sistemas de Informação (Monte Carmelo). Carga horária difere entre cursos: Sistemas de Informação (Santa Mônica) = 180h, Sistemas de Informação (Monte Carmelo) = 320h."
+    },
+    {
+      "nome": "Fundamentos de Marketing",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FAGEN31102",
+        "Sistemas de Informação (Monte Carmelo)": "GSI532"
+      }
+    },
+    {
+      "nome": "Inteligência Artificial",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC063",
+        "Sistemas de Informação (Monte Carmelo)": "GSI551"
+      }
+    },
+    {
+      "nome": "Interação Humano-Computador",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32704",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33501"
+      }
+    },
+    {
+      "nome": "Introdução aos Sistemas de Informação",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32104",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33102"
+      }
+    },
+    {
+      "nome": "Metodologia Científica em Computação e Informática",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31704",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica)."
+    },
+    {
+      "nome": "Pesquisa Operacional",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32705",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33606"
+      }
+    },
+    {
+      "nome": "Programação para Dispositivos Móveis",
+      "cursos": [
+        "Sistemas de Informação (Santa Mônica)",
+        "Sistemas de Informação (Monte Carmelo)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Sistemas de Informação (Santa Mônica)": "FACOM32503",
+        "Sistemas de Informação (Monte Carmelo)": "FACOM33402"
+      }
+    },
+    {
+      "nome": "Projeto de Graduação",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Inteligência Artificial (Santa Mônica)"
+      ],
+      "mesmo_codigo": null,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "FACOM31806",
+        "Inteligência Artificial (Santa Mônica)": null
+      },
+      "obs": "Código não publicado para: Inteligência Artificial (Santa Mônica). Carga horária difere entre cursos: Ciência da Computação (Santa Mônica) = 60h, Inteligência Artificial (Santa Mônica) = 270h."
+    },
+    {
+      "nome": "Segurança da Informação",
+      "cursos": [
+        "Ciência da Computação (Santa Mônica)",
+        "Sistemas de Informação (Santa Mônica)"
+      ],
+      "mesmo_codigo": false,
+      "codigos": {
+        "Ciência da Computação (Santa Mônica)": "GBC083",
+        "Sistemas de Informação (Santa Mônica)": "FACOM32804"
+      }
+    }
+  ],
+  "duvidas": "1) IA: 36 dos 38 componentes obrigatórios ainda não têm código publicado (null), incluindo o Projeto de Graduação. 2) SI Monte Carmelo: o Estágio Curricular do currículo 2022 não tem código publicado (null). 3) SI Santa Mônica: os códigos vêm da listagem do site da FACOM, porque o campo CÓDIGO das fichas em PDF está vazio; 'Economia' usa o código antigo GSI031. 4) Unidade de matemática: as fontes de BCC e SI (2022 a 2024) indicam FAMAT; as de IA (2025) indicam IME. É a mesma unidade, renomeada em 2024 (Res. CONSUN 76/2024); mantive a sigla de cada fonte. 5) Compartilhadas: agrupei pelo nome oficial, ignorando maiúsculas e o separador ('-' ou ':') das ACE. Agrupei 'Popularização da Ciência' (BCC) com 'Popularização de Ciência' (demais cursos); a grafia de cada curso está em 'obs'. Os campos extras 'codigos' (código por curso) e 'obs' foram acrescentados em 'compartilhadas'. mesmo_codigo é true só quando todos os cursos do grupo têm o mesmo código; é false quando há códigos diferentes; é null quando falta o código de algum curso e os códigos publicados não se contradizem. Mesmo nome não garante mesma ementa ou mesma turma: 'Lógica para Computação', por exemplo, tem 3 códigos diferentes (BCC, SI-SM e SI-MC) e não tem código publicado em IA. O mesmo código só aparece em 'Matemática para Ciência da Computação' (FAMAT32401, em BCC e SI-SM) e em 'Direito e Legislação' (GBC081, em BCC e IA). 6) Disciplinas parecidas com nome diferente NÃO foram marcadas como compartilhadas. Exemplos: 'Banco de Dados' (IA) e 'Banco de Dados I' (SI); 'Introdução à Computação' (IA) e 'Introdução à Ciência da Computação' (BCC); 'Gerência de Projetos em TI' (SI-SM) e 'Gerência de Projetos de Tecnologia da Informação' (SI-MC); 'Estágio Supervisionado' (BCC) e 'Estágio Curricular' (SI); 'Cálculo I' (SI-SM), 'Cálculo Diferencial e Integral' (SI-MC) e 'Cálculo Diferencial e Integral I' (BCC/IA)."
+}

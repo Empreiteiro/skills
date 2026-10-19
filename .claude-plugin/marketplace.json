@@ -1,0 +1,12 @@
+{
+  "name": "empreiteiro-skills",
+  "owner": { "name": "Empreiteiro" },
+  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations.",
+  "plugins": [
+    {
+      "name": "presentations",
+      "source": "./",
+      "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
+    }
+  ]
+}

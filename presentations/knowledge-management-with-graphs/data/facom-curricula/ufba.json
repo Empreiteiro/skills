@@ -1,0 +1,125 @@
+{
+  "universidade": "UFBA",
+  "cursos": [
+    {
+      "curso": "Jornalismo",
+      "campus": "Salvador",
+      "curriculo": "Bacharelado em Jornalismo (curso de graduação em Jornalismo, que substituiu Comunicação com Habilitação em Jornalismo). PPC aprovado pelo CAE em 23/03/2022 (Parecer 027), em vigor para ingressantes a partir de 2023.1. Lista e códigos tirados da estrutura curricular ATIVA no SIGAA: G20251X 'JORNALISMO - SALVADOR - BACHARELADO - Presencial - MT', com entrada em vigor em 2025.2",
+      "fontes": [
+        "https://sigaa.ufba.br/sigaa/public/curso/curriculo.jsf?lc=pt_BR&id=1876940",
+        "https://www.facom.ufba.br/portal/pagina/11/jornalismo",
+        "https://www.facom.ufba.br/portal/conteudo/files/Fluxograma%20-%20Jornalismo%202023.pdf",
+        "https://facom.ufba.br/portal/upload/arquivos/12_06_24_projeto_pedagogico%20jornalismo_FINAL_AJUSTES%20CARGA%20HORARIA.docx.pdf"
+      ],
+      "disciplinas": [
+        {"nome": "Teorias da Comunicação", "codigo": "COM101", "periodo": 1, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "História do Jornalismo", "codigo": "COMB88", "periodo": 1, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Introdução às Práticas Jornalísticas", "codigo": "GCOM0033", "periodo": 1, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Introdução ao Texto Jornalístico", "codigo": "GCOM0034", "periodo": 1, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Teorias do Jornalismo", "codigo": "COM121", "periodo": 2, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação, Meios e Linguagens", "codigo": "COMB52", "periodo": 2, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Jornalismo Integrado I", "codigo": "GCOM0035", "periodo": 2, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Estética da Comunicação", "codigo": "COM103", "periodo": 3, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Jornalismo Integrado II", "codigo": "GCOM0036", "periodo": 3, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Gestão de Práticas e Processos Jornalísticos", "codigo": "GCOM0041", "periodo": 3, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Tecnologia", "codigo": "COM104", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Jornalismo Integrado III", "codigo": "GCOM0037", "periodo": 4, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Jornalismo Especializado", "codigo": "GCOM0042", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Política", "codigo": "COM105", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Ética", "codigo": "COM115", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Jornalismo Integrado IV", "codigo": "GCOM0038", "periodo": 5, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Cultura Contemporânea", "codigo": "COM106", "periodo": 6, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Trabalho de Conclusão de Curso em Jornalismo I", "codigo": "COMB91", "periodo": 6, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Jornalismo Integrado V", "codigo": "GCOM0039", "periodo": 6, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Estágio Supervisionado em Jornalismo", "codigo": "GCOM0001", "periodo": 7, "ch": 240, "unidade": "Colegiado do Curso de Graduação em Comunicação/FACOM"},
+        {"nome": "Trabalho de Conclusão de Curso em Jornalismo II", "codigo": "GCOM0031", "periodo": 7, "ch": 60, "unidade": "Colegiado do Curso de Graduação em Comunicação/FACOM"},
+        {"nome": "Jornalismo Integrado VI", "codigo": "GCOM0040", "periodo": 7, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Trabalho de Conclusão de Curso em Jornalismo III", "codigo": "GCOM0032", "periodo": 8, "ch": 360, "unidade": "Colegiado do Curso de Graduação em Comunicação/FACOM"},
+        {"nome": "Componente de Homologação de Extensão Curricular", "codigo": "GCOM0045", "periodo": 8, "ch": 1, "unidade": "Colegiado do Curso de Graduação em Comunicação/FACOM"}
+      ],
+      "observacoes": "Total de 24 componentes obrigatórios. Período = nível/semestre sugerido no SIGAA, igual ao do PPC 2022 e ao do fluxograma 'a partir de 2023'. Na migração para o SIGAA, 13 componentes ganharam códigos GCOM, com equivalência registrada aos códigos que o PPC e o fluxograma do site da FACOM ainda mostram: GCOM0033=COMB79, GCOM0034=COMB80, GCOM0035..GCOM0040=COMB81..COMB86 (Jornalismo Integrado I-VI), GCOM0001=COMB87, GCOM0041=COMB89, GCOM0042=COMB90, GCOM0031=COMB92, GCOM0032=COMB93. Os demais códigos (COM101, COMB52, COM103, COM104, COM105, COM106, COM115, COM121, COMB88, COMB91) são iguais nas duas fontes. GCOM0045 (Componente de Homologação de Extensão Curricular, 1h, tipo ATIVIDADE) só aparece como obrigatório no SIGAA; não está no PPC nem no fluxograma. Integralização pelo PPC: 2.220h obrigatórias (2.221h no SIGAA, contando o componente de 1h), 180h de optativas, 240h de componentes livres, 360h de atividades complementares, 3.000h no total. Estágio (240h) e TCC I-III são obrigatórios. O fluxograma de 2016 (Fluxograma-Jornalismo2016.pdf) é do currículo antigo, que vale para ingressantes até 2022.2. Unidade = 'Unidade Responsável' na ficha de cada componente no SIGAA."
+    },
+    {
+      "curso": "Produção em Comunicação e Cultura",
+      "campus": "Salvador",
+      "curriculo": "Comunicação com Habilitação em Produção em Comunicação e Cultura (Bacharelado). PPC aprovado pelo CAE em 29/05/2019 (Parecer 178); fluxograma 'válido a partir de 2020.1' (arquivo 'atualização 2023'). Lista e códigos tirados da estrutura curricular ATIVA no SIGAA: G20251X 'COMUNICAÇÃO - SALVADOR - BACHARELADO - Presencial - PRODUÇÃO EM COMUNICAÇÃO E CULTURA - MT', com entrada em vigor em 2025.2",
+      "fontes": [
+        "https://sigaa.ufba.br/sigaa/public/curso/curriculo.jsf?lc=pt_BR&id=1876941",
+        "https://www.facom.ufba.br/portal/pagina/12/producao-em-comunicacao-e-cultura",
+        "https://www.facom.ufba.br/portal/conteudo/files/Fluxograma%20-%20PRODU%C3%87%C3%83O%20-%20atualiza%C3%A7%C3%A3o%202023.pdf",
+        "http://facom.ufba.br/portal/upload/arquivos/PROJETO%20PEDAG__GICO%20DE%20CURSO_20.06.24.pdf",
+        "https://www.facom.ufba.br/portal/conteudo/files/PROJETO%20PEDAGO%CC%81GICO%20DE%20CURSO_ANEXO%20V.pdf"
+      ],
+      "disciplinas": [
+        {"nome": "Teorias da Comunicação", "codigo": "COM101", "periodo": 1, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Oficina de Comunicação Escrita", "codigo": "COM111", "periodo": 1, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Teorias da Cultura", "codigo": "COMB56", "periodo": 1, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Administração", "codigo": "ADM012", "periodo": 2, "ch": 60, "unidade": "Coordenação Acadêmica/EADM"},
+        {"nome": "Comunicação, Meios e Linguagens", "codigo": "COMB52", "periodo": 2, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Oficina de Análise de Públicos e Práticas Culturais", "codigo": "GCOM0023", "periodo": 2, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Estética da Comunicação", "codigo": "COM103", "periodo": 3, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Políticas Culturais", "codigo": "COMB57", "periodo": 3, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Produção e Circulação de Conteúdos em Mídias Digitais", "codigo": "COMB61", "periodo": 3, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação Visual", "codigo": "COMB62", "periodo": 3, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Tecnologia", "codigo": "COM104", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Economia da Cultura", "codigo": "COMB58", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Oficina de Comunicação Estratégica", "codigo": "GCOM0026", "periodo": 4, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Política", "codigo": "COM105", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Ética e Direitos Culturais", "codigo": "COMB59", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Oficina de Planejamento e Elaboração de Projetos em Cultura", "codigo": "GCOM0024", "periodo": 5, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Comunicação e Cultura Contemporânea", "codigo": "COM106", "periodo": 6, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "TCC I", "codigo": "COMB53", "periodo": 6, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Oficina de Produção em Cultura", "codigo": "GCOM0027", "periodo": 6, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "TCC II", "codigo": "COMB54", "periodo": 7, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Oficina de Gestão em Cultura", "codigo": "GCOM0025", "periodo": 7, "ch": 120, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "TCC III", "codigo": "GCOM0029", "periodo": 8, "ch": 300, "unidade": "Colegiado do Curso de Graduação em Comunicação/FACOM"},
+        {"nome": "Componente de Homologação de Extensão Curricular", "codigo": "GCOM0045", "periodo": 8, "ch": 1, "unidade": "Colegiado do Curso de Graduação em Comunicação/FACOM"}
+      ],
+      "observacoes": "Total de 23 componentes obrigatórios. Os períodos coincidem com o fluxograma 2020.1 e a matriz do PPC. No SIGAA, 6 componentes têm códigos GCOM, com equivalência registrada aos códigos do PPC e do fluxograma: GCOM0023=COMB60, GCOM0026=COMB63, GCOM0024=COMB64, GCOM0027=COMB65, GCOM0025=COMB66, GCOM0029=COMB55 (TCC III). GCOM0045 (1h, homologação de extensão) só aparece no SIGAA. Integralização pelo PPC/fluxograma: 1.920h obrigatórias (1.921h no SIGAA), 360h de componentes livres, 60h de optativas, 360h de atividades complementares, 2.700h no total. Esta matriz não tem estágio obrigatório. ADM012 é oferecida fora da FACOM; 'EADM' na ficha do SIGAA é a Escola de Administração. Nome 'Administração' segue o PPC (no SIGAA aparece sem acento, 'ADMINISTRACAO'). As versões antigas G20251 e T20252 que aparecem no SIGAA (COM102, COM112, COM131 etc.) são do currículo anterior a 2020 e estão inativas."
+    },
+    {
+      "curso": "Cinema e Audiovisual",
+      "campus": "Salvador",
+      "curriculo": "Área de Concentração (AC) em Cinema e Audiovisual, oferecida pela FACOM dentro do Bacharelado Interdisciplinar em Artes (IHAC); certificação 'Bacharel(a) em Artes com Área de Concentração em Cinema e Audiovisual'. Matriz da AC alterada, válida a partir de 2025.2 (alteração curricular isolada no PPC da AC). Lista e códigos tirados da estrutura curricular ATIVA no SIGAA: G20251X 'ARTES - SALVADOR - BACHARELADO - Presencial - CINEMA E AUDIOVISUAL - N', com entrada em vigor em 2025.2",
+      "fontes": [
+        "https://sigaa.ufba.br/sigaa/public/curso/curriculo.jsf?lc=pt_BR&id=1877026",
+        "https://www.facom.ufba.br/portal/pagina/13/cinema-e-audiovisual",
+        "https://facom.ufba.br/portal/upload/arquivos/Matriz%20Curricular%20e%20quadro%20de%20equival__ncias.pdf",
+        "https://facom.ufba.br/portal/upload/arquivos/Projeto%20Pedag__gico%20de%20Curso%20(AC%20em%20Cinema%20e%20Audiovisual)%20-%20inclui%20altera____o%20isolada%202025.2.pdf",
+        "https://sigaa.ufba.br/sigaa/public/curso/portal.jsf?id=5649059&lc=pt_BR&nivel=G",
+        "https://www.bahianoticias.com.br/noticia/320006-ufba-aprova-bacharelado-em-cinema-e-audiovisual-com-turma-inicial-em-2027"
+      ],
+      "disciplinas": [
+        {"nome": "Estudos sobre a Contemporaneidade I", "codigo": "HACA01", "periodo": 1, "ch": 60, "unidade": "Coordenação Acadêmica/IHAC"},
+        {"nome": "Ação Artística I", "codigo": "HACA04", "periodo": 1, "ch": 60, "unidade": "Coordenação Acadêmica/IHAC"},
+        {"nome": "Políticas Culturais", "codigo": "HACA05", "periodo": 1, "ch": 60, "unidade": "Coordenação Acadêmica/IHAC"},
+        {"nome": "Língua Portuguesa, Poder e Diversidade Cultural", "codigo": "LETE43", "periodo": 1, "ch": 60, "unidade": "Coordenação Acadêmica de Ensino de Letras/LET"},
+        {"nome": "Estudos sobre a Contemporaneidade II", "codigo": "HACA34", "periodo": 2, "ch": 60, "unidade": "Coordenação Acadêmica/IHAC"},
+        {"nome": "Ação Artística II", "codigo": "HACA37", "periodo": 2, "ch": 60, "unidade": "Coordenação Acadêmica/IHAC"},
+        {"nome": "Leitura e Produção de Textos em Língua Portuguesa", "codigo": "LETE45", "periodo": 2, "ch": 60, "unidade": "Coordenação Acadêmica de Ensino de Letras/LET"},
+        {"nome": "Ação e Mediação Cultural através das Artes", "codigo": "GHAC0007", "periodo": 3, "ch": 60, "unidade": "Coordenação Acadêmica/IHAC"},
+        {"nome": "Introdução às Práticas Cinematográficas e Audiovisuais", "codigo": "GCOM0002", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "História do Cinema e do Audiovisual", "codigo": "COMB97", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Roteiro Cinematográfico e Audiovisual", "codigo": "GCOM0003", "periodo": 4, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Práticas e Teoria do Documentário", "codigo": "GCOM0005", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Fotografia Cinematográfica e Audiovisual", "codigo": "GCOM0007", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Captação e Edição de Som em Cinema e Audiovisual", "codigo": "GCOM0006", "periodo": 5, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Produção e Direção em Cinema e Audiovisual", "codigo": "GCOM0043", "periodo": 6, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Montagem e Edição em Cinema e Audiovisual", "codigo": "GCOM0008", "periodo": 6, "ch": 60, "unidade": "Departamento de Comunicação/FACOM"},
+        {"nome": "Componente de Homologação de Extensão Curricular", "codigo": "GHAC0012", "periodo": 6, "ch": 1, "unidade": "Colegiado do Curso de Bacharelado Interdisciplinar em Artes - Noturno/IHAC"}
+      ],
+      "observacoes": "Total de 17 componentes obrigatórios. Na UFBA, Cinema e Audiovisual ainda não é um bacharelado próprio em funcionamento: é uma AC cursada do 4º ao 6º semestre do BI em Artes. O curso tem 2.400h no total, 1.200h delas na AC. Componentes da AC propriamente dita: os 8 dos períodos 4 a 6 (GCOM0002, COMB97, GCOM0003, GCOM0005, GCOM0007, GCOM0006, GCOM0043, GCOM0008), 480h, todos do Departamento de Comunicação/FACOM. Eles batem com a 'Matriz curricular AC Cinema e Audiovisual atual (válida a partir de 2025.2)'. A AC tem ainda 180h de optativas, 360h de componentes livres e 180h de atividades complementares. Os 8 componentes dos períodos 1 a 3 (HACA01, HACA04, HACA05, LETE43, HACA34, HACA37, LETE45, GHAC0007) são o núcleo obrigatório do BI em Artes, oferecido pelo IHAC e pelo Instituto de Letras, não pela FACOM. Entraram porque a estrutura oficial do SIGAA para esta AC os marca como obrigatórios; filtre por 'unidade' se quiser só a parte da FACOM. GHAC0012 (1h) é o componente administrativo de homologação de extensão do turno noturno. A estrutura do turno matutino/vespertino (G20251X '... CINEMA E AUDIOVISUAL - MT') tem os mesmos componentes, mas usa GHAC0020 no lugar de GHAC0012. Total obrigatório no SIGAA: 961h. Matriz anterior (2023.2 a 2025.1) usava COMB96, COMB98, COMB99 e COMC01 a COMC06. Equivalências registradas no SIGAA: GCOM0002 com COMB96, COMA85 e COM328; GCOM0003 com COMB99; GCOM0005 com COMC02; GCOM0006 com COMC04; GCOM0007 com COMC03; GCOM0008 com COMC05; GCOM0043 com COMB98 e COMA84. O novo Bacharelado em Cinema e Audiovisual (2º ciclo, vinculado à FACOM) foi aprovado pelo CAE, segundo o Bahia Notícias de 14/08/2026, com primeira turma prevista para 2027. Ele já existe no SIGAA (curso id 5649059, 'Bacharel em Cinema e Audiovisual'), mas não há estrutura curricular publicada. A matriz desse bacharelado NÃO foi encontrada e não está neste arquivo."
+    }
+  ],
+  "compartilhadas": [
+    {"nome": "Teorias da Comunicação", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura"], "mesmo_codigo": true, "codigos": {"Jornalismo": "COM101", "Produção em Comunicação e Cultura": "COM101"}},
+    {"nome": "Comunicação, Meios e Linguagens", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura"], "mesmo_codigo": true, "codigos": {"Jornalismo": "COMB52", "Produção em Comunicação e Cultura": "COMB52"}},
+    {"nome": "Estética da Comunicação", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura"], "mesmo_codigo": true, "codigos": {"Jornalismo": "COM103", "Produção em Comunicação e Cultura": "COM103"}},
+    {"nome": "Comunicação e Tecnologia", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura"], "mesmo_codigo": true, "codigos": {"Jornalismo": "COM104", "Produção em Comunicação e Cultura": "COM104"}},
+    {"nome": "Comunicação e Política", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura"], "mesmo_codigo": true, "codigos": {"Jornalismo": "COM105", "Produção em Comunicação e Cultura": "COM105"}},
+    {"nome": "Comunicação e Cultura Contemporânea", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura"], "mesmo_codigo": true, "codigos": {"Jornalismo": "COM106", "Produção em Comunicação e Cultura": "COM106"}},
+    {"nome": "Componente de Homologação de Extensão Curricular", "cursos": ["Jornalismo", "Produção em Comunicação e Cultura", "Cinema e Audiovisual"], "mesmo_codigo": false, "codigos": {"Jornalismo": "GCOM0045", "Produção em Comunicação e Cultura": "GCOM0045", "Cinema e Audiovisual": "GHAC0012"}},
+    {"nome": "Políticas Culturais", "cursos": ["Produção em Comunicação e Cultura", "Cinema e Audiovisual"], "mesmo_codigo": false, "codigos": {"Produção em Comunicação e Cultura": "COMB57", "Cinema e Audiovisual": "HACA05"}}
+  ],
+  "duvidas": "1) Códigos: usei os da estrutura ATIVA no SIGAA (G20251X, vigor 2025.2), que é o registro oficial vigente. O PPC e os fluxogramas no site da FACOM ainda trazem os códigos COMB anteriores à migração. O mapeamento está nas 'observacoes' de cada curso, e o conjunto de componentes, as CH e os semestres são os mesmos nas duas fontes. 2) 'Componente de Homologação de Extensão Curricular' (1h) é um registro administrativo de horas de extensão, não uma disciplina. Entrou porque o SIGAA o marca como Obrigatória nos três cursos; para o grafo talvez valha descartá-lo. 3) Cinema e Audiovisual é uma Área de Concentração do BI em Artes, não um bacharelado autônomo. Incluí o núcleo obrigatório do BI (IHAC/Letras) porque está na estrutura oficial. O novo bacharelado (aprovado em 2026, turma em 2027) não tem matriz pública. 4) Compartilhadas: entre os três cursos, nenhuma disciplina tem o mesmo código. Jornalismo e Produção compartilham 6 disciplinas pelo código (COM101, COMB52, COM103, COM104, COM105, COM106, nos mesmos semestres 1 a 6) e também GCOM0045. 'Políticas Culturais' tem o mesmo nome, mas são componentes diferentes: COMB57 é da FACOM e HACA05 é do IHAC. A homologação de extensão tem o mesmo nome nos três, com código GCOM0045 em Jornalismo/Produção e GHAC0012 (ou GHAC0020 no turno MT) em Cinema. COM115 (Comunicação e Ética) é só de Jornalismo. Acrescentei o campo extra 'codigos' em 'compartilhadas' para não perder essa informação. 5) Inconsistências nas fontes: o PPC de Jornalismo diz 'Carga Horária Total do Curso: 3.056 horas' na identificação, mas a matriz soma 3.000h. O PPC de Produção diz 2.952h na identificação (número do currículo antigo), mas a matriz soma 2.700h. O formulário do TCC III (COMB55) no anexo do PPC de Produção traz 'P 340', enquanto matriz, fluxograma e SIGAA dão 300h; usei 300h. Para GCOM0005, o SIGAA registra 'Práticas e Teoria do Documentário' e o PDF da matriz diz 'Práticas e Teorias do Documentário'; usei o nome do SIGAA. O formulário de Jornalismo Integrado VI no PPC grafa 'COM86' em vez de COMB86. A estrutura antiga 307141 de Produção no SIGAA diz vigor 2023.1, mas o PPC diz 2020.1. 6) Os nomes seguem a grafia mista do PPC e da matriz. O SIGAA grava tudo em maiúsculas, e para os componentes do BI em Artes, sem outra fonte lida, só converti maiúsculas para minúsculas, sem mudar palavras. 7) 'campus': o SIGAA indica SALVADOR nos três cursos; os PPCs citam o Campus de Ondina."
+}

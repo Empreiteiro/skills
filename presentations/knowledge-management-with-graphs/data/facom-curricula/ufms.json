@@ -1,0 +1,2374 @@
+{
+  "universidade": "UFMS",
+  "cursos": [
+    {
+      "curso": "Ciência da Computação",
+      "campus": "Campo Grande",
+      "curriculo": "PPC aprovado pela Resolução nº 1.287-Cograd/UFMS, de 8 de dezembro de 2025; matriz implantada a partir de 2026-1 para todos os acadêmicos do curso",
+      "fontes": [
+        "https://www.facom.ufms.br/wp-content/uploads/2026/02/PPC-CC-completo.2026-02.pdf",
+        "https://graduacao.ufms.br/cursos/1904/estrutura",
+        "https://ensino.ufms.br/cursos/grade/1904",
+        "https://www.facom.ufms.br/ciencia-da-computacao/"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "1919.000.461-9",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Cálculo I",
+          "codigo": "2201.000.253-9",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação e Sociedade",
+          "codigo": "1919.000.590-1",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução à Computação",
+          "codigo": "1919.000.537-6",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Vetores e Geometria Analítica",
+          "codigo": "2201.000.251-0",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "1919.000.576-0",
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Cálculo II",
+          "codigo": "2201.000.252-0",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Teoria da Computação",
+          "codigo": "1919.000.593-9",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sequências e Séries",
+          "codigo": "2201.000.256-6",
+          "periodo": 2,
+          "ch": 30,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sistemas Digitais",
+          "codigo": "1919.000.608-8",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Álgebra Linear",
+          "codigo": "2201.000.255-7",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estruturas de Dados",
+          "codigo": "1919.000.543-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagem de Programação Orientada a Objetos",
+          "codigo": "1919.000.564-3",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagens Formais e Autômatos",
+          "codigo": "1919.000.599-3",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Probabilidade e Estatística",
+          "codigo": "2201.000.257-5",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Engenharia de Software",
+          "codigo": "1919.000.551-8",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "1919.000.563-4",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Projeto e Análise de Algoritmos I",
+          "codigo": "1919.000.594-8",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Teoria dos Grafos e seus Algoritmos",
+          "codigo": "1919.000.547-4",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Arquitetura de Computadores I",
+          "codigo": "1919.000.604-1",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Banco de Dados",
+          "codigo": "1919.000.496-9",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Compiladores I",
+          "codigo": "1919.000.597-5",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Métodos Numéricos",
+          "codigo": "2201.000.260-0",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Análise e Projeto de Software Orientado a Objetos",
+          "codigo": "1919.000.586-8",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Arquitetura de Computadores II",
+          "codigo": "1919.000.611-2",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação Gráfica",
+          "codigo": "1919.000.596-6",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sistemas Operacionais",
+          "codigo": "1919.000.602-3",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação Distribuída",
+          "codigo": "1919.000.591-0",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Programação Paralela",
+          "codigo": "1919.000.567-0",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Redes de Computadores",
+          "codigo": "1919.000.612-1",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Empreendedorismo e Inovação",
+          "codigo": "0100.000.003-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Vida, Cidadania e Sustentabilidade",
+          "codigo": "0100.000.002-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Estágio Obrigatório",
+          "codigo": null,
+          "periodo": null,
+          "ch": 330,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([EO])"
+        },
+        {
+          "nome": "Trabalho de Conclusão de Curso",
+          "codigo": null,
+          "periodo": null,
+          "ch": 300,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([TCC-ND])"
+        }
+      ],
+      "observacoes": "Código do curso UFMS 1904. 30 disciplinas obrigatórias semestralizadas (1770 h), + 2 disciplinas institucionais obrigatórias do Núcleo de Formação Cidadã (sem semestre definido; no sistema aparecem com tipo NFC e no PPC como 'Disciplinas sem Lotação'), + 2 componente(s) não disciplinar(es) obrigatório(s) (estágio/TCC, sem código de disciplina e sem semestre no quadro de semestralização). Nomes conforme o quadro de semestralização do PPC; códigos, CH e semestre conferidos com graduacao.ufms.br/cursos/1904/estrutura e ensino.ufms.br/cursos/grade/1904 (sem divergências). Unidade conforme item 7.4 do PPC (Lotação das disciplinas): todas lotadas na FACOM, exceto as indicadas. Carga mínima de optativas: 240 h. Componentes não disciplinares no sistema: [EO] Estágio Obrigatório: 330 horas (OBR); [ACS-ND] Atividades Complementares: 180 horas (OBR); [AOE-ND] Atividades Orientadas de Ensino: 300 horas (OPT); [AEX-ND] Atividades de Extensão: 320 horas (OBR); [AEX-ND] Atividades de Extensão: 320 horas (OPT); [TCC-ND] Trabalho de Conclusão de Curso: 300 horas (OBR); [Enade] Exame Nacional de Desempenho:  (s/ tipo). Atividades Complementares, Atividades de Extensão, AOE e Enade não foram listados como disciplinas. Componentes obrigatórios não disciplinares: Estágio Obrigatório (330 h) e Trabalho de Conclusão de Curso (300 h). O 8º semestre não tem disciplinas obrigatórias (o PPC o descreve como \"Componentes Curriculares Não Semestralizados\")."
+    },
+    {
+      "curso": "Engenharia de Computação",
+      "campus": "Campo Grande",
+      "curriculo": "PPC aprovado pela Resolução nº 903-Cograd/UFMS, de 22 de junho de 2023, com item 7 (Currículo) alterado pela Resolução nº 1.309-COGRAD/UFMS, de 8 de dezembro de 2025; matriz implantada a partir de 2026-1 (efeitos a partir de 2/3/2026) para todos os estudantes do curso",
+      "fontes": [
+        "https://www.facom.ufms.br/wp-content/uploads/2026/03/RESOLUCAO-COGRAD-n-1309-de-08-12-2025.pdf",
+        "https://graduacao.ufms.br/cursos/1905/estrutura",
+        "https://ensino.ufms.br/cursos/grade/1905",
+        "https://www.facom.ufms.br/engenharia-de-computacao/projeto-pedagogico/"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "1919.000.461-9",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Cálculo I",
+          "codigo": "2201.000.253-9",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução à Computação",
+          "codigo": "1919.000.537-6",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Vetores e Geometria Analítica",
+          "codigo": "2201.000.251-0",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "1919.000.576-0",
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Cálculo II",
+          "codigo": "2201.000.252-0",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Mecânica",
+          "codigo": "2401.000.412-5",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "INFI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Teoria da Computação",
+          "codigo": "1919.000.593-9",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Laboratório de Mecânica, Fluidos e Termodinâmica",
+          "codigo": "2401.000.411-6",
+          "periodo": 2,
+          "ch": 30,
+          "unidade": "INFI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sequências e Séries",
+          "codigo": "2201.000.256-6",
+          "periodo": 2,
+          "ch": 30,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Álgebra Linear",
+          "codigo": "2201.000.255-7",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Cálculo III",
+          "codigo": "2201.000.254-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estruturas de Dados",
+          "codigo": "1919.000.543-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Fluidos, Ondas e Termodinâmica",
+          "codigo": "2401.000.420-5",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INFI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Laboratório de Eletricidade e Magnetismo",
+          "codigo": "2401.000.421-4",
+          "periodo": 3,
+          "ch": 30,
+          "unidade": "INFI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sistemas Digitais",
+          "codigo": "1919.000.608-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Arquitetura de Computadores I",
+          "codigo": "1919.000.604-1",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Equações Diferenciais Ordinárias",
+          "codigo": "2201.000.267-3",
+          "periodo": 4,
+          "ch": 30,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Eletromagnetismo",
+          "codigo": "2401.000.409-0",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "INFI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagem de Programação Orientada a Objetos",
+          "codigo": "1919.000.564-3",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagens Formais e Autômatos",
+          "codigo": "1919.000.599-3",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Mecânica Geral",
+          "codigo": "2401.000.410-7",
+          "periodo": 4,
+          "ch": 30,
+          "unidade": "INFI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Análise de Sinais e Sistemas",
+          "codigo": "1919.000.613-0",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Arquitetura de Computadores II",
+          "codigo": "1919.000.611-2",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Circuitos Elétricos",
+          "codigo": "2101.002.125-6",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FAENG",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Mecânica dos Sólidos",
+          "codigo": "2101.001.686-4",
+          "periodo": 5,
+          "ch": 45,
+          "unidade": "FAENG",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Probabilidade e Estatística",
+          "codigo": "2201.000.257-5",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Projeto e Análise de Algoritmos I",
+          "codigo": "1919.000.594-8",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Banco de Dados",
+          "codigo": "1919.000.496-9",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Circuitos Eletrônicos",
+          "codigo": "1919.000.629-3",
+          "periodo": 6,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Compiladores I",
+          "codigo": "1919.000.597-5",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Controle e Servomecanismos",
+          "codigo": "1919.000.627-5",
+          "periodo": 6,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Métodos Numéricos",
+          "codigo": "2201.000.260-0",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Comunicação e Transmissão de Dados",
+          "codigo": "1919.000.550-9",
+          "periodo": 7,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Economia",
+          "codigo": "2501.000.451-0",
+          "periodo": 7,
+          "ch": 30,
+          "unidade": "ESAN",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Fenômenos dos Transportes",
+          "codigo": "2101.002.127-4",
+          "periodo": 7,
+          "ch": 30,
+          "unidade": "FAENG",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "1919.000.563-4",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Microcontroladores e Aplicações",
+          "codigo": "1919.000.630-0",
+          "periodo": 7,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sistemas Operacionais",
+          "codigo": "1919.000.602-3",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação e Sociedade",
+          "codigo": "1919.000.590-1",
+          "periodo": 8,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Laboratório de Hardware",
+          "codigo": "1919.000.607-9",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Química Geral",
+          "codigo": "2301.000.416-0",
+          "periodo": 8,
+          "ch": 30,
+          "unidade": "INQUI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Química Geral Experimental",
+          "codigo": "2301.000.418-8",
+          "periodo": 8,
+          "ch": 30,
+          "unidade": "INQUI",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Redes de Computadores",
+          "codigo": "1919.000.612-1",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sistemas de Integração e Automação Industrial",
+          "codigo": "1919.000.626-6",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Desenho por Computador",
+          "codigo": "2101.002.126-5",
+          "periodo": 9,
+          "ch": 30,
+          "unidade": "FAENG",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Engenharia de Software",
+          "codigo": "1919.000.551-8",
+          "periodo": 9,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução a Gestão Organizacional",
+          "codigo": "2501.000.453-9",
+          "periodo": 9,
+          "ch": 30,
+          "unidade": "ESAN",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Empreendedorismo e Inovação",
+          "codigo": "0100.000.003-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Vida, Cidadania e Sustentabilidade",
+          "codigo": "0100.000.002-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Estágio Obrigatório",
+          "codigo": null,
+          "periodo": null,
+          "ch": 160,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([EO])"
+        },
+        {
+          "nome": "Trabalho de Conclusão de Curso",
+          "codigo": null,
+          "periodo": null,
+          "ch": 240,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([TCC-ND])"
+        }
+      ],
+      "observacoes": "Código do curso UFMS 1905. 48 disciplinas obrigatórias semestralizadas (2595 h), + 2 disciplinas institucionais obrigatórias do Núcleo de Formação Cidadã (sem semestre definido; no sistema aparecem com tipo NFC e no PPC como 'Disciplinas sem Lotação'), + 2 componente(s) não disciplinar(es) obrigatório(s) (estágio/TCC, sem código de disciplina e sem semestre no quadro de semestralização). Nomes conforme o quadro de semestralização do PPC; códigos, CH e semestre conferidos com graduacao.ufms.br/cursos/1905/estrutura e ensino.ufms.br/cursos/grade/1905 (sem divergências). Unidade conforme item 7.4 do PPC (Lotação das disciplinas): todas lotadas na FACOM, exceto as indicadas. Carga mínima de optativas: 150 h. Componentes não disciplinares no sistema: [EO] Estágio Obrigatório: 160 horas (OBR); [ACS-ND] Atividades Complementares: 35 horas (OBR); [AOE-ND] Atividades Orientadas de Ensino: 300 horas (OPT); [AEX-ND] Atividades de Extensão: 360 horas (OPT); [AEX-ND] Atividades de Extensão: 360 horas (OBR); [TCC-ND] Trabalho de Conclusão de Curso: 240 horas (OBR); [Enade] Exame Nacional de Desempenho:  (s/ tipo). Atividades Complementares, Atividades de Extensão, AOE e Enade não foram listados como disciplinas. Curso de 10 semestres; o 10º semestre não tem disciplinas obrigatórias (\"Componentes Curriculares Não Semestralizados\"). Componentes obrigatórios não disciplinares: Estágio Obrigatório (160 h) e Trabalho de Conclusão de Curso (240 h). O PPC-base de 2023 (https://www.facom.ufms.br/wp-content/uploads/2024/04/ppc_2023-1.pdf) foi substituído no item Currículo pela Res. 1.309/2025."
+    },
+    {
+      "curso": "Engenharia de Software",
+      "campus": "Campo Grande",
+      "curriculo": "PPC aprovado pela Resolução nº 904-Cograd/UFMS, de 22 de junho de 2023, com item 7 (Currículo) alterado pela Resolução nº 1.308-COGRAD/UFMS, de 8 de dezembro de 2025; matriz implantada a partir de 2026-1 (efeitos a partir de 2/3/2026) para todos os estudantes do curso",
+      "fontes": [
+        "https://www.facom.ufms.br/wp-content/uploads/2026/02/PPC_2025.pdf",
+        "https://graduacao.ufms.br/cursos/1906/estrutura",
+        "https://ensino.ufms.br/cursos/grade/1906",
+        "https://www.facom.ufms.br/engenharia-de-software/"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "1919.000.461-9",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estatística",
+          "codigo": "2201.000.265-5",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos da Administração",
+          "codigo": "2501.000.353-1",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "ESAN",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos Matemáticos para Computação",
+          "codigo": "1919.000.587-7",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução à Computação",
+          "codigo": "1919.000.537-6",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução à Engenharia de Software",
+          "codigo": "1919.000.619-5",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "1919.000.576-0",
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Banco de Dados",
+          "codigo": "1919.000.496-9",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Interação Humano-computador",
+          "codigo": "1919.000.469-1",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagem de Programação Orientada a Objetos",
+          "codigo": "1919.000.564-3",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Modelagem de Processos de Negócio",
+          "codigo": "1919.000.467-3",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Análise e Projeto de Software Orientado a Objetos",
+          "codigo": "1919.000.586-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Engenharia de Requisitos",
+          "codigo": "1919.000.573-2",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estruturas de Dados",
+          "codigo": "1919.000.543-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Gerência de Projetos",
+          "codigo": "1919.000.546-5",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Organização de Computadores",
+          "codigo": "1919.000.483-3",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Arquitetura de Software",
+          "codigo": "1919.000.570-5",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "1919.000.563-4",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução a Sistemas Operacionais",
+          "codigo": "1919.000.470-8",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Laboratório de Banco de Dados",
+          "codigo": "1919.000.498-7",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Melhoria de Processos de Software",
+          "codigo": "1919.000.545-6",
+          "periodo": 4,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Programação para Web",
+          "codigo": "1919.000.482-4",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Redes de Computadores",
+          "codigo": "1919.000.465-5",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Gerência de Configuração de Software",
+          "codigo": "1919.000.534-9",
+          "periodo": 5,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Medição de Software",
+          "codigo": "1919.000.478-0",
+          "periodo": 5,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Técnicas Avançadas de Desenvolvimento de Software",
+          "codigo": "1919.000.557-2",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Verificação, Validação e Teste de Software",
+          "codigo": "1919.000.558-1",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação Distribuída",
+          "codigo": "1919.000.591-0",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Engenharia de Software Experimental",
+          "codigo": "1919.000.468-2",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Implementação Algorítmica",
+          "codigo": "1919.000.475-3",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Manutenção de Software",
+          "codigo": "1919.000.578-8",
+          "periodo": 6,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Programação para Dispositivos Móveis",
+          "codigo": "1919.000.492-2",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Prática em Desenvolvimento de Software I",
+          "codigo": "1919.000.620-1",
+          "periodo": 7,
+          "ch": 240,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação e Sociedade",
+          "codigo": "1919.000.590-1",
+          "periodo": 8,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Prática em Desenvolvimento de Software II",
+          "codigo": "1919.000.622-0",
+          "periodo": 8,
+          "ch": 240,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Empreendedorismo e Inovação",
+          "codigo": "0100.000.003-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Vida, Cidadania e Sustentabilidade",
+          "codigo": "0100.000.002-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Estágio Obrigatório",
+          "codigo": null,
+          "periodo": null,
+          "ch": 270,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([EO])"
+        }
+      ],
+      "observacoes": "Código do curso UFMS 1906. 35 disciplinas obrigatórias semestralizadas (2310 h), + 2 disciplinas institucionais obrigatórias do Núcleo de Formação Cidadã (sem semestre definido; no sistema aparecem com tipo NFC e no PPC como 'Disciplinas sem Lotação'), + 1 componente(s) não disciplinar(es) obrigatório(s) (estágio/TCC, sem código de disciplina e sem semestre no quadro de semestralização). Nomes conforme o quadro de semestralização do PPC; códigos, CH e semestre conferidos com graduacao.ufms.br/cursos/1906/estrutura e ensino.ufms.br/cursos/grade/1906 (sem divergências). Unidade conforme item 7.4 do PPC (Lotação das disciplinas): todas lotadas na FACOM, exceto as indicadas. Carga mínima de optativas: 300 h. Componentes não disciplinares no sistema: [EO] Estágio Obrigatório: 270 horas (OBR); [ACS-ND] Atividades Complementares: 260 horas (OBR); [AOE-ND] Atividades Orientadas de Ensino: 300 horas (OPT); [AEX-ND] Atividades de Extensão: 320 horas (OPT); [Enade] Exame Nacional de Desempenho:  (s/ tipo). Atividades Complementares, Atividades de Extensão, AOE e Enade não foram listados como disciplinas. Não há TCC como componente; o curso tem Estágio Obrigatório (270 h) e as disciplinas obrigatórias Prática em Desenvolvimento de Software I e II (240 h cada)."
+    },
+    {
+      "curso": "Sistemas de Informação",
+      "campus": "Campo Grande",
+      "curriculo": "PPC aprovado pela Resolução nº 1.307-Cograd/UFMS, de 8 de dezembro de 2025; matriz implantada a partir de 2026-1 para todos os estudantes do curso",
+      "fontes": [
+        "https://www.facom.ufms.br/wp-content/uploads/2026/03/Projeto-Pedagogico-SI-2026-Completo.pdf",
+        "https://graduacao.ufms.br/cursos/1907/estrutura",
+        "https://ensino.ufms.br/cursos/grade/1907",
+        "https://www.facom.ufms.br/sistemas-de-informacao/projeto-pedagogico/"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "1919.000.461-9",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos da Administração",
+          "codigo": "2501.000.353-1",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "ESAN",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos Matemáticos para Computação",
+          "codigo": "1919.000.587-7",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução à Computação",
+          "codigo": "1919.000.537-6",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Matemática Elementar",
+          "codigo": "2201.000.258-4",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "1919.000.576-0",
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Banco de Dados",
+          "codigo": "1919.000.496-9",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Comportamento Humano e Organizacional",
+          "codigo": "2501.000.410-9",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "ESAN",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Modelagem de Processos de Negócio",
+          "codigo": "1919.000.467-3",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Engenharia de Software",
+          "codigo": "1919.000.551-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estatística",
+          "codigo": "2201.000.265-5",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Gestão Estratégica",
+          "codigo": "2501.000.352-2",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "ESAN",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagem de Programação Orientada a Objetos",
+          "codigo": "1919.000.564-3",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Organização de Computadores",
+          "codigo": "1919.000.483-3",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Análise e Projeto de Software Orientado a Objetos",
+          "codigo": "1919.000.586-8",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estruturas de Dados",
+          "codigo": "1919.000.543-8",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Gerência de Projetos",
+          "codigo": "1919.000.546-5",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Laboratório de Banco de Dados",
+          "codigo": "1919.000.498-7",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "1919.000.563-4",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Interação Humano-computador",
+          "codigo": "1919.000.469-1",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução a Sistemas Operacionais",
+          "codigo": "1919.000.470-8",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Programação para Web",
+          "codigo": "1919.000.482-4",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Redes de Computadores",
+          "codigo": "1919.000.465-5",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Gerência de Configuração de Software",
+          "codigo": "1919.000.534-9",
+          "periodo": 6,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Qualidade de Software",
+          "codigo": "1919.000.574-1",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Técnicas Avançadas de Desenvolvimento de Software",
+          "codigo": "1919.000.557-2",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação Distribuída",
+          "codigo": "1919.000.591-0",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação e Sociedade",
+          "codigo": "1919.000.590-1",
+          "periodo": 7,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Sistemas de Apoio à Decisão",
+          "codigo": "1919.000.484-2",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Governança de Tecnologia da Informação",
+          "codigo": "1919.000.466-4",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Segurança e Auditoria de Sistemas",
+          "codigo": "1919.000.577-9",
+          "periodo": 8,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Empreendedorismo e Inovação",
+          "codigo": "0100.000.003-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Vida, Cidadania e Sustentabilidade",
+          "codigo": "0100.000.002-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Trabalho de Conclusão de Curso",
+          "codigo": null,
+          "periodo": null,
+          "ch": 300,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([TCC-ND])"
+        }
+      ],
+      "observacoes": "Código do curso UFMS 1907. 31 disciplinas obrigatórias semestralizadas (1830 h), + 2 disciplinas institucionais obrigatórias do Núcleo de Formação Cidadã (sem semestre definido; no sistema aparecem com tipo NFC e no PPC como 'Disciplinas sem Lotação'), + 1 componente(s) não disciplinar(es) obrigatório(s) (estágio/TCC, sem código de disciplina e sem semestre no quadro de semestralização). Nomes conforme o quadro de semestralização do PPC; códigos, CH e semestre conferidos com graduacao.ufms.br/cursos/1907/estrutura e ensino.ufms.br/cursos/grade/1907 (sem divergências). Unidade conforme item 7.4 do PPC (Lotação das disciplinas): todas lotadas na FACOM, exceto as indicadas. Carga mínima de optativas: 300 h. Componentes não disciplinares no sistema: [ACS-ND] Atividades Complementares: 210 horas (OBR); [AOE-ND] Atividades Orientadas de Ensino: 300 horas (OPT); [AEX-ND] Atividades de Extensão: 300 horas (OPT); [AEX-ND] Atividades de Extensão: 300 horas (OBR); [TCC-ND] Trabalho de Conclusão de Curso: 300 horas (OBR); [Enade] Exame Nacional de Desempenho:  (s/ tipo). Atividades Complementares, Atividades de Extensão, AOE e Enade não foram listados como disciplinas. Não há Estágio Obrigatório; o componente obrigatório não disciplinar é o Trabalho de Conclusão de Curso (300 h)."
+    },
+    {
+      "curso": "Inteligência Artificial",
+      "campus": "Campo Grande",
+      "curriculo": "PPC aprovado pela Resolução nº 1.372-Cograd/UFMS, de 15 de dezembro de 2025; curso implantado a partir de 2026/1 (primeira matriz)",
+      "fontes": [
+        "https://www.facom.ufms.br/wp-content/uploads/2026/01/ppc-bacharelado-ia.pdf",
+        "https://graduacao.ufms.br/cursos/1908/estrutura",
+        "https://ensino.ufms.br/cursos/grade/1908",
+        "https://www.facom.ufms.br/inteligencia-artificial/"
+      ],
+      "disciplinas": [
+        {
+          "nome": "Algoritmos e Programação I",
+          "codigo": "1919.000.461-9",
+          "periodo": 1,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Computação e Sociedade",
+          "codigo": "1919.000.590-1",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Fundamentos de Teoria da Computação",
+          "codigo": "1919.000.593-9",
+          "periodo": 1,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Introdução à Computação",
+          "codigo": "1919.000.537-6",
+          "periodo": 1,
+          "ch": 30,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Algoritmos e Programação II",
+          "codigo": "1919.000.576-0",
+          "periodo": 2,
+          "ch": 90,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Cálculo I",
+          "codigo": "2201.000.253-9",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Probabilidade e Estatística",
+          "codigo": "2201.000.257-5",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Vetores e Geometria Analítica",
+          "codigo": "2201.000.251-0",
+          "periodo": 2,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Álgebra Linear",
+          "codigo": "2201.000.255-7",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "INMA",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Aprendizado de Máquina Supervisionado",
+          "codigo": "1919.000.512-4",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Engenharia de Software",
+          "codigo": "1919.000.551-8",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Inteligência Artificial",
+          "codigo": "1919.000.563-4",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Teoria dos Grafos e seus Algoritmos",
+          "codigo": "1919.000.547-4",
+          "periodo": 3,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Banco de Dados",
+          "codigo": "1919.000.496-9",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Estruturas de Dados",
+          "codigo": "1919.000.543-8",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Linguagem de Programação Orientada a Objetos",
+          "codigo": "1919.000.564-3",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Organização de Computadores",
+          "codigo": "1919.000.483-3",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Redes Neurais",
+          "codigo": "1919.000.504-4",
+          "periodo": 4,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Aprendizado de Máquina Não Supervisionado",
+          "codigo": "1919.000.510-6",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Gerência de Configuração Aplicada à Inteligência Artificial",
+          "codigo": "1919.000.509-0",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Processamento de Imagens",
+          "codigo": "1919.000.502-6",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Processamento de Linguagem Natural",
+          "codigo": "1919.000.503-5",
+          "periodo": 5,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Aprendizado de Máquina por Reforço",
+          "codigo": "1919.000.508-0",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Grandes Modelos de Linguagem",
+          "codigo": "1919.000.500-8",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Mineração de Dados",
+          "codigo": "1919.000.501-7",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Visão Computacional",
+          "codigo": "1919.000.506-2",
+          "periodo": 6,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Agentes Inteligentes",
+          "codigo": "1919.000.507-1",
+          "periodo": 7,
+          "ch": 60,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Residência em Inteligência Artificial I",
+          "codigo": "1919.000.624-8",
+          "periodo": 7,
+          "ch": 360,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Residência em Inteligência Artificial II",
+          "codigo": "1919.000.625-7",
+          "periodo": 8,
+          "ch": 360,
+          "unidade": "FACOM",
+          "tipo": "disciplina obrigatória"
+        },
+        {
+          "nome": "Empreendedorismo e Inovação",
+          "codigo": "0100.000.003-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Vida, Cidadania e Sustentabilidade",
+          "codigo": "0100.000.002-0",
+          "periodo": null,
+          "ch": 30,
+          "unidade": null,
+          "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+        },
+        {
+          "nome": "Estágio Obrigatório",
+          "codigo": null,
+          "periodo": null,
+          "ch": 320,
+          "unidade": null,
+          "tipo": "componente curricular não disciplinar obrigatório ([EO])"
+        }
+      ],
+      "observacoes": "Código do curso UFMS 1908. 29 disciplinas obrigatórias semestralizadas (2340 h), + 2 disciplinas institucionais obrigatórias do Núcleo de Formação Cidadã (sem semestre definido; no sistema aparecem com tipo NFC e no PPC como 'Disciplinas sem Lotação'), + 1 componente(s) não disciplinar(es) obrigatório(s) (estágio/TCC, sem código de disciplina e sem semestre no quadro de semestralização). Nomes conforme o quadro de semestralização do PPC; códigos, CH e semestre conferidos com graduacao.ufms.br/cursos/1908/estrutura e ensino.ufms.br/cursos/grade/1908 (sem divergências). Unidade conforme item 7.4 do PPC (Lotação das disciplinas): todas lotadas na FACOM, exceto as indicadas. Carga mínima de optativas: 180 h. Componentes não disciplinares no sistema: [EO] Estágio Obrigatório: 320 horas (OBR); [ACS-ND] Atividades Complementares: 300 horas (OBR); [AOE-ND] Atividades Orientadas de Ensino: 300 horas (OPT); [AEX-ND] Atividades de Extensão: 320 horas (OPT); [Enade] Exame Nacional de Desempenho:  (s/ tipo). Atividades Complementares, Atividades de Extensão, AOE e Enade não foram listados como disciplinas. Curso novo: primeira matriz, implantada em 2026/1 (os semestres finais ainda não foram ofertados). Não há TCC como componente; há Estágio Obrigatório (320 h) e as disciplinas obrigatórias Residência em Inteligência Artificial I e II (360 h cada)."
+    }
+  ],
+  "compartilhadas": [
+    {
+      "nome": "Algoritmos e Programação I",
+      "codigo": "1919.000.461-9",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 1,
+        "Engenharia de Computação": 1,
+        "Engenharia de Software": 1,
+        "Sistemas de Informação": 1,
+        "Inteligência Artificial": 1
+      },
+      "ch": 90,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Algoritmos e Programação II",
+      "codigo": "1919.000.576-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 2,
+        "Engenharia de Computação": 2,
+        "Engenharia de Software": 2,
+        "Sistemas de Informação": 2,
+        "Inteligência Artificial": 2
+      },
+      "ch": 90,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Banco de Dados",
+      "codigo": "1919.000.496-9",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 5,
+        "Engenharia de Computação": 6,
+        "Engenharia de Software": 2,
+        "Sistemas de Informação": 2,
+        "Inteligência Artificial": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Computação e Sociedade",
+      "codigo": "1919.000.590-1",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 1,
+        "Engenharia de Computação": 8,
+        "Engenharia de Software": 8,
+        "Sistemas de Informação": 7,
+        "Inteligência Artificial": 1
+      },
+      "ch": 30,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Empreendedorismo e Inovação",
+      "codigo": "0100.000.003-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": null,
+        "Engenharia de Computação": null,
+        "Engenharia de Software": null,
+        "Sistemas de Informação": null,
+        "Inteligência Artificial": null
+      },
+      "ch": 30,
+      "unidade": null,
+      "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+    },
+    {
+      "nome": "Estruturas de Dados",
+      "codigo": "1919.000.543-8",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 3,
+        "Engenharia de Computação": 3,
+        "Engenharia de Software": 3,
+        "Sistemas de Informação": 4,
+        "Inteligência Artificial": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Inteligência Artificial",
+      "codigo": "1919.000.563-4",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 4,
+        "Engenharia de Computação": 7,
+        "Engenharia de Software": 4,
+        "Sistemas de Informação": 5,
+        "Inteligência Artificial": 3
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Introdução à Computação",
+      "codigo": "1919.000.537-6",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 1,
+        "Engenharia de Computação": 1,
+        "Engenharia de Software": 1,
+        "Sistemas de Informação": 1,
+        "Inteligência Artificial": 1
+      },
+      "ch": 30,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Linguagem de Programação Orientada a Objetos",
+      "codigo": "1919.000.564-3",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 3,
+        "Engenharia de Computação": 4,
+        "Engenharia de Software": 2,
+        "Sistemas de Informação": 3,
+        "Inteligência Artificial": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Vida, Cidadania e Sustentabilidade",
+      "codigo": "0100.000.002-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": null,
+        "Engenharia de Computação": null,
+        "Engenharia de Software": null,
+        "Sistemas de Informação": null,
+        "Inteligência Artificial": null
+      },
+      "ch": 30,
+      "unidade": null,
+      "tipo": "disciplina obrigatória institucional (Núcleo de Formação Cidadã)"
+    },
+    {
+      "nome": "Engenharia de Software",
+      "codigo": "1919.000.551-8",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 4,
+        "Engenharia de Computação": 9,
+        "Sistemas de Informação": 3,
+        "Inteligência Artificial": 3
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Álgebra Linear",
+      "codigo": "2201.000.255-7",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Inteligência Artificial"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 3,
+        "Engenharia de Computação": 3,
+        "Inteligência Artificial": 3
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Análise e Projeto de Software Orientado a Objetos",
+      "codigo": "1919.000.586-8",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 6,
+        "Engenharia de Software": 3,
+        "Sistemas de Informação": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Cálculo I",
+      "codigo": "2201.000.253-9",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Inteligência Artificial"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 1,
+        "Engenharia de Computação": 1,
+        "Inteligência Artificial": 2
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Computação Distribuída",
+      "codigo": "1919.000.591-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 7,
+        "Engenharia de Software": 6,
+        "Sistemas de Informação": 7
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Fundamentos de Teoria da Computação",
+      "codigo": "1919.000.593-9",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Inteligência Artificial"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 2,
+        "Engenharia de Computação": 2,
+        "Inteligência Artificial": 1
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Organização de Computadores",
+      "codigo": "1919.000.483-3",
+      "cursos": [
+        "Engenharia de Software",
+        "Inteligência Artificial",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 3,
+        "Sistemas de Informação": 3,
+        "Inteligência Artificial": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Probabilidade e Estatística",
+      "codigo": "2201.000.257-5",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Inteligência Artificial"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 3,
+        "Engenharia de Computação": 5,
+        "Inteligência Artificial": 2
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Vetores e Geometria Analítica",
+      "codigo": "2201.000.251-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação",
+        "Inteligência Artificial"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 1,
+        "Engenharia de Computação": 1,
+        "Inteligência Artificial": 2
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Arquitetura de Computadores I",
+      "codigo": "1919.000.604-1",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 5,
+        "Engenharia de Computação": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Arquitetura de Computadores II",
+      "codigo": "1919.000.611-2",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 6,
+        "Engenharia de Computação": 5
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Cálculo II",
+      "codigo": "2201.000.252-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 2,
+        "Engenharia de Computação": 2
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Compiladores I",
+      "codigo": "1919.000.597-5",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 5,
+        "Engenharia de Computação": 6
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Estatística",
+      "codigo": "2201.000.265-5",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 1,
+        "Sistemas de Informação": 3
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Fundamentos da Administração",
+      "codigo": "2501.000.353-1",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 1,
+        "Sistemas de Informação": 1
+      },
+      "ch": 60,
+      "unidade": "ESAN",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Fundamentos de Redes de Computadores",
+      "codigo": "1919.000.465-5",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 5,
+        "Sistemas de Informação": 6
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Fundamentos Matemáticos para Computação",
+      "codigo": "1919.000.587-7",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 1,
+        "Sistemas de Informação": 1
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Gerência de Configuração de Software",
+      "codigo": "1919.000.534-9",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 5,
+        "Sistemas de Informação": 6
+      },
+      "ch": 30,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Gerência de Projetos",
+      "codigo": "1919.000.546-5",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 3,
+        "Sistemas de Informação": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Interação Humano-computador",
+      "codigo": "1919.000.469-1",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 2,
+        "Sistemas de Informação": 5
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Introdução a Sistemas Operacionais",
+      "codigo": "1919.000.470-8",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 4,
+        "Sistemas de Informação": 5
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Laboratório de Banco de Dados",
+      "codigo": "1919.000.498-7",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 4,
+        "Sistemas de Informação": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Linguagens Formais e Autômatos",
+      "codigo": "1919.000.599-3",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 3,
+        "Engenharia de Computação": 4
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Métodos Numéricos",
+      "codigo": "2201.000.260-0",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 5,
+        "Engenharia de Computação": 6
+      },
+      "ch": 60,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Modelagem de Processos de Negócio",
+      "codigo": "1919.000.467-3",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 2,
+        "Sistemas de Informação": 2
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Programação para Web",
+      "codigo": "1919.000.482-4",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 4,
+        "Sistemas de Informação": 5
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Projeto e Análise de Algoritmos I",
+      "codigo": "1919.000.594-8",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 4,
+        "Engenharia de Computação": 5
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Redes de Computadores",
+      "codigo": "1919.000.612-1",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 7,
+        "Engenharia de Computação": 8
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Sequências e Séries",
+      "codigo": "2201.000.256-6",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 2,
+        "Engenharia de Computação": 2
+      },
+      "ch": 30,
+      "unidade": "INMA",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Sistemas Digitais",
+      "codigo": "1919.000.608-8",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 2,
+        "Engenharia de Computação": 3
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Sistemas Operacionais",
+      "codigo": "1919.000.602-3",
+      "cursos": [
+        "Ciência da Computação",
+        "Engenharia de Computação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 6,
+        "Engenharia de Computação": 7
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Técnicas Avançadas de Desenvolvimento de Software",
+      "codigo": "1919.000.557-2",
+      "cursos": [
+        "Engenharia de Software",
+        "Sistemas de Informação"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Engenharia de Software": 5,
+        "Sistemas de Informação": 6
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    },
+    {
+      "nome": "Teoria dos Grafos e seus Algoritmos",
+      "codigo": "1919.000.547-4",
+      "cursos": [
+        "Ciência da Computação",
+        "Inteligência Artificial"
+      ],
+      "mesmo_codigo": true,
+      "periodo_por_curso": {
+        "Ciência da Computação": 4,
+        "Inteligência Artificial": 3
+      },
+      "ch": 60,
+      "unidade": "FACOM",
+      "tipo": "disciplina obrigatória"
+    }
+  ],
+  "duvidas": "1) Versão curricular: as páginas do sistema (graduacao.ufms.br/cursos/<id>/estrutura e ensino.ufms.br/cursos/grade/<id>) não mostram rótulo de versão, e a 'data da última atualização' em ensino.ufms.br é um valor-padrão (01/01/1970). A versão foi identificada pelos PPCs publicados no site da FACOM (todos com matriz implantada a partir de 2026-1). O conteúdo das páginas do sistema bate 100% com o quadro de semestralização desses PPCs (nome, CH e semestre de todas as disciplinas obrigatórias, sem divergência). 2) Os PDFs de CC, SI e IA são o Anexo (PPC); o número da resolução foi lido no cabeçalho do anexo, porque o corpo da resolução não vem no PDF. Os PDFs de ES e EC trazem também o texto da resolução de alteração. 3) Empreendedorismo e Inovação e Vida, Cidadania e Sustentabilidade são obrigatórias pelo PPC ('o estudante deverá cursar'; 60 h mínimas no Núcleo de Formação Cidadã). Mas não têm semestre definido, aparecem como 'Disciplinas sem Lotação' (por isso unidade = null) e no sistema estão com tipo NFC, não OBR. Elas estão incluídas com um campo 'tipo' próprio: filtre por tipo se quiser só as OBR semestralizadas. 4) Estágio Obrigatório e TCC são componentes curriculares não disciplinares (siglas [EO] e [TCC-ND]): não têm código de disciplina nem semestre no quadro de semestralização, por isso codigo, periodo e unidade = null. Não entram em 'compartilhadas', porque são componentes próprios de cada curso, com carga horária diferente. 5) Ficaram de fora, conforme o pedido: Atividades Complementares (OBR em todos), Atividades de Extensão (marcadas OBR no sistema/PPC de CC 320 h, EC 360 h e SI 300 h; aparecem também como OPT), Atividades Orientadas de Ensino (OPT) e Enade. 6) A unidade vem do item 7.4 de cada PPC (disciplinas lotadas na FACOM, salvo as exceções listadas) e é coerente com o prefixo do código (1919 = FACOM, 2201 = INMA, 2401 = INFI, 2301 = INQUI, 2501 = ESAN, 2101 = FAENG, 0100 = componente institucional). 7) Nomes conforme o PPC (as páginas do sistema mostram tudo em maiúsculas). Os códigos estão no formato de graduacao.ufms.br (ex.: 1919.000.461-9); em ensino.ufms.br o mesmo código aparece sem pontuação (19190004619). 8) Não há disciplina com o mesmo nome e código diferente entre os cursos: todo nome repetido também repete o código. Há pares de nome parecido que são disciplinas distintas (códigos diferentes) e não foram marcados como compartilhados: Estatística (ES, SI) x Probabilidade e Estatística (CC, EC, IA); Introdução a Sistemas Operacionais (ES, SI) x Sistemas Operacionais (CC, EC); Fundamentos de Redes de Computadores (ES, SI) x Redes de Computadores (CC, EC). 9) O site da FACOM também lista o curso 'Téc. em Análise e Desenvolvimento de Sistemas', que não foi pedido nem incluído. O filtro de unidade FACOM em graduacao.ufms.br retorna só os 5 bacharelados (ids 1904 a 1908).",
+  "legenda_unidades": {
+    "FACOM": "Faculdade de Computação",
+    "INMA": "Instituto de Matemática",
+    "INFI": "Instituto de Física",
+    "INQUI": "Instituto de Química",
+    "ESAN": "Escola de Administração e Negócios",
+    "FAENG": "Faculdade de Engenharias, Arquitetura e Urbanismo e Geografia"
+  }
+}
