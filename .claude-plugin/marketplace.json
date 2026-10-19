@@ -1,12 +1,17 @@
 {
   "name": "empreiteiro-skills",
   "owner": { "name": "Empreiteiro" },
-  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations.",
+  "description": "Claude Code skills by Empreiteiro: creating and checking HTML presentations, and writing and rendering posts for meme pages.",
   "plugins": [
     {
       "name": "presentations",
       "source": "./",
       "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
+    },
+    {
+      "name": "memes",
+      "source": "./plugins/memes",
+      "description": "Write and render posts for a humor/meme page in its own voice: text posts, chart memes, code-generated Reels and a 1-bit platform-game series."
     }
   ]
 }
