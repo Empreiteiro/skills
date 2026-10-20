@@ -1,9 +1,0 @@
-{
-  "name": "writing",
-  "displayName": "Writing",
-  "description": "Write without sounding like AI: a brand voice system, two editing passes, and the craft of fourteen forms from fiction to technical docs.",
-  "version": "1.0.0",
-  "author": { "name": "Empreiteiro" },
-  "repository": "https://github.com/Empreiteiro/skills",
-  "keywords": ["writing", "editing", "voice", "copywriting", "ai-slop"]
-}

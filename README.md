@@ -1,207 +1,82 @@
 # Skills
 
-Claude Code skills and the presentations built with them. Ten plugins, installed separately:
+Claude Code skills and the presentations built with them, in one plugin (`empreiteiro`). The skills are grouped by
+category, one folder each under `skills/`, and every category has a README with what each skill does and what its
+scripts need.
 
-| Plugin | What it is for | Skills |
+| Category | What it is for | Skills |
 |---|---|---|
-| `presentations` | Creating and checking HTML presentations | `skills/` |
-| `memes` | Writing and rendering posts for a humor/meme page | [`plugins/memes/`](plugins/memes/) |
-| `saas-backend` | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | [`plugins/saas-backend/`](plugins/saas-backend/) |
-| `web-ui` | Web UI patterns: search/filter bar, sortable List view, screens in framework-less SPAs, layout review | [`plugins/web-ui/`](plugins/web-ui/) |
-| `data-analytics` | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | [`plugins/data-analytics/`](plugins/data-analytics/) |
-| `data-cards` | Shareable data cards rendered to PNG on the server: design system and render checks | [`plugins/data-cards/`](plugins/data-cards/) |
-| `writing` | Brand copy without AI tells, and the craft of fourteen forms from fiction to technical docs | [`plugins/writing/`](plugins/writing/) |
-| `dev-workflow` | A change from request to production: worktree, gate, PR, deploy, proof by fetch | [`plugins/dev-workflow/`](plugins/dev-workflow/) |
-| `ab-testing` | Product A/B tests, from the design to promoting the winner | [`plugins/ab-testing/`](plugins/ab-testing/) |
-| `animated-reels` | Vertical reels with drawn characters, rendered frame by frame | [`plugins/animated-reels/`](plugins/animated-reels/) |
+| [`presentations/`](skills/presentations/README.md) | Creating and checking HTML presentations | `presentation-create`, `presentation-slide`, `presentation-graph`, `presentation-export`, `presentation-check-structure`, `presentation-check-visual`, `presentation-check-facts`, `presentation-review` |
+| [`writing/`](skills/writing/README.md) | Brand copy without AI tells, and the craft of fourteen forms from fiction to technical docs | `write`, `no-ai-slop`, `humanizer`, `writing-*` (14) |
+| [`video/`](skills/video/README.md) | Video and motion made by code, rendered frame by frame | `animated-reel`, `kinetic-film` |
+| [`memes/`](skills/memes/README.md) | Writing and rendering posts and reels for a humor/meme page | `meme-post`, `meme-chart`, `meme-reel`, `meme-game` |
+| [`data/`](skills/data/README.md) | Answering questions over data and building data features with LLMs: profiling, text-to-SQL, connectors, reports, pipelines, security | `dataset-profiling`, `dataset-onboarding`, `text-to-sql`, `tabular-file-qa`, `join-discovery`, `grounded-answers`, `chart-spec`, `api-data-connector`, `data-reports-and-alerts`, `medallion-pipeline`, `lineage-and-versioning`, `identity-resolution`, `baseline-automl`, `secure-data-platform`, `llm-structured-output`, `sqlite-postgres-portability` |
+| [`backend/`](skills/backend/README.md) | Multi-tenant SaaS backends: secure API routes, SQLite/Postgres schema changes, data-source integrations | `secure-api-route`, `sqlite-postgres-schema`, `data-source-integration` |
+| [`frontend/`](skills/frontend/README.md) | Web UI: search/filter bar, sortable List view, SPA screens, React component placement, screen prototypes, data cards, layout review | `search-filter-bar`, `data-table-list-view`, `vanilla-spa-screen`, `atomic-design`, `ui-revamp-prototype`, `data-card-design`, `web-layout-review` |
+| [`dev-workflow/`](skills/dev-workflow/README.md) | A change from request to production: worktree, gate, PR, deploy, proof by fetch | `implement`, `test-and-ship`, `ship`, `railway-ops` |
+| [`ab-testing/`](skills/ab-testing/README.md) | Product A/B tests, from the design to promoting the winner | `ab-test-create`, `ab-test-promote-winner` |
 
 ```
-.claude-plugin/            plugin + marketplace manifests (install the skills with one command)
-skills/                    the presentation skills (one folder per skill, SKILL.md + scripts)
+.claude-plugin/
+  marketplace.json         the marketplace, with one plugin: empreiteiro
+  plugin.json              the plugin manifest; "skills" lists the category folders below
+skills/
+  <category>/              one folder per category, with a README.md
+    <skill>/               one folder per skill: SKILL.md, plus scripts/, references/ or an engine when it has them
 presentations/
   README.md                index of presentations and how to add one
   _template/               starter deck: copy it to start a new presentation
   <slug>/                  one folder per presentation (index.html, assets/, data/, README.md)
-plugins/                   self-contained plugins, each with its own manifest, README and skills/
-  memes/
-  saas-backend/
-  web-ui/
-  data-analytics/
-  data-cards/
-  writing/
-  dev-workflow/
-  ab-testing/
-  animated-reels/
 ```
-
-## Presentation skills
-
-| Skill | What it does |
-|---|---|
-| `presentation-create` | Start a new deck from `presentations/_template` and register it |
-| `presentation-slide` | Add, edit, reorder or hide slides, with notes, explanations, fragments and controller steps |
-| `presentation-graph` | Graph slides with D3: data, deterministic layout, legible labels, real datasets |
-| `presentation-export` | PDF, one image per slide, or a single-slide screenshot at 1920×1080 (headless Chrome) |
-
-## Presentation checking skills
-
-| Skill | What it does |
-|---|---|
-| `presentation-check-structure` | Slide list, notes, explanations, clicks, controllers, slide references, assets, pinned CDNs, console errors |
-| `presentation-check-visual` | Renders every slide and inspects it; compares before/after renders to catch unintended changes |
-| `presentation-check-facts` | Verifies claims and datasets against primary sources and records them |
-| `presentation-review` | Runs the three checks and returns one prioritized report |
-
-## Meme skills
-
-Plugin in [`plugins/memes/`](plugins/memes/README.md), for any humor page in any language: each page keeps its
-voice in a `PAGE.md` profile, built from its post archive or its best posts.
-
-| Skill | What it does |
-|---|---|
-| `meme-post` | Writes a post — the line on the image, the caption, the hashtag block — and renders the 1080×1080 PNG |
-| `meme-chart` | Posts where the drawing is the joke: zigzag line, staircase, bars or pie |
-| `meme-reel` | 1080×1920 videos generated by code, ending on the still post (Pillow + ffmpeg) |
-| `meme-game` | A series of reels told as a 1-bit platform game |
-
-## SaaS backend skills
-
-Plugin in [`plugins/saas-backend/`](plugins/saas-backend/README.md): checklists for multi-tenant backends. Each one
-starts by mapping the project's own helpers.
-
-| Skill | What it does |
-|---|---|
-| `secure-api-route` | Add or change an API route without leaking across tenants or roles: auth layers, scope, tenant-checked writes, input, errors, audit, SSRF, signatures |
-| `sqlite-postgres-schema` | Schema changes and SQL that run on both SQLite and Postgres, with idempotent boot-time schema files |
-| `data-source-integration` | Connect an external SaaS source end to end: OAuth or API key, polling, cursors, rate limits, webhooks, ingestion, visibility, UI, docs |
-
-## Web UI skills
-
-Plugin in [`plugins/web-ui/`](plugins/web-ui/README.md): consistent list screens, framework-less SPA screens, and
-looking at every changed screen before it ships.
-
-| Skill | What it does |
-|---|---|
-| `search-filter-bar` | One search/filter bar for every list: search, *Filters* popover, quick selectors, pills, counts, overflow |
-| `data-table-list-view` | One sortable table for every List view: one value per cell, persisted sort, Cards · List toggle, accessible rows |
-| `vanilla-spa-screen` | Add a screen to a vanilla-JS SPA: route, state, loader, view, gates, menu, handlers, focus, i18n, cache busting |
-| `web-layout-review` | Look at a changed screen: demo seed, screenshots at 1440px and 390px in every theme, sideways-overflow detection, layout checklist and rules |
-
-## Data analytics skills
-
-Plugin in [`plugins/data-analytics/`](plugins/data-analytics/README.md): distilled from building
-[Data Talks](https://github.com/Empreiteiro/data-talks), an LLM data-analysis platform, and generalized. Each skill
-keeps the pattern that worked and turns what broke into a rule. Use them to analyse data for someone or to build the
-same features into an application.
-
-| Group | Skills |
-|---|---|
-| Analysis | `dataset-profiling`, `dataset-onboarding`, `text-to-sql`, `tabular-file-qa`, `join-discovery`, `grounded-answers`, `chart-spec` |
-| Integration and reporting | `api-data-connector`, `data-reports-and-alerts` |
-| Data engineering | `medallion-pipeline`, `lineage-and-versioning`, `identity-resolution`, `baseline-automl` |
-| Platform | `secure-data-platform`, `llm-structured-output`, `sqlite-postgres-portability` |
-
-They complement `saas-backend`: that plugin covers per-route security, boot-time schema files and SaaS ingestion
-for search/assistants; these cover API extracts as queryable tables, platform-wide data security and
-SQLAlchemy/Alembic portability. Six skills ship scripts (`profile_dataset.py`, `sql_guard.py`, `infer_joins.py`,
-`chart_spec.py`, `check_url.py`, `resolve_identities.py`); see the plugin README for what each needs.
-
-## Data card skills
-
-Plugin in [`plugins/data-cards/`](plugins/data-cards/README.md): chart images an app draws on the server for people to
-share (Satori, `next/og`, `@vercel/og`).
-
-| Skill | What it does |
-|---|---|
-| `data-card-design` | The sheet, three type roles, color tokens by role with one highlight, textures, chart marks, copy, editable parts, social formats, and before/after render comparison |
-
-## Writing skills
-
-Plugin in [`plugins/writing/`](plugins/writing/README.md). `write` keeps a brand's voice in two templates it fills
-from samples of copy you like, checks claims against the product, then runs `no-ai-slop` and `humanizer` (vendored
-unedited, MIT).
-
-| Skill | What it does |
-|---|---|
-| `write` | Brand writing system: voice and opinion templates, a claim check, then the two passes below |
-| `no-ai-slop` | Flags AI-slop patterns line by line and cuts them, keeping the writer's voice |
-| `humanizer` | Rewrites what still reads as AI without changing what it says |
-| `writing-*` (14) | The craft of one form each: academic research, blog posts, books and fiction, business and legal, essays, ghostwriting, journalism, marketing copy, newsletters, nonfiction and memoir, poetry, scripts and speeches, social media, technical |
-
-## Dev workflow skills
-
-Plugin in [`plugins/dev-workflow/`](plugins/dev-workflow/README.md). Project facts (gate and deploy commands, URLs,
-branch names, Railway IDs) come from the project's `CLAUDE.md` or `AGENTS.md`.
-
-| Skill | What it does |
-|---|---|
-| `implement` | Entry point for build/fix/change requests: worktree, framework docs, the project's invariants, premise checked against today's code, plan |
-| `test-and-ship` | Runs the gate and fixes what fails, then commits, opens and merges the PR, deploys, and proves it by fetching the live site |
-| `ship` | The same without the gate, for diffs that do not run |
-| `atomic-design` | Where a React component lives, what it may import, what goes stale when it moves |
-| `ui-revamp-prototype` | A throwaway prototype of one screen, published as an Artifact, with N directions to pick from before any code |
-| `railway-ops` | Operate an app on Railway: status, logs, deploys, variables, read-only Postgres, rollback |
-
-## A/B testing skills
-
-Plugin in [`plugins/ab-testing/`](plugins/ab-testing/README.md), for web apps with user accounts.
-
-| Skill | What it does |
-|---|---|
-| `ab-test-create` | Design the test with you, assign each account once at signup, gate the arms behind a flag, build the results board |
-| `ab-test-promote-winner` | Snapshot the final board, send everyone to the winner, delete the losing arms, retire the flag, archive the test |
-
-## Animated reel skill
-
-Plugin in [`plugins/animated-reels/`](plugins/animated-reels/README.md): the skill plus its render engine, with one
-neutral example character and reel. Bring your own characters and brand.
-
-| Skill | What it does |
-|---|---|
-| `animated-reel` | A 1080x1920 reel from a topic and a cast: first-person script and voice-over checked with Whisper, new poses from an image model, frame-by-frame animation in headless Chromium, synthesized soundtrack, cover and caption |
 
 ## Install
 
-As a plugin (recommended):
-
 ```bash
 claude plugin marketplace add Empreiteiro/skills
-claude plugin install presentations@empreiteiro-skills
-claude plugin install memes@empreiteiro-skills
-claude plugin install saas-backend@empreiteiro-skills
-claude plugin install web-ui@empreiteiro-skills
-claude plugin install data-analytics@empreiteiro-skills
-claude plugin install data-cards@empreiteiro-skills
-claude plugin install writing@empreiteiro-skills
-claude plugin install dev-workflow@empreiteiro-skills
-claude plugin install ab-testing@empreiteiro-skills
-claude plugin install animated-reels@empreiteiro-skills
+claude plugin install empreiteiro@empreiteiro-skills
 ```
 
-Inside a session: `/plugin marketplace add Empreiteiro/skills`, then `/plugin install <plugin>@empreiteiro-skills`.
-Skills are then available as `/presentations:presentation-review`, `/saas-backend:secure-api-route`, and so on.
-Updates: `claude plugin update <plugin>@empreiteiro-skills`.
+Inside a session: `/plugin install empreiteiro --marketplace Empreiteiro/skills`. Skills are then available as
+`/empreiteiro:presentation-review`, `/empreiteiro:write`, `/empreiteiro:kinetic-film` and so on, and Claude loads them
+on its own when a task matches. Updates: `claude plugin update empreiteiro@empreiteiro-skills`.
 
-The meme scripts need `pip install pillow`, and an ffmpeg for videos (see [its README](plugins/memes/README.md)).
-The A/B board scripts need Node 18+ and Playwright (see [its README](plugins/ab-testing/README.md)).
-The data-analytics scripts need Python 3.9+ and `pip install pandas openpyxl` for the ones that read data files
-(`pyarrow` for Parquet and `sqlglot` for stricter SQL validation are optional).
-The layout review needs Node 18+ and Playwright with a Chromium; the card render comparison needs
-`pip install pillow` (see each plugin's README).
-The reel engine needs Node 18+, ffmpeg, ImageMagick 7 and whisper.cpp; its setup script installs the rest (see
-[its README](plugins/animated-reels/README.md)).
+### Coming from the per-area plugins
 
-Without the plugin system, copy the folders you want from `skills/` or `plugins/<plugin>/skills/` to
-`~/.claude/skills/` (personal) or to a project's `.claude/skills/`. Some skills use a sibling's files, so copy these
-together: `presentation-export` with the presentation check skills; `dataset-profiling` and `text-to-sql` with
-`tabular-file-qa`; `write` with `no-ai-slop` and `humanizer`; `test-and-ship` with `ship`; and
-`ab-test-promote-winner` with `ab-test-create`.
+Until version 2.0.0 each area was a plugin of its own (`presentations`, `memes`, `saas-backend`, `web-ui`,
+`data-analytics`, `data-cards`, `writing`, `dev-workflow`, `ab-testing`, `animated-reels`). They are no longer in the
+marketplace: uninstall the ones you have and install `empreiteiro`.
 
-## Requirements for the presentation scripts
+```bash
+claude plugin marketplace update empreiteiro-skills
+claude plugin uninstall writing@empreiteiro-skills    # once per plugin you had installed
+claude plugin install empreiteiro@empreiteiro-skills
+```
 
-- Python 3.9+
-- Google Chrome, Chromium or Microsoft Edge (set `CHROME_PATH` if it is not found)
-- `pip install pymupdf pillow` for slide images and render comparison
+The skill names did not change; only the prefix did (`/writing:write` is now `/empreiteiro:write`). The old
+`saas-backend` skills are in `backend/`, `web-ui` and `data-cards` in `frontend/` (with `atomic-design` and
+`ui-revamp-prototype`, which were in `dev-workflow`), `data-analytics` in `data/` and `animated-reels` in `video/`.
+
+### Without the plugin system
+
+Copy the skill folders you want from `skills/<category>/` to `~/.claude/skills/` (personal) or to a project's
+`.claude/skills/`. Some skills use a sibling's files, so copy these together: `presentation-export` with the
+presentation check skills; `dataset-profiling` and `text-to-sql` with `tabular-file-qa`; `write` with `no-ai-slop` and
+`humanizer`; the four meme skills; `test-and-ship` with `ship`; and `ab-test-promote-winner` with `ab-test-create`.
+`presentation-create` and `presentation-graph` also read `presentations/` from this repository.
+
+## Requirements
+
+Only the skills with scripts need anything installed; each category README has the details.
+
+- **presentations**: Python 3.9+, Chrome/Chromium/Edge (`CHROME_PATH`), `pip install pymupdf pillow`.
+- **video**: Node 18+ and ffmpeg for both; `animated-reel` also needs ImageMagick 7 and whisper.cpp, and its setup
+  script installs the rest; `kinetic-film` needs Playwright with a Chromium.
+- **memes**: `pip install pillow` and an ffmpeg for videos.
+- **data**: Python 3.9+ and `pip install pandas openpyxl` for the scripts that read data files (`pyarrow` for
+  Parquet and `sqlglot` for stricter SQL validation are optional).
+- **frontend**: Node 18+ and Playwright with a Chromium for the layout review; `pip install pillow` for the card
+  render comparison.
+- **ab-testing**: Node 18+ and Playwright for the board scripts.
 
 ## Viewing a presentation
 

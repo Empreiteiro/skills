@@ -1,9 +1,24 @@
 {
-  "name": "presentations",
-  "displayName": "Presentations",
-  "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review.",
-  "version": "1.0.0",
+  "name": "empreiteiro",
+  "displayName": "Empreiteiro skills",
+  "description": "Every Empreiteiro skill in one plugin, grouped by category: presentations, writing, video and motion, memes, data, backend, frontend, dev workflow and A/B testing.",
+  "version": "2.0.0",
   "author": { "name": "Empreiteiro" },
   "repository": "https://github.com/Empreiteiro/skills",
-  "keywords": ["presentations", "slides", "html", "review", "d3"]
+  "keywords": [
+    "presentations", "slides", "writing", "editing", "video", "motion", "kinetic-typography", "reels", "animation",
+    "memes", "social-media", "data", "analytics", "text-to-sql", "llm", "backend", "multi-tenant", "saas",
+    "frontend", "ui", "layout", "workflow", "ship", "deploy", "ab-testing", "experiments"
+  ],
+  "skills": [
+    "./skills/presentations/",
+    "./skills/writing/",
+    "./skills/video/",
+    "./skills/memes/",
+    "./skills/data/",
+    "./skills/backend/",
+    "./skills/frontend/",
+    "./skills/dev-workflow/",
+    "./skills/ab-testing/"
+  ]
 }
