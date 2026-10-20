@@ -1,0 +1,622 @@
+<meta charset="utf-8">
+<title>Remark — brand film</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════════
+   FONTS — vendored, no network at runtime.
+   Archivo is loaded as a TRUE variable font: one file, wght 100–900 live.
+   ═══════════════════════════════════════════════════════════════════════ */
+@font-face{font-family:Archivo;src:url(fonts/archivo.woff2)format('woff2');font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:Newsreader;src:url(fonts/newsreader.woff2)format('woff2');font-weight:200 800;font-style:normal;font-display:block}
+@font-face{font-family:Newsreader;src:url(fonts/newsreader-italic.woff2)format('woff2');font-weight:200 800;font-style:italic;font-display:block}
+@font-face{font-family:'JetBrains Mono';src:url(fonts/jetbrains.woff2)format('woff2');font-weight:100 800;font-style:normal;font-display:block}
+@font-face{font-family:'Hanken Grotesk';src:url(fonts/hanken.woff2)format('woff2');font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:'Geist Mono';src:url(fonts/geistmono.woff2)format('woff2');font-weight:100 900;font-style:normal;font-display:block}
+
+@property --wg{syntax:'<number>';inherits:true;initial-value:400}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PALETTE — the page's own three colours, verbatim from site/app/tokens.css
+   ═══════════════════════════════════════════════════════════════════════ */
+:root{
+  --paper:oklch(97.48% 0.0079 74);
+  --sheet:oklch(99.1% 0.004 80);
+  --ink:oklch(23.69% 0.0036 49);
+  --muted:oklch(47% 0.006 55);
+  --faint:oklch(60% 0.008 60);
+  --rule:oklch(90.09% 0.0095 63);
+  --paper-on-ink:oklch(93.55% 0.0091 78);
+  --muted-on-ink:oklch(72% 0.01 70);
+  --red:oklch(61.12% 0.2252 31);        /* #ec3013 marker red */
+  --red-deep:oklch(48.06% 0.185 31);    /* #ae1800 — the marker block, the logo stem */
+  --display:Archivo,sans-serif;
+  --body:Newsreader,Georgia,serif;
+  --label:'JetBrains Mono',ui-monospace,monospace;
+}
+
+/* THE APP'S OWN PALETTE — .app-screen light, verbatim. The mock is a
+   quotation, so it is painted in the product's colours, not the page's:
+   bluestone is your hand, fern is what the AI proposes, red is the logo's. */
+.app,#instr{
+  --s-bg:oklch(97.48% 0.0079 74);
+  --s-bg-sidebar:oklch(95.6% 0.009 72);
+  --s-surface:oklch(99.1% 0.004 80);
+  --s-surface-1:oklch(95.6% 0.009 72);
+  --s-surface-2:oklch(92.8% 0.011 70);
+  --s-surface-3:oklch(88.5% 0.0115 68);
+  --s-line:oklch(90.09% 0.0095 63);
+  --s-line-1:oklch(86.5% 0.0105 62);
+  --s-line-2:oklch(82% 0.012 62);
+  --s-tx:oklch(23.69% 0.0036 49);
+  --s-tx-1:oklch(33% 0.004 49);
+  --s-tx-2:oklch(47% 0.006 55);
+  --s-tx-3:oklch(60% 0.008 60);
+  --s-acc:oklch(58% 0.062 261);
+  --s-acc-wash:oklch(58% 0.062 261/0.14);
+  --s-acc-wash-2:oklch(58% 0.062 261/0.22);
+  --s-acc-line:oklch(58% 0.062 261/0.45);
+  --s-acc-text:color-mix(in oklab,oklch(58% 0.062 261)80%,oklch(23.69% 0.0036 49));
+  --s-ai:oklch(58% 0.105 156);
+  --s-ai-wash:oklch(58% 0.105 156/0.14);
+  --s-ai-wash-2:oklch(58% 0.105 156/0.22);
+  --s-ai-line:oklch(58% 0.105 156/0.45);
+  --s-ai-text:color-mix(in oklab,oklch(58% 0.105 156)85%,oklch(23.69% 0.0036 49));
+  --s-ai-fg:oklch(97.48% 0.0079 74);
+  --s-btn:oklch(32% 0.005 55);
+  --s-btn-fg:oklch(97.48% 0.0079 74);
+  --s-red:oklch(48.07% 0.1848 31);
+  --s-ins:#0f7a3d;
+  --s-ins-wash:rgba(22,163,74,.1);
+  --s-del:oklch(45% 0.17 32);
+  --s-del-wash:oklch(48.07% 0.1848 31/.13);
+  --s-del-line:oklch(48.07% 0.1848 31/.5);
+  --s-amber:#d97706;
+  --s-r:5px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0b0a0a;overflow:hidden}
+body{display:grid;place-items:center}
+
+#stage{
+  width:1920px;height:1080px;position:relative;overflow:hidden;
+  background:var(--paper);
+  transform-origin:50% 50%;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+
+/* ── scenes ──────────────────────────────────────────────────────────── */
+.scene{position:absolute;inset:0;display:none;background:var(--paper);z-index:0}
+.scene.ink{background:var(--ink)}
+.frame{position:absolute;inset:0;transform-origin:50% 50%;z-index:2}
+
+/* safe box: 140px margins → 1640 × 800 */
+.box{position:absolute;left:140px;top:140px;width:1640px;height:800px}
+.guides{position:absolute;left:140px;top:140px;width:1640px;height:800px;
+  outline:1px solid rgba(236,48,19,.35);display:none;z-index:99;pointer-events:none}
+.guides:before{content:'';position:absolute;left:50%;top:-140px;bottom:-140px;width:1px;background:rgba(236,48,19,.2)}
+body.guides-on .guides{display:block}
+
+/* ── type ────────────────────────────────────────────────────────────── */
+.d{font-family:var(--display);font-variation-settings:"wght" var(--wg);
+   letter-spacing:-.045em;line-height:.9;color:var(--ink);white-space:nowrap}
+.ink .d{color:var(--paper-on-ink)}
+.quiet{font-size:96px;--wg:400;letter-spacing:-.032em;line-height:1.02}
+.hero{line-height:.86;--wg:800}
+.mono{font-family:var(--label);text-transform:uppercase;letter-spacing:.13em;
+  font-size:22px;color:var(--muted)}
+
+/* ── the marker — the site's gesture, frame-exact ────────────────────── */
+.mk{position:relative;display:inline-block;padding:.02em .09em;vertical-align:top}
+.mk-bg{position:absolute;left:0;bottom:-.09em;width:0;height:.09em;
+  background:var(--red-deep);display:block;z-index:0}
+.mk-caret{position:absolute;top:-2%;bottom:-10%;left:0;width:.045em;min-width:3px;
+  background:var(--red-deep);display:block;opacity:0;z-index:2}
+.mk-tx{position:relative;z-index:1;display:block}
+.flood{position:absolute;inset:0;background:var(--red-deep);z-index:1;
+  display:none;clip-path:inset(0 0 0 0)}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   THE MOCK — Remark, quoted. Built at the app's own metrics (980 × 390,
+   the narrow-window layout) and scaled 1.67× so the draft, set in Newsreader
+   at the app's 20px, reads at 33px on a 1080-line frame.
+   ═══════════════════════════════════════════════════════════════════════ */
+#mockwrap{position:absolute;left:141px;top:290px;width:1637px;height:651px;z-index:2;display:none}
+.app{
+  width:980px;height:390px;transform:scale(1.67);transform-origin:0 0;
+  background:var(--s-bg);color:var(--s-tx);
+  font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16px;line-height:1.5;
+  border:1px solid var(--s-line-1);border-radius:var(--s-r);overflow:hidden;
+  box-shadow:0 1px 0 oklch(23.69% .0036 49/.05),0 18px 50px -26px oklch(23.69% .0036 49/.30);
+  position:relative;display:flex;flex-direction:column
+}
+.app .mono{font-family:'Geist Mono',ui-monospace,monospace;text-transform:none;letter-spacing:0;color:inherit;font-size:inherit}
+.micro{font-family:'Geist Mono',ui-monospace,monospace;font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--s-tx-3)}
+
+/* header */
+.a-head{height:38px;flex:none;border-bottom:1px solid var(--s-line);display:flex;
+  align-items:center;padding:0 14px;gap:9px;background:var(--s-bg)}
+.a-tile{width:16px;height:16px;flex:none}
+.a-crumb{font-size:12.5px;color:var(--s-tx-2);display:flex;align-items:center;gap:7px}
+.a-crumb b{color:var(--s-tx);font-weight:600}
+.a-chip{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--s-line-1);
+  border-radius:3px;padding:1px 6px;font-size:11px;color:var(--s-tx-2);background:var(--s-surface-1)}
+.a-spacer{flex:1}
+.a-btn{border:1px solid var(--s-line-2);border-radius:3px;padding:3px 9px;
+  font-size:11.5px;color:var(--s-tx-1);background:var(--s-surface)}
+
+/* toolbar */
+.a-tool{height:30px;flex:none;border-bottom:1px solid var(--s-line);display:flex;align-items:center;
+  gap:3px;padding:0 10px;background:var(--s-bg)}
+.a-tb{min-width:20px;height:20px;display:grid;place-items:center;border-radius:3px;
+  font-size:10.5px;font-weight:600;color:var(--s-tx-2);padding:0 4px}
+.a-sep{width:1px;height:14px;background:var(--s-line-1);margin:0 5px}
+.a-wand{min-width:20px;height:20px;display:grid;place-items:center;border-radius:3px;position:relative}
+.a-wand.on{background:var(--s-ai-wash);box-shadow:inset 0 0 0 1px var(--s-ai-line)}
+.a-wand.on:after{content:'';position:absolute;top:-1px;right:-1px;width:5px;height:5px;
+  border-radius:50%;background:var(--s-ai)}
+
+/* body split */
+.a-body{display:flex;flex:1;min-height:0}
+.a-doc{width:620px;flex:none;border-right:1px solid var(--s-line);position:relative;overflow:hidden;background:var(--s-bg)}
+.a-col{width:520px;margin:0 0 0 76px;padding:20px 0 0}
+.doc{font-family:Newsreader,Georgia,serif;font-size:20px;line-height:1.34;
+  letter-spacing:-.003em;color:var(--s-tx-1)}
+.doc h1{font-size:1.7em;font-weight:600;line-height:1.1;margin:0 0 .5em;color:var(--s-tx)}
+.doc p{margin:0 0 .85em}
+.doc .cursorline{position:relative}
+.ghost{color:var(--s-tx-3);opacity:.72}
+.caretbar{display:inline-block;width:2px;height:.95em;background:var(--s-tx);
+  vertical-align:-.14em;margin:0 1px}
+mark{background:var(--s-acc-wash);border-bottom:2px solid var(--s-acc-line);
+  color:inherit;padding:2px 1px 0;border-radius:2px;
+  background-image:linear-gradient(var(--s-acc-wash),var(--s-acc-wash));
+  background-repeat:no-repeat;background-size:100% 100%}
+mark.sel{background:none;background-image:linear-gradient(var(--s-acc-wash-2),var(--s-acc-wash-2));
+  background-size:0% 100%;border-bottom:none}
+/* the passage a rewrite touched, awaiting a decision — .prose [data-change="pending"] */
+.aiwash{background-image:linear-gradient(var(--s-ai-wash-2),var(--s-ai-wash-2));
+  background-repeat:no-repeat;background-size:0% 100%;
+  border-bottom:2px solid var(--s-ai-line);border-radius:2px;padding:2px 1px 0;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+ins{background:var(--s-ins-wash);color:var(--s-ins);text-decoration:none;border-radius:2px;padding:0 2px}
+del{background:var(--s-del-wash);color:var(--s-del);text-decoration:line-through;
+  text-decoration-color:var(--s-del-line);border-radius:2px;padding:0 2px}
+
+/* the margin bracket of the review */
+.brk{position:absolute;left:20px;width:6px;border-left:2px solid var(--s-ai);
+  border-top:2px solid var(--s-ai);border-bottom:2px solid var(--s-ai);display:none}
+.brk i{position:absolute;left:14px;top:1px;width:16px;height:16px;display:grid;place-items:center;
+  color:var(--s-ai-text)}
+.brk i.rv{color:var(--s-tx-3);top:21px}
+
+/* review bar */
+.a-rev{height:24px;flex:none;border-bottom:1px solid var(--s-line);display:none;
+  align-items:center;gap:7px;padding:0 12px;background:var(--s-surface-1)}
+.a-rev .dot{width:5px;height:5px;border-radius:50%;background:var(--s-ai)}
+
+/* rail */
+.a-rail{width:360px;flex:none;background:var(--s-surface);display:flex;flex-direction:column;position:relative}
+.a-tabs{height:30px;flex:none;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--s-line)}
+.a-tab{display:flex;align-items:center;justify-content:center;gap:6px;position:relative;
+  font-family:'Geist Mono',monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--s-tx-3)}
+.a-tab.on{color:var(--s-tx)}
+.a-tab.on:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--s-tx-1)}
+.a-tab b{font-family:'Geist Mono',monospace;font-size:10.5px;font-weight:400;
+  border:1px solid var(--s-line-1);border-radius:2px;padding:0 3px;letter-spacing:0}
+.a-railbody{flex:1;padding:10px;overflow:hidden;position:relative}
+.card{border:1px solid var(--s-line-1);border-radius:var(--s-r);background:var(--s-bg);
+  padding:9px 10px;margin-bottom:8px}
+.card.dash{border:1px dashed var(--s-acc-line);background:var(--s-acc-wash);
+  display:flex;gap:8px;align-items:flex-start}
+.card .who{font-family:'Geist Mono',monospace;font-size:9.5px;text-transform:uppercase;
+  letter-spacing:.1em;padding:1px 4px;border-radius:2px;
+  background:var(--s-acc-wash);color:var(--s-acc-text)}
+.card .who.ai{background:var(--s-ai-wash);color:var(--s-ai-text)}
+.quote{font-family:Newsreader,serif;font-style:italic;font-size:12.5px;color:var(--s-tx-2);
+  border-left:2px solid var(--s-acc-line);padding-left:8px;margin:5px 0 6px;line-height:1.35}
+.note{font-size:12.5px;color:var(--s-tx-1);line-height:1.4}
+.kbd{font-family:'Geist Mono',monospace;font-size:9.5px;border:1px solid var(--s-line-2);
+  border-radius:2px;padding:0 3px;color:var(--s-tx-2);background:var(--s-surface-1)}
+.rowend{display:flex;justify-content:flex-end;gap:6px;margin-top:7px}
+.b{border-radius:3px;font-size:11.5px;padding:3px 9px;border:1px solid transparent}
+.b.ghostb{color:var(--s-tx-2)}
+.b.solid{background:var(--s-btn);color:var(--s-btn-fg)}
+.b.aib{background:var(--s-ai);color:var(--s-ai-fg)}
+.b.out{border-color:var(--s-line-2);color:var(--s-tx-1);background:var(--s-surface)}
+
+/* rail footer — auto-suggest */
+.a-foot{border-top:1px solid var(--s-line);height:34px;flex:none;display:flex;align-items:center;
+  gap:8px;padding:0 10px;background:var(--s-surface)}
+.sw{width:26px;height:15px;border-radius:8px;background:var(--s-surface-3);position:relative;flex:none}
+.sw i{position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.sw.on{background:var(--s-ai)}
+.sw.on i{left:13px}
+.a-foot .lab{font-family:'Geist Mono',monospace;font-size:10px;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--s-tx-3)}
+.a-foot .lab.on{color:var(--s-ai-text)}
+
+/* @ai mention */
+.mention{background:var(--s-ai-wash-2);box-shadow:inset 0 0 0 1px var(--s-ai-line);
+  border-radius:2px;padding:0 2px}
+.aihint{display:none;align-items:center;gap:6px;border:1px solid var(--s-line-1);
+  border-radius:var(--s-r);background:var(--s-bg);padding:5px 8px;margin-top:5px;
+  box-shadow:0 6px 18px -10px rgba(0,0,0,.3)}
+.aichip{background:var(--s-ai);color:var(--s-ai-fg);border-radius:3px;padding:1px 6px;font-size:11px}
+.thread{border-top:1px solid var(--s-line);margin-top:7px;padding-top:7px;display:none}
+.spk{font-family:'Geist Mono',monospace;font-size:9.5px;text-transform:uppercase;
+  letter-spacing:.1em;display:flex;align-items:center;gap:5px;margin-bottom:3px}
+.spk .tick{width:2px;height:9px;background:currentColor}
+
+/* ghost-text hint pill */
+.ghosthint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);
+  background:var(--s-tx);color:var(--s-bg);border-radius:3px;padding:4px 9px;
+  font-family:'Geist Mono',monospace;font-size:10px;text-transform:uppercase;
+  letter-spacing:.1em;display:none;white-space:nowrap}
+
+/* instructions page */
+#instr{width:980px;height:390px;transform:scale(1.67);transform-origin:0 0;
+  background:var(--s-bg);border:1px solid var(--s-line-1);border-radius:var(--s-r);
+  overflow:hidden;font-family:'Hanken Grotesk',system-ui,sans-serif;color:var(--s-tx);
+  box-shadow:0 1px 0 oklch(23.69% .0036 49/.05),0 18px 50px -26px oklch(23.69% .0036 49/.30)}
+#instrwrap{position:absolute;left:141px;top:290px;width:1637px;height:651px;z-index:2;display:none}
+.i-tabs{height:36px;border-bottom:1px solid var(--s-line);display:flex;align-items:center;
+  gap:4px;padding:0 14px;background:var(--s-bg)}
+.i-tab{font-size:12.5px;color:var(--s-tx-2);padding:4px 10px;border-radius:3px}
+.i-tab.on{background:var(--s-surface-2);color:var(--s-tx);font-weight:600}
+.i-wrap{padding:16px 18px}
+.i-sub{font-size:12.5px;color:var(--s-tx-2);margin-bottom:12px}
+.i-row{border:1px solid var(--s-line-1);border-radius:var(--s-r);background:var(--s-surface);
+  padding:8px 12px;display:flex;gap:10px;align-items:flex-start;margin-bottom:6px}
+.i-n{font-family:'Geist Mono',monospace;font-size:10.5px;color:var(--s-tx-3);padding-top:2px}
+.i-t{font-size:13px;font-weight:600}
+.i-d{font-size:11.5px;color:var(--s-tx-2);margin-top:2px}
+.rule{display:flex;align-items:center;gap:9px;padding:5px 0;border-top:1px solid var(--s-line)}
+.rule .tx{flex:1;font-size:12.5px;color:var(--s-tx-1)}
+.bar{display:block;flex:none;height:5px;background:var(--s-acc);border-radius:2px}
+.cnt{font-family:'Geist Mono',monospace;font-size:10.5px;color:var(--s-tx-2);width:14px;text-align:right}
+
+/* the synthetic pointer — an OS cursor, not a colour of the product */
+#cursor{position:absolute;width:22px;height:22px;z-index:9;display:none;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+
+/* ── the official mark, end sting ────────────────────────────────────── */
+#mark{position:absolute;left:0;right:0;top:392px;height:301px;display:none;z-index:3}
+#mark svg{display:block;margin:0 auto;overflow:visible}
+#markword{position:absolute;left:0;right:0;top:752px;text-align:center;display:none;z-index:3;
+  font-family:var(--label);font-size:34px;letter-spacing:.2em;color:var(--muted)}
+</style>
+
+<div id="stage">
+  <!-- ═══ A · AN AI CHAT WAS NEVER MADE FOR WRITING ═══════════════════ -->
+  <section class="scene" id="sA1">
+    <div class="frame"><div class="box">
+      <div class="d quiet" id="a-l1" style="position:absolute;left:0;top:236px">An AI Chat</div>
+      <div class="d quiet" id="a-l2" style="position:absolute;left:0;top:344px">was never made for</div>
+    </div></div>
+  </section>
+
+  <section class="scene" id="sA2">
+    <div class="flood" id="a-flood"></div>
+    <div class="frame"><div class="box">
+      <div style="position:absolute;left:0;top:50%;transform:translateY(-50%)">
+        <span class="d hero mk" id="a-mk" data-fit="1700"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">writing</b></span>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ═══ B · YOU COPY / PASTE / EXPLAIN / AGAIN ══════════════════════ -->
+  <section class="scene" id="sB">
+    <div class="frame"><div class="box">
+      <div style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:100%;height:0">
+        <div class="d hero bw" id="bw0" data-fit="1700" style="position:absolute;left:0;top:0;transform:translateY(-50%)">You copy</div>
+        <div class="d hero bw" id="bw1" data-fit="1340" style="position:absolute;left:0;top:0;transform:translateY(-50%)">paste</div>
+        <div class="d hero bw" id="bw2" data-fit="1620" style="position:absolute;left:0;top:0;transform:translateY(-50%)">explain</div>
+        <div class="d hero bw" id="bw3" data-fit="1470" style="position:absolute;left:0;top:0;transform:translateY(-50%)">again</div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ═══ C · IT'S NEVER [OBVIOUS] WHAT CHANGED ═══════════════════════ -->
+  <section class="scene" id="sC">
+    <div class="frame"><div class="box">
+      <div class="d quiet" id="c-l1" style="position:absolute;left:6px;top:56px">It’s never</div>
+      <div style="position:absolute;left:0;top:184px">
+        <span class="d hero mk" id="c-mk" data-fit="1620"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">obvious</b></span>
+      </div>
+      <div class="d quiet" id="c-l3" style="position:absolute;left:6px;top:600px">what changed</div>
+    </div></div>
+  </section>
+
+  <!-- ═══ D · PARTS YOU LOVED LOST IN THE [SCROLL] ════════════════════ -->
+  <section class="scene" id="sD">
+    <div class="frame"><div class="box">
+      <div class="d" id="d-l1" style="position:absolute;left:6px;top:170px;font-size:118px;--wg:420">parts you loved</div>
+      <div class="d" id="d-l2" style="position:absolute;left:6px;top:320px;font-size:118px;--wg:420">lost in the</div>
+      <div class="d" id="d-l3" style="position:absolute;left:6px;top:470px;font-size:118px;--wg:420">scroll</div>
+      <div id="d-heroWrap" style="position:absolute;left:0;top:50%;transform:translateY(-50%);display:none">
+        <span class="d hero mk" id="d-mk" data-fit="1700"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">scroll</b></span>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ═══ E · SUDDENLY ════════════════════════════════════════════════ -->
+  <section class="scene ink" id="sE1">
+    <div class="frame"><div class="box">
+      <div class="d hero" id="e-sud" data-fit="1700" style="position:absolute;left:0;top:50%;transform:translateY(-50%)">Suddenly</div>
+    </div></div>
+  </section>
+
+  <section class="scene" id="sE2">
+    <div class="frame"><div class="box">
+      <div class="d" id="e-p1" data-fit="1560" style="position:absolute;left:0;top:206px;--wg:900">you’re prompting,</div>
+      <div class="d" id="e-p2" data-fit="1560" style="position:absolute;left:0;top:430px;--wg:220">not reviewing</div>
+    </div></div>
+  </section>
+
+  <!-- ═══ E3 · THE DEAD BAR — empty paper, then the red caret ═════════ -->
+  <section class="scene" id="sE3">
+    <div class="frame"><div class="box">
+      <i id="e-caret" style="position:absolute;left:0;top:308px;width:14px;height:210px;
+         background:var(--red);display:block;opacity:0"></i>
+    </div></div>
+  </section>
+
+  <!-- ═══ F · REMARK ══════════════════════════════════════════════════ -->
+  <section class="scene ink" id="sF1">
+    <div class="frame"><div class="box">
+      <div class="d hero" id="f-remark" data-fit="1700" style="position:absolute;left:0;top:50%;transform:translateY(-50%);letter-spacing:-.05em">REMARK</div>
+    </div></div>
+  </section>
+
+  <section class="scene" id="sF2">
+    <div class="flood" id="f-flood"></div>
+    <div class="frame"><div class="box">
+      <div class="d quiet" id="f-l1" style="position:absolute;left:6px;top:52px">makes your writing</div>
+      <div style="position:absolute;left:0;top:180px">
+        <span class="d hero mk" id="f-mk" data-fit="1560"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">human</b></span>
+      </div>
+      <div class="d quiet" id="f-l3" style="position:absolute;left:6px;top:604px">again!</div>
+    </div></div>
+  </section>
+
+  <!-- ═══ G · THE DEMO ════════════════════════════════════════════════ -->
+  <section class="scene" id="sG">
+    <div class="box" style="height:auto">
+      <div class="d" id="g-h1" style="position:absolute;left:0;top:0;font-size:80px;--wg:520;display:none">
+        point what’s <span class="mk" id="g-mk1"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">wrong</b></span>
+      </div>
+      <div class="d" id="g-h2" style="position:absolute;left:0;top:0;font-size:80px;--wg:520;display:none">
+        and it changes <span class="mk" id="g-mk2"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">only</b></span> that!
+      </div>
+      <div class="d" id="g-h3" style="position:absolute;left:0;top:0;font-size:80px;--wg:760;display:none;letter-spacing:-.04em">
+        AND SHOWS WHERE!
+      </div>
+      <div class="d" id="g-h4a" style="position:absolute;left:0;top:0;font-size:80px;--wg:520;display:none">
+        It learns from your feedback
+      </div>
+      <div class="d" id="g-h4b" style="position:absolute;left:0;top:0;font-size:80px;--wg:520;display:none">
+        and it creates principles!
+      </div>
+      <div class="d" id="g-h5" style="position:absolute;left:0;top:0;font-size:80px;--wg:520;display:none">
+        it auto-completes and even suggests!
+      </div>
+      <div class="d" id="g-h6" style="position:absolute;left:0;top:0;font-size:80px;--wg:520;display:none">
+        have a question? ask <span style="--wg:860">INLINE!</span>
+      </div>
+    </div>
+
+    <!-- the app, quoted -->
+    <div id="mockwrap"><div class="app" id="mock">
+      <div class="a-head">
+        <svg class="a-tile" viewBox="0 -1 95 102" aria-hidden="true">
+          <rect x="0" y="-1" width="22" height="102" rx="1" fill="var(--s-red)"/>
+          <rect x="32" y="0" width="63" height="22" rx="1" fill="var(--s-tx)"/>
+          <rect x="32" y="39" width="63" height="22" rx="1" fill="var(--s-tx)"/>
+          <rect x="32" y="78" width="41.58" height="22" rx="1" fill="var(--s-tx)"/>
+        </svg>
+        <div class="a-crumb"><span>Projects</span><span>›</span><span>Field notes</span><span>›</span><b>The last ferry</b></div>
+        <span class="a-chip" id="m-count">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>2</span>
+        <div class="a-spacer"></div>
+        <span class="a-btn">Export</span>
+      </div>
+
+      <div class="a-tool">
+        <span class="a-tb">H1</span><span class="a-tb">H2</span><span class="a-tb">H3</span>
+        <span class="a-sep"></span>
+        <span class="a-tb" style="font-weight:800">B</span>
+        <span class="a-tb" style="font-style:italic;font-family:Newsreader,serif">I</span>
+        <span class="a-tb" style="text-decoration:underline">U</span>
+        <span class="a-tb" style="text-decoration:line-through">S</span>
+        <span class="a-sep"></span>
+        <span class="a-tb">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1.2" fill="currentColor"/><circle cx="3.5" cy="12" r="1.2" fill="currentColor"/><circle cx="3.5" cy="18" r="1.2" fill="currentColor"/></svg>
+        </span>
+        <span class="a-sep"></span>
+        <span class="a-tb" style="font-size:9.5px">Freeze</span>
+        <span class="a-wand" id="m-wand">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--s-tx-2)" id="m-wandsvg">
+            <path d="M15 4V2m0 20v-2M9 9l-6 6a1.5 1.5 0 0 0 0 2l2 2a1.5 1.5 0 0 0 2 0l6-6M13 7l4 4M19 6l2-2M19 18l2 2"/></svg>
+        </span>
+        <div class="a-spacer"></div>
+        <span class="a-tb" style="gap:4px;display:flex">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.5 15a9 9 0 1 0 2.1-9.4L1 10"/><polyline points="12 7 12 12 15 14"/></svg>
+          <span class="micro" style="font-size:9.5px">12</span>
+        </span>
+      </div>
+
+      <div class="a-rev" id="m-rev">
+        <span class="dot"></span>
+        <span class="micro" style="color:var(--s-tx-2)">2 passages to approve</span>
+        <div class="a-spacer"></div>
+        <span class="micro" style="color:var(--s-ai-text)">✓ Approve all</span>
+        <span class="micro">✕ Done</span>
+      </div>
+
+      <div class="a-body">
+        <div class="a-doc">
+          <!-- margin brackets of the review -->
+          <div class="brk" id="m-brk1"><i>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></i>
+            <i class="rv">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="1 4 1 10 7 10"/><path d="M3.5 15a9 9 0 1 0 2.1-9.4L1 10"/></svg></i>
+          </div>
+          <div class="brk" id="m-brk2"><i>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></i>
+            <i class="rv">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="1 4 1 10 7 10"/><path d="M3.5 15a9 9 0 1 0 2.1-9.4L1 10"/></svg></i>
+          </div>
+
+          <div class="a-col doc">
+            <h1>The last ferry</h1>
+            <p>At the end of the season the island empties in a single afternoon.
+              <span id="m-p1"><mark class="sel" id="m-sel">In today’s fast-paced landscape, ferry operations remain committed to leveraging scheduling flexibility to deliver a seamless experience for all stakeholders.</mark></span><span id="m-p1b" style="display:none">The ferry runs twice more, then not again until April, and everyone on the island knows which one they are taking.</span>
+              The dock hands stack the deck chairs.</p>
+            <p><span id="m-p2">Someone’s dog runs the length of the pier and back, twice, and nobody really seems to mind.</span><span id="m-p2b" style="display:none">Someone’s dog runs the length of the pier and back, twice. Nobody minds.</span><span id="m-ghost" style="display:none"><span class="caretbar"></span><span class="ghost">The café owner counts the chairs twice and locks the door.</span></span></p>
+          </div>
+          <div class="ghosthint" id="m-ghosthint">Tab to take it · Esc to dismiss</div>
+        </div>
+
+        <div class="a-rail">
+          <div class="a-tabs">
+            <div class="a-tab on">Remarks <b>2</b></div>
+            <div class="a-tab">Chat</div>
+          </div>
+          <div class="a-railbody">
+            <!-- selection CTA -->
+            <div class="card dash" id="m-cta" style="display:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--s-acc);flex:none;margin-top:1px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <div class="note" style="color:var(--s-tx-2)">Click here or press <span class="kbd">Tab</span> to create a remark</div>
+            </div>
+
+            <!-- the composer -->
+            <div class="card" id="m-comp" style="display:none">
+              <div class="quote">“In today’s fast-paced landscape, ferry operations remain committed to…”</div>
+              <div class="note" id="m-note">corporate mush — say what actually happens</div>
+              <div class="rowend"><span class="b ghostb">Cancel</span><span class="b solid" id="m-save">Save</span></div>
+            </div>
+
+            <!-- the two saved remarks -->
+            <div id="m-cards" style="display:none">
+              <div class="card">
+                <span class="who">You</span>
+                <div class="quote">“In today’s fast-paced landscape, ferry operations remain committed to…”</div>
+                <div class="note">corporate mush — say what actually happens</div>
+              </div>
+              <div class="card">
+                <span class="who">You</span>
+                <div class="quote">“…twice, and nobody really seems to mind.”</div>
+                <div class="note" id="m-note2">hedging — end it harder</div>
+                <div class="aihint" id="m-aihint">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--s-ai-text)"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg>
+                  <span class="aichip">Ask AI</span>
+                  <span style="font-size:11.5px;color:var(--s-tx-2)">answers on this note</span>
+                  <div class="a-spacer"></div>
+                  <span class="kbd">TAB</span>
+                </div>
+                <div class="thread" id="m-thread">
+                  <div class="spk" style="color:var(--s-ai-text)"><i class="tick"></i>AI</div>
+                  <div class="note" id="m-answer" style="color:var(--s-tx-2)">Cut the second clause. “Nobody minds” carries it, and the sentence ends on the dog.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="a-foot">
+            <div class="sw" id="m-sw"><i></i></div>
+            <span class="lab" id="m-swlab">Auto-suggest</span>
+            <div class="a-spacer"></div>
+            <span class="b out" style="font-size:11px;padding:2px 8px">Apply all</span>
+          </div>
+        </div>
+      </div>
+
+      <svg id="cursor" viewBox="0 0 24 24"><path d="M5 2.5l13.2 8.1-5.9.9 3.4 6.6-2.6 1.3-3.4-6.6-4.7 3.7z"
+        fill="#fff" stroke="oklch(18% .004 49/.9)" stroke-width="1.1" stroke-linejoin="round"/></svg>
+    </div></div>
+
+    <!-- the Instructions page -->
+    <div id="instrwrap"><div id="instr">
+      <div class="i-tabs">
+        <span class="i-tab">Documents</span><span class="i-tab">Remarks</span>
+        <span class="i-tab on">Instructions</span><span class="i-tab">Project settings</span>
+      </div>
+      <div class="i-wrap">
+        <div class="i-sub">Prompts, style references and remark principles — applied to every rewrite.</div>
+        <div class="i-row"><span class="i-n">02</span><div><div class="i-t">Writer instructions</div>
+          <div class="i-d">Applies remarks to a draft. Also frames principle synthesis.</div></div></div>
+        <div class="i-row"><span class="i-n">03</span><div><div class="i-t">Style references</div>
+          <div class="i-d">Style guide ready</div></div></div>
+        <div class="i-row" style="flex-direction:column;gap:8px">
+          <div style="display:flex;gap:10px;align-items:flex-start;width:100%">
+            <span class="i-n">05</span>
+            <div style="flex:1"><div class="i-t">Synthesized principles</div>
+              <div class="i-d">Reusable principles distilled from remarks. Injected into Rewrite and AI suggestions.</div></div>
+            <span class="b out" style="font-size:11px;padding:2px 8px">✦ Synthesize</span>
+          </div>
+          <div style="width:100%;padding-left:24px">
+            <div class="micro" style="margin-bottom:2px">3 rules · from 7 quoted annotations</div>
+            <div class="rule"><span class="tx">Cut corporate abstraction. Name the thing that actually happens.</span>
+              <span class="bar" id="r1" style="width:0"></span><span class="cnt">4</span></div>
+            <div class="rule"><span class="tx">End the paragraph on the concrete noun, not on the hedge.</span>
+              <span class="bar" id="r2" style="width:0"></span><span class="cnt">2</span></div>
+            <div class="rule"><span class="tx">Prefer the specific number to the vague quantifier.</span>
+              <span class="bar" id="r3" style="width:0"></span><span class="cnt">1</span></div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ═══ H · IT FINALLY / SOUNDS / LIKE / YOU ════════════════════════ -->
+  <section class="scene" id="sH">
+    <div class="frame"><div class="box">
+      <div class="d" id="h1" style="position:absolute;left:7px;top:2px;font-size:70px;--wg:280;line-height:.95">it finally</div>
+      <div class="d" id="h2" style="position:absolute;left:5px;top:80px;font-size:118px;--wg:440;line-height:.95">sounds</div>
+      <div class="d" id="h3" style="position:absolute;left:3px;top:208px;font-size:190px;--wg:640;line-height:.95">like</div>
+      <div class="d" id="h4" style="position:absolute;left:0;top:374px;font-size:440px;--wg:900;line-height:.95">you</div>
+    </div></div>
+  </section>
+
+  <section class="scene ink" id="sH2">
+    <div class="frame"><div class="box">
+      <div class="d" id="hs1" data-fit="1640" style="position:absolute;left:0;top:246px;--wg:500">Stop settling for text</div>
+      <div class="d" id="hs2" data-fit="1640" style="position:absolute;left:0;top:436px;--wg:500">that reads like AI</div>
+    </div></div>
+  </section>
+
+  <!-- ═══ I · WRITE SOMETHING [REMARKABLE] ════════════════════════════ -->
+  <section class="scene" id="sI">
+    <div class="flood" id="i-flood"></div>
+    <div class="frame"><div class="box">
+      <div class="d quiet" id="i-l1" style="position:absolute;left:6px;top:180px">write something</div>
+      <div style="position:absolute;left:0;top:330px">
+        <span class="d hero mk" id="i-mk" data-fit="1700"><i class="mk-bg"></i><i class="mk-caret"></i><b class="mk-tx">remarkable</b></span>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ═══ J · THE OFFICIAL MARK ═══════════════════════════════════════ -->
+  <section class="scene" id="sJ">
+    <div class="flood" id="j-flood"></div>
+    <div id="mark">
+      <svg width="280" height="301" viewBox="0 -1 95 102" preserveAspectRatio="xMidYMid meet">
+        <rect id="jstem" x="0" y="-1" width="22" height="102" rx="1" fill="var(--red-deep)"/>
+        <rect id="jb1" x="32" y="0"  width="63"    height="22" rx="1" fill="var(--ink)"/>
+        <rect id="jb2" x="32" y="39" width="63"    height="22" rx="1" fill="var(--ink)"/>
+        <rect id="jb3" x="32" y="78" width="41.58" height="22" rx="1" fill="var(--ink)"/>
+      </svg>
+    </div>
+    <div id="markword">remark.so</div>
+  </section>
+
+  <div class="guides"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="film.js"></script>

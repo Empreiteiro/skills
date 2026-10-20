@@ -3,57 +3,12 @@
   "owner": {
     "name": "Empreiteiro"
   },
-  "description": "Claude Code skills by Empreiteiro: HTML presentations, posts for meme pages, multi-tenant SaaS backends, web UI patterns, data analytics with LLMs, shareable data cards, writing without AI tells, a build-test-ship workflow, A/B tests and animated reels.",
+  "description": "Claude Code skills by Empreiteiro in one plugin: HTML presentations, writing without AI tells, video and motion, posts for meme pages, data analytics with LLMs, multi-tenant SaaS backends, web UI and data cards, a build-test-ship workflow and A/B tests.",
   "plugins": [
     {
-      "name": "presentations",
+      "name": "empreiteiro",
       "source": "./",
-      "description": "Create HTML presentations from a template and check them: structure, visuals, facts and a full review."
-    },
-    {
-      "name": "memes",
-      "source": "./plugins/memes",
-      "description": "Write and render posts for a humor/meme page in its own voice: text posts, chart memes, code-generated Reels and a 1-bit platform-game series."
-    },
-    {
-      "name": "saas-backend",
-      "source": "./plugins/saas-backend",
-      "description": "Multi-tenant SaaS backends: secure API routes, schema changes and SQL portable across SQLite and Postgres, and data-source integrations."
-    },
-    {
-      "name": "web-ui",
-      "source": "./plugins/web-ui",
-      "description": "Web UI patterns: a shared search/filter bar, a shared sortable List view, screens in framework-less single-page apps, and layout review with screenshots at desktop and phone widths."
-    },
-    {
-      "name": "data-analytics",
-      "source": "./plugins/data-analytics",
-      "description": "Answer questions over data and build data features with LLMs: profiling, text-to-SQL, file Q&A, joins, grounded answers, charts, connectors, reports, pipelines, identity resolution, AutoML and security."
-    },
-    {
-      "name": "data-cards",
-      "source": "./plugins/data-cards",
-      "description": "Design and check shareable data cards rendered to PNG on the server (Satori, next/og, @vercel/og): sheet, type, color roles, chart marks, copy, social formats and before/after render comparison."
-    },
-    {
-      "name": "writing",
-      "source": "./plugins/writing",
-      "description": "Write without sounding like AI: a brand voice system, two editing passes, and the craft of fourteen forms from fiction to technical docs."
-    },
-    {
-      "name": "dev-workflow",
-      "source": "./plugins/dev-workflow",
-      "description": "Take a change from request to production: isolate and plan it, run the gate, open and merge the PR, deploy and prove it by fetching the live site."
-    },
-    {
-      "name": "ab-testing",
-      "source": "./plugins/ab-testing",
-      "description": "Run product A/B tests end to end: design the arms, assign accounts once at signup, build the results board, then promote the winner and remove the rest."
-    },
-    {
-      "name": "animated-reels",
-      "source": "./plugins/animated-reels",
-      "description": "Turn a topic and a cast of drawn characters into a vertical 1080x1920 reel: script, voice, animation rendered frame by frame in Chromium, soundtrack, cover and caption."
+      "description": "Every Empreiteiro skill in one plugin, grouped by category: presentations, writing, video and motion, memes, data, backend, frontend, dev workflow and A/B testing."
     }
   ]
 }
