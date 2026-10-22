@@ -10,7 +10,7 @@ graphs with LLMs, and closes with a real graph of the FACOM faculties built from
 | | |
 |---|---|
 | Language | pt-BR |
-| Slides | 28 (22 shown, 6 hidden backups: 6, 7, 12, 21, 23, 24) |
+| Slides | 28 (20 shown, 8 hidden backups: 6, 7, 12, 18, 19, 21, 23, 24) |
 | Duration | about 40 minutes plus questions |
 | Libraries | D3 7.9.0 (cdnjs), Martian Mono (Google Fonts) |
 

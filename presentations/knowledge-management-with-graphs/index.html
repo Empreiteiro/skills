@@ -1289,7 +1289,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
 
 <section class="slide s-index" data-steps="1">
   <div class="kicker"><b>04</b> · Grafos e IA · indexação</div>
-  <h2>Como o GraphRAG monta o grafo</h2>
+  <h2>Como o Grafo é montado</h2>
   <div class="pipe-janela">
     <div class="pipe-trilho">
     <div class="pipe-pagina">
@@ -1346,11 +1346,11 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     <p><b>A ideia.</b> O pipeline de indexação do GraphRAG, que roda inteiro antes de qualquer pergunta. Os documentos viram texto, o texto é cortado em pedaços, o LLM extrai entidades e relações de cada pedaço, o Leiden acha as comunidades, o LLM escreve um resumo por comunidade, as descrições das entidades viram embeddings e tudo é salvo em tabelas.</p>
     <p><b>Na tela.</b> Oito etapas em duas páginas de quatro. No clique, a faixa desliza da primeira página (texto, chunks, entidades, relações) para a segunda (Leiden, resumos, embeddings, tabelas).</p>
     <p><b>O que destacar.</b> A extração é a etapa mais cara, com pelo menos uma chamada de LLM por pedaço de texto. Os resumos alimentam o global search, e os embeddings são a porta de entrada do local search.</p>
-    <p><b>Liga com.</b> O próximo slide mostra as tabelas da última etapa.</p>
+    <p><b>Liga com.</b> O próximo slide mostra como esse grafo é usado para responder: local search e global search.</p>
   </aside>
 </section>
 
-<section class="slide">
+<section class="slide" data-oculto>
   <div class="kicker"><b>04</b> · Grafos e IA · armazenamento</div>
   <h2>O grafo é uma tabela de nós e uma tabela de arestas.</h2>
   <div class="corpo tab-wrap">
@@ -1398,7 +1398,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   </aside>
 </section>
 
-<section class="slide s-prompt" data-steps="1">
+<section class="slide s-prompt" data-steps="1" data-oculto>
   <div class="kicker"><b>04</b> · Grafos e IA</div>
   <h2>A IA nunca vê o grafo</h2>
   <div class="corpo prompt-wrap">
