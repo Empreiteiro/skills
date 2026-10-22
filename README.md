@@ -80,6 +80,9 @@ Only the skills with scripts need anything installed; each category README has t
 
 ## Viewing a presentation
 
-Open `presentations/<slug>/index.html` in a browser. Arrows or space to advance, `F` fullscreen,
-`O` overview, `S` presenter window (timer, current and next slide, notes). Add `?all` (or `?todos` in older decks)
-to the URL to include hidden backup slides.
+The latest version of every deck on `main` is published at <https://empreiteiro.github.io/skills/>, one page per
+presentation (`https://empreiteiro.github.io/skills/<slug>/`); `.github/workflows/pages.yml` republishes it on every
+push to `main` that changes `presentations/`. Locally, open `presentations/<slug>/index.html` in a browser.
+
+Arrows or space to advance, `F` fullscreen, `O` overview, `S` presenter window (timer, current and next slide,
+notes). Add `?all` (or `?todos` in older decks) to the URL to include hidden backup slides.

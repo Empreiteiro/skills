@@ -1,5 +1,7 @@
 # Presentations
 
+Published at <https://empreiteiro.github.io/skills/>, always the version on `main`.
+
 | Presentation | Language | Slides | Folder |
 |---|---|---|---|
 | Gestão de Conhecimento com Grafos (knowledge management with graphs) | pt-BR | 29 (23 shown, 6 hidden backups) | [knowledge-management-with-graphs](knowledge-management-with-graphs/) |
@@ -14,6 +16,15 @@ Use the `presentation-create` skill, or by hand:
 3. Write the folder's `README.md`: title, language, audience, duration, outline, sources.
 4. Add a row to the table above.
 5. Check it: `presentation-check-structure`, then render it with `presentation-export` and look at the slides.
+6. Merge to `main`: the deck goes live at `https://empreiteiro.github.io/skills/<slug>/`.
+
+## Website
+
+`.github/workflows/pages.yml` runs on every push to `main` that changes `presentations/`: it runs
+`check_structure.py` on each deck (an error stops the publish, the site keeps the previous version), then
+`build_site.py` copies every `<slug>/` to the site and writes an index page with the decks, and GitHub Pages serves
+it. To see the site before pushing: `python presentations/build_site.py _site` and serve `_site/` with any static
+server. Decks whose folder starts with `_` (the template) are not published.
 
 ## Folder layout
 

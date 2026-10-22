@@ -1,0 +1,54 @@
+# Publishes presentations/ to GitHub Pages on every push to main that changes a deck.
+# Site: https://empreiteiro.github.io/skills/ (one folder per presentation).
+# One-time setup: Settings > Pages > Build and deployment > Source: GitHub Actions.
+name: Presentations site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'presentations/**'
+      - 'skills/presentations/presentation-check-structure/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # build_site.py reads the date of each deck's last commit
+
+      - name: Check the decks
+        run: |
+          for deck in presentations/*/index.html; do
+            case "$deck" in presentations/_*) continue ;; esac
+            python3 skills/presentations/presentation-check-structure/scripts/check_structure.py "$deck"
+          done
+
+      - name: Build the site
+        run: python3 presentations/build_site.py _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
