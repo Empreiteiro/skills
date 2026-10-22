@@ -451,8 +451,10 @@ ol.passos{list-style:none;counter-reset:p;display:flex;flex-direction:column;gap
 .fv.ramo span{flex:1;background:none;border:1px solid rgba(42,172,176,.45);border-radius:8px;padding:10px 12px;font-size:18px;line-height:1.3}
 
 /* 22 variantes, 23 banco */
-.var3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-content:start;margin:auto 0} /* blocos no meio do espaço abaixo do título */
-.var3 .card{display:flex;flex-direction:column;gap:14px}
+.var3{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:14px 28px;align-content:start;margin:auto 0} /* blocos no meio do espaço abaixo do título */
+/* cada card usa as duas linhas da grade (subgrid): topo (título + texto) e código; assim os três códigos começam na mesma altura */
+.var3 .card{display:grid;grid-row:span 2;grid-template-rows:subgrid}
+.var3-topo{display:flex;flex-direction:column;gap:14px}
 .var3 svg{width:100%;height:auto;margin:4px 0}
 .var3 p{font-size:24px;color:var(--suave);line-height:1.36}
 pre.code.sm{font-size:22px;padding:16px 20px;line-height:1.5}
@@ -1513,16 +1515,20 @@ Pergunta: <span class="var q">{pergunta}</span><span class="valor"><span class="
   <h2>Três jeitos de a IA consultar um banco de grafos</h2>
   <div class="var3">
     <div class="card">
-      <h3>Vetor + travessia</h3>
-      <p>A busca vetorial acha os nós de entrada. Um Cypher fixo, escrito por você, percorre os vizinhos.</p>
+      <div class="var3-topo">
+        <h3>Vetor + travessia</h3>
+        <p>A busca vetorial acha os nós de entrada. Um Cypher fixo, escrito por você, percorre os vizinhos.</p>
+      </div>
 <pre class="code sm" data-lang="cypher">MATCH (t:Tema)&lt;-[:SOBRE]-(c:TCC)
       &lt;-[:ORIENTA]-(p:Professor)
 WHERE t.id IN $entrada
 RETURN p.nome, c.nome</pre>
     </div>
     <div class="card fragment">
-      <h3>Text2Cypher</h3>
-      <p>O LLM escreve a consulta. O banco executa.</p>
+      <div class="var3-topo">
+        <h3>Text2Cypher</h3>
+        <p>O LLM escreve a consulta. O banco executa.</p>
+      </div>
 <pre class="code sm" data-lang="cypher">MATCH (p:Professor)
       -[:ORIENTA]->(:TCC)
       -[:SOBRE]->(t:Tema)
@@ -1530,8 +1536,10 @@ WHERE t.nome = "GraphRAG"
 RETURN p.nome</pre>
     </div>
     <div class="card fragment">
-      <div class="tipo-top"><h3>Grafo como ferramenta</h3><span class="tag teal">MCP</span></div>
-      <p>O agente decide quando chamar cada função, passo a passo.</p>
+      <div class="var3-topo">
+        <div class="tipo-top"><h3>Grafo como ferramenta</h3><span class="tag teal">MCP</span></div>
+        <p>O agente decide quando chamar cada função, passo a passo.</p>
+      </div>
 <pre class="code sm" data-lang="tool">buscar_entidade("GraphRAG")
 → Tema t_graphrag
 
