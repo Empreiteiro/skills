@@ -322,11 +322,11 @@ svg[data-passo="1"] .pk-voce,svg[data-passo="2"] .pk-voce{opacity:1}
 .cmp-rag{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
 .cmp-rag .card{display:flex;flex-direction:column;gap:16px}
 .cmp-fluxo{font:condensed 500 20px var(--mono);color:var(--suave)}
-.cmp-corpo{display:flex;flex-direction:column;gap:12px}
+.cmp-corpo{display:flex;flex-direction:column;gap:12px;flex:1}
 .cmp-rag .trecho{font-size:22px;padding:10px 18px}
 .cmp-rag .trecho.caminho{border-left-color:var(--teal);font:condensed 600 20px/1.4 var(--mono)}
 .cmp-rag .trecho.caminho .rel{font-size:1em}
-.cmp-rag .resposta{font-size:24px;padding:18px 22px;margin-top:6px}
+.cmp-rag .resposta{font-size:24px;padding:18px 22px;margin-top:auto} /* resposta no pé do card: as duas ficam alinhadas */
 .cmp-rag .resposta.certa{border-color:rgba(42,172,176,.6)}
 .trechos{display:flex;flex-direction:column;gap:14px}
 .trecho{background:none;border:1px solid var(--borda);border-left:3px solid var(--azul);border-radius:8px;padding:12px 20px;font-size:25px;line-height:1.35}
