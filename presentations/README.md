@@ -2,7 +2,7 @@
 
 | Presentation | Language | Slides | Folder |
 |---|---|---|---|
-| Gestão de Conhecimento com Grafos (knowledge management with graphs) | pt-BR | 29 (23 shown, 6 hidden backups) | [knowledge-management-with-graphs](knowledge-management-with-graphs/) |
+| Augmented-Generation e Gestão de Conhecimento com Grafos (augmented generation and knowledge management with graphs) | pt-BR | 28 (22 shown, 6 hidden backups) | [knowledge-management-with-graphs](knowledge-management-with-graphs/) |
 
 ## Adding a presentation
 

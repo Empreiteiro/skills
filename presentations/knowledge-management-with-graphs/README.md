@@ -1,6 +1,6 @@
-# Gestão de Conhecimento com Grafos
+# Augmented-Generation e Gestão de Conhecimento com Grafos
 
-*Knowledge management with graphs* — a talk by Lucas Democh (Data Scientist, Orion) for students and professors
+*Augmented generation and knowledge management with graphs* — a talk by Lucas Democh (Data Scientist, Orion) for students and professors
 of a computing faculty. The slides are in Brazilian Portuguese.
 
 The talk builds a knowledge graph of the audience's own course (students, professors, disciplines, final
@@ -10,13 +10,13 @@ graphs with LLMs, and closes with a real graph of the FACOM faculties built from
 | | |
 |---|---|
 | Language | pt-BR |
-| Slides | 29 (23 shown, 6 hidden backups: 7, 8, 13, 22, 24, 25) |
+| Slides | 28 (22 shown, 6 hidden backups: 6, 7, 12, 21, 23, 24) |
 | Duration | about 40 minutes plus questions |
 | Libraries | D3 7.9.0 (cdnjs), Martian Mono (Google Fonts) |
 
 ## Outline
 
-1. **Abertura** (opening) — title, a fork joke ("grafo" vs "garfo"), are graphs still useful, the one-sentence rule
+1. **Abertura** (opening) — title, are graphs still useful, the one-sentence rule
 2. **O que é um grafo** (what a graph is) — nodes, edges, labels, properties; graphs in everyday apps; ontology; time in edge properties
 3. **Lendo o grafo** (reading the graph) — degree and betweenness, communities, Leiden, live community detection
 4. **Grafos e IA** (graphs and AI) — augmented generation, RAG vs GraphRAG, how GraphRAG builds and stores the graph, the prompt, local and global search, three ways for an AI to query a graph database
@@ -32,11 +32,11 @@ presenter explanation.
 
 ## Data
 
-- The course graph (slides 1–26 and the background of slide 29) is fictional, written in `CURSO` inside `index.html`.
-- Slide 28 is real: the mandatory disciplines of the 14 courses of the four faculties called FACOM
+- The course graph (slides 1–25 and the background of slide 28) is fictional, written in `CURSO` inside `index.html`.
+- Slide 27 is real: the mandatory disciplines of the 14 courses of the four faculties called FACOM
   (UFU, UFMS, UFBA, UFJF), taken from the official curricula. Sources, rules and the generator are in
   [`data/facom-curricula/`](data/facom-curricula/).
 
 ## Known issues
 
-- The explanations of slides 10, 11 and 17 mention slides 8 and 25, which are hidden.
+- The explanations of slides 9, 10 and 16 mention slides 7 and 24, which are hidden.

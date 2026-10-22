@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gestão de Conhecimento com Grafos</title>
+<title>Augmented-Generation e Gestão de Conhecimento com Grafos</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1115'/%3E%3Cg stroke='%23A7B3C0' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M19 21L45 18M19 21L32 45M45 18L32 45'/%3E%3C/g%3E%3Ccircle cx='19' cy='21' r='8' fill='%234C9BE8'/%3E%3Ccircle cx='45' cy='18' r='7' fill='%23B86BD6'/%3E%3Ccircle cx='32' cy='45' r='9' fill='%232AACB0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,16 +147,8 @@ pre.code .ln{display:block;margin:0 -32px;padding:0 32px 0 26px;border-left:6px 
 .capa-autor .nome{font-size:36px;font-weight:700}
 .capa-autor .cargo{font:condensed 500 24px var(--mono);color:var(--suave);letter-spacing:.04em}
 
-/* 2 imagem */
-.s-garfo{padding:0;display:grid;place-items:center}
-/* foto do garfo (PNG transparente) sobre o fundo padrão */
-.garfo-foto{width:min(1100px,66%);height:auto;max-height:80%;object-fit:contain}
-.garfo-desenho{display:none;height:84%;width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
-.sem-foto .garfo-foto{display:none}
-.sem-foto .garfo-desenho{display:block}
-
 /* 4 apps */
-.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-content:start}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-content:start}
 .app{display:flex;flex-direction:column;gap:14px;padding:30px 26px}
 .app svg{width:100%;height:auto;margin-bottom:10px}
 .app p{font-size:26px;line-height:1.35;color:var(--suave);flex:1}
@@ -629,7 +621,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
 <section class="slide s-capa" data-ctrl="capa">
   <div class="grafo fraco capa-grafo"></div>
   <div class="capa-txt">
-    <h1>Gestão de<br>Conhecimento<br>com Grafos</h1>
+    <h1>Augmented-Generation<br>e Gestão de<br>Conhecimento<br>com Grafos</h1>
     <div class="capa-autor">
       <span class="nome">Lucas Democh</span>
       <span class="cargo">Data Scientist · Orion</span>
@@ -645,38 +637,6 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     <p><b>A ideia.</b> Abertura. Apresenta o tema e o combinado da palestra: montar um grafo de conhecimento usando a própria sala como exemplo, com estudantes, professores, disciplinas, cursos, TCCs e temas.</p>
     <p><b>Na tela.</b> Título, seu nome e cargo. Atrás, em transparência, o grafo completo do curso, o mesmo que vai sendo montado ao longo dos slides.</p>
     <p><b>Liga com.</b> O slide “Perguntas?” usa o mesmo desenho. No começo ninguém sabe ler esse grafo; a ideia é que, no fim, todo mundo saiba.</p>
-  </aside>
-</section>
-
-<section class="slide s-garfo">
-  <img class="garfo-foto" src="assets/garfo.png" alt="Um garfo" onerror="this.closest('.slide').classList.add('sem-foto')">
-  <svg class="garfo-desenho" viewBox="-270 -25 940 1450" role="img" aria-label="Um garfo">
-    <defs>
-      <linearGradient id="metal" x1="0" x2="1" y1="0" y2="0">
-        <stop offset="0" stop-color="#4A535C"/><stop offset=".38" stop-color="#E9EDF1"/><stop offset=".55" stop-color="#B9C2CB"/><stop offset="1" stop-color="#3E464F"/>
-      </linearGradient>
-      <linearGradient id="brilho-metal" x1="0" x2="0" y1="0" y2="1">
-        <stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".18"/>
-      </linearGradient>
-    </defs>
-    <g transform="rotate(24 200 700)">
-      <g fill="url(#metal)">
-        <rect x="132" y="40" width="22" height="370" rx="11"/><rect x="170" y="40" width="22" height="370" rx="11"/>
-        <rect x="208" y="40" width="22" height="370" rx="11"/><rect x="246" y="40" width="22" height="370" rx="11"/>
-        <path d="M132 380 H268 V450 C268 520 232 560 224 612 L220 700 H180 L176 612 C168 560 132 520 132 450 Z"/>
-        <path d="M180 690 H220 C226 820 246 1100 250 1250 C252 1320 230 1362 200 1362 C170 1362 148 1320 150 1250 C154 1100 174 820 180 690 Z"/>
-      </g>
-      <path d="M180 690 H220 C226 820 246 1100 250 1250 C252 1320 230 1362 200 1362 C170 1362 148 1320 150 1250 C154 1100 174 820 180 690 Z" fill="url(#brilho-metal)"/>
-    </g>
-  </svg>
-  <aside class="notes">
-    <p>Piada de abertura. Deixar o garfo na tela uns segundos, sem falar nada.</p>
-    <p>Depois: “Calma, não é garfo. É grafo, com R.” Daqui em diante, só grafo.</p>
-  </aside>
-  <aside class="explica">
-    <p><b>A ideia.</b> Piada para quebrar o gelo. Grafo e garfo se confundem o tempo todo, na fala e no teclado. Mostrar o garfo sem dizer nada faz a sala rir e fixa a palavra certa.</p>
-    <p><b>Na tela.</b> Só a foto de um garfo, sem texto.</p>
-    <p><b>Liga com.</b> Não tem conteúdo. Serve para criar um momento leve antes do slide honesto sobre o hype.</p>
   </aside>
 </section>
 
@@ -704,7 +664,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     </div>
   </div>
   <aside class="notes">
-    <p>⏱ Uns 2 minutos, logo depois da piada do garfo.</p>
+    <p>⏱ Uns 2 minutos, logo depois da capa.</p>
     <p>Sendo honesto: parte do hype de grafo passou.</p>
     <p>Perdeu força: grafo como remendo de busca. Contexto longo e modelos melhores resolvem muita coisa que antes pedia GraphRAG. Agentes que buscam sozinhos: agente de código navega pelos arquivos com busca textual, sem índice nenhum. E o custo de manutenção: extrair é caro, tem erro, e o grafo envelhece.</p>
     <p>Continua valendo, ou vale mais: pergunta de relação e de agregação. Precisão e auditoria: a mesma consulta dá a mesma resposta, e o caminho fica visível. Memória de agentes: entidades, decisões e relações entre sessões. Permissões e linhagem de dados. E construir ficou mais barato, porque o LLM faz a extração.</p>
@@ -814,30 +774,18 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
       <h3>Google Maps</h3>
       <p>Cada trecho tem um custo: metros, minutos.</p>
     </div>
-    <div class="card app">
-      <div class="app-tipo">Graus de distância</div>
-      <svg viewBox="0 0 320 180">
-        <line x1="50" y1="90" x2="160" y2="90" class="ln-g"/><line x1="160" y1="90" x2="270" y2="90" class="ln-g" style="stroke-dasharray:7 6"/>
-        <circle cx="50" cy="90" r="26" style="fill:var(--azul)"/><circle cx="160" cy="90" r="22" style="fill:var(--roxo)"/><circle cx="270" cy="90" r="22" style="fill:#4A5868"/>
-        <text x="105" y="70" class="sv-r">1º</text><text x="215" y="70" class="sv-r">2º</text>
-        <text x="50" y="150" class="sv-l">você</text><text x="160" y="150" class="sv-l">contato</text><text x="270" y="150" class="sv-l" style="font-size:17px">do contato</text>
-      </svg>
-      <h3>LinkedIn</h3>
-      <p>Conexão de 2º grau é o contato do seu contato.</p>
-    </div>
   </div>
   <aside class="notes">
     <p>Passar rápido. É só para mostrar que grafo não é coisa de livro.</p>
     <p>Instagram: seguir tem direção. Você segue, a pessoa não precisa seguir de volta.</p>
     <p>Spotify: dois tipos de coisa, gente e música, e a ligação sempre cruza de um lado para o outro. Isso é um grafo bipartido. Recomendação sai daí.</p>
     <p>Google Maps: cada trecho tem um custo, e a rota é o menor caminho num grafo ponderado. É o problema que o algoritmo de Dijkstra resolve.</p>
-    <p>LinkedIn: conexão de 2º grau é o contato do contato. É distância no grafo.</p>
     <p>Transição: a faculdade também é um grafo. Vamos montar.</p>
   </aside>
   <aside class="explica">
     <p><b>A ideia.</b> Grafo não é coisa de livro. Os apps que todo mundo usa são grafos, e cada um mostra uma característica diferente.</p>
-    <p><b>Na tela.</b> Instagram: a aresta tem direção, porque seguir não é recíproco. Spotify: grafo bipartido, com dois tipos de nó (gente e música) e a aresta sempre ligando um de cada lado. Google Maps: grafo ponderado, cada trecho tem um custo e a rota é o menor caminho. LinkedIn: distância, a conexão de 2º grau é o contato do contato.</p>
-    <p><b>Liga com.</b> Esse vocabulário volta. Direção aparece nas setas do Cypher, peso nas relações do GraphRAG, menor caminho no shortestPath e distância nos saltos das consultas.</p>
+    <p><b>Na tela.</b> Instagram: a aresta tem direção, porque seguir não é recíproco. Spotify: grafo bipartido, com dois tipos de nó (gente e música) e a aresta sempre ligando um de cada lado. Google Maps: grafo ponderado, cada trecho tem um custo e a rota é o menor caminho.</p>
+    <p><b>Liga com.</b> Esse vocabulário volta. Direção aparece nas setas do Cypher, peso nas relações do GraphRAG e menor caminho no shortestPath.</p>
   </aside>
 </section>
 
@@ -1045,12 +993,12 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> Grafo temporal, e por que as propriedades da aresta importam. Um fato tem validade: o Paulo deu Algoritmos em 2019 e 2020, a Marta de 2021 a 2024, o Sérgio deu uma segunda turma em 2023 e 2024, ao mesmo tempo que ela, e o Jorge dá desde 2025. Se o grafo guarda só “X leciona Algoritmos” para cada um, as quatro arestas ficam lá, e a pergunta “quem é o professor de Algoritmos?” devolve os quatro. Está errado. A solução é guardar o período na própria relação, com as propriedades “de” e “ate”. Assim dá para perguntar quem é o professor hoje (a relação sem “ate”: o Jorge) e quem era em qualquer ano (em 2023, a Marta e o Sérgio).</p>
     <p><b>Em uma frase.</b> O fato completo é “a Marta lecionou Algoritmos de 2021 a 2024”. Sem as datas, ele fica pela metade.</p>
-    <p><b>Onde o tempo fica guardado.</b> Nas propriedades da própria aresta. O fato “a Marta leciona Algoritmos” é a aresta LECIONA entre os dois nós, e o período fica guardado nela: {de: 2021, ate: 2024}. A aresta do Jorge tem só {de: 2025}, porque ainda não acabou. Os nós não mudam; o que muda é a validade da ligação. Isso funciona porque, no grafo de propriedades, a aresta também pode ter propriedades (o “de: 2021” do slide 8, que no RDF não teria onde ficar). Quando o fato tem mais detalhes, como semestre, turma e sala, outra opção é transformar a ligação num nó próprio, por exemplo uma Turma ligada ao professor e à disciplina.</p>
+    <p><b>Onde o tempo fica guardado.</b> Nas propriedades da própria aresta. O fato “a Marta leciona Algoritmos” é a aresta LECIONA entre os dois nós, e o período fica guardado nela: {de: 2021, ate: 2024}. A aresta do Jorge tem só {de: 2025}, porque ainda não acabou. Os nós não mudam; o que muda é a validade da ligação. Isso funciona porque, no grafo de propriedades, a aresta também pode ter propriedades (o “de: 2021” do slide 7, que no RDF não teria onde ficar). Quando o fato tem mais detalhes, como semestre, turma e sala, outra opção é transformar a ligação num nó próprio, por exemplo uma Turma ligada ao professor e à disciplina.</p>
     <p><b>Na tela.</b> Só a linha do tempo com os quatro professores e a marca de hoje, no centro do slide. As barras crescem quando o slide entra. A pergunta “quem é o professor de Algoritmos?” e a comparação entre o grafo sem tempo e o grafo com tempo ficam na fala.</p>
-    <p><b>Por que importa.</b> Fato muda o tempo todo: professor troca de disciplina, aluno se forma, projeto acaba. Um LLM aprendeu uma foto antiga do mundo, e um RAG comum acha a ata velha e a nova sem saber qual vale. É a palavra “histórico” da frase do slide 4.</p>
+    <p><b>Por que importa.</b> Fato muda o tempo todo: professor troca de disciplina, aluno se forma, projeto acaba. Um LLM aprendeu uma foto antiga do mundo, e um RAG comum acha a ata velha e a nova sem saber qual vale. É a palavra “histórico” da frase do slide 3.</p>
     <p><b>Se perguntarem.</b> Por que não apagar a aresta antiga? Porque aí some o histórico e ninguém mais responde quem dava a disciplina em 2023. E “leciona ou lecionou”: o tipo da relação é sempre LECIONA; quem diz se já acabou é o “ate”. E dois professores ao mesmo tempo não é problema: são duas arestas válidas no mesmo período, e a resposta para 2023 tem dois nomes.</p>
-    <p><b>Detalhe.</b> As turmas do Paulo e do Sérgio aparecem só nesta linha do tempo. O grafo completo do curso, usado nos slides 11 a 14, guarda só a da Marta: com as outras duas, as comunidades e as pontes daqueles slides mudariam.</p>
-    <p><b>Liga com.</b> O “de: 2021” que apareceu nos slides 5 e 8. E a consulta do slide 25, em que “l.ate IS NULL” filtra só quem leciona hoje.</p>
+    <p><b>Detalhe.</b> As turmas do Paulo e do Sérgio aparecem só nesta linha do tempo. O grafo completo do curso, usado nos slides 10 a 13, guarda só a da Marta: com as outras duas, as comunidades e as pontes daqueles slides mudariam.</p>
+    <p><b>Liga com.</b> O “de: 2021” que apareceu nos slides 4 e 7. E a consulta do slide 24, em que “l.ate IS NULL” filtra só quem leciona hoje.</p>
   </aside>
 </section>
 
@@ -1076,7 +1024,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     <p><b>Na tela.</b> Só o grafo inteiro do curso, na largura do slide, sem texto ao lado: legenda e resultados são ditos em voz alta. A ontologia agora tem TCC e Tema, 45 nós. O tamanho do nó é o grau. Os cursos são os maiores porque todo mundo se liga a eles, o que é esperado e diz pouco. No primeiro clique, um anel tracejado marca as pontes; entre as pessoas, a maior ponte é você, que circula entre Algoritmos, Dados e IA. No segundo clique, a Marta sai: o nó dela apaga e fica em vermelho o que perde cobertura, a disciplina de IA (sem professor), dois TCCs (sem orientadora) e dois temas (sem ninguém pesquisando). Dá para clicar em outros professores e comparar.</p>
     <p><b>Em uma frase.</b> Ter muitas conexões e ser difícil de substituir são coisas diferentes, e o grafo mede as duas.</p>
     <p><b>Por que importa.</b> É o problema da pessoa-chave. Numa empresa, é quem sai e leva junto um conhecimento que só ela tinha. Nenhuma planilha guarda isso, mas o grafo calcula.</p>
-    <p><b>Liga com.</b> Abre o bloco “Lendo o grafo”, que segue com comunidades. A mesma preocupação volta em Cypher no slide 25, na consulta da disciplina que depende de um professor só.</p>
+    <p><b>Liga com.</b> Abre o bloco “Lendo o grafo”, que segue com comunidades. A mesma preocupação volta em Cypher no slide 24, na consulta da disciplina que depende de um professor só.</p>
   </aside>
 </section>
 
@@ -1236,7 +1184,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     <p><b>A ideia.</b> Mapa rápido das formas de dar contexto a um LLM. Em todas, o modelo recebe junto com a pergunta um conteúdo que não estava no treino; o que muda é como esse conteúdo é escolhido. RAG busca os trechos mais parecidos. CAG não busca: carrega a base inteira no contexto e guarda o cache do modelo (o estado calculado depois de ler esse texto) para reaproveitar em todas as perguntas. Agentic RAG põe um agente para decidir quando, onde e quantas vezes buscar. GraphRAG busca num grafo de entidades e relações.</p>
     <p><b>Na tela.</b> Quatro quadros lado a lado, um para cada técnica: nome, nome por extenso, como funciona e quando é bom usar.</p>
     <p><b>Fonte.</b> O CAG vem do artigo “Don't Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks” (arXiv 2412.15605, dezembro de 2024). A proposta vale para bases de tamanho limitado, que cabem no contexto do modelo.</p>
-    <p><b>Liga com.</b> O próximo slide compara RAG e GraphRAG com a mesma pergunta. O agente de código que busca sozinho, citado no slide 3, é um caso de Agentic RAG.</p>
+    <p><b>Liga com.</b> O próximo slide compara RAG e GraphRAG com a mesma pergunta. O agente de código que busca sozinho, citado no slide 2, é um caso de Agentic RAG.</p>
   </aside>
 </section>
 
@@ -1277,7 +1225,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> A mesma pergunta respondida pelos dois jeitos. No RAG, a pergunta vira embedding e o banco vetorial devolve os trechos mais parecidos; funciona quando a resposta está escrita em algum trecho. Aqui não está: quem orienta cada TCC está num documento, e o tema do TCC em outro. No GraphRAG, a busca acha as entidades da pergunta (os temas de grafos) e segue as relações SOBRE e ORIENTA até os professores.</p>
     <p><b>Na tela.</b> A pergunta “Quem orienta TCC sobre grafos?” em cima e dois quadros lado a lado, cada um com o caminho da busca. No primeiro clique, o quadro do RAG mostra os trechos que voltam e a resposta, um chute educado. No segundo, o quadro do GraphRAG mostra os três caminhos no grafo e a resposta certa: a Marta orienta os TCCs da Ana e do Bruno, e o Sérgio orienta o do Diego. No terceiro, a frase “vetor acha parecido, grafo acha conectado”.</p>
-    <p><b>Liga com.</b> Os slides seguintes explicam como o GraphRAG monta esse grafo. O local search (slide 21) é o caminho do quadro da direita, passo a passo.</p>
+    <p><b>Liga com.</b> Os slides seguintes explicam como o GraphRAG monta esse grafo. O local search (slide 20) é o caminho do quadro da direita, passo a passo.</p>
   </aside>
 </section>
 
@@ -1335,7 +1283,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> No GraphRAG da Microsoft, ninguém modela o grafo antes. O LLM lê os documentos, extrai entidades e relações e monta um grafo de propriedades com pesos; depois o sistema acha comunidades e escreve um resumo de cada uma. Como não há ontologia, o LLM escolhe os nomes. Isso facilita começar e cria dois problemas: a mesma entidade em vários nós e a mesma relação com nomes diferentes.</p>
     <p><b>Na tela.</b> Três documentos passam pelo LLM e viram um grafo. A Marta aparece em três nós (Marta, Profa. Marta Lima, M. Lima), e a orientação aparece com três nomes de relação. No clique, aparecem o destaque “a mesma pessoa, três nós” e os três nomes de relação em vermelho. O resto (quase nunca é RDF, sem esquema rígido) fica na fala.</p>
-    <p><b>Liga com.</b> É o que o slide da ontologia avisou: sem regra, cada documento escreve de um jeito. Resolução de entidades e uma lista de tipos permitidos na extração ajudam, mas são trabalho a mais. O MERGE do slide 25 também não resolve.</p>
+    <p><b>Liga com.</b> É o que o slide da ontologia avisou: sem regra, cada documento escreve de um jeito. Resolução de entidades e uma lista de tipos permitidos na extração ajudam, mas são trabalho a mais. O MERGE do slide 24 também não resolve.</p>
   </aside>
 </section>
 
@@ -1446,7 +1394,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> Um grafo pode ser guardado em qualquer lugar, inclusive em tabelas. No GraphRAG da Microsoft, ele fica em arquivos parquet: uma tabela de nós (entities), uma de arestas (relationships), uma de comunidades, uma de resumos, uma de trechos e uma de documentos. Os embeddings ficam num banco vetorial à parte, o LanceDB por padrão.</p>
     <p><b>Na tela.</b> A lista das tabelas e o que cada uma guarda. No primeiro clique, linhas de exemplo de entities e relationships com os dados do curso; no segundo, o banco vetorial.</p>
-    <p><b>Liga com.</b> Qualquer pessoa abre essas tabelas com pandas. O slide 23 mostra o outro caminho, quando o grafo fica num banco de grafos como o Neo4j.</p>
+    <p><b>Liga com.</b> Qualquer pessoa abre essas tabelas com pandas. O slide 22 mostra o outro caminho, quando o grafo fica num banco de grafos como o Neo4j.</p>
   </aside>
 </section>
 
@@ -1508,7 +1456,7 @@ Pergunta: <span class="var q">{pergunta}</span><span class="valor"><span class="
   <aside class="explica">
     <p><b>A ideia.</b> Os dois modos de busca do GraphRAG no mesmo desenho. O local search serve para perguntas sobre coisas específicas: a busca vetorial só acha por onde entrar no grafo (as entidades mais parecidas com a pergunta) e, dali em diante, o sistema segue as ligações até os vizinhos. O global search serve para perguntas sobre o acervo inteiro: em vez de entidades, ele usa as comunidades e os resumos delas.</p>
     <p><b>Na tela.</b> Primeiro, o grafo completo do curso, no centro. No primeiro clique, o foco vai para o grafo local: as entidades de entrada (GraphRAG e Grafos de conhecimento) ganham um anel, a vista se aproxima e só os vizinhos ficam acesos. No segundo, o foco passa para as comunidades: os nós se agrupam e cada comunidade ganha um contorno, como no slide da demo. A pergunta de exemplo e os passos ficam na fala.</p>
-    <p><b>Liga com.</b> O local search responde certo uma pergunta parecida com a que o RAG do slide 16 errou.</p>
+    <p><b>Liga com.</b> O local search responde certo uma pergunta parecida com a que o RAG do slide 15 errou.</p>
   </aside>
 </section>
 
@@ -1697,7 +1645,7 @@ MERGE (e)-[:ESTUDA {desde: 2026}]->(t)</pre>
   <aside class="explica">
     <p><b>A ideia.</b> Quatro consultas sobre o grafo do curso, cada uma mostrando algo que o Cypher faz bem.</p>
     <p><b>Na tela.</b> A primeira já aparece; as outras entram uma por clique. Um salto: quem está matriculado em Algoritmos. Agregação com tempo: disciplinas que dependem de um professor só, contando apenas quem leciona hoje (l.ate IS NULL); dá 8 de 9. Caminho de tamanho variável: o menor caminho entre o Lucas e o Rodrigo, com até 5 saltos, em qualquer direção. Escrita sem duplicar: o MERGE só cria o que ainda não existe.</p>
-    <p><b>Liga com.</b> A segunda consulta junta duas ideias anteriores, o grafo temporal (slide 10) e a pessoa-chave (slide 11). A quarta tem um limite: o MERGE não percebe que “Marta” e “Profa. Marta Lima” são a mesma pessoa, que é o problema do GraphRAG no slide 17.</p>
+    <p><b>Liga com.</b> A segunda consulta junta duas ideias anteriores, o grafo temporal (slide 9) e a pessoa-chave (slide 10). A quarta tem um limite: o MERGE não percebe que “Marta” e “Profa. Marta Lima” são a mesma pessoa, que é o problema do GraphRAG no slide 16.</p>
   </aside>
 </section>
 
@@ -1734,7 +1682,7 @@ WHERE e.nome = 'Você';</pre></div>
   <aside class="explica">
     <p><b>A ideia.</b> A mesma pergunta em Cypher e em SQL, para mostrar por que perguntas de relação ficam mais simples num grafo.</p>
     <p><b>Na tela.</b> As duas consultas lado a lado, com a mesma altura: Cypher à esquerda, SQL à direita. A pergunta (“quem já orientou TCC sobre temas que você estuda?”) fica na fala. No primeiro clique, as cores ligam cada salto do Cypher às linhas do SQL e aparece “3 saltos no Cypher, 4 JOINs no SQL”. No segundo, a frase sobre caminho de tamanho variável, que em SQL exige consulta recursiva. A conclusão sobre Text2Cypher fica na fala.</p>
-    <p><b>Liga com.</b> Fecha o bloco de Cypher e retoma o Text2Cypher do slide 23.</p>
+    <p><b>Liga com.</b> Fecha o bloco de Cypher e retoma o Text2Cypher do slide 22.</p>
   </aside>
 </section>
 
