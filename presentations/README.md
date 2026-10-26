@@ -15,6 +15,11 @@ Use the `presentation-create` skill, or by hand:
 4. Add a row to the table above.
 5. Check it: `presentation-check-structure`, then render it with `presentation-export` and look at the slides.
 
+## Reviewing a presentation
+
+[`review-editor-prompt.md`](review-editor-prompt.md) has the prompts to build a review editor for a deck (an
+Artifact on claude.ai where you pin comments to the slides) and to resolve the open comments afterwards.
+
 ## Folder layout
 
 ```
