@@ -30,6 +30,9 @@ Open `index.html` in Chrome. Arrows/space advance, `S` opens the presenter windo
 Portuguese names of the template conventions: `data-oculto` for hidden slides and `aside.explica` for the
 presenter explanation.
 
+The text for the sign-up page of a remote session of the talk (title, summary, description and event details, in
+Portuguese) is in [`event-description.md`](event-description.md).
+
 ## Data
 
 - The course graph (slides 1–25 and the background of slide 28) is fictional, written in `CURSO` inside `index.html`.
