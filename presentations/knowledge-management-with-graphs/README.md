@@ -31,7 +31,8 @@ Portuguese names of the template conventions: `data-oculto` for hidden slides an
 presenter explanation.
 
 The text for the sign-up page of a remote session of the talk (title, summary, description and event details, in
-Portuguese) is in [`event-description.md`](event-description.md).
+Portuguese) is in [`event-description.md`](event-description.md), and a LinkedIn post announcing it is in
+[`linkedin-post.md`](linkedin-post.md).
 
 ## Data
 
