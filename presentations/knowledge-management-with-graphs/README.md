@@ -10,13 +10,13 @@ graphs with LLMs, and closes with a real graph of the FACOM faculties built from
 | | |
 |---|---|
 | Language | pt-BR |
-| Slides | 28 (20 shown, 8 hidden backups: 6, 7, 12, 18, 19, 21, 23, 24) |
+| Slides | 29 (21 shown, 8 hidden backups: 7, 8, 13, 19, 20, 22, 24, 25) |
 | Duration | about 40 minutes plus questions |
 | Libraries | D3 7.9.0 (cdnjs), Martian Mono (Google Fonts) |
 
 ## Outline
 
-1. **Abertura** (opening) — title, are graphs still useful, the one-sentence rule
+1. **Abertura** (opening) — title, a timeline of LLM context windows and tools, are graphs still useful, the one-sentence rule
 2. **O que é um grafo** (what a graph is) — nodes, edges, labels, properties; graphs in everyday apps; ontology; time in edge properties
 3. **Lendo o grafo** (reading the graph) — degree and betweenness, communities, Leiden, live community detection
 4. **Grafos e IA** (graphs and AI) — augmented generation, RAG vs GraphRAG, how GraphRAG builds and stores the graph, the prompt, local and global search, three ways for an AI to query a graph database
@@ -32,11 +32,13 @@ presenter explanation.
 
 ## Data
 
-- The course graph (slides 1–25 and the background of slide 28) is fictional, written in `CURSO` inside `index.html`.
-- Slide 27 is real: the mandatory disciplines of the 14 courses of the four faculties called FACOM
+- The course graph (slides 1 and 3–26, and the background of slide 29) is fictional, written in `CURSO` inside `index.html`.
+- Slide 2 is real: release dates and context windows of LLMs, plus the launch of LangChain, Langflow, Cursor
+  and Claude Code. Data, sources and the generator are in [`data/llm-timeline/`](data/llm-timeline/).
+- Slide 28 is real: the mandatory disciplines of the 14 courses of the four faculties called FACOM
   (UFU, UFMS, UFBA, UFJF), taken from the official curricula. Sources, rules and the generator are in
   [`data/facom-curricula/`](data/facom-curricula/).
 
 ## Known issues
 
-- The explanations of slides 9, 10 and 16 mention slides 7 and 24, which are hidden.
+- The explanations of slides 10, 11 and 17 mention slides 8 and 25, which are hidden.

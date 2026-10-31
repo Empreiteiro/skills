@@ -147,6 +147,25 @@ pre.code .ln{display:block;margin:0 -32px;padding:0 32px 0 26px;border-left:6px 
 .capa-autor .nome{font-size:36px;font-weight:700}
 .capa-autor .cargo{font:condensed 500 24px var(--mono);color:var(--suave);letter-spacing:.04em}
 
+/* 2 linha do tempo: modelos e janela de contexto (svg gerado por data/llm-timeline/build_timeline.py) */
+.s-linha-tempo{justify-content:center}
+.jc-svg{width:100%;height:100%;display:block;overflow:visible}
+.jc-grade{stroke:var(--linha);stroke-width:1.5;stroke-dasharray:4 7}
+.jc-eixo{stroke:var(--linha-2);stroke-width:2.5}
+.jc-tick{stroke:var(--linha-2);stroke-width:2.5}
+.jc-eixo-y{font:condensed 600 21px var(--mono);fill:var(--apagado);text-anchor:end;dominant-baseline:central}
+.jc-ano{font:condensed 600 24px var(--mono);fill:var(--suave);text-anchor:middle}
+.jc-haste{stroke:var(--linha-2);stroke-width:1.5;stroke-dasharray:2 5}
+.jc-modelo circle{fill:var(--teal);stroke:var(--bg);stroke-width:4}
+.jc-modelo text{font:condensed 600 25px var(--sans);fill:var(--texto);paint-order:stroke;stroke:var(--bg);stroke-width:7px;stroke-linejoin:round}
+.jc-modelo .jc-ctx{font-weight:700;fill:var(--teal)}
+.jc-ferramenta line{stroke:var(--destaque);stroke-width:2;stroke-dasharray:4 5;opacity:.7}
+.jc-ferramenta path{fill:var(--destaque);stroke:var(--bg);stroke-width:3}
+.jc-ferramenta text{font:condensed 700 24px var(--sans);fill:var(--destaque)}
+.slide.active .jc-modelo,.slide.active .jc-ferramenta{animation:jc-entra .5s ease both;animation-delay:calc(var(--i) * 70ms + .15s)}
+.slide.active .jc-ferramenta{animation-delay:calc(var(--i) * 120ms + 1s)}
+@keyframes jc-entra{from{opacity:0}to{opacity:1}}
+
 /* 4 apps */
 .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-content:start}
 .app{display:flex;flex-direction:column;gap:14px;padding:30px 26px}
@@ -642,6 +661,131 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   </aside>
 </section>
 
+<section class="slide s-linha-tempo">
+  <!-- linha-do-tempo:inicio -->
+<svg class="jc-svg" viewBox="0 0 1700 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Linha do tempo dos modelos de linguagem e do tamanho da janela de contexto, de 2020 a 2026">
+  <line class="jc-grade" x1="110" y1="700" x2="1640" y2="700"/>
+  <text class="jc-eixo-y" x="96" y="700">1K</text>
+  <line class="jc-grade" x1="110" y1="542" x2="1640" y2="542"/>
+  <text class="jc-eixo-y" x="96" y="542">10K</text>
+  <line class="jc-grade" x1="110" y1="385" x2="1640" y2="385"/>
+  <text class="jc-eixo-y" x="96" y="385">100K</text>
+  <line class="jc-grade" x1="110" y1="228" x2="1640" y2="228"/>
+  <text class="jc-eixo-y" x="96" y="228">1M</text>
+  <line class="jc-grade" x1="110" y1="70" x2="1640" y2="70"/>
+  <text class="jc-eixo-y" x="96" y="70">10M</text>
+  <line class="jc-eixo" x1="110" y1="750" x2="1640" y2="750"/>
+  <line class="jc-tick" x1="130" y1="750" x2="130" y2="764"/>
+  <text class="jc-ano" x="244" y="794">2020</text>
+  <line class="jc-tick" x1="359" y1="750" x2="359" y2="764"/>
+  <text class="jc-ano" x="473" y="794">2021</text>
+  <line class="jc-tick" x1="588" y1="750" x2="588" y2="764"/>
+  <text class="jc-ano" x="702" y="794">2022</text>
+  <line class="jc-tick" x1="816" y1="750" x2="816" y2="764"/>
+  <text class="jc-ano" x="931" y="794">2023</text>
+  <line class="jc-tick" x1="1045" y1="750" x2="1045" y2="764"/>
+  <text class="jc-ano" x="1160" y="794">2024</text>
+  <line class="jc-tick" x1="1274" y1="750" x2="1274" y2="764"/>
+  <text class="jc-ano" x="1388" y="794">2025</text>
+  <line class="jc-tick" x1="1503" y1="750" x2="1503" y2="764"/>
+  <text class="jc-ano" x="1617" y="794">2026</text>
+  <g class="jc-ferramenta" style="--i:0">
+    <line x1="774" y1="760" x2="774" y2="822"/>
+    <path d="M774,741 l9,9 l-9,9 l-9,-9 z"/>
+    <text x="784" y="846" text-anchor="end">LangChain</text>
+  </g>
+  <g class="jc-ferramenta" style="--i:1">
+    <line x1="844" y1="760" x2="844" y2="858"/>
+    <path d="M844,741 l9,9 l-9,9 l-9,-9 z"/>
+    <text x="844" y="882" text-anchor="middle">Langflow</text>
+  </g>
+  <g class="jc-ferramenta" style="--i:2">
+    <line x1="863" y1="760" x2="863" y2="822"/>
+    <path d="M863,741 l9,9 l-9,9 l-9,-9 z"/>
+    <text x="853" y="846" text-anchor="start">Cursor</text>
+  </g>
+  <g class="jc-ferramenta" style="--i:3">
+    <line x1="1307" y1="760" x2="1307" y2="822"/>
+    <path d="M1307,741 l9,9 l-9,9 l-9,-9 z"/>
+    <text x="1307" y="846" text-anchor="middle">Claude Code</text>
+  </g>
+  <g class="jc-modelo" style="--i:0">
+    <line class="jc-haste" x1="232" y1="660" x2="232" y2="750"/>
+    <circle cx="232" cy="651" r="9"/>
+    <text x="250" y="649" text-anchor="start"><tspan class="jc-nome">GPT-3</tspan><tspan class="jc-ctx" x="250" dy="30">2K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:1">
+    <line class="jc-haste" x1="796" y1="613" x2="796" y2="750"/>
+    <circle cx="796" cy="604" r="9"/>
+    <text x="778" y="602" text-anchor="end"><tspan class="jc-nome">ChatGPT</tspan><tspan class="jc-ctx" x="778" dy="30">4K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:2">
+    <line class="jc-haste" x1="863" y1="565" x2="863" y2="750"/>
+    <circle cx="863" cy="556" r="9"/>
+    <text x="881" y="554" text-anchor="start"><tspan class="jc-nome">GPT-4</tspan><tspan class="jc-ctx" x="881" dy="30">8K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:3">
+    <line class="jc-haste" x1="937" y1="394" x2="937" y2="750"/>
+    <circle cx="937" cy="385" r="9"/>
+    <text x="937" y="329" text-anchor="middle"><tspan class="jc-nome">Claude 2</tspan><tspan class="jc-ctx" x="937" dy="30">100K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:4">
+    <line class="jc-haste" x1="1010" y1="377" x2="1010" y2="750"/>
+    <circle cx="1010" cy="368" r="9"/>
+    <text x="1002" y="414" text-anchor="start"><tspan class="jc-nome">GPT-4 Turbo</tspan><tspan class="jc-ctx" x="1002" dy="30">128K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:5">
+    <line class="jc-haste" x1="1073" y1="236" x2="1073" y2="750"/>
+    <circle cx="1073" cy="228" r="9"/>
+    <text x="1073" y="172" text-anchor="middle"><tspan class="jc-nome">Gemini 1.5 Pro</tspan><tspan class="jc-ctx" x="1073" dy="30">1M</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:6">
+    <line class="jc-haste" x1="1085" y1="347" x2="1085" y2="750"/>
+    <circle cx="1085" cy="338" r="9"/>
+    <text x="1085" y="282" text-anchor="middle"><tspan class="jc-nome">Claude 3</tspan><tspan class="jc-ctx" x="1085" dy="30">200K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:7">
+    <line class="jc-haste" x1="1173" y1="377" x2="1173" y2="750"/>
+    <circle cx="1173" cy="368" r="9"/>
+    <text x="1191" y="366" text-anchor="start"><tspan class="jc-nome">Llama 3.1</tspan><tspan class="jc-ctx" x="1191" dy="30">128K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:8">
+    <line class="jc-haste" x1="1334" y1="79" x2="1334" y2="750"/>
+    <circle cx="1334" cy="70" r="9"/>
+    <text x="1352" y="68" text-anchor="start"><tspan class="jc-nome">Llama 4 Scout</tspan><tspan class="jc-ctx" x="1352" dy="30">10M</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:9">
+    <line class="jc-haste" x1="1339" y1="236" x2="1339" y2="750"/>
+    <circle cx="1339" cy="228" r="9"/>
+    <text x="1321" y="226" text-anchor="end"><tspan class="jc-nome">GPT-4.1</tspan><tspan class="jc-ctx" x="1321" dy="30">1M</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:10">
+    <line class="jc-haste" x1="1411" y1="299" x2="1411" y2="750"/>
+    <circle cx="1411" cy="290" r="9"/>
+    <text x="1429" y="288" text-anchor="start"><tspan class="jc-nome">GPT-5</tspan><tspan class="jc-ctx" x="1429" dy="30">400K</tspan></text>
+  </g>
+  <g class="jc-modelo" style="--i:11">
+    <line class="jc-haste" x1="1524" y1="236" x2="1524" y2="750"/>
+    <circle cx="1524" cy="228" r="9"/>
+    <text x="1524" y="172" text-anchor="middle"><tspan class="jc-nome">Claude Opus 4.6</tspan><tspan class="jc-ctx" x="1524" dy="30">1M</tspan></text>
+  </g>
+</svg>
+<!-- linha-do-tempo:fim -->
+  <aside class="notes">
+    <p>⏱ Uns 2 minutos, logo depois da capa.</p>
+    <p>Antes de falar de grafo, o contexto em que a gente está. Em 2020, o GPT-3 lia 2 mil tokens de uma vez, umas poucas páginas. O ChatGPT, no fim de 2022, lia 4 mil.</p>
+    <p>Em três anos isso subiu para 100 mil, 200 mil, 1 milhão de tokens; o Llama 4 Scout anuncia 10 milhões. A escala do gráfico é logarítmica: cada linha é dez vezes a anterior.</p>
+    <p>Embaixo, em amarelo, as ferramentas que vieram junto: LangChain e Langflow para montar aplicações com LLM, Cursor e Claude Code para programar com eles.</p>
+    <p>É isso que obriga a perguntar, no próximo slide, se grafo ainda faz sentido.</p>
+  </aside>
+  <aside class="explica">
+    <p><b>A ideia.</b> A janela de contexto é quanto texto o modelo lê de uma vez. Ela cresceu umas cinco mil vezes em seis anos, de 2K tokens (GPT-3, 2020) a 1M nos modelos de ponta e 10M anunciados no Llama 4 Scout. Ao mesmo tempo surgiram as ferramentas para construir com LLMs (LangChain, out/2022; Langflow, fev/2023) e para programar com eles (Cursor, mar/2023; Claude Code, fev/2025).</p>
+    <p><b>Na tela.</b> Só a linha do tempo, sem título. Cada ponto é um modelo, na data de lançamento e na altura do tamanho do contexto (escala logarítmica, de 1K a 10M). Os losangos amarelos no eixo marcam o lançamento das ferramentas. Os pontos aparecem da esquerda para a direita quando o slide entra.</p>
+    <p><b>Detalhe.</b> Os números são os do lançamento de cada modelo: o GPT-4 também saiu com uma versão de 32K, o Gemini 1.5 Pro chegou depois a 2M, e o 1M do Claude Opus 4.6 começou em beta. Fontes em <code>data/llm-timeline/README.md</code>.</p>
+    <p><b>Liga com.</b> O slide 3, “Grafos ainda são úteis?”: contexto longo e agentes de código que buscam sozinhos (como Cursor e Claude Code) são justamente o que tirou força do grafo como remendo de busca.</p>
+  </aside>
+</section>
+
 <section class="slide">
   <div class="kicker"><b>01</b> · Abertura</div>
   <h2>Grafos ainda são úteis?</h2>
@@ -995,12 +1139,12 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> Grafo temporal, e por que as propriedades da aresta importam. Um fato tem validade: o Paulo deu Algoritmos em 2019 e 2020, a Marta de 2021 a 2024, o Sérgio deu uma segunda turma em 2023 e 2024, ao mesmo tempo que ela, e o Jorge dá desde 2025. Se o grafo guarda só “X leciona Algoritmos” para cada um, as quatro arestas ficam lá, e a pergunta “quem é o professor de Algoritmos?” devolve os quatro. Está errado. A solução é guardar o período na própria relação, com as propriedades “de” e “ate”. Assim dá para perguntar quem é o professor hoje (a relação sem “ate”: o Jorge) e quem era em qualquer ano (em 2023, a Marta e o Sérgio).</p>
     <p><b>Em uma frase.</b> O fato completo é “a Marta lecionou Algoritmos de 2021 a 2024”. Sem as datas, ele fica pela metade.</p>
-    <p><b>Onde o tempo fica guardado.</b> Nas propriedades da própria aresta. O fato “a Marta leciona Algoritmos” é a aresta LECIONA entre os dois nós, e o período fica guardado nela: {de: 2021, ate: 2024}. A aresta do Jorge tem só {de: 2025}, porque ainda não acabou. Os nós não mudam; o que muda é a validade da ligação. Isso funciona porque, no grafo de propriedades, a aresta também pode ter propriedades (o “de: 2021” do slide 7, que no RDF não teria onde ficar). Quando o fato tem mais detalhes, como semestre, turma e sala, outra opção é transformar a ligação num nó próprio, por exemplo uma Turma ligada ao professor e à disciplina.</p>
+    <p><b>Onde o tempo fica guardado.</b> Nas propriedades da própria aresta. O fato “a Marta leciona Algoritmos” é a aresta LECIONA entre os dois nós, e o período fica guardado nela: {de: 2021, ate: 2024}. A aresta do Jorge tem só {de: 2025}, porque ainda não acabou. Os nós não mudam; o que muda é a validade da ligação. Isso funciona porque, no grafo de propriedades, a aresta também pode ter propriedades (o “de: 2021” do slide 8, que no RDF não teria onde ficar). Quando o fato tem mais detalhes, como semestre, turma e sala, outra opção é transformar a ligação num nó próprio, por exemplo uma Turma ligada ao professor e à disciplina.</p>
     <p><b>Na tela.</b> Só a linha do tempo com os quatro professores e a marca de hoje, no centro do slide. As barras crescem quando o slide entra. A pergunta “quem é o professor de Algoritmos?” e a comparação entre o grafo sem tempo e o grafo com tempo ficam na fala.</p>
-    <p><b>Por que importa.</b> Fato muda o tempo todo: professor troca de disciplina, aluno se forma, projeto acaba. Um LLM aprendeu uma foto antiga do mundo, e um RAG comum acha a ata velha e a nova sem saber qual vale. É a palavra “histórico” da frase do slide 3.</p>
+    <p><b>Por que importa.</b> Fato muda o tempo todo: professor troca de disciplina, aluno se forma, projeto acaba. Um LLM aprendeu uma foto antiga do mundo, e um RAG comum acha a ata velha e a nova sem saber qual vale. É a palavra “histórico” da frase do slide 4.</p>
     <p><b>Se perguntarem.</b> Por que não apagar a aresta antiga? Porque aí some o histórico e ninguém mais responde quem dava a disciplina em 2023. E “leciona ou lecionou”: o tipo da relação é sempre LECIONA; quem diz se já acabou é o “ate”. E dois professores ao mesmo tempo não é problema: são duas arestas válidas no mesmo período, e a resposta para 2023 tem dois nomes.</p>
-    <p><b>Detalhe.</b> As turmas do Paulo e do Sérgio aparecem só nesta linha do tempo. O grafo completo do curso, usado nos slides 10 a 13, guarda só a da Marta: com as outras duas, as comunidades e as pontes daqueles slides mudariam.</p>
-    <p><b>Liga com.</b> O “de: 2021” que apareceu nos slides 4 e 7. E a consulta do slide 24, em que “l.ate IS NULL” filtra só quem leciona hoje.</p>
+    <p><b>Detalhe.</b> As turmas do Paulo e do Sérgio aparecem só nesta linha do tempo. O grafo completo do curso, usado nos slides 11 a 14, guarda só a da Marta: com as outras duas, as comunidades e as pontes daqueles slides mudariam.</p>
+    <p><b>Liga com.</b> O “de: 2021” que apareceu nos slides 5 e 8. E a consulta do slide 25, em que “l.ate IS NULL” filtra só quem leciona hoje.</p>
   </aside>
 </section>
 
@@ -1026,7 +1170,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     <p><b>Na tela.</b> Só o grafo inteiro do curso, na largura do slide, sem texto ao lado: legenda e resultados são ditos em voz alta. A ontologia agora tem TCC e Tema, 45 nós. O tamanho do nó é o grau. Os cursos são os maiores porque todo mundo se liga a eles, o que é esperado e diz pouco. No primeiro clique, um anel tracejado marca as pontes; entre as pessoas, a maior ponte é você, que circula entre Algoritmos, Dados e IA. No segundo clique, a Marta sai: o nó dela apaga e fica em vermelho o que perde cobertura, a disciplina de IA (sem professor), dois TCCs (sem orientadora) e dois temas (sem ninguém pesquisando). Dá para clicar em outros professores e comparar.</p>
     <p><b>Em uma frase.</b> Ter muitas conexões e ser difícil de substituir são coisas diferentes, e o grafo mede as duas.</p>
     <p><b>Por que importa.</b> É o problema da pessoa-chave. Numa empresa, é quem sai e leva junto um conhecimento que só ela tinha. Nenhuma planilha guarda isso, mas o grafo calcula.</p>
-    <p><b>Liga com.</b> Abre o bloco “Lendo o grafo”, que segue com comunidades. A mesma preocupação volta em Cypher no slide 24, na consulta da disciplina que depende de um professor só.</p>
+    <p><b>Liga com.</b> Abre o bloco “Lendo o grafo”, que segue com comunidades. A mesma preocupação volta em Cypher no slide 25, na consulta da disciplina que depende de um professor só.</p>
   </aside>
 </section>
 
@@ -1186,7 +1330,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
     <p><b>A ideia.</b> Mapa rápido das formas de dar contexto a um LLM. Em todas, o modelo recebe junto com a pergunta um conteúdo que não estava no treino; o que muda é como esse conteúdo é escolhido. RAG busca os trechos mais parecidos. CAG não busca: carrega a base inteira no contexto e guarda o cache do modelo (o estado calculado depois de ler esse texto) para reaproveitar em todas as perguntas. Agentic RAG põe um agente para decidir quando, onde e quantas vezes buscar. GraphRAG busca num grafo de entidades e relações.</p>
     <p><b>Na tela.</b> Quatro quadros lado a lado, um para cada técnica: nome, nome por extenso, como funciona e quando é bom usar.</p>
     <p><b>Fonte.</b> O CAG vem do artigo “Don't Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks” (arXiv 2412.15605, dezembro de 2024). A proposta vale para bases de tamanho limitado, que cabem no contexto do modelo.</p>
-    <p><b>Liga com.</b> O próximo slide compara RAG e GraphRAG com a mesma pergunta. O agente de código que busca sozinho, citado no slide 2, é um caso de Agentic RAG.</p>
+    <p><b>Liga com.</b> O próximo slide compara RAG e GraphRAG com a mesma pergunta. O agente de código que busca sozinho, citado no slide 3, é um caso de Agentic RAG.</p>
   </aside>
 </section>
 
@@ -1227,7 +1371,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> A mesma pergunta respondida pelos dois jeitos. No RAG, a pergunta vira embedding e o banco vetorial devolve os trechos mais parecidos; funciona quando a resposta está escrita em algum trecho. Aqui não está: quem orienta cada TCC está num documento, e o tema do TCC em outro. No GraphRAG, a busca acha as entidades da pergunta (os temas de grafos) e segue as relações SOBRE e ORIENTA até os professores.</p>
     <p><b>Na tela.</b> A pergunta “Quem orienta TCC sobre grafos?” em cima e dois quadros lado a lado, cada um com o caminho da busca. No primeiro clique, o quadro do RAG mostra os trechos que voltam e a resposta, um chute educado. No segundo, o quadro do GraphRAG mostra os três caminhos no grafo e a resposta certa: a Marta orienta os TCCs da Ana e do Bruno, e o Sérgio orienta o do Diego. No terceiro, a frase “vetor acha parecido, grafo acha conectado”.</p>
-    <p><b>Liga com.</b> Os slides seguintes explicam como o GraphRAG monta esse grafo. O local search (slide 20) é o caminho do quadro da direita, passo a passo.</p>
+    <p><b>Liga com.</b> Os slides seguintes explicam como o GraphRAG monta esse grafo. O local search (slide 21) é o caminho do quadro da direita, passo a passo.</p>
   </aside>
 </section>
 
@@ -1285,7 +1429,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> No GraphRAG da Microsoft, ninguém modela o grafo antes. O LLM lê os documentos, extrai entidades e relações e monta um grafo de propriedades com pesos; depois o sistema acha comunidades e escreve um resumo de cada uma. Como não há ontologia, o LLM escolhe os nomes. Isso facilita começar e cria dois problemas: a mesma entidade em vários nós e a mesma relação com nomes diferentes.</p>
     <p><b>Na tela.</b> Três documentos passam pelo LLM e viram um grafo. A Marta aparece em três nós (Marta, Profa. Marta Lima, M. Lima), e a orientação aparece com três nomes de relação. No clique, aparecem o destaque “a mesma pessoa, três nós” e os três nomes de relação em vermelho. O resto (quase nunca é RDF, sem esquema rígido) fica na fala.</p>
-    <p><b>Liga com.</b> É o que o slide da ontologia avisou: sem regra, cada documento escreve de um jeito. Resolução de entidades e uma lista de tipos permitidos na extração ajudam, mas são trabalho a mais. O MERGE do slide 24 também não resolve.</p>
+    <p><b>Liga com.</b> É o que o slide da ontologia avisou: sem regra, cada documento escreve de um jeito. Resolução de entidades e uma lista de tipos permitidos na extração ajudam, mas são trabalho a mais. O MERGE do slide 25 também não resolve.</p>
   </aside>
 </section>
 
@@ -1396,7 +1540,7 @@ pre.code,pre.code *,code,.anat-code,.anat-code *,.formula{font-variant-ligatures
   <aside class="explica">
     <p><b>A ideia.</b> Um grafo pode ser guardado em qualquer lugar, inclusive em tabelas. No GraphRAG da Microsoft, ele fica em arquivos parquet: uma tabela de nós (entities), uma de arestas (relationships), uma de comunidades, uma de resumos, uma de trechos e uma de documentos. Os embeddings ficam num banco vetorial à parte, o LanceDB por padrão.</p>
     <p><b>Na tela.</b> A lista das tabelas e o que cada uma guarda. No primeiro clique, linhas de exemplo de entities e relationships com os dados do curso; no segundo, o banco vetorial.</p>
-    <p><b>Liga com.</b> Qualquer pessoa abre essas tabelas com pandas. O slide 22 mostra o outro caminho, quando o grafo fica num banco de grafos como o Neo4j.</p>
+    <p><b>Liga com.</b> Qualquer pessoa abre essas tabelas com pandas. O slide 23 mostra o outro caminho, quando o grafo fica num banco de grafos como o Neo4j.</p>
   </aside>
 </section>
 
@@ -1458,7 +1602,7 @@ Pergunta: <span class="var q">{pergunta}</span><span class="valor"><span class="
   <aside class="explica">
     <p><b>A ideia.</b> Os dois modos de busca do GraphRAG no mesmo desenho. O local search serve para perguntas sobre coisas específicas: a busca vetorial só acha por onde entrar no grafo (as entidades mais parecidas com a pergunta) e, dali em diante, o sistema segue as ligações até os vizinhos. O global search serve para perguntas sobre o acervo inteiro: em vez de entidades, ele usa as comunidades e os resumos delas.</p>
     <p><b>Na tela.</b> Primeiro, o grafo completo do curso, no centro. No primeiro clique, o foco vai para o grafo local: as entidades de entrada (GraphRAG e Grafos de conhecimento) ganham um anel, a vista se aproxima e só os vizinhos ficam acesos. No segundo, o foco passa para as comunidades: os nós se agrupam e cada comunidade ganha um contorno, como no slide da demo. A pergunta de exemplo e os passos ficam na fala.</p>
-    <p><b>Liga com.</b> O local search responde certo uma pergunta parecida com a que o RAG do slide 15 errou.</p>
+    <p><b>Liga com.</b> O local search responde certo uma pergunta parecida com a que o RAG do slide 16 errou.</p>
   </aside>
 </section>
 
@@ -1653,7 +1797,7 @@ MERGE (e)-[:ESTUDA {desde: 2026}]->(t)</pre>
   <aside class="explica">
     <p><b>A ideia.</b> Quatro consultas sobre o grafo do curso, cada uma mostrando algo que o Cypher faz bem.</p>
     <p><b>Na tela.</b> A primeira já aparece; as outras entram uma por clique. Um salto: quem está matriculado em Algoritmos. Agregação com tempo: disciplinas que dependem de um professor só, contando apenas quem leciona hoje (l.ate IS NULL); dá 8 de 9. Caminho de tamanho variável: o menor caminho entre o Lucas e o Rodrigo, com até 5 saltos, em qualquer direção. Escrita sem duplicar: o MERGE só cria o que ainda não existe.</p>
-    <p><b>Liga com.</b> A segunda consulta junta duas ideias anteriores, o grafo temporal (slide 9) e a pessoa-chave (slide 10). A quarta tem um limite: o MERGE não percebe que “Marta” e “Profa. Marta Lima” são a mesma pessoa, que é o problema do GraphRAG no slide 16.</p>
+    <p><b>Liga com.</b> A segunda consulta junta duas ideias anteriores, o grafo temporal (slide 10) e a pessoa-chave (slide 11). A quarta tem um limite: o MERGE não percebe que “Marta” e “Profa. Marta Lima” são a mesma pessoa, que é o problema do GraphRAG no slide 17.</p>
   </aside>
 </section>
 
@@ -1690,7 +1834,7 @@ WHERE e.nome = 'Você';</pre></div>
   <aside class="explica">
     <p><b>A ideia.</b> A mesma pergunta em Cypher e em SQL, para mostrar por que perguntas de relação ficam mais simples num grafo.</p>
     <p><b>Na tela.</b> As duas consultas lado a lado, com a mesma altura: Cypher à esquerda, SQL à direita. A pergunta (“quem já orientou TCC sobre temas que você estuda?”) fica na fala. No primeiro clique, as cores ligam cada salto do Cypher às linhas do SQL e aparece “3 saltos no Cypher, 4 JOINs no SQL”. No segundo, a frase sobre caminho de tamanho variável, que em SQL exige consulta recursiva. A conclusão sobre Text2Cypher fica na fala.</p>
-    <p><b>Liga com.</b> Fecha o bloco de Cypher e retoma o Text2Cypher do slide 22.</p>
+    <p><b>Liga com.</b> Fecha o bloco de Cypher e retoma o Text2Cypher do slide 23.</p>
   </aside>
 </section>
 
