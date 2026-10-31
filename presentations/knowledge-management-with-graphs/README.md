@@ -33,8 +33,8 @@ presenter explanation.
 ## Data
 
 - The course graph (slides 1 and 3–26, and the background of slide 29) is fictional, written in `CURSO` inside `index.html`.
-- Slide 2 is real: release dates and context windows of LLMs, plus the launch of LangChain, Langflow, Cursor
-  and Claude Code. Data, sources and the generator are in [`data/llm-timeline/`](data/llm-timeline/).
+- Slide 2 is real: release dates and context windows of LLMs, plus the launch of LangChain, ChatGPT,
+  Langflow, Cursor and Claude Code. Data, sources and the generator are in [`data/llm-timeline/`](data/llm-timeline/).
 - Slide 28 is real: the mandatory disciplines of the 14 courses of the four faculties called FACOM
   (UFU, UFMS, UFBA, UFJF), taken from the official curricula. Sources, rules and the generator are in
   [`data/facom-curricula/`](data/facom-curricula/).

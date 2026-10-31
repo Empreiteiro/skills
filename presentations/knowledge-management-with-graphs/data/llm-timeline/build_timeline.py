@@ -4,7 +4,7 @@
     python build_timeline.py --check    # only checks that index.html already holds this block
 
 x = release date (linear), y = context window in tokens (log scale, 1K to 10M).
-Tools (LangChain, Langflow, Cursor, Claude Code) are marked on the time axis.
+Events (LangChain, ChatGPT, Langflow, Cursor, Claude Code) are marked on the time axis.
 Sources for every date and size are in README.md.
 """
 import math
@@ -19,7 +19,6 @@ START, END = '<!-- linha-do-tempo:inicio -->', '<!-- linha-do-tempo:fim -->'
 # pos: 'r' right of the dot, 'l' left, 'a' above, 'b' below, starting at the dot
 MODELS = [
     ('GPT-3',           (2020, 6, 11),  2_048,      'r'),
-    ('ChatGPT',         (2022, 11, 30), 4_096,      'l'),
     ('GPT-4',           (2023, 3, 14),  8_192,      'r'),
     ('Claude 2',        (2023, 7, 11),  100_000,    'a'),
     ('GPT-4 Turbo',     (2023, 11, 6),  128_000,    'b'),
@@ -31,10 +30,11 @@ MODELS = [
     ('GPT-5',           (2025, 8, 7),   400_000,    'r'),
     ('Claude Opus 4.6', (2026, 2, 5),   1_000_000,  'a'),
 ]
-# name, release, label row (1 or 2), anchor
+# events: name, launch, label row (1 or 2), anchor
 TOOLS = [
     ('LangChain',   (2022, 10, 25), 1, 'end'),
-    ('Langflow',    (2023, 2, 15),  2, 'middle'),
+    ('ChatGPT',     (2022, 11, 30), 2, 'end'),
+    ('Langflow',    (2023, 2, 15),  2, 'start'),
     ('Cursor',      (2023, 3, 14),  1, 'start'),
     ('Claude Code', (2025, 2, 24),  1, 'middle'),
 ]
@@ -81,11 +81,11 @@ def svg():
         mid = x((yr, 7, 1))
         if mid < X1:
             out.append(f'  <text class="jc-ano" x="{mid:.0f}" y="{AXIS + 44}">{yr}</text>')
-    # tools: diamond on the axis, dashed stem down to the label
+    # events: diamond on the axis, dashed stem down to the label
     for i, (name, d, row, anchor) in enumerate(TOOLS):
         tx = x(d)
         ly = AXIS + (96 if row == 1 else 132)
-        dx = {'end': 10, 'start': -10, 'middle': 0}[anchor]
+        dx = {'end': 4, 'start': -4, 'middle': 0}[anchor]
         out.append(f'  <g class="jc-ferramenta" style="--i:{i}">')
         out.append(f'    <line x1="{tx:.0f}" y1="{AXIS + 10}" x2="{tx:.0f}" y2="{ly - 24}"/>')
         out.append(f'    <path d="M{tx:.0f},{AXIS - 9} l9,9 l-9,9 l-9,-9 z"/>')
@@ -122,7 +122,7 @@ def main():
         print('index.html contains this block:', 'yes' if ok else 'NO')
         sys.exit(0 if ok else 1)
     DECK.write_text(html[:a] + block + html[b:], encoding='utf-8')
-    print(f'wrote {len(MODELS)} models and {len(TOOLS)} tools into {DECK.name}')
+    print(f'wrote {len(MODELS)} models and {len(TOOLS)} events into {DECK.name}')
 
 
 if __name__ == '__main__':
