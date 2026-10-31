@@ -19,6 +19,7 @@ START, END = '<!-- linha-do-tempo:inicio -->', '<!-- linha-do-tempo:fim -->'
 # pos: 'r' right of the dot, 'l' left, 'a' above, 'b' below, starting at the dot
 MODELS = [
     ('GPT-3',           (2020, 6, 11),  2_048,      'r'),
+    ('GPT-3.5 Turbo',   (2023, 3, 1),   4_096,      'l'),
     ('GPT-4',           (2023, 3, 14),  8_192,      'r'),
     ('Claude 2',        (2023, 7, 11),  100_000,    'a'),
     ('GPT-4 Turbo',     (2023, 11, 6),  128_000,    'b'),

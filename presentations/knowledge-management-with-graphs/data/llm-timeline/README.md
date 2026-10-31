@@ -19,6 +19,7 @@ Context size at launch (the number the vendor announced on release day).
 | Model | Release | Context | Note |
 |---|---|---|---|
 | GPT-3 | Jun 2020 | 2K (2,048) | OpenAI API |
+| GPT-3.5 Turbo | Mar 2023 | 4K (4,096) | API release of the ChatGPT model; a 16K version came in June 2023 |
 | GPT-4 | Mar 2023 | 8K (8,192) | a 32K version was announced alongside |
 | Claude 2 | Jul 2023 | 100K | |
 | GPT-4 Turbo | Nov 2023 | 128K | |
