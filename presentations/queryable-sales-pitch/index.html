@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queryable Sales Pitch</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1115'/%3E%3Cg stroke='%23A7B3C0' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M19 21L45 18M19 21L32 45M45 18L32 45'/%3E%3C/g%3E%3Ccircle cx='19' cy='21' r='8' fill='%234C9BE8'/%3E%3Ccircle cx='45' cy='18' r='7' fill='%23B86BD6'/%3E%3Ccircle cx='32' cy='45' r='9' fill='%232AACB0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* node / category colors */
+  --blue:#4C9BE8; --purple:#B86BD6; --green:#5BAE5B; --orange:#E89A4C; --teal:#2AACB0; --gray:#666666;
+  /* surfaces */
+  --bg:#0E1115; --panel:#141B23; --line:#25303C; --line-2:#344150;
+  --border:rgba(232,237,242,.11);
+  --box:rgba(232,237,242,.30); /* outline of a neutral box in the scenario drawings */
+  --title-gap:64px; /* fixed distance from the title to the content, on every slide */
+  /* text */
+  --text:#E8EDF2; --soft:#A7B3C0; --dim:#6E7B88;
+  /* states */
+  --error:#F0635A; --ok:#6CC46C; --highlight:#F2CC60;
+  --sans:'Martian Mono',ui-monospace,'Cascadia Code',Consolas,monospace;
+  --mono:'Martian Mono',ui-monospace,'Cascadia Code',Consolas,monospace;
+  /* optional logo in the bottom-right corner of every slide: url("assets/logo.svg") */
+  --logo:none;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);font-stretch:87.5%;overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+
+/* ---------- 16:9 stage (1920×1080, scaled to the window) ---------- */
+#viewport{position:fixed;inset:0;overflow:hidden;background:var(--grain,linear-gradient(transparent,transparent)) 0 0/320px 320px repeat,var(--bg)}
+#deck{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--k,.5));transform-origin:50% 50%}
+.slide{position:absolute;inset:0;padding:calc(64px + var(--extra-v,0px) * .35) max(110px,calc((100% - 1920px) / 2 + 110px)) 76px;display:flex;flex-direction:column;overflow:hidden;
+  background:var(--grain,linear-gradient(transparent,transparent)) 0 0/320px 320px repeat,var(--bg);
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+.slide.active{opacity:1;visibility:visible;transition:opacity .45s ease}
+.slide::after{content:'';position:absolute;bottom:26px;right:max(110px,calc((100% - 1920px) / 2 + 110px));width:46px;height:46px;background:var(--logo) no-repeat center/contain;pointer-events:none}
+aside.notes,aside.explain{display:none!important} /* speaker notes (presenter window) and the explanation for whoever presents */
+
+/* ---------- progress bar and click zones ---------- */
+#hud{position:absolute;left:0;right:0;bottom:0;height:60px;z-index:20;pointer-events:none}
+#bar{position:absolute;left:0;bottom:0;height:5px;width:100%;background:rgba(255,255,255,.05)}
+#bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .4s ease}
+.navzone{position:fixed;top:0;bottom:0;width:5vw;z-index:30;cursor:pointer;opacity:0;transition:opacity .2s}
+.navzone:hover{opacity:1}
+.navzone.left{left:0;background:linear-gradient(90deg,rgba(255,255,255,.06),transparent)}
+.navzone.right{right:0;background:linear-gradient(270deg,rgba(255,255,255,.06),transparent)}
+
+/* ---------- typography ---------- */
+.kicker{font:condensed 500 22px/24px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:var(--title-gap);min-height:24px}
+.lead{font-size:40px;line-height:1.25;font-weight:600;letter-spacing:-.01em;margin-bottom:52px;max-width:1700px;text-wrap:balance}
+.kicker b{color:var(--teal);font-weight:700}
+h1{font-size:112px;line-height:1.02;font-weight:600;letter-spacing:-.03em}
+h2{font-size:52px;line-height:1.12;font-weight:600;letter-spacing:-.02em;margin-bottom:var(--title-gap);max-width:1700px}
+h3{font-size:30px;line-height:1.22;font-weight:600;letter-spacing:-.01em}
+p{font-size:32px;line-height:1.38}
+.muted{color:var(--soft)} .dim{color:var(--dim)} .hl{color:var(--highlight)}
+.c-blue{color:var(--blue)} .c-purple{color:var(--purple)} .c-teal{color:var(--teal)} .c-red{color:var(--error)}
+code{font-family:var(--mono);font-stretch:75%;font-size:.82em;border:1px solid var(--border);border-radius:6px;padding:.04em .32em;white-space:nowrap}
+.body{flex:1;min-height:0;position:relative;display:flex;flex-direction:column;justify-content:center}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-content:start}
+.card{border:1px solid var(--border);border-radius:12px;padding:28px 32px;display:flex;flex-direction:column;gap:16px}
+.card p{font-size:26px;color:var(--soft)}
+.list{list-style:none;display:flex;flex-direction:column;gap:26px}
+.list li{font-size:32px;line-height:1.36;padding-left:44px;position:relative}
+.list li::before{content:'';position:absolute;left:4px;top:.55em;width:14px;height:14px;border-radius:50%;background:var(--teal)}
+.list li b{font-weight:650}
+.list li span{color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{display:inline-block;font:condensed 600 19px/1 var(--mono);letter-spacing:.04em;padding:9px 13px;border-radius:999px;border:1px solid var(--line-2);color:var(--soft);white-space:nowrap}
+.section-label{font:condensed 600 19px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+/* ---------- fragments (appear click by click) ---------- */
+.fragment{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.fragment.visible{opacity:1;transform:none}
+
+/* ---------- title and closing slides ---------- */
+.s-title,.s-end{justify-content:center;align-items:center;text-align:center}
+.s-title{padding-top:0;padding-bottom:0}
+.s-title .tagline{text-wrap:balance}
+.s-title .tagline{margin-top:36px;font-size:36px;color:var(--soft);max-width:1300px}
+.author{margin-top:64px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.author .name{font-size:36px;font-weight:700}
+.author .role{font:condensed 500 24px var(--mono);color:var(--soft);letter-spacing:.04em}
+.s-end h1{font-size:120px}
+
+/* ---------- big sentence ---------- */
+.s-phrase{justify-content:center;padding:0 170px;text-align:center}
+.big-phrase p{font-size:62px;line-height:1.2;font-weight:600;letter-spacing:-.015em;margin-bottom:46px}
+
+/* ---------- scenario drawings (inline SVG, 1700 wide) ---------- */
+.scene{display:flex;flex-direction:row;align-items:center;justify-content:center}
+.scene svg{width:100%;height:100%}
+.bx{fill:none;stroke:var(--box);stroke-width:2}
+.bx.blue{stroke:var(--blue)} .bx.teal{stroke:var(--teal)} .bx.orange{stroke:var(--orange)} .bx.red{stroke:var(--error)}
+.bx.purple{stroke:var(--purple);stroke-width:2.5}
+.bx.zone{stroke:var(--line-2);stroke-dasharray:10 8}
+.bx.dash{stroke-dasharray:10 8}
+.bt{font:condensed 600 26px var(--sans);fill:var(--text);text-anchor:middle;dominant-baseline:central}
+.bt.big{font-size:34px;font-weight:700}
+.bt.red{fill:var(--error)}
+.bs{font:condensed 500 20px var(--sans);fill:var(--soft);text-anchor:middle;dominant-baseline:central}
+.bl{font:condensed 500 21px var(--sans);fill:var(--soft);text-anchor:middle;dominant-baseline:central}
+.zl{font:condensed 600 19px var(--mono);letter-spacing:.1em;fill:var(--dim);dominant-baseline:central}
+.lt{font:condensed 500 20px var(--sans);fill:var(--soft);dominant-baseline:central}
+.lt.teal{fill:var(--teal)}
+.ln{fill:none;stroke:var(--soft);stroke-width:2.5}
+.ln.dash{stroke-dasharray:9 8}
+.ln.teal{stroke:var(--teal)}
+
+/* ---------- what each source becomes ---------- */
+.sources{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-content:center}
+.sources .card{gap:18px}
+.sources h3{display:flex;align-items:center;gap:14px}
+.sources h3::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--c,var(--soft));flex:none}
+
+/* ---------- side by side ---------- */
+.compare{width:100%;border-collapse:collapse;table-layout:fixed}
+.compare th,.compare td{text-align:left;vertical-align:top;padding:24px 28px;border-bottom:1px solid var(--border)}
+.compare col.row-head{width:22%}
+.compare thead th{font:condensed 600 22px var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--line-2)}
+.compare thead th:nth-child(2){color:var(--error)}
+.compare thead th:nth-child(3){color:var(--teal)}
+.compare thead th:nth-child(4){color:var(--purple)}
+.compare tbody th{font-size:24px;line-height:1.35;font-weight:600;color:var(--soft)}
+.compare td{font-size:26px;line-height:1.35}
+
+/* ---------- next steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center}
+.steps .card{gap:20px;padding:36px 36px 40px}
+.steps .n{font:condensed 700 72px/1 var(--mono);color:var(--teal)}
+
+/* ---------- integrations (backup) ---------- */
+.integrations{display:grid;grid-template-columns:400px 1fr;gap:30px 40px;align-items:center;align-content:center}
+
+/* ---------- overview (O) ---------- */
+#overview{position:fixed;inset:0;background:rgba(5,8,12,.97);display:none;overflow:auto;padding:40px;z-index:50;gap:22px;justify-content:center;align-content:start;grid-template-columns:repeat(auto-fill,calc(1920px * var(--ts,.15)))}
+#overview.open{display:grid}
+.thumb{position:relative;width:calc(1920px * var(--ts,.15));height:calc(1080px * var(--ts,.15));border:2px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);cursor:pointer;padding:0}
+.thumb:hover{border-color:var(--soft)}
+.thumb.hidden-slide .thumb-inner{opacity:.35}
+.thumb.current{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,172,176,.3)}
+.thumb-inner{position:absolute;left:0;top:0;width:1920px;height:1080px;transform:scale(var(--ts,.15));transform-origin:0 0;pointer-events:none}
+.thumb-inner .slide{opacity:1;visibility:visible;transition:none}
+.thumb-inner *{animation:none!important}
+.thumb-num{position:absolute;left:8px;bottom:6px;font:condensed 600 14px var(--mono);background:rgba(0,0,0,.7);color:var(--text);padding:2px 7px;border-radius:5px}
+
+/* ---------- modes ---------- */
+html.mode-embed .slide,html.mode-embed .fragment{transition:none}
+html.mode-embed .navzone{display:none}
+html.mode-presenter #viewport,html.mode-presenter .navzone{display:none}
+#pres{position:fixed;inset:0;display:grid;grid-template-columns:1.55fr 1fr;grid-template-rows:auto 1fr;gap:16px;padding:16px;background:#06080B;color:var(--text)}
+#pres header{grid-column:1/-1;display:flex;align-items:center;gap:22px;font:condensed 600 26px var(--mono)}
+#pres header button{font:condensed 600 17px var(--mono);padding:8px 14px;border-radius:9px;border:1px solid var(--line-2);background:var(--panel);cursor:pointer}
+#p-timer{font-size:36px;min-width:150px}
+#p-timer.over{color:var(--error)}
+#p-clock{color:var(--soft)}
+#p-num{margin-left:auto;color:var(--teal)}
+.p-col{display:flex;flex-direction:column;gap:10px;min-height:0}
+.p-label{font:condensed 600 15px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.p-frame{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000;flex:none}
+.p-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#p-notes{flex:1;min-height:0;overflow:auto;font-size:19px;line-height:1.55;padding:16px 20px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+#p-notes p{font-size:19px;line-height:1.55;margin-bottom:12px}
+.p-hint{font:condensed 500 14px var(--mono);color:var(--dim)}
+
+@media (prefers-reduced-motion:reduce){
+  .slide,.fragment{transition:none!important}
+  *{animation:none!important}
+}
+
+/* ---------- print / PDF: one slide per page, final state ---------- */
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{width:1920px;height:auto;overflow:visible;background:var(--bg)}
+  #viewport{position:static;overflow:visible}
+  #deck{position:static;transform:none!important;width:1920px!important;height:auto!important;--extra-v:0px!important}
+  .slide{position:relative!important;width:1920px;height:1080px;opacity:1!important;visibility:visible!important;transition:none!important;break-after:page;page-break-after:always}
+  .fragment{opacity:1!important;transform:none!important;transition:none!important}
+  .fragment[data-until]{display:none!important}
+  html:not(.show-hidden) .slide[data-hidden]{display:none!important}
+  #hud,#overview,.navzone,aside.notes,aside.explain{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- arrowheads shared by every drawing -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:#A7B3C0"/></marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:#2AACB0"/></marker>
+  </defs>
+</svg>
+
+<div id="viewport">
+<div id="deck">
+
+<!-- ============ SLIDES ============
+     Each slide is a <section class="slide">. Optional attributes:
+       data-ctrl="name"   controller in CTRL (init / enter / leave / step) for slides with behavior
+       data-steps="N"     extra clicks handled by the controller (on top of fragments)
+       data-hidden        kept in the file but skipped by the presentation and the PDF (?all shows it)
+     Inside: aside.notes = what to say (presenter window); aside.explain = the concept explained
+     for whoever presents (never shown). ================================================ -->
+
+<section class="slide s-title">
+  <h1>Queryable</h1>
+  <p class="tagline">Your company's memory, with people and agents working on it</p>
+  <aside class="notes">
+    <p>⏱ About 15 minutes in total, plus questions.</p>
+    <p>Introduce yourself in one sentence. The plan: three scenarios. How the company works today, how it works with Queryable, and Queryable 2.0, where the product is heading.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Sales opening. The product name and the promise in one line: everything the company knows in one place, with people and AI agents working on top of it.</p>
+    <p><b>On screen.</b> The name and the tagline, centered.</p>
+    <p><b>Connects to.</b> The three scenarios (slides 3, 4 and 7) and the comparison on slide 8.</p>
+  </aside>
+</section>
+
+<section class="slide s-phrase">
+  <div class="big-phrase">
+    <p>The answers you are looking for in your company almost always exist.</p>
+    <p>They are just scattered across <span class="hl">meetings, conversations, documents and systems</span>.</p>
+  </div>
+  <aside class="notes">
+    <p>Read slowly. First sentence: almost everything someone needs to know has already been said in a meeting, written in a group chat or recorded in a system.</p>
+    <p>Then the second sentence: the problem isn't a lack of information. It's that it lives in four places that don't talk to each other.</p>
+    <p>Ask the room: how much time did you spend this week looking for something someone already knew?</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> The problem in one sentence. The company doesn't suffer from a lack of information, but from information split across meetings, conversations, documents and systems.</p>
+    <p><b>On screen.</b> The two sentences, with the four places highlighted in the second.</p>
+    <p><b>Connects to.</b> The four places become the blocks of the three scenarios.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>01</b> · Without Queryable</div>
+  <div class="body scene">
+    <svg viewBox="0 0 1700 700" role="img" aria-label="Current scenario: people and teams going back and forth between channels, meetings, documents and isolated systems; stand-alone agents connected to both groups and to people">
+      <rect x="1" y="1" width="1698" height="180" rx="18" class="bx zone"/>
+      <text x="30" y="30" class="zl">SCATTERED COMMUNICATION AND KNOWLEDGE</text>
+      <rect x="30" y="56" width="380" height="96" rx="14" class="bx"/><text x="220" y="90" class="bt">WhatsApp</text><text x="220" y="124" class="bs">groups and voice notes</text>
+      <rect x="450" y="56" width="380" height="96" rx="14" class="bx"/><text x="640" y="90" class="bt">Email</text><text x="640" y="124" class="bs">personal inboxes</text>
+      <rect x="870" y="56" width="380" height="96" rx="14" class="bx"/><text x="1060" y="90" class="bt">Internal chat</text><text x="1060" y="124" class="bs">threads that vanish</text>
+      <rect x="1290" y="56" width="380" height="96" rx="14" class="bx"/><text x="1480" y="90" class="bt">Meetings</text><text x="1480" y="124" class="bs">no notes, no search</text>
+
+      <g>
+        <line x1="520" y1="234" x2="226" y2="158" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="660" y1="234" x2="642" y2="158" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="820" y1="234" x2="1054" y2="158" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="960" y1="234" x2="1474" y2="158" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="620" y1="342" x2="434" y2="408" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="860" y1="342" x2="1264" y2="408" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      </g>
+
+      <g>
+        <line x1="205" y1="234" x2="205" y2="187" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="205" y1="342" x2="205" y2="390" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="386" y1="288" x2="464" y2="288" class="ln dash" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="30" y="240" width="350" height="96" rx="14" class="bx orange"/><text x="205" y="274" class="bt">Agents</text><text x="205" y="308" class="bs">each sees a piece</text>
+      </g>
+      <rect x="470" y="240" width="570" height="96" rx="14" class="bx blue"/><text x="755" y="274" class="bt">People and teams</text><text x="755" y="308" class="bs">search, copy, ask</text>
+
+      <g>
+        <line x1="1046" y1="288" x2="1194" y2="288" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="1200" y="240" width="440" height="96" rx="14" class="bx dash"/><text x="1420" y="274" class="bt">Outside world</text><text x="1420" y="308" class="bs">customers, suppliers</text>
+      </g>
+
+      <rect x="1" y="396" width="1698" height="180" rx="18" class="bx zone"/>
+      <rect x="30" y="414" width="800" height="96" rx="14" class="bx"/><text x="430" y="448" class="bt">Documents</text><text x="430" y="482" class="bs">folders and PDFs</text>
+      <rect x="870" y="414" width="800" height="96" rx="14" class="bx"/><text x="1270" y="448" class="bt">Systems</text><text x="1270" y="482" class="bs">ERP, CRM, accounting</text>
+      <text x="30" y="546" class="zl">ISOLATED SYSTEMS AND REPOSITORIES</text>
+
+      <g>
+        <rect x="30" y="616" width="520" height="80" rx="14" class="bx red"/><text x="290" y="656" class="bt red">Context gets lost</text>
+        <rect x="590" y="616" width="520" height="80" rx="14" class="bx red"/><text x="850" y="656" class="bt red">Manual rework</text>
+        <rect x="1150" y="616" width="520" height="80" rx="14" class="bx red"/><text x="1410" y="656" class="bt red">No one sees the whole</text>
+      </g>
+    </svg>
+  </div>
+  <aside class="notes">
+    <p>⏱ 2 minutes.</p>
+    <p>This is a picture of almost every company. At the top, where conversations happen: WhatsApp, email, internal chat, meetings. At the bottom, where things are stored: documents and systems (ERP, CRM, accounting).</p>
+    <p>In the middle, people and teams connect all of it. They search the group chat, copy into the CRM, ask by email.</p>
+    <p>On the left, the AI agents the company already uses. They touch the channels, the systems and the people, but each one sees only a piece.</p>
+    <p>On the right, customers and suppliers talk to these people and depend on whoever knows the answer.</p>
+    <p>At the bottom, in red, the result. Context gets lost between one tool and the next, work is redone by hand and no one sees the whole.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Scenario 1, today. Information lives in silos: communication channels and meetings on one side, documents and systems on the other. Nothing talks to anything else, so the integration is done by people, teams and stand-alone AI agents, always by hand.</p>
+    <p><b>On screen.</b> The two groups of silos; people and teams in the middle, with dashed back-and-forth arrows to each block (the manual work); the agents on the left, connected to both groups and to people; the outside world talking to people; and the three consequences in red.</p>
+    <p><b>Connects to.</b> Slide 4 uses the same blocks, now flowing into Queryable.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>02</b> · With Queryable</div>
+  <div class="body scene">
+    <svg viewBox="0 0 1700 750" role="img" aria-label="Scenario with Queryable: the sources flow into one memory with internal agents; people, external agents and the outside world interact with it">
+      <rect x="30" y="2" width="380" height="96" rx="14" class="bx"/><text x="220" y="36" class="bt">Meetings</text><text x="220" y="70" class="bs">Meet and Teams</text>
+      <rect x="450" y="2" width="380" height="96" rx="14" class="bx"/><text x="640" y="36" class="bt">Conversations</text><text x="640" y="70" class="bs">WhatsApp, Slack, Discord</text>
+      <rect x="870" y="2" width="380" height="96" rx="14" class="bx"/><text x="1060" y="36" class="bt">Documents</text><text x="1060" y="70" class="bs">Drive, Notion, GitHub</text>
+      <rect x="1290" y="2" width="380" height="96" rx="14" class="bx"/><text x="1480" y="36" class="bt">Systems</text><text x="1480" y="70" class="bs">ERP, CRM, accounting</text>
+      <line x1="220" y1="104" x2="220" y2="144" class="ln" marker-end="url(#arrow)"/>
+      <line x1="640" y1="104" x2="640" y2="144" class="ln" marker-end="url(#arrow)"/>
+      <line x1="1060" y1="104" x2="1060" y2="144" class="ln" marker-end="url(#arrow)"/>
+      <line x1="1420" y1="104" x2="1420" y2="144" class="ln" marker-end="url(#arrow)"/>
+
+      <rect x="2" y="150" width="1696" height="320" rx="28" class="bx purple"/>
+      <text x="850" y="190" class="bt big">Queryable</text>
+      <text x="850" y="226" class="bs">one memory for the organization, one place to talk</text>
+      <rect x="50" y="250" width="740" height="190" rx="18" class="bx teal"/>
+      <text x="420" y="284" class="bt">Organizational memory</text>
+      <text x="420" y="322" class="bl">transcripts, summaries and decisions</text>
+      <text x="420" y="352" class="bl">search by meaning and by keyword</text>
+      <text x="420" y="382" class="bl">graph of people and topics</text>
+      <text x="420" y="412" class="bl">access based on who is asking</text>
+
+      <g>
+        <line x1="796" y1="345" x2="904" y2="345" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="910" y="250" width="740" height="190" rx="18" class="bx teal"/>
+        <text x="1280" y="284" class="bt">Internal agents</text>
+        <text x="1280" y="322" class="bl">answer across the whole memory</text>
+        <text x="1280" y="352" class="bl">respond to @ in channels and DMs</text>
+        <text x="1280" y="382" class="bl">agent teams for each area</text>
+        <text x="1280" y="412" class="bl">create tasks and summaries</text>
+      </g>
+
+      <g>
+        <line x1="550" y1="474" x2="550" y2="516" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="1150" y1="474" x2="1150" y2="516" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="320" y="520" width="460" height="90" rx="14" class="bx blue"/><text x="550" y="552" class="bt">People</text><text x="550" y="584" class="bs">web, desktop, mobile</text>
+        <line x1="786" y1="565" x2="914" y2="565" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="920" y="520" width="460" height="90" rx="14" class="bx orange"/><text x="1150" y="552" class="bt">External agents</text><text x="1150" y="584" class="bs">Claude and others via MCP</text>
+      </g>
+
+      <g>
+        <line x1="700" y1="614" x2="700" y2="652" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="1000" y1="614" x2="1000" y2="652" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="600" y="656" width="500" height="90" rx="14" class="bx dash"/><text x="850" y="688" class="bt">Outside world</text><text x="850" y="720" class="bs">customers, suppliers</text>
+      </g>
+
+      <g>
+        <line x1="1540" y1="144" x2="1540" y2="104" class="ln dash teal" marker-end="url(#arrow-teal)"/>
+        <line x1="1190" y1="680" x2="1240" y2="680" class="ln"/><text x="1256" y="680" class="lt">data flows into memory</text>
+        <line x1="1190" y1="724" x2="1240" y2="724" class="ln dash teal"/><text x="1256" y="724" class="lt teal">tasks and updates flow back</text>
+      </g>
+    </svg>
+  </div>
+  <aside class="notes">
+    <p>⏱ 3 minutes.</p>
+    <p>The same four places as before, now flowing into Queryable. The bot joins Meet and Teams meetings; WhatsApp, Slack and Discord groups, documents and systems come in too. It all becomes one memory, with transcripts, summaries, decisions and a graph of who talks about what.</p>
+    <p>Next to the memory, the internal agents work on top of it. They answer about everything, respond when someone calls them with @ in a channel, are organized into teams for each area and already create the tasks.</p>
+    <p>Below, people use it from the browser, the Mac app or their phone. And outside agents, like the company's Claude, query the same memory through MCP.</p>
+    <p>Further down, customers and suppliers talk to people and agents who already have the answer.</p>
+    <p>The dashed arrow on the right is the way back. Tasks go to ClickUp or Jira, and the deal is updated in the CRM.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Scenario 2, Queryable today. The company's sources feed one organizational memory, with per-person access control. Internal agents work on that memory. People and external agents (Claude and other MCP clients) interact with it and with each other, and they serve the outside world.</p>
+    <p><b>On screen.</b> The four sources flowing into Queryable, the memory and the internal agents side by side, people and external agents below, the outside world, the dashed arrow back to the systems and the legend.</p>
+    <p><b>If asked.</b> The CRM (Pipedrive, HubSpot) is queried when the question is asked, and Pipedrive receives updates. ERP and accounting have no dedicated connector yet: they come in through API, webhook or MCP. Tasks go out to ClickUp, Jira or a webhook.</p>
+    <p><b>Connects to.</b> Slide 5 details each source; slide 6 shows who sees what.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>02</b> · With Queryable</div>
+  <div class="body sources">
+    <div class="card" style="--c:var(--blue)">
+      <h3>Meetings</h3>
+      <p>The bot joins Meet or Teams, records and transcribes with each speaker's name. Out come summaries, decisions and tasks.</p>
+    </div>
+    <div class="card" style="--c:var(--orange)">
+      <h3>Conversations</h3>
+      <p>WhatsApp groups and Slack and Discord channels become memory.</p>
+    </div>
+    <div class="card" style="--c:var(--green)">
+      <h3>Documents and systems</h3>
+      <p>Files, pages and tickets come in and stay up to date. The CRM is queried when the question is asked.</p>
+    </div>
+    <div class="card" style="--c:var(--teal)">
+      <h3>Agents</h3>
+      <p>Ask anything answers across all of it. Agents respond to @ in channels, and the company's Claude queries it through MCP.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>⏱ 2 minutes. One card at a time, in reading order.</p>
+    <p>Meetings: the bot joins on its own, from the calendar, a few minutes before the start time. It records, transcribes with each speaker's name and delivers summaries, decisions and tasks.</p>
+    <p>Conversations: WhatsApp, Slack and Discord groups. Each person's Gmail is searched live, without being copied.</p>
+    <p>Documents and systems: Drive, OneDrive, Notion, GitHub, Zendesk. What changes there changes here. The CRM is queried when the question is asked.</p>
+    <p>Agents: questions in plain language, agents called with @ and the company's Claude connected through MCP. Tasks go to ClickUp or Jira.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> What happens to each source when it comes into Queryable.</p>
+    <p><b>On screen.</b> Four cards: meetings, conversations, documents and systems, agents.</p>
+    <p><b>Detail.</b> Gmail and the CRM are queried live (they are not copied into memory). The full list of integrations is on the hidden backup slide near the end (open the deck with ?all).</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>02</b> · With Queryable</div>
+  <div class="body">
+  <p class="lead">Each person and each agent sees only what they can see.</p>
+  <ul class="list">
+    <li><b>Owners and admins see the whole organization.</b> <span>Members see only the meetings they took part in.</span></li>
+    <li><b>Private channels and DMs never become memory.</b> <span>Not even for admins.</span></li>
+    <li><b>An agent never sees more than the person asking.</b> <span>It inherits the limits of whoever called it.</span></li>
+    <li><b>Outside tools come in read-only.</b> <span>Writing has to be enabled.</span></li>
+  </ul>
+  </div>
+  <aside class="notes">
+    <p>⏱ 1 to 2 minutes. This is the question that always comes up: what about security?</p>
+    <p>First rule: owners and admins see the organization. A member sees the meetings they took part in.</p>
+    <p>Second: private channels and direct messages don't go into memory, not even for the admin.</p>
+    <p>Third: an agent answers with at most the access of the person who asked. No one can use the agent to see what they couldn't see themselves.</p>
+    <p>Fourth: Claude or any other tool connected through MCP comes in read-only, unless the company enables writing.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Having everything in one place only works if access is respected. Four product rules: the role defines what each person sees, private conversations stay out of memory, the agent inherits the limits of whoever asks and outside connections start read-only.</p>
+    <p><b>On screen.</b> The opening sentence and the four rules.</p>
+    <p><b>If asked.</b> Each organization has its own data, separated by email domain. The MCP token has read scope by default; write scope has to be chosen.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>03</b> · Queryable 2.0</div>
+  <div class="body scene">
+    <svg viewBox="0 0 1700 750" role="img" aria-label="Queryable 2.0: meetings, conversations, documents and systems inside Queryable, connected to a central block of agents and memory; the outside world talks to people or directly to the agents">
+      <rect x="2" y="2" width="1696" height="586" rx="28" class="bx purple"/>
+      <text x="850" y="42" class="bt big">Queryable 2.0</text>
+      <text x="850" y="78" class="bs">where work happens and becomes memory</text>
+      <rect x="50" y="110" width="385" height="96" rx="14" class="bx"/><text x="242" y="144" class="bt">Meetings</text><text x="242" y="178" class="bs">live calls</text>
+      <rect x="455" y="110" width="385" height="96" rx="14" class="bx"/><text x="647" y="144" class="bt">Conversations</text><text x="647" y="178" class="bs">channels and DMs</text>
+      <rect x="860" y="110" width="385" height="96" rx="14" class="bx"/><text x="1052" y="144" class="bt">Documents</text><text x="1052" y="178" class="bs">notes and files</text>
+      <rect x="1265" y="110" width="385" height="96" rx="14" class="bx"/><text x="1457" y="144" class="bt">Systems</text><text x="1457" y="178" class="bs">CRM, ERP, accounting</text>
+      <line x1="242" y1="212" x2="242" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="647" y1="212" x2="647" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1052" y1="212" x2="1052" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1457" y1="212" x2="1457" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="50" y="260" width="1600" height="160" rx="18" class="bx teal"/>
+      <text x="850" y="296" class="bt">Agents and organizational memory</text>
+      <text x="850" y="336" class="bl">everything that happens here becomes memory at once, with nothing to integrate</text>
+      <text x="850" y="366" class="bl">agents answer, act and serve whoever is outside</text>
+      <text x="850" y="396" class="bl">one access control for people, agents and data</text>
+
+      <g>
+        <line x1="470" y1="426" x2="470" y2="464" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <rect x="240" y="470" width="460" height="90" rx="14" class="bx blue"/><text x="470" y="502" class="bt">People</text><text x="470" y="534" class="bs">one place to work</text>
+      </g>
+
+      <g>
+        <line x1="650" y1="646" x2="650" y2="566" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <line x1="1100" y1="646" x2="1100" y2="426" class="ln teal" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"/>
+        <text x="1124" y="510" class="lt teal">straight to the agents</text>
+        <rect x="600" y="652" width="560" height="90" rx="14" class="bx dash"/><text x="880" y="684" class="bt">Outside world</text><text x="880" y="716" class="bs">customers, suppliers, WhatsApp</text>
+      </g>
+    </svg>
+  </div>
+  <aside class="notes">
+    <p>⏱ 2 minutes. Make it clear that this is where the product is heading.</p>
+    <p>In the third scenario, Queryable 2.0, the tools no longer sit outside sending data in. The meeting, the conversation, the document and the system happen inside Queryable. There is no integration to maintain: what happens here is already memory.</p>
+    <p>At the center, agents and memory are one thing. The agent answers, acts and serves, always under the same access control.</p>
+    <p>Below, people work in one place.</p>
+    <p>And customers can talk to a person or straight to the agents, who already know their history.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Scenario 3, Queryable 2.0: where the product is heading. Meetings, conversations, documents and systems (CRM, ERP, accounting) become Queryable modules, and the central block brings agents and memory together. The outside world comes in through people or straight through the agents.</p>
+    <p><b>On screen.</b> Queryable 2.0 with the four modules, the central block, people and the outside world, with both paths (through people, in gray, and straight to the agents, in teal).</p>
+    <p><b>For the presenter.</b> Today the native parts are channels, DMs and projects with tasks. In-platform calls, a document editor and ERP and accounting modules don't exist yet. Present it as a direction, not as a finished product.</p>
+    <p><b>Connects to.</b> Slide 8 compares the three scenarios.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>03</b> · Queryable 2.0</div>
+  <div class="body">
+    <table class="compare">
+      <colgroup><col class="row-head"><col><col><col></colgroup>
+      <thead>
+        <tr><th></th><th>Today</th><th>With Queryable</th><th>Queryable 2.0</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Where company knowledge lives</th><td>in each tool and in people's heads</td><td>in one memory, fed by the tools</td><td>it is born inside Queryable</td></tr>
+        <tr><th>Who connects the pieces</th><td>people, by hand</td><td>the memory and the internal agents</td><td>the agents, within the workflow</td></tr>
+        <tr><th>How customers are served</th><td>by whoever knows the answer</td><td>by people and agents who already have the answer</td><td>by people or directly by the agents</td></tr>
+        <tr><th>What needs integration</th><td>every system with every other</td><td>each tool with Queryable</td><td>only what stays outside</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="notes">
+    <p>⏱ 1 to 2 minutes. A summary of the three scenarios.</p>
+    <p>The Today column first: knowledge is scattered, people do the connecting, customers depend on whoever knows, and every system has to be connected to every other.</p>
+    <p>Then, with Queryable: one memory, agents doing the connecting and one integration per tool.</p>
+    <p>Finally, in Queryable 2.0, memory is born in the work itself and only what stays outside needs integration.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> The same questions answered by the three scenarios. It works as a summary and shows that the second scenario already solves most of the problem; the third removes the integration that is left.</p>
+    <p><b>On screen.</b> The full table, with the three columns.</p>
+    <p><b>Connects to.</b> Slides 3, 4 and 7.</p>
+  </aside>
+</section>
+
+<section class="slide">
+  <div class="kicker"><b>04</b> · Next step</div>
+  <div class="body steps">
+    <div class="card"><span class="n">1</span><h3>Connect your calendar</h3><p>The bot joins scheduled meetings, records and summarizes them.</p></div>
+    <div class="card"><span class="n">2</span><h3>Bring in conversations and documents</h3><p>Connect WhatsApp, Slack, Drive, Notion and the CRM.</p></div>
+    <div class="card"><span class="n">3</span><h3>Ask and delegate</h3><p>Use Ask anything and create agents for each area.</p></div>
+  </div>
+  <aside class="notes">
+    <p>⏱ 1 minute.</p>
+    <p>Start with the calendar. From then on, the bot joins meetings on its own.</p>
+    <p>Then conversations, documents and the CRM.</p>
+    <p>With the memory filled, people ask and the company creates agents for each area.</p>
+    <p>Propose a concrete next step: pick one area to start with.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Show that getting started is simple and gradual: meetings first, then conversations and documents, then agents.</p>
+    <p><b>On screen.</b> Three cards, in the order the rollout happens.</p>
+    <p><b>If asked.</b> Each connection is made from the Connections screen, by signing in to the tool (OAuth) or with an API key.</p>
+  </aside>
+</section>
+
+<section class="slide" data-hidden>
+  <div class="kicker"><b>04</b> · Backup</div>
+  <div class="body integrations">
+    <span class="section-label">Meetings and calendar</span><div class="tags"><span class="tag">Google Meet</span><span class="tag">Microsoft Teams</span><span class="tag">Google Calendar</span><span class="tag">Outlook</span><span class="tag">Granola</span><span class="tag">Circleback</span><span class="tag">Chrome extension</span></div>
+    <span class="section-label">Conversations and email</span><div class="tags"><span class="tag">WhatsApp</span><span class="tag">Slack</span><span class="tag">Discord</span><span class="tag">Gmail</span></div>
+    <span class="section-label">Documents and code</span><div class="tags"><span class="tag">Google Drive</span><span class="tag">OneDrive</span><span class="tag">Notion</span><span class="tag">GitHub</span></div>
+    <span class="section-label">Support and product</span><div class="tags"><span class="tag">Zendesk</span><span class="tag">Intercom</span><span class="tag">Linear</span></div>
+    <span class="section-label">Sales and tasks</span><div class="tags"><span class="tag">Pipedrive</span><span class="tag">HubSpot</span><span class="tag">ClickUp</span><span class="tag">Jira</span><span class="tag">webhook</span></div>
+    <span class="section-label">Agents</span><div class="tags"><span class="tag">Claude (MCP)</span><span class="tag">Cursor (MCP)</span><span class="tag">Organization's Claude</span></div>
+  </div>
+  <aside class="notes">
+    <p>Only if someone asks about a specific tool.</p>
+  </aside>
+  <aside class="explain">
+    <p><b>Why it is hidden.</b> Backup for questions about integrations. It shows what exists in the product today, grouped as on slide 5.</p>
+    <p><b>Detail.</b> Gmail, Drive (live search) and the CRM are queried live; the rest go into memory. ERP and accounting have no dedicated connector.</p>
+  </aside>
+</section>
+
+<section class="slide s-end">
+  <h1>Let's talk</h1>
+  <div class="author"><span class="name">Lucas Democh</span><span class="role">democh@oriontech.me</span><span class="role">app.queryable.digital</span></div>
+  <aside class="notes">
+    <p>Thank you. Open the floor for questions.</p>
+    <p>If no one asks, prompt them: which area of your company suffers most from scattered information?</p>
+  </aside>
+  <aside class="explain">
+    <p><b>The idea.</b> Closing, contact and an invitation to the next step.</p>
+    <p><b>If no one asks.</b> Which area of the company suffers most from scattered information? That is the area to start with.</p>
+  </aside>
+</section>
+
+<div id="hud"><div id="bar"><i></i></div></div>
+</div>
+</div>
+<div class="navzone left" title="previous"></div>
+<div class="navzone right" title="next"></div>
+<div id="overview"></div>
+
+<script>
+'use strict';
+const $ = (sel, el = document) => el.querySelector(sel);
+const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* =====================================================================
+   Slide controllers: CTRL[name] = { init(s), enter(s), leave(s), step(s, step, dir) }
+   init runs once, the first time the slide is needed. step runs on every click.
+   ===================================================================== */
+const CTRL = {};
+
+/* =====================================================================
+   Engine (navigation, fragments, overview, presenter window, print).
+   Usually no need to touch anything below this line.
+   ===================================================================== */
+const params = new URLSearchParams(location.search);
+const MODE = params.has('presenter') ? 'presenter' : params.has('embed') ? 'embed' : 'main';
+document.documentElement.classList.add('mode-' + MODE);
+const deck = $('#deck');
+const slides = $$('#deck > section.slide');
+const TOTAL = slides.length;
+let current = -1, step = 0;
+
+// fragments: data-f="n" sets the click; without it they count up in order. data-until="n" hides it after click n.
+function prepareFragments() {
+  slides.forEach(s => {
+    let auto = 0, max = 0;
+    s._frags = $$('.fragment', s).map(el => {
+      let f;
+      if (el.dataset.f != null) { f = +el.dataset.f; auto = Math.max(auto, f); } else f = ++auto;
+      max = Math.max(max, f);
+      return { el, f, until: el.dataset.until != null ? +el.dataset.until : Infinity };
+    });
+    s._max = Math.max(max, +(s.dataset.steps || 0));
+  });
+}
+
+function call(i, phase, ...args) {
+  const s = slides[i], c = CTRL[s.dataset.ctrl];
+  if (!c) return;
+  try {
+    if (!s._ok) { s._ok = true; if (c.init) c.init(s); }
+    if (c[phase]) c[phase](s, ...args);
+  } catch (e) { console.error('slide', i + 1, e); }
+}
+
+function show(i, st = 0, op = {}) {
+  i = Math.max(0, Math.min(TOTAL - 1, i | 0));
+  const s = slides[i];
+  st = Math.max(0, Math.min(s._max, st | 0));
+  const changed = i !== current;
+  if (changed) {
+    if (current >= 0) { slides[current].classList.remove('active'); call(current, 'leave'); }
+    s.classList.add('active');
+    call(i, 'enter');
+  }
+  s._frags.forEach(({ el, f, until }) => {
+    const vis = st >= f && st <= until;
+    el.classList.toggle('visible', vis);
+    el.classList.toggle('current', vis && f === st);
+  });
+  s.dataset.step = st;
+  current = i; step = st;
+  call(i, 'step', st, op.dir || 1);
+  const shown = slides.filter((_, j) => inShow(j)), pos = shown.filter(x => slides.indexOf(x) <= i).length - 1;
+  $('#bar i').style.width = (shown.length > 1 ? Math.max(0, pos) / (shown.length - 1) * 100 : 100) + '%';
+  if (MODE === 'main') {
+    history.replaceState(null, '', location.search + '#' + (i + 1));
+    if (!op.silent) send({ type: 'state', i, st });
+  }
+}
+
+// data-hidden slides stay in the file but the presentation skips them (?all shows everything)
+const showHidden = params.has('all');
+if (showHidden) document.documentElement.classList.add('show-hidden');
+const inShow = i => showHidden || !slides[i].hasAttribute('data-hidden');
+function neighbor(i, dir) { for (let j = i + dir; j >= 0 && j < TOTAL; j += dir) if (inShow(j)) return j; return -1; }
+function navigate(i, st, action) {
+  if (action === 'next') { if (st < slides[i]._max) return [i, st + 1]; const j = neighbor(i, 1); return j < 0 ? [i, st] : [j, 0]; }
+  if (action === 'prev') { if (st > 0) return [i, st - 1]; const j = neighbor(i, -1); return j < 0 ? [i, st] : [j, slides[j]._max]; }
+  if (action === 'first') return [neighbor(-1, 1), 0];
+  return [neighbor(TOTAL, -1), 0];
+}
+function go(action) { const [i, st] = navigate(current, step, action); show(i, st, { dir: action === 'prev' ? -1 : 1 }); }
+
+function navKeys(e, nav) {
+  if (e.ctrlKey || e.metaKey || e.altKey) return false;
+  const k = e.key;
+  if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(k)) nav('next');
+  else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) nav('prev');
+  else if (k === 'Home') nav('first');
+  else if (k === 'End') nav('last');
+  else return false;
+  e.preventDefault();
+  return true;
+}
+
+// Base 1920×1080. Taller windows grow the stage downwards, wider ones sideways (up to 4:3 and 21:9);
+// the content stays centered and the extra space becomes breathing room.
+let K = 1;
+function fit() {
+  const vw = innerWidth || 1920, vh = innerHeight || 1080;
+  let W = 1920, H = 1080;
+  if (vw / vh < 16 / 9) H = Math.min(1440, Math.round(1920 * vh / vw)); else W = Math.min(2560, Math.round(1080 * vw / vh));
+  K = Math.min(vw / W, vh / H);
+  deck.style.width = W + 'px'; deck.style.height = H + 'px';
+  deck.style.setProperty('--k', K);
+  deck.style.setProperty('--extra-v', (H - 1080) + 'px');
+}
+
+function fullscreen() {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen().catch(() => {});
+}
+
+/* ---------- overview (O) ---------- */
+const ov = $('#overview');
+const ovOpen = () => ov.classList.contains('open');
+function openOverview() {
+  slides.forEach((_, i) => call(i, 'none')); // make sure controller drawings exist in the thumbnails
+  const cols = 5, gap = 22, w = Math.min(380, (innerWidth - 80 - gap * (cols - 1)) / cols);
+  ov.style.setProperty('--ts', w / 1920);
+  ov.innerHTML = '';
+  slides.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.className = 'thumb' + (i === current ? ' current' : '') + (inShow(i) ? '' : ' hidden-slide');
+    const inner = document.createElement('div');
+    inner.className = 'thumb-inner';
+    const c = s.cloneNode(true);
+    c.classList.add('active');
+    c.querySelectorAll('aside').forEach(n => n.remove());
+    c.querySelectorAll('.fragment').forEach(f => f.classList.toggle('visible', !f.hasAttribute('data-until')));
+    c.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+    inner.appendChild(c);
+    b.appendChild(inner);
+    b.insertAdjacentHTML('beforeend', `<span class="thumb-num">${i + 1}${inShow(i) ? '' : ' · hidden'}</span>`);
+    b.onclick = () => { closeOverview(); show(i, 0); };
+    ov.appendChild(b);
+  });
+  ov.classList.add('open');
+  if (ov.children[current]) ov.children[current].scrollIntoView({ block: 'center' });
+}
+function closeOverview() { ov.classList.remove('open'); ov.innerHTML = ''; }
+
+/* ---------- sync between windows (main ↔ presenter ↔ embedded previews) ---------- */
+// file:// may lack BroadcastChannel; then sync uses window.opener/postMessage only
+const channel = (() => { try { return MODE !== 'embed' && 'BroadcastChannel' in window ? new BroadcastChannel('deck-' + location.pathname) : null; } catch (e) { return null; } })();
+let presenterWin = null;
+function send(msg) {
+  msg.from = MODE;
+  try { if (channel) channel.postMessage(msg); } catch (e) { /* file:// may block */ }
+  try {
+    if (MODE === 'main' && presenterWin && !presenterWin.closed) presenterWin.postMessage(msg, '*');
+    if (MODE === 'presenter' && window.opener && !window.opener.closed) window.opener.postMessage(msg, '*');
+  } catch (e) { /* window closed */ }
+}
+function receive(msg, source) {
+  if (!msg || typeof msg !== 'object' || msg.from === MODE) return;
+  if (MODE === 'main') {
+    if (msg.from === 'presenter' && source) presenterWin = source;
+    if (msg.type === 'go' && !(msg.i === current && msg.st === step)) show(msg.i, msg.st, { silent: true, dir: msg.dir });
+    if (msg.type === 'hello') send({ type: 'state', i: current, st: step });
+  } else if (MODE === 'presenter') {
+    if (msg.type === 'state') P.update(msg.i, msg.st);
+  } else if (MODE === 'embed') {
+    if (msg.type === 'embed') show(msg.i, msg.st);
+  }
+}
+addEventListener('message', e => receive(e.data, e.source));
+if (channel) channel.onmessage = e => receive(e.data, null);
+
+function openPresenter() {
+  const url = location.href.split('#')[0].split('?')[0] + '?presenter' + (showHidden ? '&all' : '') + '#' + (current + 1);
+  presenterWin = window.open(url, 'presenter', 'width=1400,height=860');
+}
+
+/* ---------- presenter window (S): timer, current and next slide, notes ---------- */
+const P = {
+  i: 0, st: 0, start: 0, elapsed: 0, running: false, target: null,
+  build() {
+    document.title = 'Presenter · ' + document.title;
+    const base = location.href.split('#')[0].split('?')[0];
+    document.body.insertAdjacentHTML('beforeend', `
+      <div id="pres">
+        <header>
+          <span id="p-timer">00:00</span><button id="p-play">start</button><button id="p-reset">reset</button>
+          <span id="p-clock"></span><span class="p-hint">arrow keys navigate · the main window follows</span><span id="p-num"></span>
+        </header>
+        <div class="p-col"><div class="p-label">now</div><div class="p-frame"><iframe id="p-now" title="current slide"></iframe></div></div>
+        <div class="p-col"><div class="p-label" id="p-next-label">next</div><div class="p-frame"><iframe id="p-next" title="next"></iframe></div>
+          <div class="p-label">notes</div><div id="p-notes"></div></div>
+      </div>`);
+    this.fNow = $('#p-now'); this.fNext = $('#p-next');
+    const i0 = Math.max(0, (parseInt(location.hash.slice(1)) || 1) - 1);
+    this.fNow.onload = this.fNext.onload = () => this.sendFrames();
+    const q = showHidden ? '?embed&all' : '?embed';
+    this.fNow.src = base + q + '#' + (i0 + 1);
+    this.fNext.src = base + q + '#' + (i0 + 1);
+    $('#p-play').onclick = () => this.toggle();
+    $('#p-reset').onclick = () => this.reset();
+    document.addEventListener('keydown', e => navKeys(e, a => this.nav(a)));
+    setInterval(() => this.tick(), 500);
+    this.tick();
+    this.update(i0, 0);
+    send({ type: 'hello' });
+  },
+  nav(action) {
+    const [i, st] = navigate(this.i, this.st, action);
+    if (!this.running && this.elapsed === 0) this.toggle();
+    this.update(i, st);
+    send({ type: 'go', i, st, dir: action === 'prev' ? -1 : 1 });
+  },
+  update(i, st) {
+    this.i = i; this.st = st;
+    const s = slides[i];
+    $('#p-num').textContent = `${i + 1} / ${TOTAL}` + (s._max ? ` · step ${st}/${s._max}` : '');
+    const n = $('aside.notes', s);
+    $('#p-notes').innerHTML = n ? n.innerHTML : '<p class="dim">no notes</p>';
+    const [ni, nst] = navigate(i, st, 'next');
+    $('#p-next-label').textContent = ni === i && nst === st ? 'end' : ni === i ? 'next click' : 'next slide';
+    this.target = { a: [i, st], n: [ni, nst] };
+    this.sendFrames();
+  },
+  sendFrames() {
+    if (!this.target) return;
+    try { this.fNow.contentWindow.postMessage({ type: 'embed', i: this.target.a[0], st: this.target.a[1], from: 'presenter' }, '*'); } catch (e) { /* loading */ }
+    try { this.fNext.contentWindow.postMessage({ type: 'embed', i: this.target.n[0], st: this.target.n[1], from: 'presenter' }, '*'); } catch (e) { /* loading */ }
+  },
+  toggle() {
+    if (this.running) { this.elapsed += Date.now() - this.start; this.running = false; }
+    else { this.start = Date.now(); this.running = true; }
+    $('#p-play').textContent = this.running ? 'pause' : 'resume';
+  },
+  reset() {
+    this.elapsed = 0; this.start = Date.now();
+    if (!this.running) $('#p-play').textContent = 'start';
+    this.tick();
+  },
+  tick() {
+    const sec = Math.floor((this.elapsed + (this.running ? Date.now() - this.start : 0)) / 1000);
+    const t = $('#p-timer');
+    t.textContent = String(Math.floor(sec / 60)).padStart(2, '0') + ':' + String(sec % 60).padStart(2, '0');
+    t.classList.toggle('over', sec >= TALK_MINUTES * 60);
+    $('#p-clock').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+};
+const TALK_MINUTES = 15; // the timer turns red after this
+
+/* ---------- print: every slide in its final state ---------- */
+addEventListener('beforeprint', () => {
+  slides.forEach((s, i) => { s.dataset.step = s._max; call(i, 'step', s._max, 1); });
+});
+addEventListener('afterprint', () => { const a = current; current = -1; slides[a].classList.remove('active'); show(a, step, { silent: true }); });
+
+/* ---------- film grain on the background ---------- */
+function makeGrain() {
+  try {
+    const hex = css('--bg').replace('#', ''), base = [0, 2, 4].map(i => parseInt(hex.slice(i, i + 2), 16));
+    const n = 320, c = document.createElement('canvas'); c.width = c.height = n;
+    const g = c.getContext('2d'), img = g.createImageData(n, n), d = img.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const r = (Math.random() + Math.random() + Math.random() - 1.5) * 12;
+      d[i] = base[0] + r; d[i + 1] = base[1] + r; d[i + 2] = base[2] + r; d[i + 3] = 255;
+    }
+    g.putImageData(img, 0, 0);
+    document.documentElement.style.setProperty('--grain', `url(${c.toDataURL('image/png')})`);
+  } catch (e) { /* no canvas: plain background */ }
+}
+
+/* ---------- start ---------- */
+(function start() {
+  makeGrain();
+  prepareFragments();
+  fit();
+  addEventListener('resize', fit);
+  if (MODE === 'presenter') return P.build();
+  const h = location.hash.slice(1).split('.');
+  show(Math.max(0, (parseInt(h[0]) || 1) - 1), parseInt(h[1]) || 0, { silent: true });
+  if (MODE !== 'main') return;
+  document.addEventListener('keydown', e => {
+    if (ovOpen()) { if (e.key === 'Escape' || e.key.toLowerCase() === 'o') { e.preventDefault(); closeOverview(); } return; }
+    if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+      const k = e.key.toLowerCase();
+      if (k === 'f') return fullscreen();
+      if (k === 'o') return openOverview();
+      if (k === 's') return openPresenter();
+    }
+    navKeys(e, go);
+  });
+  $('.navzone.left').onclick = () => go('prev');
+  $('.navzone.right').onclick = () => go('next');
+  let touch = null;
+  const vp = $('#viewport');
+  vp.addEventListener('touchstart', e => { touch = e.target.closest('input, button') ? null : [e.touches[0].clientX, e.touches[0].clientY]; }, { passive: true });
+  vp.addEventListener('touchend', e => {
+    if (!touch) return;
+    const dx = e.changedTouches[0].clientX - touch[0], dy = e.changedTouches[0].clientY - touch[1];
+    touch = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 'next' : 'prev');
+  });
+  addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1)); if (n && n - 1 !== current) show(n - 1, 0); });
+  send({ type: 'state', i: current, st: step });
+})();
+</script>
+</body>
+</html>
