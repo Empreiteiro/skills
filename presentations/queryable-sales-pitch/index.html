@@ -98,6 +98,7 @@ code{font-family:var(--mono);font-stretch:75%;font-size:.82em;border:1px solid v
 .bx{fill:none;stroke:var(--box);stroke-width:2}
 .bx.blue{stroke:var(--blue)} .bx.teal{stroke:var(--teal)} .bx.orange{stroke:var(--orange)} .bx.red{stroke:var(--error)}
 .bx.purple{stroke:var(--purple);stroke-width:2.5}
+.bx.strong{stroke-width:2.5}
 .bx.zone{stroke:var(--line-2);stroke-dasharray:10 8}
 .bx.dash{stroke-dasharray:10 8}
 .bt{font:condensed 600 26px var(--sans);fill:var(--text);text-anchor:middle;dominant-baseline:central}
@@ -113,7 +114,7 @@ code{font-family:var(--mono);font-stretch:75%;font-size:.82em;border:1px solid v
 .ln.teal{stroke:var(--teal)}
 
 /* ---------- what each source becomes ---------- */
-.sources{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-content:center}
+.sources{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-content:center}
 .sources .card{gap:18px}
 .sources h3{display:flex;align-items:center;gap:14px}
 .sources h3::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--c,var(--soft));flex:none}
@@ -291,55 +292,46 @@ html.mode-presenter #viewport,html.mode-presenter .navzone{display:none}
 <section class="slide">
   <div class="kicker"><b>02</b> · With Queryable</div>
   <div class="body scene">
-    <svg viewBox="0 0 1700 750" role="img" aria-label="Scenario with Queryable: the sources flow into one memory with internal agents; people, external agents and the outside world interact with it">
+    <svg viewBox="0 0 1700 836" role="img" aria-label="Scenario with Queryable: the sources flow into one memory with internal agents; people, external agents and the outside world interact with it">
       <rect x="30" y="2" width="380" height="96" rx="14" class="bx"/><text x="220" y="36" class="bt">Meetings</text><text x="220" y="70" class="bs">Meet and Teams</text>
       <rect x="450" y="2" width="380" height="96" rx="14" class="bx"/><text x="640" y="36" class="bt">Conversations</text><text x="640" y="70" class="bs">WhatsApp, Slack, Discord</text>
       <rect x="870" y="2" width="380" height="96" rx="14" class="bx"/><text x="1060" y="36" class="bt">Documents</text><text x="1060" y="70" class="bs">Drive, Notion, GitHub</text>
       <rect x="1290" y="2" width="380" height="96" rx="14" class="bx"/><text x="1480" y="36" class="bt">Systems</text><text x="1480" y="70" class="bs">ERP, CRM, accounting</text>
-      <line x1="220" y1="104" x2="220" y2="144" class="ln" marker-end="url(#arrow)"/>
-      <line x1="640" y1="104" x2="640" y2="144" class="ln" marker-end="url(#arrow)"/>
-      <line x1="1060" y1="104" x2="1060" y2="144" class="ln" marker-end="url(#arrow)"/>
-      <line x1="1420" y1="104" x2="1420" y2="144" class="ln" marker-end="url(#arrow)"/>
+      <line x1="220" y1="104" x2="220" y2="174" class="ln" marker-end="url(#arrow)"/>
+      <line x1="640" y1="104" x2="640" y2="174" class="ln" marker-end="url(#arrow)"/>
+      <line x1="1060" y1="104" x2="1060" y2="174" class="ln" marker-end="url(#arrow)"/>
+      <line x1="1420" y1="104" x2="1420" y2="174" class="ln" marker-end="url(#arrow)"/>
+      <line x1="1540" y1="174" x2="1540" y2="104" class="ln dash" marker-end="url(#arrow)"/>
 
-      <rect x="2" y="150" width="1696" height="320" rx="28" class="bx purple"/>
-      <text x="850" y="190" class="bt big">Queryable</text>
-      <text x="850" y="226" class="bs">one memory for the organization, one place to talk</text>
-      <rect x="50" y="250" width="740" height="190" rx="18" class="bx teal"/>
-      <text x="420" y="284" class="bt">Organizational memory</text>
-      <text x="420" y="322" class="bl">transcripts, summaries and decisions</text>
-      <text x="420" y="352" class="bl">search by meaning and by keyword</text>
-      <text x="420" y="382" class="bl">graph of people and topics</text>
-      <text x="420" y="412" class="bl">access based on who is asking</text>
+      <rect x="2" y="180" width="1696" height="320" rx="28" class="bx strong"/>
+      <text x="850" y="220" class="bt big">Queryable</text>
+      <text x="850" y="256" class="bs">one memory for the organization, one place to talk</text>
+      <rect x="50" y="280" width="740" height="190" rx="18" class="bx"/>
+      <text x="420" y="314" class="bt">Organizational memory</text>
+      <text x="420" y="352" class="bl">transcripts, summaries and decisions</text>
+      <text x="420" y="382" class="bl">search by meaning and by keyword</text>
+      <text x="420" y="412" class="bl">graph of people and topics</text>
+      <text x="420" y="442" class="bl">access based on who is asking</text>
+      <line x1="796" y1="375" x2="904" y2="375" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="910" y="280" width="740" height="190" rx="18" class="bx orange"/>
+      <text x="1280" y="314" class="bt">Internal agents</text>
+      <text x="1280" y="352" class="bl">answer across the whole memory</text>
+      <text x="1280" y="382" class="bl">respond to @ in channels and DMs</text>
+      <text x="1280" y="412" class="bl">agent teams for each area</text>
+      <text x="1280" y="442" class="bl">create tasks and summaries</text>
 
-      <g>
-        <line x1="796" y1="345" x2="904" y2="345" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <rect x="910" y="250" width="740" height="190" rx="18" class="bx orange"/>
-        <text x="1280" y="284" class="bt">Internal agents</text>
-        <text x="1280" y="322" class="bl">answer across the whole memory</text>
-        <text x="1280" y="352" class="bl">respond to @ in channels and DMs</text>
-        <text x="1280" y="382" class="bl">agent teams for each area</text>
-        <text x="1280" y="412" class="bl">create tasks and summaries</text>
-      </g>
+      <line x1="550" y1="504" x2="550" y2="566" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1150" y1="504" x2="1150" y2="566" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="320" y="572" width="460" height="90" rx="14" class="bx blue"/><text x="550" y="604" class="bt">People</text><text x="550" y="636" class="bs">web, desktop, mobile</text>
+      <line x1="786" y1="617" x2="914" y2="617" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="920" y="572" width="460" height="90" rx="14" class="bx orange"/><text x="1150" y="604" class="bt">External agents</text><text x="1150" y="636" class="bs">Claude and others via MCP</text>
 
-      <g>
-        <line x1="550" y1="474" x2="550" y2="516" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <line x1="1150" y1="474" x2="1150" y2="516" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <rect x="320" y="520" width="460" height="90" rx="14" class="bx blue"/><text x="550" y="552" class="bt">People</text><text x="550" y="584" class="bs">web, desktop, mobile</text>
-        <line x1="786" y1="565" x2="914" y2="565" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <rect x="920" y="520" width="460" height="90" rx="14" class="bx orange"/><text x="1150" y="552" class="bt">External agents</text><text x="1150" y="584" class="bs">Claude and others via MCP</text>
-      </g>
+      <line x1="700" y1="666" x2="700" y2="738" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1000" y1="666" x2="1000" y2="738" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="600" y="744" width="500" height="90" rx="14" class="bx dash"/><text x="850" y="776" class="bt">Outside world</text><text x="850" y="808" class="bs">customers, suppliers</text>
 
-      <g>
-        <line x1="700" y1="614" x2="700" y2="652" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <line x1="1000" y1="614" x2="1000" y2="652" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <rect x="600" y="656" width="500" height="90" rx="14" class="bx dash"/><text x="850" y="688" class="bt">Outside world</text><text x="850" y="720" class="bs">customers, suppliers</text>
-      </g>
-
-      <g>
-        <line x1="1540" y1="144" x2="1540" y2="104" class="ln dash teal" marker-end="url(#arrow-teal)"/>
-        <line x1="1190" y1="680" x2="1240" y2="680" class="ln"/><text x="1256" y="680" class="lt">data flows into memory</text>
-        <line x1="1190" y1="724" x2="1240" y2="724" class="ln dash teal"/><text x="1256" y="724" class="lt teal">tasks and updates flow back</text>
-      </g>
+      <line x1="1190" y1="768" x2="1240" y2="768" class="ln"/><text x="1256" y="768" class="lt">data flows into memory</text>
+      <line x1="1190" y1="812" x2="1240" y2="812" class="ln dash"/><text x="1256" y="812" class="lt">tasks and updates flow back</text>
     </svg>
   </div>
   <aside class="notes">
@@ -361,34 +353,45 @@ html.mode-presenter #viewport,html.mode-presenter .navzone{display:none}
 <section class="slide">
   <div class="kicker"><b>02</b> · With Queryable</div>
   <div class="body sources">
-    <div class="card" style="--c:var(--blue)">
+    <div class="card">
       <h3>Meetings</h3>
       <p>The bot joins Meet or Teams, records and transcribes with each speaker's name. Out come summaries, decisions and tasks.</p>
     </div>
-    <div class="card" style="--c:var(--orange)">
+    <div class="card">
       <h3>Conversations</h3>
       <p>WhatsApp groups and Slack and Discord channels become memory.</p>
     </div>
-    <div class="card" style="--c:var(--green)">
-      <h3>Documents and systems</h3>
-      <p>Files, pages and tickets come in and stay up to date. The CRM is queried when the question is asked.</p>
+    <div class="card">
+      <h3>Documents</h3>
+      <p>Files, pages and tickets come in and stay up to date.</p>
     </div>
-    <div class="card" style="--c:var(--teal)">
+    <div class="card">
+      <h3>Systems</h3>
+      <p>Connect Postgres or BigQuery and pick the tables. Agents answer with read-only queries and charts, and query the CRM live.</p>
+    </div>
+    <div class="card" style="--c:var(--orange)">
       <h3>Agents</h3>
       <p>Ask anything answers across all of it. Agents respond to @ in channels, and the company's Claude queries it through MCP.</p>
     </div>
+    <div class="card" style="--c:var(--orange)">
+      <h3>Specialized agents</h3>
+      <p>Ready for sales, support and onboarding: they evaluate sales calls, back the support team and build onboarding plans.</p>
+    </div>
   </div>
   <aside class="notes">
-    <p>⏱ 2 minutes. One card at a time, in reading order.</p>
+    <p>⏱ 2 to 3 minutes. One card at a time, in reading order.</p>
     <p>Meetings: the bot joins on its own, from the calendar, a few minutes before the start time. It records, transcribes with each speaker's name and delivers summaries, decisions and tasks.</p>
     <p>Conversations: WhatsApp, Slack and Discord groups. Each person's Gmail is searched live, without being copied.</p>
-    <p>Documents and systems: Drive, OneDrive, Notion, GitHub, Zendesk. What changes there changes here. The CRM is queried when the question is asked.</p>
+    <p>Documents: Drive, OneDrive, Notion, GitHub, Zendesk. What changes there changes here.</p>
+    <p>Systems: the company connects its databases, Postgres or BigQuery, and chooses which tables the agent can see. People ask in plain language; the agent writes a read-only query, answers and can draw a chart. The CRM is queried when the question is asked.</p>
     <p>Agents: questions in plain language, agents called with @ and the company's Claude connected through MCP. Tasks go to ClickUp or Jira.</p>
+    <p>Specialized agents: Queryable comes with agents for specific jobs. In sales, they score each sales call against a scorecard and track objections and signals. In onboarding, they put together a plan for each new hire. In support, they work with the support team's history.</p>
   </aside>
   <aside class="explain">
-    <p><b>The idea.</b> What happens to each source when it comes into Queryable.</p>
-    <p><b>On screen.</b> Four cards: meetings, conversations, documents and systems, agents.</p>
-    <p><b>Detail.</b> Gmail and the CRM are queried live (they are not copied into memory). The full list of integrations is on the hidden backup slide near the end (open the deck with ?all).</p>
+    <p><b>The idea.</b> What happens to each source when it comes into Queryable, and the agents that work on top of it.</p>
+    <p><b>On screen.</b> Six cards: meetings, conversations, documents and systems in gray, like the sources in the drawings; agents and specialized agents in orange, like the agents.</p>
+    <p><b>Detail.</b> Gmail and the CRM are queried live (they are not copied into memory). Database connections are read-only and go through a short onboarding (tables, context questions, KPIs). The full list of integrations is on the hidden backup slide near the end (open the deck with ?all).</p>
+    <p><b>For the presenter.</b> In the product today, Sales and Onboarding are Programs. There is no Support program yet: support tools (Zendesk, Intercom) come in as sources.</p>
   </aside>
 </section>
 
@@ -420,35 +423,31 @@ html.mode-presenter #viewport,html.mode-presenter .navzone{display:none}
 <section class="slide">
   <div class="kicker"><b>03</b> · Queryable 2.0</div>
   <div class="body scene">
-    <svg viewBox="0 0 1700 750" role="img" aria-label="Queryable 2.0: meetings, conversations, documents and systems inside Queryable, connected to a central block of agents and memory; the outside world talks to people or directly to the agents">
-      <rect x="2" y="2" width="1696" height="586" rx="28" class="bx purple"/>
-      <text x="850" y="42" class="bt big">Queryable 2.0</text>
-      <text x="850" y="78" class="bs">where work happens and becomes memory</text>
-      <rect x="50" y="110" width="385" height="96" rx="14" class="bx"/><text x="242" y="144" class="bt">Meetings</text><text x="242" y="178" class="bs">live calls</text>
-      <rect x="455" y="110" width="385" height="96" rx="14" class="bx"/><text x="647" y="144" class="bt">Conversations</text><text x="647" y="178" class="bs">channels and DMs</text>
-      <rect x="860" y="110" width="385" height="96" rx="14" class="bx"/><text x="1052" y="144" class="bt">Documents</text><text x="1052" y="178" class="bs">notes and files</text>
-      <rect x="1265" y="110" width="385" height="96" rx="14" class="bx"/><text x="1457" y="144" class="bt">Systems</text><text x="1457" y="178" class="bs">CRM, ERP, accounting</text>
-      <line x1="242" y1="212" x2="242" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-      <line x1="647" y1="212" x2="647" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-      <line x1="1052" y1="212" x2="1052" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-      <line x1="1457" y1="212" x2="1457" y2="254" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-      <rect x="50" y="260" width="1600" height="160" rx="18" class="bx teal"/>
-      <text x="850" y="296" class="bt">Agents and organizational memory</text>
-      <text x="850" y="336" class="bl">everything that happens here becomes memory at once, with nothing to integrate</text>
-      <text x="850" y="366" class="bl">agents answer, act and serve whoever is outside</text>
-      <text x="850" y="396" class="bl">one access control for people, agents and data</text>
+    <svg viewBox="0 0 1700 836" role="img" aria-label="Queryable 2.0: meetings, conversations, documents and systems inside Queryable, connected to a central block of agents and memory; the outside world talks to people or directly to the agents">
+      <rect x="2" y="2" width="1696" height="660" rx="28" class="bx strong"/>
+      <text x="850" y="44" class="bt big">Queryable 2.0</text>
+      <text x="850" y="80" class="bs">where work happens and becomes memory</text>
+      <rect x="50" y="120" width="385" height="96" rx="14" class="bx"/><text x="242" y="154" class="bt">Meetings</text><text x="242" y="188" class="bs">live calls</text>
+      <rect x="455" y="120" width="385" height="96" rx="14" class="bx"/><text x="647" y="154" class="bt">Conversations</text><text x="647" y="188" class="bs">channels and DMs</text>
+      <rect x="860" y="120" width="385" height="96" rx="14" class="bx"/><text x="1052" y="154" class="bt">Documents</text><text x="1052" y="188" class="bs">notes and files</text>
+      <rect x="1265" y="120" width="385" height="96" rx="14" class="bx"/><text x="1457" y="154" class="bt">Systems</text><text x="1457" y="188" class="bs">CRM, ERP, accounting</text>
+      <line x1="242" y1="222" x2="242" y2="290" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="647" y1="222" x2="647" y2="290" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1052" y1="222" x2="1052" y2="290" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1457" y1="222" x2="1457" y2="290" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="50" y="296" width="1600" height="160" rx="18" class="bx orange"/>
+      <text x="850" y="332" class="bt">Agents and organizational memory</text>
+      <text x="850" y="372" class="bl">everything that happens here becomes memory at once, with nothing to integrate</text>
+      <text x="850" y="402" class="bl">agents answer, act and serve whoever is outside</text>
+      <text x="850" y="432" class="bl">one access control for people, agents and data</text>
 
-      <g>
-        <line x1="470" y1="426" x2="470" y2="464" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <rect x="240" y="470" width="460" height="90" rx="14" class="bx blue"/><text x="470" y="502" class="bt">People</text><text x="470" y="534" class="bs">one place to work</text>
-      </g>
+      <line x1="470" y1="462" x2="470" y2="530" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <rect x="240" y="536" width="460" height="90" rx="14" class="bx blue"/><text x="470" y="568" class="bt">People</text><text x="470" y="600" class="bs">one place to work</text>
 
-      <g>
-        <line x1="650" y1="646" x2="650" y2="566" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-        <line x1="1100" y1="646" x2="1100" y2="426" class="ln teal" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"/>
-        <text x="1124" y="510" class="lt teal">straight to the agents</text>
-        <rect x="600" y="652" width="560" height="90" rx="14" class="bx dash"/><text x="880" y="684" class="bt">Outside world</text><text x="880" y="716" class="bs">customers, suppliers, WhatsApp</text>
-      </g>
+      <line x1="650" y1="738" x2="650" y2="632" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <line x1="1100" y1="738" x2="1100" y2="462" class="ln" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <text x="1124" y="581" class="lt">straight to the agents</text>
+      <rect x="600" y="744" width="560" height="90" rx="14" class="bx dash"/><text x="880" y="776" class="bt">Outside world</text><text x="880" y="808" class="bs">customers, suppliers, WhatsApp</text>
     </svg>
   </div>
   <aside class="notes">
@@ -460,7 +459,7 @@ html.mode-presenter #viewport,html.mode-presenter .navzone{display:none}
   </aside>
   <aside class="explain">
     <p><b>The idea.</b> Scenario 3, Queryable 2.0: where the product is heading. Meetings, conversations, documents and systems (CRM, ERP, accounting) become Queryable modules, and the central block brings agents and memory together. The outside world comes in through people or straight through the agents.</p>
-    <p><b>On screen.</b> Queryable 2.0 with the four modules, the central block, people and the outside world, with both paths (through people, in gray, and straight to the agents, in teal).</p>
+    <p><b>On screen.</b> Queryable 2.0 with the four modules, the central block, people and the outside world, with both paths (through people, and straight to the agents). Same colors as slides 3 and 4: agents in orange, people in blue, the rest in gray.</p>
     <p><b>For the presenter.</b> Today the native parts are channels, DMs and projects with tasks. In-platform calls, a document editor and ERP and accounting modules don't exist yet. Present it as a direction, not as a finished product.</p>
     <p><b>Connects to.</b> Slide 8 compares the three scenarios.</p>
   </aside>
